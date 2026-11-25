@@ -30,6 +30,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Notes tailored to each meal.** Light-hearted nudges after carb-heavy, sugary, salty, oily or low-protein meals, and end-of-day notes on fibre, fruit and veg, and protein.
 - **Light or dark, chosen on the first screen.**
 - **Scan button in the middle.** Tap to open the camera and name the dish; hold for search, labels and more.
+- **Korean BBQ builder.** Count each piece off the grill, your banchan refills, rice and sauces.
 - **Hot pot builder.** Pick one or two broths, tap each item you ate (fish tofu, lettuce, beef slices…) and your sauce bowl.
 - **Protein drinks.** Whey shakes, Herbalife, Ensure, Anlene, Dutch Lady +Protein and Barebells, from their own labels.
 - **My supplements.** Your own daily checklist, ticked off on Today. The app never suggests supplements.

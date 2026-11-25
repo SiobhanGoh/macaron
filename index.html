@@ -826,7 +826,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 <section class="view" id="v-scan" aria-labelledby="h-scan">
   <h1 id="h-scan">Add food</h1>
   <p class="lead" id="scanLead"></p>
-  <div class="quickAdd" role="group" aria-label="More ways"><button data-act="openDish" data-t="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>Search food</button><button data-act="openDish" data-t="recent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Favourites</button><button data-act="openKit" data-k="hotpot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11c0 5 3 8 7 8s7-3 7-8M2 11h2M20 11h2M9 7c0-1 1-1.5 1-2.5M14 7c0-1 1-1.5 1-2.5"/></svg>Hot pot</button><button data-act="openBuild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M12 3v6M9 6h6"/></svg>Build my own</button><button data-act="openAdd"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/></svg>More ways</button></div>
+  <div class="quickAdd" role="group" aria-label="More ways"><button data-act="openDish" data-t="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>Search food</button><button data-act="openDish" data-t="recent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>Favourites</button><button data-act="openKit" data-k="hotpot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18M5 11c0 5 3 8 7 8s7-3 7-8M2 11h2M20 11h2M9 7c0-1 1-1.5 1-2.5M14 7c0-1 1-1.5 1-2.5"/></svg>Hot pot</button><button data-act="openKit" data-k="kbbq"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="13" rx="9" ry="5"/><path d="M6 11l12 4M8 9.5l10 4M5.5 13l10 3.5M9 5c0-1 1-1.5 1-2.5M14 5c0-1 1-1.5 1-2.5"/></svg>Korean BBQ</button><button data-act="openBuild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M12 3v6M9 6h6"/></svg>Build my own</button><button data-act="openAdd"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="6" cy="12" r="1.8"/><circle cx="12" cy="12" r="1.8"/><circle cx="18" cy="12" r="1.8"/></svg>More ways</button></div>
   <div class="seg" id="modeSeg" role="group" aria-label="How to add food"><i></i><button data-act="mode" data-m="photo">Photo</button><button data-act="mode" data-m="label">Label</button><button data-act="mode" data-m="order">Order help</button></div>
   <div id="photoBox">
     <div class="drop"><img id="preview" alt="Your photo" hidden><span id="dropTxt">No photo yet</span></div>
@@ -1211,6 +1211,102 @@ Minced pork soup|1 bowl, with gourd or greens|180|18|4|10|1|1|800|3.5|0.5|ld|Hom
 Fried fish cake|2 pieces|200|12|14|11|0|2|700|2.5|0|lds|Home|0|chinese seafood fried|
 Chicken quesadilla|1 tortilla, 4 wedges|500|26|40|26|3|3|1000|11|0.5|ld|Western cafe|1|western|
 Hot pot, typical meal|1 person, with a sauce bowl|850|50|60|45|6|8|2800|14|2|ld|Hot pot restaurant|2|chinese soupy steamboat haidilao|For a closer number, build it item by item in Build my own
+Korean BBQ, typical meal|1 person: pork belly, sides and rice|950|38|70|58|6|8|1900|20|1.5|ld|Korean BBQ restaurant|3|korean pork bbq kbbq samgyeopsal|For a closer number, build it piece by piece in Build my own
+Samgyeopsal set with rice|150 g pork belly, lettuce, kimchi, rice|900|32|60|58|4|4|1500|20|1|ld|Korean BBQ restaurant|3|korean pork bbq kbbq rice|
+Bulgogi with rice|1 plate|620|30|75|20|3|12|1200|7|0.5|ld|Korean restaurant|2|korean beef rice bbq|
+Kimchi jjigae with rice|1 pot, 1 bowl rice|520|24|62|18|4|5|1900|6|1|ld|Korean restaurant|2|korean soupy pork hot rice|
+Sundubu jjigae with rice|1 pot, 1 bowl rice|480|24|58|16|3|4|1700|4|0.5|ld|Korean restaurant|2|korean soupy seafood hot rice|
+Tteokbokki|1 plate|380|8|76|5|3|14|1100|1|0.2|ls|Korean restaurant|2|korean hot|
+Kimchi fried rice with egg|1 plate|600|18|80|22|3|5|1300|6|0.5|ld|Korean restaurant|2|korean rice hot|
+Ramyeon with egg|1 pot|520|14|68|20|3|4|1900|9|0.2|ld|Korean restaurant|1|korean noodles soupy hot|
+Jajangmyeon|1 bowl|650|20|95|20|5|10|1400|5|0.5|ld|Korean restaurant|2|korean noodles pork|
+Samgyetang|half chicken with rice in soup|700|55|45|32|1|1|900|9|0|ld|Korean restaurant|3|korean soupy mild protein|
+Korean fried chicken, yangnyeom|4 pieces|520|28|34|30|1|14|900|7|0|lds|Korean restaurant|2|korean fried hot|
+Seafood pajeon|2 slices|300|10|34|13|2|2|600|2|0.3|ls|Korean restaurant|2|korean seafood fried|
+Army stew (budae jjigae)|1 person's share with rice|750|30|80|32|4|6|2200|12|0.5|ld|Korean restaurant|2|korean soupy pork hot|
+Mookata (Thai BBQ), typical meal|1 person|800|45|40|48|4|6|2000|16|1.5|d|Thai restaurant|2|thai pork bbq steamboat|
+Yakiniku, typical meal|1 person with rice|900|40|70|50|3|10|1500|20|0.5|ld|Japanese restaurant|3|japanese beef bbq|
+BBQ chicken wings|6 pieces|540|36|12|38|0|9|1100|10|0|lds|Western cafe|2|western bbq|
+BBQ pork ribs|half rack|780|48|22|54|1|18|1400|19|0|ld|Western cafe|3|western pork bbq|
+Lamb skewers (BBQ)|5 skewers|420|30|4|32|1|1|700|13|0|ds|Pasar malam|2|chinese bbq hot|
+Grilled chicken wings (BBQ)|2 wings|300|20|6|22|0|4|500|6|0|ds|Pasar malam|1|malay bbq|
+Otak-otak|2 pieces|160|10|8|10|1|2|500|4|0|s|Pasar malam|1|malay seafood hot bbq|
+Ikan pari bakar with rice|1 plate|520|34|72|10|2|4|1000|2|0.3|ld|Ikan bakar stall|1|malay seafood hot bbq rice|
+Lok lok|10 sticks with sauce|450|26|30|24|3|8|1800|7|0.5|ds|Pasar malam|1|chinese steamboat|
+Big Mac|1 burger|491|26|42|25|3|8|900|10|0.2|ld|McDonald's|1|western beef|
+Spicy Chicken McDeluxe|1 burger|531|24|48|27|3|6|1100|6|0.2|ld|McDonald's|1|western fried hot|
+Double cheeseburger|1 burger|435|25|32|23|2|7|1050|11|0|ld|McDonald's|1|western beef|
+Nasi Lemak McD|1 set|593|22|70|25|4|6|1100|9|0.2|bl|McDonald's|1|malay rice hot fried|
+French fries, large|1 large|423|5|54|21|5|0|330|9|0|s|McDonald's|1|western fried veg side|
+Sausage McMuffin with egg|1 muffin|380|20|28|21|2|3|800|8|0|b|McDonald's|1|western|
+Hotcakes with syrup|3 pieces|520|9|90|14|2|40|600|6|0|b|McDonald's|1|western sweet veg|
+Apple pie (McD)|1 pie|240|2|30|12|1|10|170|6|0|s|McDonald's|1|western sweet veg pastry|
+KFC Original Recipe, breast|1 piece|342|30|12|19|1|0|900|5|0|ld|KFC|1|western fried protein|
+KFC Original Recipe, thigh|1 piece|287|18|10|19|0|0|700|5|0|ld|KFC|1|western fried|
+KFC Original Recipe, drumstick|1 piece|160|13|5|10|0|0|400|2.5|0|lds|KFC|1|western fried|
+KFC Original Recipe, wing|1 piece|188|11|7|13|0|0|450|3.5|0|lds|KFC|1|western fried|
+KFC Hot & Spicy, breast|1 piece|353|29|14|20|1|0|1000|5|0|ld|KFC|1|western fried hot protein|
+Cheezy wedges, large|1 large|453|8|50|24|4|3|900|8|0|s|KFC|1|western fried veg side|
+KFC nuggets|6 pieces|260|14|16|15|1|0|600|3|0|s|KFC|1|western fried|
+Whipped potato with gravy|1 regular|90|2|14|3|1|0|350|1|0|s|KFC|1|western side|
+Coleslaw|1 regular|120|1|12|8|2|9|200|1|0.5|s|KFC|1|western veg side|
+Whopper|1 burger|660|28|49|40|2|11|980|12|0.3|ld|Burger King|2|western beef|
+Texas Chicken, 2 pieces|2 pieces|560|36|20|36|1|0|1300|9|0|ld|Texas Chicken|1|western fried|
+Honey butter biscuit|1 piece|230|3|26|13|1|7|500|6|0|s|Texas Chicken|1|western sweet veg pastry|
+Coney dog|1 piece|340|13|28|19|2|5|900|7|0|ls|A&W|1|western beef|
+Root beer float|1 mug|250|3|46|6|0|44|80|4|0|s|A&W|1|drink sweet veg|
+Ramly burger, special|1 burger with egg wrap|520|22|38|30|2|8|1000|10|0.2|ds|Pasar malam|1|malay beef|
+Tonkatsu set|cutlet, rice, cabbage, miso soup|850|32|95|36|5|8|1500|9|0.8|ld|Japanese restaurant|3|japanese pork fried rice|
+Salmon don|1 bowl|560|28|72|16|1|6|800|3|0|ld|Japanese restaurant|3|japanese seafood rice protein|
+Unagi don|1 bowl|680|28|88|22|1|14|1100|5|0|ld|Japanese restaurant|3|japanese seafood rice|
+Tempura udon|1 bowl|560|18|78|18|3|6|1900|3|0.2|ld|Japanese restaurant|2|japanese noodles soupy fried|
+Chicken karaage|5 pieces|380|22|18|24|0|1|700|5|0|lds|Japanese restaurant|2|japanese fried|
+Okonomiyaki|1 piece|520|18|50|26|3|8|1300|6|0.5|ld|Japanese restaurant|2|japanese fried|
+Yakitori|3 skewers|240|22|8|13|0|6|600|3.5|0|lds|Japanese restaurant|2|japanese bbq protein|
+California roll|6 pieces|260|8|40|7|2|6|500|1|0.2|ls|Sushi King|2|japanese seafood rice|
+Salmon nigiri|4 pieces|220|12|30|5|0|4|350|1|0|ls|Sushi King|2|japanese seafood rice light|
+Cold soba|1 tray|340|14|66|2|4|4|1100|0.4|0|ld|Japanese restaurant|2|japanese noodles light veg|
+Green curry chicken with rice|1 bowl curry, 1 cup rice|650|28|65|30|3|6|1300|18|0.5|ld|Thai restaurant|2|thai rice hot|
+Som tam|1 plate|150|4|26|4|4|16|1100|0.5|1.5|lds|Thai restaurant|1|thai hot light|
+Tom yum noodles|1 bowl|450|22|58|14|2|5|1900|4|0.3|ld|Thai restaurant|1|thai noodles soupy seafood hot|
+Thai fried rice with chicken|1 plate|620|24|82|20|2|4|1200|4|0.3|ld|Thai restaurant|1|thai rice|
+Thai milk tea|1 cup (350 ml)|230|3|36|9|0|32|80|6|0|s|Thai restaurant|1|drink sweet veg thai|
+Moo ping with sticky rice|3 skewers, 1 pack rice|480|24|52|18|1|10|900|6|0|lds|Thai restaurant|1|thai pork bbq|
+Chicken chop with black pepper sauce|1 plate with fries|780|40|55|44|5|6|1400|12|0.5|ld|Western food stall|2|western fried|
+Lamb chop with fries|2 chops|820|42|40|54|4|4|1100|22|0.5|ld|Western food stall|2|western|
+Mushroom soup with garlic bread|1 bowl, 1 slice|320|6|30|19|2|5|900|9|0.3|ls|Western cafe|2|western soupy veg|
+Big breakfast|eggs, sausage, toast, beans, hash brown|780|32|60|46|6|8|1600|15|0.5|b|Western cafe|3|western|
+Avocado toast with egg|1 slice|380|14|30|22|7|3|500|4.5|1|b|Western cafe|3|western veg|
+Beef burger with fries|1 set|900|36|80|48|6|10|1400|17|0.3|ld|Western cafe|2|western beef fried|
+Seafood marinara pasta|1 plate|620|28|84|16|5|10|1100|3|0.8|ld|Western cafe|2|western seafood noodles|
+Creamy mushroom chicken pasta|1 plate|720|32|78|30|4|6|1100|15|0.3|ld|Western cafe|2|western noodles|
+Grilled chicken wrap|1 wrap|480|26|46|20|4|4|1000|6|0.5|ld|Western cafe|2|western protein|
+Smoothie bowl|1 bowl|380|8|66|10|9|40|60|4|2|bs|Western cafe|3|western sweet veg|
+Char siu rice|1 plate|620|28|80|20|2|12|1100|7|0.3|ld|Chicken rice shop|1|chinese pork rice bbq|
+Siew yuk rice|1 plate|700|26|78|30|2|4|1200|11|0.3|ld|Chicken rice shop|1|chinese pork rice|
+Sweet and sour pork with rice|1 plate|720|24|92|28|3|20|1100|8|0.5|ld|Economy rice stall|1|chinese pork rice fried sweet|
+Kung pao chicken with rice|1 plate|680|32|82|24|3|8|1400|5|0.5|ld|Economy rice stall|1|chinese rice hot|
+Salted egg chicken rice|1 plate|820|30|85|40|2|6|1300|14|0.2|ld|Economy rice stall|2|chinese rice fried|
+Butter prawns|6 prawns|420|22|14|30|1|4|800|14|0|ld|Economy rice stall|2|chinese seafood fried|
+Loh mee|1 bowl|520|20|72|16|3|4|1700|4|0.3|ld|Kopitiam|1|chinese noodles soupy pork|
+Sarawak laksa|1 bowl|520|24|58|22|3|4|1600|12|0.3|bld|Kopitiam|1|chinese noodles soupy seafood hot|
+Kolo mee|1 bowl|480|20|62|17|2|3|1200|5|0.2|bld|Kopitiam|1|chinese noodles pork|
+Chilli pan mee|1 bowl|560|24|66|22|3|3|1500|6|0.3|ld|Kopitiam|1|chinese noodles pork hot|
+Claypot yee mee|1 pot|480|20|60|18|3|3|1700|5|0.3|ld|Kopitiam|1|chinese noodles soupy|
+Economy bee hoon|1 plate with egg|420|12|62|14|2|3|900|4|0.2|b|Kopitiam|0|chinese noodles|
+Nasi kerabu with ayam percik|1 plate|620|30|78|20|6|5|1100|8|1.5|ld|Malay stall|1|malay rice|
+Rendang daging with rice|1 plate|680|32|75|28|3|4|1000|14|0.3|ld|Nasi campur stall|1|malay beef rice hot|
+Ayam percik with rice|1 plate|650|36|74|22|2|8|1000|9|0.3|ld|Malay stall|1|malay rice bbq|
+Nasi goreng pattaya|1 plate|720|24|90|28|3|8|1400|6|0.3|ld|Mamak|1|malay rice|
+Nasi goreng USA|1 plate|780|30|88|32|3|10|1500|7|0.3|ld|Mamak|1|malay rice seafood beef|
+Sambal sotong with rice|1 plate|560|26|76|16|2|8|1300|3|0.3|ld|Nasi campur stall|1|malay seafood rice hot|
+Roti tisu|1 cone|420|6|62|17|2|28|300|8|0|s|Mamak|1|indian sweet veg|
+Roti planta|1 piece|400|7|48|20|2|8|450|9|0|bs|Mamak|1|indian veg|
+Cheese naan|1 piece|380|12|48|15|2|3|600|8|0|ld|Mamak|1|indian veg|
+Butter chicken with naan|1 bowl, 1 naan|750|36|66|38|4|8|1300|16|0.3|ld|Indian restaurant|2|indian mild|
+Banana leaf rice with chicken|1 set|820|34|105|28|8|6|1500|7|1.5|ld|Banana leaf restaurant|1|indian rice hot|
+Vadai|2 pieces|240|8|28|11|4|1|400|1.5|0|bs|Mamak|0|indian fried veg|
+Puri with potato masala|3 pieces|420|9|56|18|5|3|600|3|0.3|b|Banana leaf restaurant|1|indian fried veg|
 ABC soup with chicken and rice|1 bowl soup, half cup rice|380|28|45|9|5|8|700|2.5|2|ld|Home|1|chinese soupy light protein|Boil chicken, potato, carrot, onion and tomato for 20 minutes. Salt to taste. Eat with a little rice
 Steamed egg with minced chicken, rice|1 plate|430|27|52|12|1|2|700|3.5|0|ld|Home|1|chinese rice protein light|Beat 2 eggs with water and minced chicken. Steam for 10 minutes. Add a little soy sauce and serve with rice
 Pan-seared salmon, rice and greens|1 plate|560|34|52|23|4|2|500|4.5|1.5|ld|Home|2|western rice seafood protein|Pan-fry a salmon fillet for 3 minutes a side. Blanch any greens. Serve with a cup of rice
@@ -2191,6 +2287,15 @@ const emo=n=>{n=String(n||"").toLowerCase().replace(/\(.*?\)/g,"");for(const[r,e
     kelp: (id) => `<path d="M-14 0C-14 -8 -4 -9 0 -3C4 -9 14 -8 14 0C14 8 4 9 0 3C-4 9 -14 8 -14 0Z" fill="#3e6a34"/><path d="M-10 0C-10 -4 -4 -5 0 -1C4 -5 10 -4 10 0" stroke="#7fae5e" stroke-width="1.2" fill="none" opacity=".8"/>`,
     glass: (id) => [0, 3, 6, 9, 12].map((d, i) => `<path d="M-22 ${-7 + d * .85}c6-7 10 7 16 0s10 7 16 0s9 6 12 1" stroke="#fffdf8" stroke-opacity=".75" stroke-width="1.6" fill="none" stroke-linecap="round"/>`).join(""),
     youtiao: (id) => `<rect x="-20" y="-7" width="40" height="7" rx="3.5" fill="#e3a447"/><rect x="-19" y="0" width="40" height="7" rx="3.5" fill="#d48f34"/><path d="M-16 -5h32" stroke="#ffe0a0" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>`,
+    belly: (id) => `<path d="M-17 -6C-6 -9 6 -8 17 -6L16 6C6 8 -6 8 -16 6Z" fill="#f6e2c8"/><path d="M-16.5 -2.5C-6 -5 6 -4.5 16.5 -2.5M-16.2 1.5C-6 -.5 6 0 16.2 1.5" stroke="#e9c79a" stroke-width="2" fill="none"/><path d="M-16.8 -4C-6 -6.5 6 -6 16.8 -4" stroke="#d99a6a" stroke-width="1.2" fill="none" opacity=".7"/>${[-10,-3,4,11].map(x=>`<path d="M${x-3} -6.5L${x+3} 6" stroke="#5a2a14" stroke-width="2" opacity=".55" stroke-linecap="round"/>`).join("")}<path d="M-15 -5.5C-6 -8 6 -7 15 -5.5" stroke="#fff" stroke-width="1" fill="none" opacity=".55"/>`,
+    galbi: (id) => `<path d="M-17 -3C-12 -10 2 -9 9 -9C15 -9 18 -5 17 0C16 5 8 7 0 7C-9 8 -18 4 -17 -3Z" fill="#7a3a22"/><path d="M-13 -3C-6 -6 4 -6 12 -4" stroke="#b86a44" stroke-width="2" fill="none" opacity=".8"/>${[-8,0,8].map(x=>`<path d="M${x-3} -7L${x+3} 6" stroke="#2a1008" stroke-width="2.2" opacity=".55" stroke-linecap="round"/>`).join("")}${[[-6,-1],[3,2],[9,-3],[-11,3]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="1.3" ry=".7" fill="#fff3d6"/>`).join("")}<rect x="12" y="-6" width="5" height="11" rx="2.5" fill="#f3e6d2"/>`,
+    bulgogi: (id) => [[-9,-3,20],[0,1,-15],[8,-2,30],[-3,5,5]].map(([x,y,r])=>`<path d="M${x-9} ${y}c3-5 6 4 9 0s6 4 9 0" stroke="#6e3420" stroke-width="5" fill="none" stroke-linecap="round" transform="rotate(${r} ${x} ${y})"/>`).join("")+`<path d="M-6 -6c3-2 6-2 9 0M4 5c3-2 6-2 8 0" stroke="#f6ecd8" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M-12 2l3 -4M10 -6l2 3" stroke="#5fae5a" stroke-width="1.6" stroke-linecap="round"/>`,
+    garlic: (id) => [[-6,0,-20],[0,-2,0],[6,1,20]].map(([x,y,r])=>`<g transform="translate(${x} ${y}) rotate(${r})"><path d="M0 -7C4 -6 5 2 0 6C-5 2 -4 -6 0 -7Z" fill="#fbf1d6"/><path d="M-1 -5C1 -3 1 2 -1 4" stroke="#d6a86a" stroke-width="1" fill="none" opacity=".7"/><ellipse cx="1" cy="2" rx="1.6" ry="2.4" fill="#d9964a" opacity=".55"/></g>`).join(""),
+    kimchi: (id) => `<path d="M-15 4C-15 -5 -6 -10 2 -9C11 -10 16 -3 14 4C11 9 -10 10 -15 4Z" fill="#e0562e"/><path d="M-11 2C-4 -3 4 -5 11 -3" stroke="#fff0d8" stroke-width="2.4" fill="none" stroke-linecap="round" opacity=".85"/>${[[-6,-4],[4,3],[8,-4],[-9,4]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="1.1" fill="#9a1a0a"/>`).join("")}`,
+    kingoyster: (id) => [[-7,0],[7,1]].map(([x,y])=>`<g transform="translate(${x} ${y})"><path d="M-6 -9C-2 -11 3 -11 6 -8L5 9C1 11 -2 11 -5 9Z" fill="#f3e6cf"/>${[-4,0,4].map(v=>`<path d="M-5 ${v}L5 ${v-3}" stroke="#6e3a1a" stroke-width="1.6" opacity=".5"/>`).join("")}</g>`).join(""),
+    onion: (id) => [[-5,0],[6,1]].map(([x,y])=>`<ellipse cx="${x}" cy="${y}" rx="8" ry="5.5" fill="none" stroke="#f6eedd" stroke-width="2.6"/><ellipse cx="${x}" cy="${y}" rx="4.5" ry="3" fill="none" stroke="#efe1c4" stroke-width="2"/>`).join(""),
+    squid: (id) => `<path d="M-14 -4C-8 -9 8 -9 14 -4C16 0 14 5 8 6C2 7 -6 7 -12 5C-16 3 -16 -1 -14 -4Z" fill="#fbefe6"/>${[-9,-3,3,9].map(x=>`<path d="M${x} -6L${x+3} 5" stroke="#d98a6a" stroke-width="1.3" opacity=".6"/>`).join("")}<path d="M-12 -4C-6 -7 6 -7 12 -4" stroke="#fff" stroke-width="1.2" fill="none" opacity=".8"/>`,
+    chilli: (id) => `<path d="M-14 2C-8 -4 6 -6 14 -2C15 0 13 2 11 1C4 -1 -6 1 -12 4C-15 5 -16 3 -14 2Z" fill="#3f8f3a"/><path d="M-11 1C-4 -3 4 -4 11 -2" stroke="#9adf7a" stroke-width="1" fill="none"/><path d="M14 -2l4 -3" stroke="#2e6a28" stroke-width="2" stroke-linecap="round"/>`,
   };
   // landing spots: an even grid over the broth, kept clear of the divider, then ordered so each new piece
   // lands as far as possible from the ones already there (farthest-point order)
@@ -2260,7 +2365,34 @@ const emo=n=>{n=String(n||"").toLowerCase().replace(/\(.*?\)/g,"");for(const[r,e
     if (br.length) v += `<g class="steam" fill="none" stroke="#fff" stroke-linecap="round" filter="url(#${id}b3)"><path d="M114 74c-12-16 12-26 0-44c-6-9 2-16 0-24" stroke-width="9" opacity=".55"/><path d="M162 64c-12-16 12-28 0-46c-6-9 2-14 0-22" stroke-width="11" opacity=".5"/><path d="M210 74c-12-16 12-26 0-42" stroke-width="9" opacity=".5"/></g>`;
     return v + `</svg>`;
   }
-  root.potSVG = potSVG; root.POT_BROTH = BROTH; root.POT_ING = Object.keys(ING);
+
+  function grillSVG(o) {
+    const id = o.uid || "g", list = o.items || [], last = o.last || "";
+    let v = `<svg viewBox="12 22 296 168" xmlns="http://www.w3.org/2000/svg" class="pot3d grill" role="img" aria-label="Your Korean BBQ grill">` + defs(id, "iron", ["pork"]).replace("</defs>", `<radialGradient id="${id}stone" cx=".45" cy=".35" r=".8"><stop offset="0" stop-color="#4a4447"/><stop offset=".7" stop-color="#2a2527"/><stop offset="1" stop-color="#151213"/></radialGradient><radialGradient id="${id}grate" cx=".5" cy=".45" r=".6"><stop offset="0" stop-color="#3a2a22"/><stop offset=".75" stop-color="#1c1411"/><stop offset="1" stop-color="#0d0908"/></radialGradient><radialGradient id="${id}heat" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ff7a2a" stop-opacity=".5"/><stop offset="1" stop-color="#ff7a2a" stop-opacity="0"/></radialGradient></defs>`);
+    v += `<ellipse cx="${CX}" cy="${RIMY + 70}" rx="140" ry="18" fill="#140c0e" opacity=".3" filter="url(#${id}b6)"/>`;
+    v += `<path d="M${CX - 138} ${RIMY + 2}Q${CX - 136} ${RIMY + 64} ${CX} ${RIMY + 70}Q${CX + 136} ${RIMY + 64} ${CX + 138} ${RIMY + 2}Z" fill="#1d191a"/>`;
+    v += `<ellipse cx="${CX}" cy="${RIMY}" rx="138" ry="64" fill="url(#${id}stone)"/>`;
+    let sp = ""; let rr = 11; const rnd = () => (rr = (rr * 9301 + 49297) % 233280) / 233280;
+    for (let i = 0; i < 70; i++) { const a = rnd() * Math.PI * 2, d = .82 + rnd() * .17; sp += `<circle cx="${(CX + Math.cos(a) * 136 * d).toFixed(1)}" cy="${(RIMY + Math.sin(a) * 62 * d).toFixed(1)}" r="${(.5 + rnd() * .9).toFixed(1)}" fill="${rnd() > .5 ? "#cfc6c0" : "#d8b35a"}" opacity=".55"/>`; }
+    v += sp + `<ellipse cx="${CX}" cy="${IY}" rx="${IRX + 4}" ry="${IRY + 3}" fill="#0b0808"/>`;
+    v += `<g clip-path="url(#${id}in)"><ellipse cx="${CX}" cy="${IY}" rx="${IRX}" ry="${IRY}" fill="url(#${id}grate)"/><ellipse cx="${CX}" cy="${IY + 4}" rx="70" ry="28" fill="url(#${id}heat)"/>`;
+    for (let x = CX - IRX - 30; x < CX + IRX + 30; x += 13) v += `<path d="M${x} ${IY - IRY}L${x + 22} ${IY + IRY}" stroke="#050303" stroke-width="5.5"/><path d="M${x + 6} ${IY - IRY}L${x + 28} ${IY + IRY}" stroke="#4a3a32" stroke-width="1.3" opacity=".7"/>`;
+    v += `<ellipse cx="${CX - 30}" cy="${IY - 18}" rx="50" ry="10" fill="#fff" opacity=".06" filter="url(#${id}b3)"/>`;
+    // pieces on the grill, sizzling when they land
+    const flat = []; list.forEach(([k, n]) => { for (let j = 0; j < Math.min(n, 4); j++) flat.push(k); });
+    const SP = spots(false); let li = -1; flat.forEach((k, j) => { if (k === last) li = j; });
+    v += flat.map((k, i) => [k, SP[i % SP.length], i]).sort((a, b) => a[1][1] - b[1][1]).map(([k, [x, y], i]) => {
+      if (!ING[k]) return ""; const s = .8 + (y - 78) / 60 * .42, r = ((i * 47) % 50) - 25, pl = i === li;
+      const fx = pl ? `<g class="spl">${[[-8, -6], [0, -10], [8, -5]].map(([dx, dy], q) => `<path class="dr smk" style="--dx:${dx}px;--dy:${dy - 14}px;animation-delay:${.3 + q * .08}s" d="M0 0q-3 -5 0 -10" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" opacity=".7"/>`).join("")}${[[-12, -4], [11, -6], [-4, -12], [6, -12]].map(([dx, dy], q) => `<circle class="dr" style="--dx:${dx}px;--dy:${dy}px;animation-delay:${.26 + q * .03}s" cx="0" cy="2" r="1.3" fill="#ffb347"/>`).join("")}</g>` : "";
+      return `<g transform="translate(${x} ${y}) scale(${s.toFixed(2)})"><ellipse cx="0" cy="6" rx="16" ry="4.5" fill="#000" opacity=".4" filter="url(#${id}b1)"/><g class="${pl ? "plop" : ""}"><g filter="url(#${id}sh)" transform="rotate(${r})">${ING[k](id)}</g></g>${fx}</g>`;
+    }).join("");
+    v += `</g><ellipse cx="${CX}" cy="${IY}" rx="${IRX}" ry="${IRY}" fill="none" stroke="#5a504c" stroke-width="2"/>`;
+    v += `<path d="M${CX - 120} ${RIMY - 22}C${CX - 90} ${RIMY - 56} ${CX - 30} ${RIMY - 62} ${CX + 20} ${RIMY - 62}" stroke="#fff" stroke-width="2" fill="none" opacity=".25" stroke-linecap="round"/>`;
+    if (flat.length) v += `<g class="steam" fill="none" stroke="#fff" stroke-linecap="round" filter="url(#${id}b3)"><path d="M118 76c-10-14 10-22 0-38" stroke-width="8" opacity=".35"/><path d="M168 70c-10-14 10-24 0-40" stroke-width="9" opacity=".32"/><path d="M214 76c-10-14 10-22 0-36" stroke-width="8" opacity=".3"/></g>`;
+    else v += `<text x="${CX}" y="${IY + 4}" text-anchor="middle" style="font:600 12px sans-serif;fill:#d9cfc9">Add meat to start grilling</text>`;
+    return v + `</svg>`;
+  }
+  root.potSVG = potSVG; root.grillSVG = grillSVG; root.POT_BROTH = BROTH; root.POT_ING = Object.keys(ING);
 })(typeof window !== "undefined" ? window : globalThis);
 
 let artN=0;
@@ -2446,7 +2578,7 @@ function draw(name,key){const rec=R[key||name];if(!rec)return null;const seed=hs
   if(v==="W"){const[k,...a]=t[0].split(":");let base=W[k]?W[k](...a):W.fruit(k);if(typeof base==="function")base=base(...a);return base+t.slice(1).map((x,i)=>{const[kk,a1,a2]=x.split(":"),[px,py]=[[52,48],[12,48],[52,18]][i%3];return I[kk]?I[kk](px,py,a1,a2):""}).join("")}
   const bowl=v[0]==="B"||v[0]==="K",sl=bowl?SLB:SLP;let i=0;
   return vessel(v,seed)+t.map(x=>{let pos=null;const m=x.match(/@(\d+),(\d+)$/);if(m){pos=[+m[1],+m[2]];x=x.replace(/@.*$/,"")}const[k,a,b]=x.split(":");if(!I[k])return"";const[px,py]=pos||sl[i++%sl.length];return I[k](px,py,a,b)}).join("")}
-return{draw,R,I,vessel,glass,svg:(name,key)=>{if((key||name)==="Hot pot, typical meal"&&window.potSVG)return potSVG({style:(()=>{try{return S.prefs.potStyle==="iron"}catch(e){return false}})()?"iron":"copper",broths:["tomato","mala"],items:[["beef",1],["ftofu",2],["fball",2],["lettuce",1],["corn",1],["enoki",1]],uid:"hi"+(++artN)}).replace("<svg ",'<svg aria-hidden="true" ');const d=draw(name,key);return d?`<svg viewBox="0 0 64 64" aria-hidden="true">${d}</svg>`:""}}
+return{draw,R,I,vessel,glass,svg:(name,key)=>{if((key||name)==="Hot pot, typical meal"&&window.potSVG)return potSVG({style:(()=>{try{return S.prefs.potStyle==="iron"}catch(e){return false}})()?"iron":"copper",broths:["tomato","mala"],items:[["beef",1],["ftofu",2],["fball",2],["lettuce",1],["corn",1],["enoki",1]],uid:"hi"+(++artN)}).replace("<svg ",'<svg aria-hidden="true" ');if((key||name)==="Korean BBQ, typical meal"&&window.grillSVG)return grillSVG({items:[["belly",3],["galbi",2],["garlic",1],["kimchi",1],["prawn",1]],uid:"gi"+(++artN)}).replace("<svg ",'<svg aria-hidden="true" ');const d=draw(name,key);return d?`<svg viewBox="0 0 64 64" aria-hidden="true">${d}</svg>`:""}}
 })();
 Object.assign(ART.R,{
 "Green bean soup":"B:gr:#b9c98a mince:#8fae5a",
@@ -2782,6 +2914,102 @@ Object.assign(ART.R,{
 "Egg fried rice with vegetables":"P frice egf car bean",
 "Tofu and vegetable stir-fry with rice":"P rice tofu brc car",
 "ABC soup with chicken and rice":"B:mint:clr car pot drum:pale",
+"Korean BBQ, typical meal":"P slc:pale:br grn",
+"Samgyeopsal set with rice":"P slc:pale:br@24,34 rice@44,40 grn",
+"Bulgogi with rice":"P rice@20,40 mince:br@42,36 grn ses",
+"Kimchi jjigae with rice":"K:#d9452a tofu grn mince:red",
+"Sundubu jjigae with rice":"K:#e2552f tofu egh prawn",
+"Tteokbokki":"P slc:#f08a5a:#e2552f slc:#f08a5a:#e2552f ses herb",
+"Kimchi fried rice with egg":"P frice:#e8875a egf herb",
+"Ramyeon with egg":"B:blk:#d9452a nood:y egh herb",
+"Jajangmyeon":"B:blk:#fffaf2 nood:y gravy:#3a2a26 cuc",
+"Samgyetang":"K:#f3ead6 drum:pale herb",
+"Korean fried chicken, yangnyeom":"P drum:#c9452a@22,34 piece:#c9452a@42,36 ses@30,34 cube:w@30,48",
+"Seafood pajeon":"W roti:#e8c06a prawn herb",
+"Army stew (budae jjigae)":"K:#d9452a nood:y fil:#f2a3a0 tofu grn",
+"Mookata (Thai BBQ), typical meal":"K:#e9c46a slc:pale:br prawn grn",
+"Yakiniku, typical meal":"P slc:#8a4a3a:#c9703a@24,34 rice@44,40 grn",
+"BBQ chicken wings":"P drum:#8a4a2a@22,34 drum:#8a4a2a@40,42 sauce:#6b3524@46,30",
+"BBQ pork ribs":"P fil:#7a3a22@26,32 fil:#7a3a22@38,42 chips@46,30",
+"Lamb skewers (BBQ)":"P stk:#7a4a32 ses@30,44",
+"Grilled chicken wings (BBQ)":"P drum:#b9703a@22,34 drum:#b9703a@40,42 lime",
+"Otak-otak":"W sticks:#e8875a",
+"Ikan pari bakar with rice":"P rice@20,40 fish:dk@42,30 sam lime",
+"Lok lok":"P stk:gold sauce:#c98d5a@46,44",
+"Big Mac":"W burger:gold:br:chs",
+"Spicy Chicken McDeluxe":"W burger:gold:gold",
+"Double cheeseburger":"W burger:gold:br:chs",
+"Nasi Lemak McD":"P rice egh cuc sam drum:gold",
+"French fries, large":"X chips@24,36 chips@40,38",
+"Sausage McMuffin with egg":"W muffin",
+"Hotcakes with syrup":"W stack sauce:#b9793f",
+"Apple pie (McD)":"W puffp",
+"KFC Original Recipe, breast":"P piece:gold@32,36",
+"KFC Original Recipe, thigh":"P piece:gold@32,36",
+"KFC Original Recipe, drumstick":"P drum:gold@32,36",
+"KFC Original Recipe, wing":"P drum:gold@32,36",
+"KFC Hot & Spicy, breast":"P piece:#c9703a@32,36",
+"Cheezy wedges, large":"X chips@24,36 chips@40,38 sauce:#ffc83a@32,30",
+"KFC nuggets":"X piece:gold@22,34 piece:gold@40,40",
+"Whipped potato with gravy":"B:w:#f3e3b8 gravy:#8a5a3a@32,30",
+"Coleslaw":"B:w:#f3f3e0 grn car",
+"Whopper":"W burger:gold:br:chs",
+"Texas Chicken, 2 pieces":"P piece:gold@24,34 drum:gold@42,40",
+"Honey butter biscuit":"W bun:#e8b860",
+"Coney dog":"W hotdog",
+"Root beer float":"G liq:#4a2a1a foam",
+"Ramly burger, special":"W burger:gold:br",
+"Tonkatsu set":"P rice@20,38 slc:gold:#f0c878@40,32 grn",
+"Salmon don":"B:blk:#fffaf2 fil:sal fil:sal herb",
+"Unagi don":"B:blk:#fffaf2 fil:#7a4a32 fil:#7a4a32 ses",
+"Tempura udon":"B:blk:#e9cf9a thick:w prawn herb",
+"Chicken karaage":"P piece:gold@22,34 piece:gold@40,36 piece:gold@30,46 lime",
+"Okonomiyaki":"W roti:#c98d5a sauce:#6b3524 herb",
+"Yakitori":"P stk:#8a4a2a",
+"California roll":"W maki",
+"Salmon nigiri":"W nig:sal:y",
+"Cold soba":"X nood:#b9a58a herb",
+"Green curry chicken with rice":"P rice@20,40 gravy:#9ac86a@42,38 herb",
+"Som tam":"P nood:#d9e6a0 car nut lime",
+"Tom yum noodles":"B:gr:#f08a5a nood:w prawn herb lime",
+"Thai fried rice with chicken":"P frice egf cuc lime",
+"Thai milk tea":"G liq:#e8904a ice straw",
+"Moo ping with sticky rice":"P stk:#8a4a2a rice@46,44",
+"Chicken chop with black pepper sauce":"P piece:gold@26,36 gravy:#3a2a26@30,32 chips@46,40 grn",
+"Lamb chop with fries":"P fil:#7a4a32@24,34 fil:#7a4a32@36,42 chips@46,32",
+"Mushroom soup with garlic bread":"B:w:#d9c7a6 herb",
+"Big breakfast":"P egf fil:#8a4a32 toast bean",
+"Avocado toast with egg":"W toast:#b9d98a egf",
+"Beef burger with fries":"W burger:gold:br:chs chips",
+"Seafood marinara pasta":"P nood:#f0a86a prawn herb tom",
+"Creamy mushroom chicken pasta":"P nood:#fff3c9 piece:pale herb",
+"Grilled chicken wrap":"W wrap",
+"Smoothie bowl":"B:pk:#b98ad6 mince:#fffaf2 car",
+"Char siu rice":"P rice@20,40 slc:#a4452f:#e2552f@42,34 cuc",
+"Siew yuk rice":"P rice@20,40 slc:pale:gold@42,34 cuc",
+"Sweet and sour pork with rice":"P rice@20,40 piece:#e2552f@42,36 pine",
+"Kung pao chicken with rice":"P rice@20,40 piece:#8a4a2a@42,36 nut",
+"Salted egg chicken rice":"P rice@20,40 piece:#f6c84a@42,36 herb",
+"Butter prawns":"P prawn prawn herb",
+"Loh mee":"B:blue:#6b4630 thick:y egh herb",
+"Sarawak laksa":"B:gr:#b9703a nood:w prawn egh herb",
+"Kolo mee":"B:blue:#fffaf2 nood:y mince:br slc:#a4452f:#e2552f herb",
+"Chilli pan mee":"B:blk:#fffaf2 flat:w mince:br egh sam",
+"Claypot yee mee":"K:#b98a52 nood:gold egh grn",
+"Economy bee hoon":"P nood:w egf fil:#f2a3a0",
+"Nasi kerabu with ayam percik":"P rice:#9ab0e0 drum:#c9703a herb egh sam",
+"Rendang daging with rice":"P rice@20,40 mince:#6b3524@42,36 cuc",
+"Ayam percik with rice":"P rice@20,40 drum:#c9703a@42,36 cuc",
+"Nasi goreng pattaya":"P fold sauce:red cuc",
+"Nasi goreng USA":"P frice egf prawn mince:br",
+"Sambal sotong with rice":"P rice@20,40 ring:#e2552f@42,36 cuc",
+"Roti tisu":"W roti:#f0c878:flaky",
+"Roti planta":"W roti:#f0c878:flaky sauce:cur",
+"Cheese naan":"W roti:#f3e0b8 sauce:cur",
+"Butter chicken with naan":"P gravy:#e8875a@24,38 piece:#e8875a@24,36 roti",
+"Banana leaf rice with chicken":"L rice drum:#b9703a papad grn",
+"Vadai":"W donut:#b9793f",
+"Puri with potato masala":"P roti:#f0c878 pot",
 "Hot pot, typical meal":"W hpot:#e8553f:#c9a26b",
 "Fish slice soup with tofu and tomato":"B:blue:clr fil:grey tofu tom herb",
 "Minced pork soup":"B:mint:clr mince grn herb",
@@ -3066,6 +3294,43 @@ const B_TOP=[
 ["choc","Dark chocolate chips",[["tsp",1,1],["tbsp",3,1]],[25,.3,3,1.5,.4,2.4,0,.9,0],"dust:#4a3128",1],
 ["rj","Royal jelly",[["tsp",1,1]],[7,.6,.7,.2,0,.6,0,0,0],"driz:#f6e3a8",1]];
 const KITS={
+kbbq:{nm:"Korean BBQ",view:"grill",slot:"dinner",place:"Korean BBQ restaurant",icon:"Korean BBQ, typical meal",g:[
+ ["Meat on the grill","many",[
+  ["samg","Pork belly (samgyeopsal)",[["piece|pieces",1,1]],[90,3.5,0,8.3,0,0,15,3,0],"",3,"meat pork"],
+  ["moks","Pork neck (moksal)",[["piece|pieces",1,1]],[65,5,0,5,0,0,20,1.8,0],"",3,"meat pork"],
+  ["galb","Marinated pork ribs (dwaeji galbi)",[["piece|pieces",1,1]],[75,5,3,4.8,0,2.5,150,1.7,0],"",3,"meat pork"],
+  ["bgal","Beef short rib (galbi)",[["piece|pieces",1,1]],[80,5,2,5.8,0,1.5,130,2.5,0],"",3,"meat beef"],
+  ["bulg","Beef bulgogi",[["small portion|small portions",1,1]],[113,9,4,6.5,0,3,250,2.5,0],"",1,"meat beef"],
+  ["chad","Beef brisket slices (chadolbagi)",[["slice|slices",1,1]],[35,1.6,0,3.2,0,0,8,1.3,0],"",3,"meat beef"],
+  ["dakg","Marinated chicken (dak galbi)",[["piece|pieces",1,1]],[50,5.5,1.5,2.3,0,1,140,.6,0],"",3,"meat"],
+  ["gprw","Grilled prawns",[["piece|pieces",1,1]],[15,3.3,0,.2,0,0,80,0,0],"",2,"seafood"],
+  ["gsqd","Grilled squid",[["piece|pieces",1,1]],[15,2.7,.5,.3,0,0,60,.1,0],"",2,"seafood"]],
+  "Count the pieces you ate, about the size of two fingers. Pork belly is the richest. Pork neck, chicken and prawns are lighter."],
+ ["Wraps and grilled sides","many",[
+  ["ssam","Lettuce wrap leaf",[["leaf|leaves",1,1]],[2,.1,.3,0,.2,.1,1,0,.1],"",3,""],
+  ["peri","Perilla leaf",[["leaf|leaves",1,1]],[1,.1,.2,0,.2,0,1,0,.05],"",3,""],
+  ["ggar","Grilled garlic",[["clove|cloves",1,1]],[5,.2,1,0,.1,0,1,0,0],"",3,""],
+  ["kmus","King oyster mushroom",[["slice|slices",1,1]],[5,.5,1,0,.4,.3,1,0,.15],"",2,""],
+  ["gchi","Green chilli",[["piece|pieces",1,1]],[3,.1,.6,0,.3,.3,1,0,.1],"",2,"hot"]]],
+ ["Banchan (side dishes)","many",[
+  ["kimc","Kimchi",[["small dish|small dishes",1,1]],[10,.8,1.8,.2,1,1,330,0,.4],"",1,"hot"],
+  ["kong","Seasoned bean sprouts",[["small dish|small dishes",1,1]],[25,2,2,1.2,1,0,180,.2,.4],"",1,""],
+  ["ponn","Pickled onion or radish",[["small dish|small dishes",1,1]],[15,.3,3.5,0,.5,2.5,250,0,.3],"",1,""],
+  ["jeon","Steamed egg (gyeran jjim)",[["half bowl|half bowls",1,1]],[90,7,1.5,6,0,.5,350,1.8,0],"",1,"egg"],
+  ["cche","Corn cheese",[["small dish|small dishes",1,1]],[180,6,16,10,1.5,5,300,5,.4],"",1,"dairy"],
+  ["japc","Japchae",[["small dish|small dishes",1,1]],[110,2,18,3.5,1,3,300,.5,.2],"",1,""],
+  ["fcak","Fish cake strips",[["small dish|small dishes",1,1]],[70,5,7,2.5,0,2,400,.5,0],"",1,"seafood"]],"Refills count too. Kimchi, sprouts and pickles are very light."],
+ ["Rice, stew and noodles","many",[
+  ["rice","Rice",[["half bowl|half bowls",1,1]],[120,2.2,26.5,.2,.3,0,1,0,0],"",1,""],
+  ["doen","Soybean paste stew (doenjang jjigae)",[["small bowl|small bowls",1,1]],[110,8,8,5,2,2,900,1,.5],"",1,""],
+  ["kjji","Kimchi stew (kimchi jjigae)",[["small bowl|small bowls",1,1]],[150,9,7,9,2,3,1000,3,.5],"",1,"pork hot"],
+  ["naen","Cold noodles (naengmyeon)",[["half bowl|half bowls",1,1]],[230,7,48,1.5,2,6,900,.3,.2],"",1,""],
+  ["ramy","Ramyeon",[["half pot|half pots",1,1]],[250,6,34,10,1.5,2,950,4.5,0],"",1,"hot"]]],
+ ["Sauces","many",[
+  ["ssmj","Ssamjang",[["tsp",1,1]],[12,.6,1.6,.4,.3,.8,150,0,0],"",1,""],
+  ["soil","Sesame oil with salt",[["dip|dips",1,1]],[20,0,0,2.3,0,0,60,.3,0],"",1,""],
+  ["goch","Gochujang",[["tsp",1,1]],[10,.3,2.2,.1,.2,1.2,160,0,0],"",1,"hot"],
+  ["soyo","Sweet soy onion sauce",[["tbsp",1,1]],[15,.5,3,0,.1,2.5,300,0,0],"",1,""]],"Each dip in sesame oil is about half a teaspoon."]]},
 hotpot:{nm:"Hot pot",view:"pot",slot:"dinner",place:"Hot pot restaurant",icon:"Hot pot, typical meal",g:[
  ["Broth","many",[
   ["btom","Tomato broth",[["bowl sipped|bowls sipped",1,1]],[60,1,8,2.5,1,5,700,.8,.3],"",1,"",["broth","#e8553f"]],
@@ -3320,7 +3585,7 @@ function renderBuild(first){const body=$("#buildBody"),foot=$("#buildFoot");
   $("#bBud").textContent=t[0]?(t[0]<=bud.kcal*1.1?`Fits your ${SLOTNAME[B.slot].toLowerCase()} (about ${fmt(bud.kcal)} kcal)`:`About ${fmt(t[0]-bud.kcal)} kcal over your usual ${SLOTNAME[B.slot].toLowerCase()}. Fine now and then.`):"Tap + to start adding";
   $("#bArt").innerHTML=bDraw();$("#bGo").disabled=!t[0]&&!Object.values(B.q).some(Boolean);B.last=""}
 /* gentle pointers to the lighter or more nourishing picks. Nothing is hidden or blocked */
-const BREC=[[/mushroom broth|clear broth|vinegar or lime|garlic, spring onion/i,"Lighter choice"],[/^tomato broth$/i,"Vitamin C"],[/napa cabbage|enoki|shiitake|winter melon|seaweed or kelp/i,"Very low calorie"],[/lean beef slices|^fish slices$|^prawns$|^tofu$|quail eggs/i,"Lean protein"],[/^water$/i,"Zero calories"],[/salmon/i,"Omega-3 fats"],[/chia|flax/i,"Fibre and omega-3"],[/avocado|olive oil|almond|walnut|mixed nuts|peanut butter/i,"Good fats"],
+const BREC=[[/pork neck|marinated chicken \(dak|grilled squid|grilled prawns/i,"Lean protein"],[/^kimchi$|seasoned bean sprouts|perilla leaf|king oyster|grilled garlic|lettuce wrap|pickled onion/i,"Very low calorie"],[/doenjang|ssamjang$/i,"Lighter choice"],[/mushroom broth|clear broth|vinegar or lime|garlic, spring onion/i,"Lighter choice"],[/^tomato broth$/i,"Vitamin C"],[/napa cabbage|enoki|shiitake|winter melon|seaweed or kelp/i,"Very low calorie"],[/lean beef slices|^fish slices$|^prawns$|^tofu$|quail eggs/i,"Lean protein"],[/^water$/i,"Zero calories"],[/salmon/i,"Omega-3 fats"],[/chia|flax/i,"Fibre and omega-3"],[/avocado|olive oil|almond|walnut|mixed nuts|peanut butter/i,"Good fats"],
 [/carrot|pumpkin|sweet potato|mango|papaya/i,"Vitamin A"],[/spinach/i,"Iron and folate"],[/capsicum|tomato|strawberr|kiwi|orange|guava|lemon|lime/i,"Vitamin C"],[/banana/i,"Potassium"],[/blueberr|berries/i,"Low sugar fruit"],
 [/lettuce|cucumber|sprouts|salad leaves|mixed leaves|romaine|steamed or blanched|long beans|stir-fried greens|mixed vegetables|onion$|pickles|jalape/i,"Very low calorie"],
 [/wholemeal|brown rice|rolled oats|multigrain|chickpea|honey oat|sourdough/i,"More fibre"],
@@ -3345,6 +3610,7 @@ function bDraw(){const K=KITS[B.kit],sel=B.order.map(id=>bOpt(B.kit,id)).filter(
   const base=K.view==="bowl"?sel.find(o=>!o[4]):null;
   for(const o of sel){if(!o[4])continue;const[k,a,b]=o[4].split(":"),n=Math.max(1,Math.min(3,Math.round(B.q[o[0]]*bUnit(o)[1]/(o[5]||1)+.3)));if(!ART.I[k])continue;for(let j=0;j<n;j++){const[x,y]=P[i++%P.length];out+=`<g transform="translate(${x} ${y}) scale(1.9)"><g style="animation-delay:${j*90}ms" class="${o[0]===B.last?"bd":""}">${ART.I[k](0,0,a,b)}</g></g>`}}
   if(K.view==="pot")return potDraw(sel);
+  if(K.view==="grill")return grillDraw(sel);
   if(plate)return `<svg viewBox="0 0 200 150" class="bsvg" role="img" aria-label="Your plate"><ellipse cx="100" cy="134" rx="78" ry="7" fill="#6a3442" opacity=".1"/><ellipse cx="100" cy="84" rx="92" ry="56" fill="#fff"/><ellipse cx="100" cy="84" rx="92" ry="56" fill="none" stroke="var(--p1)" stroke-width="4"/><ellipse cx="100" cy="84" rx="72" ry="42" fill="#fff9f1"/>${out||'<text x="100" y="88" text-anchor="middle" style="font:600 12px var(--text);fill:var(--mute)">Your plate is empty</text>'}</svg>`;
   return `<svg viewBox="0 0 200 150" class="bsvg" role="img" aria-label="Your bowl"><ellipse cx="100" cy="140" rx="60" ry="6" fill="#6a3442" opacity=".1"/><path d="M24 60H176Q172 130 100 136Q28 130 24 60Z" fill="var(--p1)"/><path d="M24 60H176Q175 74 171 84H29Q25 74 24 60Z" fill="#fff" opacity=".28"/><ellipse cx="100" cy="60" rx="76" ry="19" fill="${base?K.fill:"#fff9f1"}" style="transition:fill .5s"/>${base?`<path class="${base[0]===B.last?"bd":""}" d="M58 60q14-10 28 0t28 0t28 0" fill="none" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"/>`:""}${out}${!base&&!out?'<text x="100" y="64" text-anchor="middle" style="font:600 12px var(--text);fill:var(--mute)">An empty bowl</text>':""}</svg>`}
 
@@ -3358,6 +3624,10 @@ function potDraw(sel){const br=sel.filter(o=>POTB[o[0]]).map(o=>o[0]),items=[],c
   const last=B.last&&POTI[B.last]?POTI[B.last]:"",pour=B.last&&POTB[B.last]?br.indexOf(B.last):-1,st=S.prefs.potStyle==="iron"?"iron":"copper";
   const svg=potSVG({style:st,broths:br.map(x=>POTB[x]),items,last,pour,uid:"hp"});
   return svg+`<div class="potSw" role="group" aria-label="Pot style">${[["copper","Copper"],["iron","Black gold"]].map(([k,n])=>`<button data-act="potStyle" data-v="${k}" aria-pressed="${st===k}"><i class="pd ${k}"></i>${n}</button>`).join("")}</div>`}
+
+const GRI={samg:"belly",moks:"belly",galb:"galbi",bgal:"galbi",bulg:"bulgogi",chad:"beef",dakg:"pslice",gprw:"prawn",gsqd:"squid",ssam:"lettuce",peri:"spinach",ggar:"garlic",kmus:"kingoyster",gchi:"chilli",kimc:"kimchi",ponn:"onion"};
+function grillDraw(sel){const items=[];for(const o of sel){const k=GRI[o[0]];if(!k||/^(lettuce|spinach)$/.test(k))continue;items.push([k,Math.max(1,Math.min(4,Math.round(B.q[o[0]]*bUnit(o)[1]/(o[5]||1)+.3)))])}
+  return grillSVG({items,last:B.last&&GRI[B.last]?GRI[B.last]:"",uid:"kg"})}
 const bEmpty=t=>`<svg viewBox="0 0 200 150" class="bsvg"><rect x="40" y="40" width="120" height="70" rx="20" fill="none" stroke="var(--p1)" stroke-width="3" stroke-dasharray="8 8"/><text x="100" y="80" text-anchor="middle" style="font:600 13px var(--text);fill:var(--mute)">${t}</text></svg>`;
 function bLayer(s,y,h,col,x){const W=144,X=28,dk=`color-mix(in srgb,${col} 78%,#5a2338)`;
   if(s==="bunB")return `<path d="M${X} ${y}H${X+W}V${y+h-9}Q${X+W} ${y+h} ${X+W-9} ${y+h}H${X+9}Q${X} ${y+h} ${X} ${y+h-9}Z" fill="${col}"/><rect x="${X}" y="${y}" width="${W}" height="5" fill="#fff" opacity=".3"/>`;
