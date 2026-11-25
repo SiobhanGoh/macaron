@@ -36,7 +36,7 @@ jobs:
             [ -z "$ACTION" ] && ACTION=$(python -c "import json;print(json.load(open('training/kaggle_request.json'))['action'])")
             echo "action: $ACTION"; date -u
             [ -z "$KAGGLE_API_TOKEN" ] && echo "KAGGLE_API_TOKEN secret is missing"
-            pip -q install "kaggle>=1.8.0" 2>&1 | tail -2
+            pip -q install "kaggle>=1.8.0" six 2>&1 | tail -2
             kaggle --version
             if [ "$ACTION" = "launch" ]; then
               mkdir kernel && cp training/train_food_model.ipynb kernel/
