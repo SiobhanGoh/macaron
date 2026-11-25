@@ -37,7 +37,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Scan a nutrition label.** Snap the table on a packet and the numbers fill in by themselves, offline, for English and BM labels.
 - **Six languages.** English, Bahasa Melayu, 简体中文, 繁體中文, 한국어 and 日本語. Chosen on the first screen (it starts with your phone's language) and changeable any time in Me. Food names stay in their usual local spelling.
 - **Rough price bands** on suggested dishes.
-- **A drawing for every dish.** All 458 items have their own illustration, built from a small set of parts.
+- **A drawing for every dish.** All 567 items have their own illustration, built from a small set of parts.
 - **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Build my own.** Yogurt bowls, oats, subs, toast, rice plates, salads and kopitiam drinks: choose every part and amount, and watch the dish assemble as the calories add up.
 - **Equipment-aware workouts.** Tell it what you have at home or which gym machines are available, with a drawing of each, and the plan only uses those.
