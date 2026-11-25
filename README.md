@@ -21,6 +21,8 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Workout goal and difficulty.** Pick a goal in plain words or let the app choose, then switch between easy, medium and hard on the workout card.
 - **Body measurements** (waist, hips, chest, thigh, upper arm) with change since your first entry.
 - **Backups.** Save a backup file to Files or iCloud Drive and restore from it on any phone.
+- **A short tour** for first-time users, pointing out the plan, progress and profile tabs.
+- **Rough price bands** on suggested dishes.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
