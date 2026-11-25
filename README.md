@@ -9,7 +9,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 ## What it does
 
 - **Step-by-step setup** with drag rulers for age, height and weight, ending in a daily calorie target.
-- **A built-in list of 259 local dishes and drinks** with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
+- **A built-in list of 339 local dishes, drinks, desserts and snacks**, from nasi lemak to Yakult, bubble tea, bingsu and frozen yogurt, filterable by kind, with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
 - **7-day meal plans** that name the place, the dish and how to order it, plus simple home recipes and short workouts.
 - **"What do you feel like eating today?"** Pick a mood and get three plans to choose from.
 - **Local picks** around Bandar Sunway, Subang Jaya, Petaling Jaya, Damansara and Kuala Lumpur, with optional location to favour places near you.
@@ -22,8 +22,15 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Body measurements** (waist, hips, chest, thigh, upper arm) with change since your first entry.
 - **Backups.** Save a backup file to Files or iCloud Drive and restore from it on any phone.
 - **A short tour** for first-time users, pointing out the plan, progress and profile tabs.
+- **Eating style per meal.** Choose at home, eating out or either, separately for breakfast, lunch and dinner.
+- **Several exercise goals at once**, including a stronger-knees goal that adds small, low-load knee moves with picture guides.
+- **A calmer Plan page.** Two cards, Meals and Exercise, open their own focused views.
+- **A calmer Progress page.** Overview, Food and Body tabs, and a calendar that shows this week until you open the month.
+- **A look back at yesterday.** On the first open of a new day the app reviews the day before. If you ate very little it asks how you feel and can switch today to a gentle day of light, comforting food and rest.
+- **Notes tailored to each meal.** Light-hearted nudges after carb-heavy, sugary, salty, oily or low-protein meals, and end-of-day notes on fibre, fruit and veg, and protein.
+- **Light or dark, chosen on the first screen.**
 - **Rough price bands** on suggested dishes.
-- **A drawing for every dish.** All 259 dishes have their own illustration, built from a small set of parts.
+- **A drawing for every dish.** All 339 items have their own illustration, built from a small set of parts.
 - **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Build my own.** Yogurt bowls, oats, subs, toast, rice plates, salads and kopitiam drinks: choose every part and amount, and watch the dish assemble as the calories add up.
 - **Equipment-aware workouts.** Tell it what you have at home or which gym machines are available, with a drawing of each, and the plan only uses those.
