@@ -23,6 +23,8 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Backups.** Save a backup file to Files or iCloud Drive and restore from it on any phone.
 - **A short tour** for first-time users, pointing out the plan, progress and profile tabs.
 - **Rough price bands** on suggested dishes.
+- **A drawing for every dish.** All 259 dishes have their own illustration, built from a small set of parts.
+- **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
