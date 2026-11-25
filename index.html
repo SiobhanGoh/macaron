@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tingkat Calorie Tracker</title>
+<title>Macaron Calorie Tracker</title>
 <link rel="manifest" href="manifest.webmanifest">
-<meta name="theme-color" content="#0c4a34">
+<meta name="theme-color" content="#fff3e4">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 <style>
 /* VOICE everyday and playful: a food and fitness companion for one person in Malaysia
    IDEA a tingkat (stacked enamel tiffin carrier): each tier is a meal that fills with kaya gold as you eat
@@ -20,8 +20,15 @@
 /* Motion ported from the Motion Prompt library, MIT License (c) 2026 Shohei Ohtaki:
    #051 bottom sheet, #056 toast, #057 tabs, #060 segmented control, #069 skeleton, #085 ripple, #166 like burst
    https://showheyohtaki.github.io/motion-prompt/ */
-:root{color-scheme:light dark;--bg:light-dark(#fffafb,#0f1614);--ink:light-dark(#10201a,#e9f1ec);--mute:light-dark(#566860,#9bafa5);--line:light-dark(#f1dfe5,#33262b);--panel:light-dark(#fff0f5,#211a1d);--card:light-dark(#ffffff,#1a2420);--blush:light-dark(#ffcfdc,#f3a9be);--rose:light-dark(#b23a62,#ffb7cb);--pandan:light-dark(#0e6a44,#3aa878);--band:light-dark(#0c4a34,#0c3324);--band2:light-dark(#11633f,#104330);--kaya:light-dark(#f2b21a,#f4c040);--sambal:light-dark(#d23a2b,#ff6f60);--enamel:#ffdce6;--frame:#b9c7bf;--shadow:0 1px 2px rgb(8 50 34/.06),0 8px 24px rgb(8 50 34/.10);--eo:cubic-bezier(.215,.61,.355,1);--eio:cubic-bezier(.645,.045,.355,1);--disp:"Unbounded",system-ui,sans-serif;--text:"Plus Jakarta Sans",system-ui,sans-serif}
-:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+:root{color-scheme:light;--a1:#ffcfdc;--a2:#f29bb4;--a3:#ffecef;--b1:#ffd0dd;--b2:#ffe6c8;--bg:#fff3e4;--ink:#6a3442;--mute:#8f5f62;--line:#f3dcd4;--panel:var(--a3);--card:#fffaf4;--blush:var(--a1);--pk:var(--a2);--rose:#8f5f62;--pandan:#6a3442;--band:var(--a1);--band2:var(--a3);--kaya:#f0cf9a;--sambal:#d9566f;--enamel:#fff6ea;--frame:#f3c4d0;--shadow:0 1px 2px rgb(190 120 120/.06),0 10px 24px rgb(214 140 140/.16);--eo:cubic-bezier(.215,.61,.355,1);--eio:cubic-bezier(.645,.045,.355,1);--disp:"Playfair Display",Georgia,serif;--text:"Plus Jakarta Sans",system-ui,sans-serif}
+:root[data-mood=lilac]{--a1:#ead4f5;--a2:#c79be0;--a3:#f6ecfb;--b1:#ecd6f7;--b2:#ffe6d8}
+:root[data-mood=lavender]{--a1:#d9d6fa;--a2:#a9a3ec;--a3:#efeefd;--b1:#dcd9fb;--b2:#ffe9d6}
+:root[data-mood=aqua]{--a1:#c9f1e4;--a2:#7fd6bd;--a3:#e9f9f3;--b1:#cff3e7;--b2:#ffeccf}
+:root[data-mood=turquoise]{--a1:#c4ecef;--a2:#73cdd3;--a3:#e6f7f8;--b1:#c9eef1;--b2:#ffe9d2}
+:root[data-mood=lemon]{--a1:#fbeeb0;--a2:#f0d264;--a3:#fdf7d9;--b1:#fcefb6;--b2:#ffdfe0}
+:root[data-mood=peach]{--a1:#ffd9c2;--a2:#f7a987;--a3:#fff0e6;--b1:#ffdcc7;--b2:#ffe0e8}
+:root[data-mood=sky]{--a1:#cfe4fb;--a2:#8fbdee;--a3:#ecf4fe;--b1:#d3e6fb;--b2:#ffe8d6}
+:root[data-mood=mint]{--a1:#d3f0d0;--a2:#93d39a;--a3:#edf9ec;--b1:#d6f2d3;--b2:#ffe9d6}
 *{box-sizing:border-box;min-width:0}
 [hidden]{display:none!important}
 html,body{height:100%}
@@ -86,7 +93,7 @@ h3{font-size:16px;font-weight:700}
 .ring circle{fill:none;stroke-width:8}
 .ring .bgc{stroke:var(--panel)}
 .ring .fgc{stroke:var(--pandan);stroke-linecap:round;stroke-dasharray:201;stroke-dashoffset:201;transition:stroke-dashoffset .9s var(--eo)}
-.ring.r2 .fgc{stroke:var(--kaya)}.ring.r3 .fgc{stroke:light-dark(#f08aa8,#f3a9be)}
+.ring.r2 .fgc{stroke:var(--kaya)}.ring.r3 .fgc{stroke:var(--a2)}
 .ring b{display:block;font:700 18px var(--disp);margin-top:6px;font-variant-numeric:tabular-nums}
 .ring small{display:block;font-size:13px;color:var(--mute)}
 .kv{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 10px;align-items:baseline;font-size:15px;margin-top:14px}
@@ -207,11 +214,11 @@ input[type=range]{accent-color:var(--pandan);padding:0;border:0;background:trans
 .mc .mac{grid-column:1/-1;display:grid;gap:6px}
 .mc .macbar{display:flex;height:8px;border-radius:99px;overflow:hidden;background:var(--panel)}
 .mc .macbar i{display:block;transform-origin:left;animation:grow .6s var(--eo) both}
-.mc .macbar i:nth-child(1){background:var(--pandan)}.mc .macbar i:nth-child(2){background:#f2b21a}.mc .macbar i:nth-child(3){background:var(--rose)}
+.mc .macbar i:nth-child(1){background:var(--pandan)}.mc .macbar i:nth-child(2){background:#f0cf9a}.mc .macbar i:nth-child(3){background:var(--rose)}
 .mc .macl{display:flex;gap:14px;font-size:13px;font-weight:600;color:var(--mute)}
 .mc .macl b{color:var(--ink)}
 .mc .macl span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px;background:var(--pandan)}
-.mc .macl span:nth-child(2)::before{background:#f2b21a}.mc .macl span:nth-child(3)::before{background:var(--rose)}
+.mc .macl span:nth-child(2)::before{background:#f0cf9a}.mc .macl span:nth-child(3)::before{background:var(--rose)}
 .mc details{grid-column:1/-1;font-size:14px}
 .mc summary{cursor:pointer;font-weight:700;color:var(--pandan);padding:4px 0}
 .mc details p{padding:10px 12px;border-radius:12px;background:var(--panel);margin-top:6px}
@@ -339,7 +346,7 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font:600 13px var(
 .glassWrap{position:relative;border-radius:28px;padding:16px;overflow:hidden;background:linear-gradient(135deg,var(--band2),var(--band) 60%);color:#fff}
 .glassWrap::before,.glassWrap::after{content:"";position:absolute;width:240px;height:240px;border-radius:50%;filter:blur(8px);animation:drift 12s ease-in-out infinite alternate}
 .glassWrap::before{background:radial-gradient(circle,#ff9fbb 0,transparent 68%);top:-90px;right:-70px}
-.glassWrap::after{background:radial-gradient(circle,#f2b21a 0,transparent 68%);bottom:-120px;left:-80px;animation-delay:-6s}
+.glassWrap::after{background:radial-gradient(circle,#f0cf9a 0,transparent 68%);bottom:-120px;left:-80px;animation-delay:-6s}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-30px,26px) scale(1.15)}}
 .glass{position:relative;z-index:1;border-radius:22px;padding:18px;background:rgb(255 255 255/.14);-webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);border:1px solid rgb(255 255 255/.38);box-shadow:inset 0 1px 0 rgb(255 255 255/.55),inset 0 -1px 0 rgb(255 255 255/.12),0 10px 30px rgb(0 0 0/.2)}
 .glass h2{margin:0;font-size:22px}
@@ -461,11 +468,43 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font:600 13px var(
 @media(max-width:600px){.grid2{grid-template-columns:minmax(0,1fr)}}
 @media(max-width:380px){.items li{grid-template-columns:auto minmax(0,1fr) 6.4em}.seg button{font-size:13px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.steam{display:none}}
+
+/* skin: cream base, pastel accent, glass surfaces */
+body{font-variant-numeric:lining-nums;background:var(--bg)}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(70% 42% at 0% 0%,var(--b1) 0,transparent 72%),radial-gradient(60% 36% at 100% 34%,var(--b2) 0,transparent 72%),radial-gradient(70% 40% at 0% 86%,var(--b1) 0,transparent 72%),var(--bg);transition:background .5s}
+.card,.sched li.mc,.gd{background:linear-gradient(135deg,rgb(255 255 255/.76),rgb(255 255 255/.42));-webkit-backdrop-filter:blur(16px) saturate(1.4);backdrop-filter:blur(16px) saturate(1.4);border:1.5px solid rgb(255 255 255/.88);box-shadow:inset 0 1.5px 0 rgb(255 255 255/.95),0 10px 24px rgb(214 140 140/.14)}
+.top{background:transparent;color:var(--ink)}.top h1,.top b{font-family:var(--disp)}
+.hero{background:transparent;color:var(--ink)}.hero .sub{color:var(--mute)}
+.lvl,.top .streak,.topR>*{background:linear-gradient(135deg,rgb(255 255 255/.8),rgb(255 255 255/.45));border:1.5px solid rgb(255 255 255/.9);color:var(--ink);box-shadow:0 4px 10px rgb(214 140 140/.14)}
+.lvl i{background:var(--a3)}.lvl u{background:var(--a2)}
+.primary,.mc .mb .go,.addGrid .hot,.days button[aria-pressed=true],.gbtn,.chkCard .primary{background:linear-gradient(180deg,color-mix(in srgb,var(--a1) 70%,#fff),var(--a1));border-color:var(--a1);color:var(--ink);box-shadow:inset 0 1.5px 0 rgb(255 255 255/.7),0 6px 14px rgb(214 140 140/.18)}
+.track i,.ind::before,.rk .track i,.onbBar i,.rwrap::after,.sw{background:var(--a2)}
+.track i.lim{background:var(--kaya)}
+.dayBar .macbar i,.jtrack i,.lvCard .track i{background:linear-gradient(90deg,var(--a1),var(--a2))}
+.seg i{background:#fff;box-shadow:0 2px 8px rgb(214 140 140/.25)}.seg button[aria-pressed=true]{color:var(--ink)}
+.mc .macbar i:nth-child(1){background:var(--a1)}.mc .macbar i:nth-child(2){background:#f3d9b1}.mc .macbar i:nth-child(3){background:var(--a2)}
+.mc .macl span::before{background:var(--a1)}.mc .macl span:nth-child(2)::before{background:#f3d9b1}.mc .macl span:nth-child(3)::before{background:var(--a2)}
+.t1,.t2,.t3,.t4{color:var(--ink);border:1.5px solid rgb(255 255 255/.85);box-shadow:inset 0 1.5px 0 rgb(255 255 255/.8),0 8px 18px rgb(214 140 140/.14)}
+.t1{background:linear-gradient(145deg,#fff,var(--a1))}.t2{background:linear-gradient(145deg,#fff,#fbe6cf)}.t3{background:linear-gradient(145deg,#fff,var(--a3))}.t4{background:linear-gradient(145deg,#fff,#f6dcd6)}
+.excard{background:linear-gradient(135deg,rgb(255 255 255/.76),rgb(255 255 255/.42));color:var(--ink);border:1.5px solid rgb(255 255 255/.88)}
+.glassWrap{background:linear-gradient(135deg,var(--a1),#ffe9cf);color:var(--ink)}
+.glassWrap::before{background:radial-gradient(circle,#fff 0,transparent 68%)}.glassWrap::after{background:radial-gradient(circle,var(--a2) 0,transparent 68%);opacity:.6}
+.glass{background:rgb(255 255 255/.42);border-color:rgb(255 255 255/.9)}.gs div{background:rgb(255 255 255/.5)}.glass .chip{background:rgb(255 255 255/.65);color:var(--ink)}.av{color:var(--ink)}
+.tabs{background:linear-gradient(135deg,rgb(255 255 255/.82),rgb(255 255 255/.6));-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-top:1.5px solid rgb(255 255 255/.9)}
+.tabs a[aria-current=page]{color:var(--ink)}
+.fab{border-color:#fff;background:linear-gradient(180deg,color-mix(in srgb,var(--a1) 60%,#fff),var(--a1));color:var(--ink);box-shadow:0 6px 18px rgb(214 140 140/.3)}
+.cal div.v.l::after{background:var(--ink)}
+.fab,.fab[aria-expanded]{border-color:#fff!important}.daystrip button{color:var(--mute);opacity:1}.daystrip button[aria-pressed=true]{background:linear-gradient(180deg,#fff,var(--a1));color:var(--ink);box-shadow:0 4px 10px rgb(214 140 140/.18)}.daystrip button.has::after{background:var(--a2)}.ring .fgc,.win .fgc{stroke:var(--a2)}.win.done .fgc{stroke:var(--kaya)}.fe.b{background:#fbe9cf}.fe.d{background:var(--a3)}.fe.s{background:#f6dcd6}
+.steam{display:none}
+.moods{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:10px}
+.moods button{display:grid;justify-items:center;gap:6px;padding:10px 4px;font-size:13px}
+.moods i{width:38px;height:38px;border-radius:50%;border:2px solid #fff;box-shadow:0 3px 8px rgb(0 0 0/.12)}
+.moods button[aria-pressed=true]{border-color:var(--ink)}
 </style>
 </head>
 <body>
 <header class="top">
-  <div><div class="brand">Tingkat</div><p id="sync">Saved on this device</p></div>
+  <div><div class="brand">Macaron</div><p id="sync">Saved on this device</p></div>
   <div class="topR"><span class="lvl" id="lvl"><b id="lvlN">Lv 1</b><i><u id="lvlBar"></u></i></span><span class="streak" id="streak" hidden><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13 2c1 4-3 5-3 9a3 3 0 0 0 6 0c2 2 3 4 3 6a7 7 0 0 1-14 0c0-6 6-8 8-15z"/></svg><span id="streakTxt"></span></span></div>
 </header>
 
@@ -475,7 +514,7 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font:600 13px var(
   <div class="hero"><div class="wrap">
     <div class="daystrip" id="dayStrip" role="group" aria-label="Choose a day"></div>
     <div class="heroGrid">
-      <div class="tk"><svg id="tkSvg" viewBox="0 0 200 300" role="img" aria-label="Tiffin carrier: each tier fills as you eat that meal"></svg></div>
+      <div class="tk"><svg id="tkSvg" viewBox="0 0 200 300" role="img" aria-label="Stack of macarons: each one fills as you eat that meal"></svg></div>
       <div>
         <p class="sub" id="hello">Hi there</p>
         <p class="big" id="leftNum">0</p>
@@ -583,6 +622,7 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font:600 13px var(
   <h1 id="h-me" class="sr">About you</h1>
   <div id="glass"></div>
   <div id="game"></div>
+  <div id="mood"></div>
   <div id="ranks"></div>
   <div id="never"></div>
   <form id="meForm" hidden>
@@ -1011,8 +1051,8 @@ const day=k=>S.days[k]||(S.days[k]=cleanDay(LS.get("d"+k)));
 const saveDay=k=>store.set("d"+k,S.days[k]);
 const safeThumb=t=>typeof t==="string"&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(t)?t:"";
 const numMap=(o,n)=>o&&typeof o==="object"?Object.fromEntries(Object.entries(o).slice(0,n).map(([k,x])=>[String(k),num(x)])):{};
-const cleanPrefs=v=>({never:(Array.isArray(v?.never)?v.never:[]).map(String).slice(0,300),xp:pos(v?.xp),visits:numMap(v?.visits,500),badges:numMap(v?.badges,40),tag:numMap(v?.tag,60),pick:numMap(v?.pick,400),areas:Array.isArray(v?.areas)?v.areas.map(String).slice(0,5):null,near:String(v?.near||""),craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
-function loadLocal(){S.profile=LS.get("profile");S.plan=LS.get("plan");S.weights=LS.get("weights")||{list:[]};S.favs=LS.get("favs")||{list:[]};S.prefs=cleanPrefs(LS.get("prefs"));for(const k of LS.keys())if(k[0]==="d"&&isKey(k.slice(1)))S.days[k.slice(1)]=cleanDay(LS.get(k))}
+const cleanPrefs=v=>({mood:String(v?.mood||"pink").slice(0,12),never:(Array.isArray(v?.never)?v.never:[]).map(String).slice(0,300),xp:pos(v?.xp),visits:numMap(v?.visits,500),badges:numMap(v?.badges,40),tag:numMap(v?.tag,60),pick:numMap(v?.pick,400),areas:Array.isArray(v?.areas)?v.areas.map(String).slice(0,5):null,near:String(v?.near||""),craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
+function loadLocal(){S.profile=LS.get("profile");S.plan=LS.get("plan");S.weights=LS.get("weights")||{list:[]};S.favs=LS.get("favs")||{list:[]};S.prefs=cleanPrefs(LS.get("prefs"));applyMood();for(const k of LS.keys())if(k[0]==="d"&&isKey(k.slice(1)))S.days[k.slice(1)]=cleanDay(LS.get(k))}
 
 function targets(p){
   if(!p||!(num(p.weight)>0)||!(num(p.height)>0)||!(num(p.age)>0))return null;
@@ -1046,10 +1086,10 @@ function openSheet(id){const s=$(id);s.hidden=false;s.classList.remove("closing"
 function closeSheets(fast){if(sugCtl)sugCtl.abort();$$(".sheet:not([hidden])").forEach(s=>{s.classList.remove("open");s.classList.add("closing");setTimeout(()=>{s.hidden=true;s.classList.remove("closing")},calm||fast?0:600)});$("#fab").setAttribute("aria-expanded","false")}
 
 /* tingkat picture */
-function buildTk(){let g='<g class="steam"><path d="M82 30c-6-8 6-12 0-20"/><path d="M100 26c-6-8 6-12 0-20"/><path d="M118 30c-6-8 6-12 0-20"/></g><ellipse cx="100" cy="291" rx="78" ry="6" fill="#000" opacity=".22"/><path d="M58 44 C58 6 142 6 142 44" fill="none" stroke="var(--frame)" stroke-width="7" stroke-linecap="round"/><rect x="20" y="40" width="160" height="8" rx="4" fill="var(--frame)"/><rect x="24" y="40" width="8" height="238" rx="4" fill="var(--frame)"/><rect x="168" y="40" width="8" height="238" rx="4" fill="var(--frame)"/><path d="M40 64 Q40 51 56 51 H144 Q160 51 160 64 Z" fill="#3aa878"/><rect x="88" y="45" width="24" height="8" rx="4" fill="#3aa878"/>';
-  SLOTS.forEach((s,i)=>{const y=68+i*54;g+=`<g id="tg${i}" style="transform-box:fill-box;transform-origin:50% 50%"><rect x="36" y="${y}" width="128" height="48" rx="9" fill="var(--enamel)" stroke="#3aa878" stroke-width="3"/><clipPath id="tc${i}"><rect x="39" y="${y+3}" width="122" height="42" rx="7"/></clipPath><g clip-path="url(#tc${i})"><rect class="fill" id="tf${i}" x="39" y="${y+3}" width="122" height="42" fill="var(--kaya)" style="transform:scaleY(0)"/></g><rect x="46" y="${y+9}" width="7" height="30" rx="3.5" fill="#fff" opacity=".6"/><g opacity=".9" transform="translate(${i%2?128:84} ${y+24})"><circle r="3" fill="#f2b21a"/>${[0,72,144,216,288].map(a=>`<ellipse cx="0" cy="-6.5" rx="3.2" ry="4.6" fill="#fff" transform="rotate(${a})"/>`).join("")}</g><rect x="32" y="${y-2}" width="136" height="7" rx="3.5" fill="#3aa878"/><rect x="28" y="${y+19}" width="10" height="10" rx="2" fill="var(--frame)"/><rect x="162" y="${y+19}" width="10" height="10" rx="2" fill="var(--frame)"/></g>`});
+function buildTk(){let g='<ellipse cx="100" cy="291" rx="70" ry="5" fill="#6a3442" opacity=".1"/>';
+  SLOTS.forEach((s,i)=>{const y=14+i*68,sh=`M40 ${y+24}Q40 ${y} 100 ${y}Q160 ${y} 160 ${y+24}Z M36 ${y+23}h128v7h-128z M36 ${y+38}h128v7h-128z M40 ${y+44}Q40 ${y+62} 100 ${y+62}Q160 ${y+62} 160 ${y+44}Z`;g+=`<g id="tg${i}" style="transform-box:fill-box;transform-origin:50% 50%"><clipPath id="tc${i}"><path d="${sh}"/></clipPath><path d="${sh}" fill="var(--a3)" stroke="var(--a1)" stroke-width="2"/><g clip-path="url(#tc${i})"><rect class="fill" id="tf${i}" x="34" y="${y}" width="132" height="62" fill="var(--pk)" style="transform:scaleY(0)"/></g><rect x="42" y="${y+29}" width="116" height="10" rx="5" fill="#fff6ea"/><path d="M40 ${y+24}Q40 ${y} 100 ${y}Q160 ${y} 160 ${y+24}" fill="none" stroke="#fff" stroke-width="2" opacity=".9"/><ellipse cx="74" cy="${y+10}" rx="18" ry="4" fill="#fff" opacity=".55" transform="rotate(-8 74 ${y+10})"/></g>`});
   $("#tkSvg").innerHTML=g}
-function updateTk(t,T){requestAnimationFrame(()=>SLOTS.forEach(([key,,sh],i)=>{const el=$("#tf"+i);if(!el)return;const b=T?T.kcal*sh:0,e=t.slot[key]||0;el.style.transform=`scaleY(${b?Math.min(e/b,1):e>0?1:0})`;el.setAttribute("fill",b&&e>b*1.05?"#ff8c7d":"var(--kaya)")}))}
+function updateTk(t,T){requestAnimationFrame(()=>SLOTS.forEach(([key,,sh],i)=>{const el=$("#tf"+i);if(!el)return;const b=T?T.kcal*sh:0,e=t.slot[key]||0;el.style.transform=`scaleY(${b?Math.min(e/b,1):e>0?1:0})`;el.setAttribute("fill",b&&e>b*1.05?"#d9566f":"var(--pk)")}))}
 
 /* today */
 const BARS=[["fib","Fibre","g","goal"],["fv","Fruit and veg","servings","goal"],["sug","Sugar","g","lim"],["sod","Sodium","mg","lim"],["sat","Saturated fat","g","lim"]];
@@ -1108,7 +1148,7 @@ function habitLines(){const h=habits(),L=[],tg=Object.entries(S.prefs.tag||{}).s
   const cr=Object.entries(S.prefs.craves||{}).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]);if(cr.length)L.push("Often in the mood for: "+cr.join(", "));
   if(h.exAll>=3)L.push(`Workouts done: ${h.exDone} of ${h.exAll} planned`);if(h.swapped.length)L.push("Swapped out of plans: "+h.swapped.join(", "));return L}
 function habitText(){const L=habitLines();return(L.length?L.join(". ")+".":"Not enough history yet.")+(S.prefs.note?" Their own notes to remember: "+S.prefs.note:"")}
-function renderLearn(){const L=habitLines();$("#learn").innerHTML=`<h3>What Tingkat has learned about you</h3>${L.length?`<ul>${L.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:'<p class="sub">Log food for 3 days and your habits show up here: the dishes and places you choose, when you eat, and what runs high or low.</p>'}<p class="sub" style="margin-top:10px">Everything you log is saved. Your plans, swaps, order help and weekly review all use this.</p><div class="field"><label for="memo">Anything Tingkat should always remember?</label><textarea id="memo" placeholder="e.g. I hate brinjal, I eat late on Thursdays, I love matcha, no seafood at night">${esc(S.prefs.note)}</textarea></div><div class="rowb"><button class="primary" data-act="saveMemo">Remember this</button></div>`}
+function renderLearn(){const L=habitLines();$("#learn").innerHTML=`<h3>What Macaron has learned about you</h3>${L.length?`<ul>${L.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:'<p class="sub">Log food for 3 days and your habits show up here: the dishes and places you choose, when you eat, and what runs high or low.</p>'}<p class="sub" style="margin-top:10px">Everything you log is saved. Your plans, swaps, order help and weekly review all use this.</p><div class="field"><label for="memo">Anything Macaron should always remember?</label><textarea id="memo" placeholder="e.g. I hate brinjal, I eat late on Thursdays, I love matcha, no seafood at night">${esc(S.prefs.note)}</textarea></div><div class="rowb"><button class="primary" data-act="saveMemo">Remember this</button></div>`}
 
 const ic=d=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
 const I={drop:'<path d="M12 3c4 5 6 8 6 11a6 6 0 0 1-12 0c0-3 2-6 6-11z"/>',bulb:'<path d="M9 18h6M10 21h4M8 14a6 6 0 1 1 8 0c-.7.7-1 1.4-1 2H9c0-.6-.3-1.3-1-2z"/>',bowl:'<path d="M3 12h18a9 9 0 0 1-18 0z"/><path d="M8 8c0-2 2-2 2-4M13 8c0-2 2-2 2-4"/>',cake:'<path d="M5 10h14l-1.5 9h-11z"/><path d="M8 10a4 4 0 0 1 8 0M12 3v3"/>',fork:'<path d="M6 3v8a2 2 0 0 0 4 0V3M8 3v18M17 3c-2 2-2 7 0 9v9"/>',cal:'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/>',tk:'<rect x="6" y="4" width="12" height="5" rx="1.5"/><rect x="6" y="10" width="12" height="5" rx="1.5"/><rect x="6" y="16" width="12" height="5" rx="1.5"/>',egg:'<path d="M12 3c3.5 0 6 5 6 9.5a6 6 0 0 1-12 0C6 8 8.5 3 12 3z"/>',run:'<circle cx="14" cy="5" r="2"/><path d="M6 21l3-6 3 2v4M12 17l-1-5 4-2 2 3h3M11 12L8 10l-3 2"/>',flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',swap:'<path d="M4 8h13l-3-3M20 16H7l3 3"/>',ban:'<circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/>',x:'<path d="M6 6l12 12M18 6L6 18"/>'};
@@ -1133,10 +1173,10 @@ function renderRanks(){const tabs=[["places","Places"],["foods","Foods"],["cuisi
 
 /* rewards: XP for showing up and logging, levels, badges, daily check-in. Nothing rewards eating less. */
 Object.assign(I,{star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',flame:'<path d="M13 2c1 4-3 5-3 9a3 3 0 0 0 6 0c2 2 3 4 3 6a7 7 0 0 1-14 0c0-6 6-8 8-15z"/>',trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 20h8"/>',check:'<path d="M5 12.5l4.5 4.5L19 7.5"/>',left:'<path d="M15 5l-7 7 7 7"/>',right:'<path d="M9 5l7 7-7 7"/>'});
-const LVNAME=["New tingkat","Kopitiam regular","Hawker scout","Pasar pro","Mamak insider","Nasi lemak ninja","Kuih connoisseur","Food court captain","Tingkat master","Tingkat legend"];
+const LVNAME=["New tingkat","Kopitiam regular","Hawker scout","Pasar pro","Mamak insider","Nasi lemak ninja","Kuih connoisseur","Food court captain","Macaron master","Macaron legend"];
 function levelOf(xp){let lv=1,need=100,rest=xp;while(rest>=need){rest-=need;lv++;need=lv*100}return{lv,rest,need,name:LVNAME[Math.min(lv,LVNAME.length)-1]}}
 function renderLvl(){const L=levelOf(S.prefs.xp||0);$("#lvlN").textContent="Lv "+L.lv;$("#lvlBar").style.width=L.rest/L.need*100+"%";if(curView==="me")renderGame()}
-function confetti(){if(calm)return;const h=document.createElement("div");h.className="conf";const cols=["#ff8fb0","#f2b21a","#3aa878","#ffc2d2","#ffffff"];let seed=Date.now()%2147483647;const r=()=>(seed=seed*16807%2147483647)/2147483647;
+function confetti(){if(calm)return;const h=document.createElement("div");h.className="conf";const cols=["#ff8fb0","#f0cf9a","#3aa878","#ffc2d2","#ffffff"];let seed=Date.now()%2147483647;const r=()=>(seed=seed*16807%2147483647)/2147483647;
   h.innerHTML=[...Array(44)].map((_,i)=>`<i style="left:${r()*100}%;background:${cols[i%5]};--d:${1.5+r()*1.2}s;--w:${r()*.35}s;--x:${(r()-.5)*160}px;--r:${(r()-.5)*1400}deg"></i>`).join("");document.body.append(h);setTimeout(()=>h.remove(),3400)}
 const cheerQ=[];let cheerBusy=false;
 function cheer(title,sub,icon){cheerQ.push([title,sub,icon]);if(!cheerBusy)nextCheer()}
@@ -1303,7 +1343,7 @@ wsit:[[36,34,36,46,36,68,58,68,58,92,42,56,50,64],[36,35,36,47,36,68,58,68,58,92
 march:[ST,[60,18,60,30,60,56,72,60,72,78,66,40,74,36],""],walk:[[60,18,60,30,60,56,66,74,74,92,56,42,52,54,55,74,46,92],[60,18,60,30,60,56,55,74,46,92,64,42,68,54,66,74,74,92],""]};
 function fig(k){const P=POSE[k];if(!P)return"";const d=a=>`M${a[2]} ${a[3]}L${a[4]} ${a[5]}L${a[6]} ${a[7]}L${a[8]} ${a[9]}M${a[2]} ${a[3]+3}L${a[10]} ${a[11]}L${a[12]} ${a[13]}`+(a.length>14?`M${a[4]} ${a[5]}L${a[14]} ${a[15]}L${a[16]} ${a[17]}`:""),[A,B,pr]=P,an=(at,x,y)=>calm?"":`<animate attributeName="${at}" values="${x};${y};${x}" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".4 0 .2 1;.4 0 .2 1"/>`;
   const props={c:'<path d="M38 40V92M38 70H58V92"/>',w:'<path d="M101 8V92"/>',v:'<path d="M29 8V92"/>',h:'<path d="M84 46V92M84 68H100V92"/>',l:'<path d="M36 46V92M36 68H22V92"/>'}[pr]||"";
-  return `<svg viewBox="0 0 120 100" role="img" aria-label="Moving picture of the exercise"><g fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 94H114"/>${props}</g><path d="${d(A)}" fill="none" stroke="var(--rose)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${an("d",d(A),d(B))}</path><circle cx="${A[0]}" cy="${A[1]}" r="7.5" fill="var(--rose)">${an("cx",A[0],B[0])}${an("cy",A[1],B[1])}</circle></svg>`}
+  return `<svg viewBox="0 0 120 100" role="img" aria-label="Moving picture of the exercise"><g fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 94H114"/>${props}</g><path d="${d(A)}" fill="none" stroke="var(--pk)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${an("d",d(A),d(B))}</path><circle cx="${A[0]}" cy="${A[1]}" r="7.5" fill="var(--pk)">${an("cx",A[0],B[0])}${an("cy",A[1],B[1])}</circle></svg>`}
 function planDay(date,T,cx,outP){const meals=[];let sum=0,pr=0;for(const slot of["breakfast","lunch","dinner"]){cx.where=cx.rng()<outP*(slot==="breakfast"?.8:1)?"out":"home";const m=pickMeal(slot,T.kcal*SLOTS.find(x=>x[0]===slot)[2],cx);if(m){meals.push(m);sum+=m.kcal;pr+=m.p}}
   cx.where="any";cx.needP=pr<T.protein*.85;const sn=pickMeal("snack",Math.max(60,Math.min(350,T.kcal-sum)),cx);cx.needP=false;if(sn)meals.push(sn);return meals.sort(byTime)}
 function nextMonday(){const g=new Date().getDay();return addDays(today(),((8-g)%7)||7)}
@@ -1319,6 +1359,9 @@ const emo=n=>{n=String(n||"").toLowerCase().replace(/\(.*?\)/g,"");for(const[r,e
 const fe=(m,sm)=>`<span class="fe ${(SLETTER[m.slot]||"l")}${sm?" sm":""}" aria-hidden="true">${emo(m.base||m.name)}</span>`;
 function fixPlan(){const p=S.plan;if(!p||!Array.isArray(p.days))return 0;let n=0;for(const d of p.days)d.meals.forEach((m,i)=>{if(!m.base)return;const f=FOODS.find(x=>x.name===m.base);if(f&&okDiet(f))return;const cx=mkCx("fix"+d.date+m.base+i,{tier:tierOf(p.settings?.budget),ex:d.meals.map(x=>x.base||x.name)}),nm=pickMeal(m.slot,Math.max(100,m.kcal),cx);if(nm){nm.time=m.time;d.meals[i]=nm;n++}});if(n)store.set("plan",p);return n}
 function never(name){if(!name)return;S.prefs.never=[name,...(S.prefs.never||[]).filter(x=>x!==name)].slice(0,300);learn(name,-3);store.set("prefs",S.prefs);fixPlan();toast(name+" won't be suggested again.")}
+const MOODS=[["pink","Macaron pink","#ffcfdc","#f29bb4"],["lilac","Lilac","#ead4f5","#c79be0"],["lavender","Lavender","#d9d6fa","#a9a3ec"],["aqua","Aquamarine","#c9f1e4","#7fd6bd"],["turquoise","Turquoise","#c4ecef","#73cdd3"],["lemon","Lemon","#fbeeb0","#f0d264"],["peach","Peach","#ffd9c2","#f7a987"],["sky","Sky blue","#cfe4fb","#8fbdee"],["mint","Mint","#d3f0d0","#93d39a"]];
+function applyMood(){document.documentElement.dataset.mood=MOODS.some(m=>m[0]===S.prefs.mood)?S.prefs.mood:"pink"}
+function renderMood(){const el=$("#mood");if(el)el.innerHTML=`<h2>Mood</h2><div class="card"><p class="sub">Change the colour of the whole app.</p><div class="moods">${MOODS.map(([k,n,a,b])=>`<button data-act="mood" data-m="${k}" aria-pressed="${(S.prefs.mood||"pink")===k}"><i style="background:linear-gradient(145deg,${a},${b})"></i>${n}</button>`).join("")}</div></div>`}
 function renderNever(){const L=S.prefs.never||[],el=$("#never");if(!el)return;el.innerHTML=L.length?`<h2>Never suggest</h2><div class="card"><p class="sub">Tap one to allow it again.</p><div class="nevc">${L.map(n=>`<button data-act="unNever" data-n="${esc(n)}">${emo(n)} ${esc(n)} ${ic(I.x)}</button>`).join("")}</div></div>`:""}
 function renderPlan(){fixPlan();const p=S.plan;$("#planForm").hidden=true;
   if(!p){$("#planView").innerHTML='<div class="card setupbox" style="margin-top:16px"><p><b>No plan yet.</b> Answer 7 quick questions and your week is built for you.</p><button class="primary" data-act="planWiz">Plan my week</button></div>';return}
@@ -1356,7 +1399,7 @@ function adaptive(){const end=today(),start=addDays(end,-27),ks=[...Array(28)].m
   const avg=logged.reduce((a,b)=>a+b)/logged.length,burn=Math.round((avg-slope*7700)/10)*10;
   return{ready:true,avg,slope,burn,ok:burn>=1000&&burn<=4500,logged:logged.length,weighs:n}}
 function renderAdapt(){const a=adaptive(),T=targets(S.profile),el=$("#adapt"),f='<p class="f" style="font-weight:600;background:var(--panel);padding:8px 10px;border-radius:10px;margin:8px 0">Real burn = average kcal eaten − (kg gained per day × 7,700)</p>';
-  if(!a.ready){el.innerHTML=`<p>After a couple of weeks of logging, Tingkat works out what your body actually burns from your own food and weight, which is more personal than any formula.</p>${f}<p class="sub">Still needed: ${[a.need.days?a.need.days+" more logged day"+(a.need.days===1?"":"s"):"",a.need.weighs?a.need.weighs+" more weigh-in"+(a.need.weighs===1?"":"s"):"",!a.need.weighs&&a.need.span?"weigh-ins at least 10 days apart":""].filter(Boolean).join(", ")}. Weigh in two or three mornings a week.</p>`;return}
+  if(!a.ready){el.innerHTML=`<p>After a couple of weeks of logging, Macaron works out what your body actually burns from your own food and weight, which is more personal than any formula.</p>${f}<p class="sub">Still needed: ${[a.need.days?a.need.days+" more logged day"+(a.need.days===1?"":"s"):"",a.need.weighs?a.need.weighs+" more weigh-in"+(a.need.weighs===1?"":"s"):"",!a.need.weighs&&a.need.span?"weigh-ins at least 10 days apart":""].filter(Boolean).join(", ")}. Weigh in two or three mornings a week.</p>`;return}
   el.innerHTML=`${f}<p class="f" style="font-weight:600;background:var(--panel);padding:8px 10px;border-radius:10px">${fmt(a.avg)} − (${(a.slope).toFixed(3)} × 7,700) = <b>${fmt(a.burn)} kcal a day</b></p><p class="sub">From ${a.logged} logged days and ${a.weighs} weigh-ins in the last 4 weeks.${T?` The formula guessed ${fmt(T.bmr*T.act)}.`:""} If you sometimes forget to log food, the real number is higher.</p>${!a.ok?'<p class="warn" style="margin-top:8px">This number looks off, usually because some days were only partly logged. Keep logging and it will settle.</p>':T?`<div class="rowb">${T.custom?`<button data-act="useFormula">Go back to the formula</button>`:""}<button class="primary" data-act="useBurn" data-v="${a.burn}">${T.custom===a.burn?"In use for your target":"Use this for my target"}</button></div>`:""}`}
 function weekData(){const ks=[...Array(7)].map((_,i)=>addDays(today(),i-6)),ts=ks.map(k=>totals(day(k)));return{ks,ts,logged:ts.filter(t=>t.kcal>0)}}
 function renderProgress(){const T=targets(S.profile),{ks,ts,logged}=weekData(),vals=ts.map(t=>t.kcal),mx=Math.max(T?T.kcal*1.3:0,...vals,1);
@@ -1481,7 +1524,7 @@ function locate(){const fail=()=>toast("Location isn't available here. Pick your
 function restoreData(){try{const o=JSON.parse($("#restoreBox").value.trim());if(!o||typeof o!=="object"||!o.days||typeof o.days!=="object")throw 0;
     for(const k of["profile","plan","weights","favs"])if(o[k]&&typeof o[k]==="object"){S[k]=o[k];store.set(k,o[k])}if(o.prefs){S.prefs=cleanPrefs(o.prefs);store.set("prefs",S.prefs)}
     for(const k of Object.keys(o.days))if(isKey(k)){S.days[k]=cleanDay(o.days[k]);saveDay(k)}$("#restoreBox").value="";show(curView);toast("Your data is restored")}
-  catch(e){toast("That doesn't look like Tingkat data.")}}
+  catch(e){toast("That doesn't look like Macaron data.")}}
 
 /* plan wizard: the same page-by-page flow as setup */
 let wzMode="onb",P=null,pi=0,bldT=null;
@@ -1557,7 +1600,7 @@ function onbFinish(){const p=onbProfile(),k=today();S.profile=p;store.set("profi
 /* routing with #057 panel swap: old fades .2 s, new starts .1 s later and rises 8 px */
 const VIEWS=["today","scan","plan","progress","me"];
 function show(v){for(const x of VIEWS){const el=$("#v-"+x);el.classList.remove("out");el.classList.toggle("on",x===v)}$("#main").scrollTop=0;
-  if(v==="today")renderToday();else if(v==="plan"){renderPlan();if(!S.plan&&targets(S.profile)&&!S.seen.planAsk){S.seen.planAsk=1;openPlanWiz()}}else if(v==="progress")renderProgress();else if(v==="me"){fillMe();renderGlass();renderGame();renderRanks();renderNever();renderCalc();renderLearn()}else if(v==="scan"){setSeg($("#modeSeg"),MODES.indexOf(scanMode),3);if(scanMode==="order")renderOrder();else updateScanTotal()}
+  if(v==="today")renderToday();else if(v==="plan"){renderPlan();if(!S.plan&&targets(S.profile)&&!S.seen.planAsk){S.seen.planAsk=1;openPlanWiz()}}else if(v==="progress")renderProgress();else if(v==="me"){fillMe();renderGlass();renderGame();renderMood();renderRanks();renderNever();renderCalc();renderLearn()}else if(v==="scan"){setSeg($("#modeSeg"),MODES.indexOf(scanMode),3);if(scanMode==="order")renderOrder();else updateScanTotal()}
   const sel=v==="today"?"#v-today .wrap>*":v==="me"?"#v-me>*":v==="progress"?"#v-progress>*":"";if(sel&&window.gsap&&!calm&&!S.seen[v]){S.seen[v]=1;gsap.from($$(sel).filter(el=>el.offsetHeight>0),{y:22,opacity:0,duration:.5,stagger:.06,ease:"power3.out",clearProps:"transform,opacity"})}}
 function route(){let v=location.hash.slice(1);if(!VIEWS.includes(v))v="today";if(v===curView){show(v);return}
   const a=$(`.tabs a[href="#${v}"]`),ind=$("#ind");$$(".tabs a").forEach(x=>x===a?x.setAttribute("aria-current","page"):x.removeAttribute("aria-current"));
@@ -1601,6 +1644,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="neverSug"){const n=b.dataset.n;never(n);sugRes=sugRes.filter(o=>!o.meals.some(m=>(m.base||m.name)===n));renderSug()}
   else if(a==="unNever"){S.prefs.never=(S.prefs.never||[]).filter(x=>x!==b.dataset.n);store.set("prefs",S.prefs);renderNever();toast("Allowed again")}
   else if(a==="kneeMode"&&S.plan){const st=S.plan.settings=S.plan.settings||readSettings(),T=targets(S.profile);st.knees=st.knees==="yes"?"no":"yes";S.plan.days.forEach((d,i)=>{d.exercise=exDay(st,i,num(S.plan.week),T.w)});store.set("plan",S.plan);renderPlan();toast(st.knees==="yes"?"Switched to gentle, knee-friendly workouts":"Switched to regular workouts")}
+  else if(a==="mood"){S.prefs.mood=b.dataset.m;store.set("prefs",S.prefs);applyMood();renderMood()}
   else if(a==="rankTab"){S.rankTab=b.dataset.t;renderRanks()}
   else if(a==="cancelEdit"){S.planEdit=false;$("#planStatus").textContent="";renderPlan()}
   else if(a==="nextWeek"&&S.plan){let s=addDays(S.plan.dates[S.plan.dates.length-1],1);if(s<today())s=today();const prev=S.plan.days.map(d=>d.exercise?`${short(d.date)}: ${d.exercise.title}, ${d.exercise.minutes} min${S.plan.done?.[d.date]?" (done)":" (skipped)"}`:"").filter(Boolean).join("; ");genPlan(s,S.plan.settings||readSettings())}
