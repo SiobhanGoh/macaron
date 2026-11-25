@@ -126,6 +126,83 @@ button:disabled{opacity:.55;cursor:default}
 .swrow .was{color:var(--rose)}
 #sweetBody h3{margin:18px 0 6px}
 .learn ul{padding-left:1.2em;margin-top:8px;display:grid;gap:6px;font-size:15px}
+.mvL{padding:0!important;display:block!important}.mv .mvChev{transform:rotate(-45deg)!important}.mvSec{margin-top:20px}.exp .pills{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;padding:4px;border-radius:16px;background:rgb(var(--wr)/.3);border:1px solid var(--line)}:root[data-theme=dark] .exp .pills{background:rgb(255 255 255/.04);border-color:rgb(255 255 255/.08)}.exp .pills button{min-height:38px;border:0;border-radius:12px;font-size:14.5px;background:none;box-shadow:none}.exp .pills button[aria-pressed=true]{background:var(--pk);color:#2a1018;font-weight:700}
+.mvL>li.mv{margin:0;padding:10px 12px 10px 10px!important}
+.mvL>li.mv::before,.mvL>li.mv::marker{content:none;display:none}
+.mvS{width:100%;text-align:left;background:none;border:0;border-radius:12px;color:inherit;font:inherit;box-shadow:none;min-height:52px}
+.mvS:active{background:rgb(var(--wr)/.25)}
+.mvChev{transform:rotate(-45deg)}
+.howPop{position:fixed;inset:0;z-index:60;display:grid;align-items:end;padding:12px 12px max(12px,env(safe-area-inset-bottom));pointer-events:none}
+.howPop.in{pointer-events:auto}
+.howBack{position:absolute;inset:0;background:rgb(30 12 20/.16);opacity:0;transition:opacity .25s}
+.howPop.in .howBack{opacity:1}
+.howCard{position:relative;max-width:520px;width:100%;justify-self:center;max-height:min(82vh,720px);overflow:auto;overscroll-behavior:contain;padding:14px 18px 16px;border-radius:30px;
+ background:linear-gradient(150deg,rgb(255 255 255/.62),rgb(255 240 245/.38));-webkit-backdrop-filter:blur(26px) saturate(1.7);backdrop-filter:blur(26px) saturate(1.7);
+ border:1px solid rgb(255 255 255/.7);box-shadow:inset 0 1.5px 0 rgb(255 255 255/.9),inset 0 -1px 0 rgb(255 255 255/.25),0 24px 60px rgb(60 20 35/.28);
+ transform:translateY(24px) scale(.97);opacity:0;transition:transform .32s var(--eo),opacity .22s}
+:root[data-theme=dark] .howCard{background:linear-gradient(150deg,rgb(70 46 56/.62),rgb(36 22 28/.5));border-color:rgb(255 255 255/.16);box-shadow:inset 0 1px 0 rgb(255 255 255/.14),0 24px 60px rgb(0 0 0/.55)}
+.howPop.in .howCard{transform:none;opacity:1}
+.howTop{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.howX{width:34px;height:34px;min-height:0;padding:0;border-radius:50%;background:rgb(255 255 255/.35);border:1px solid rgb(255 255 255/.5);color:var(--ink);font-size:14px}
+:root[data-theme=dark] .howX{background:rgb(255 255 255/.08);border-color:rgb(255 255 255/.14)}
+.howFig{margin:6px auto 10px;width:100%;max-width:300px;aspect-ratio:6/5;border-radius:22px;background:rgb(255 255 255/.32);display:grid;place-items:center;overflow:hidden}
+:root[data-theme=dark] .howFig{background:rgb(255 255 255/.05)}
+.howFig svg{width:100%;height:100%}
+.howCard h3{margin:2px 0 0;font-size:21px;line-height:1.2}
+.howAmt{margin:2px 0 0;font-size:15px;color:var(--mute);font-variant-numeric:tabular-nums}
+.howBody{display:grid;gap:8px;margin-top:12px;font-size:14.5px;line-height:1.5}
+.howBody p{margin:0}
+.howTip{padding:10px 12px;border-radius:14px;background:rgb(255 255 255/.34);display:grid;gap:2px}
+:root[data-theme=dark] .howTip{background:rgb(255 255 255/.06)}
+.howTip b,.howSub{font-size:12.5px;font-weight:700;color:var(--rose)}
+.howBody ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
+.howKn{margin:12px 0 0}
+.howNav{position:sticky;bottom:-16px;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:10px;margin:14px -18px -16px;padding:12px 18px 16px;background:linear-gradient(transparent,rgb(255 240 245/.55) 30%);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+:root[data-theme=dark] .howNav{background:linear-gradient(transparent,rgb(36 22 28/.7) 30%)}
+.howNav button{min-height:48px;border-radius:16px;font-size:16px}
+.howNav button[data-act=howGo]{font-size:24px;padding:0}
+.howNav button[disabled]{opacity:.35}
+body.howOpen{overflow:hidden}
+@media (prefers-reduced-motion:reduce){.howCard,.howBack{transition:none}}
+.mvProg{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;margin:16px 0 2px;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
+.mvProg i{height:6px;border-radius:99px;background:var(--line);position:relative;overflow:hidden}
+.mvProg i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:var(--pk);border-radius:inherit;transition:width .45s var(--eo)}
+.mvSec{margin:18px 2px 8px;font-size:13px;font-weight:600;color:var(--mute);letter-spacing:.01em}
+.mvL{list-style:none;padding:0;margin:0;border-radius:18px;border:1px solid var(--line);background:rgb(var(--wr)/.32);overflow:hidden}
+:root[data-theme=dark] .mvL{background:rgb(255 255 255/.03);border-color:rgb(255 255 255/.08)}
+.mv{display:grid;grid-template-columns:30px minmax(0,1fr);gap:0 10px;padding:10px 12px 10px 10px;align-items:start}
+.mv+.mv{border-top:1px solid var(--line)}
+:root[data-theme=dark] .mv+.mv{border-color:rgb(255 255 255/.07)}
+.mvTick{width:28px;height:28px;min-height:0;padding:0;margin-top:12px;border-radius:50%;border:2px solid var(--line);background:transparent;display:grid;place-items:center;color:transparent;transition:background .2s,border-color .2s}
+:root[data-theme=dark] .mvTick{border-color:rgb(255 255 255/.22)}
+.mvTick svg{width:15px;height:15px}
+.mv.on .mvTick{background:var(--pk);border-color:var(--pk);color:#2a1018}
+.mv.on .mvTx b{opacity:.55;text-decoration:line-through;text-decoration-thickness:1.5px}
+.mv.on .mvFig{opacity:.6}
+.mvS{display:grid;grid-template-columns:56px minmax(0,1fr) 16px;gap:12px;align-items:center;cursor:pointer;list-style:none;padding:2px 0;min-height:52px}
+.mvS::-webkit-details-marker{display:none}
+.mvFig{width:56px;height:48px;border-radius:12px;background:var(--a3);display:grid;place-items:center;overflow:hidden;color:var(--mute)}
+.mvFig svg{width:56px;height:48px}
+.mvTx{display:grid;gap:1px;min-width:0}
+.mvTx b{font-size:15px;line-height:1.28;font-weight:650}
+.mvAmt{font-size:13.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.mvTag{font-size:11.5px;font-weight:700;color:var(--rose)}
+.mvTag.knee{color:#3f8a55}
+:root[data-theme=dark] .mvTag.knee{color:#9fd8ad}
+.mvChev{width:8px;height:8px;border-right:2px solid var(--mute);border-bottom:2px solid var(--mute);transform:rotate(45deg) translate(-2px,-2px);transition:transform .25s var(--eo);justify-self:center}
+.mvD[open] .mvChev{transform:rotate(-135deg) translate(-2px,-2px)}
+.mvD[open] .mvS{padding-bottom:4px}
+.mvHow{margin:6px 0 4px}
+.mvAct{display:flex;flex-wrap:wrap;gap:8px;grid-column:2;margin:8px 0 2px 68px}
+.mvAct button{font-size:12.5px;min-height:32px;padding:4px 12px;border-radius:99px}
+.mvTips{margin-top:14px;padding:12px 14px;border-radius:16px;background:var(--a3);font-size:13.5px;color:var(--mute);display:grid;gap:6px}
+.mvTips b{color:var(--ink);font-size:13.5px}
+.mvTips ul{margin:0;padding-left:1.1em;display:grid;gap:4px}
+.mvHint{margin:10px 2px 0;font-size:12.5px;color:var(--mute)}
+.mvDone{display:grid;gap:8px;margin-top:16px}
+.mvDone .doneBtn{width:100%;min-height:50px;font-size:16px}
+.mvKnee{justify-self:center;background:none!important;border:0!important;box-shadow:none!important;color:var(--rose);font-size:14px;min-height:36px;text-decoration:underline;text-underline-offset:3px}
+@media (prefers-reduced-motion:reduce){.mvProg i::after,.mvChev,.mvTick{transition:none}}
 .xkn{display:flex;gap:6px;margin-top:6px}.xkn button{font-size:12.5px;padding:4px 12px;min-height:32px} .excard{margin-top:16px;background:var(--band);color:#fff;border:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
 .excard p{font-size:14px;opacity:.88}
 .excard button{background:var(--wh);color:#0c3d2a;border-color:var(--wh)} :root[data-theme=dark] .excard button:not([aria-pressed=true]){background:var(--pk);border-color:var(--pk);color:#2a1018;font-weight:700}
@@ -2246,6 +2323,33 @@ function kneeSafe(e,st){if(st.knees!=="yes"||e.intensity==="rest")return e;const
   if(e.steps.some(x=>/^(Leg press|Leg curl|Sit to stand)/.test(x))){const t="Tip: keep leg moves light and bend your knees no more than a right angle";if(!e.steps.includes(t))e.steps.push(t)}
   if(e.steps.some(x=>x.startsWith("Knee-easy"))){const t="Tip: moves marked Easier on knees can be swapped or skipped if they still hurt";if(!e.steps.includes(t))e.steps.push(t)}
   e.knee=true;return e}
+/* the workout as a checklist: warm up, workout, finish; tap a row for the how-to, tick it off when done */
+function exMoves(ex){const tips=[],sec={warm:[],main:[],end:[]};
+  ex.steps.forEach((x0,xi)=>{const x=stepMain(x0),q=exParse(x);if(q.tip||q.tag==="Rest"||/^(Pick|Tip|No mat)\b/.test(x)){tips.push(x.replace(/^Tip:\s*/,""));return}
+    (q.tag==="Warm up"?sec.warm:/^(Cardio|Stretch|Finish|Cool down)$/.test(q.tag)?sec.end:sec.main).push({x,alt:stepAlt(x0),xi,q,g:guideOf(x)})});
+  return{tips,sec,all:[...sec.warm,...sec.main,...sec.end]}}
+function exList(ex,k){const tk=new Set(((S.plan&&S.plan.ticks)||{})[k]||[]),{tips,sec,all}=exMoves(ex),n=all.length,d=all.filter(r=>tk.has(r.xi)).length,
+  row=r=>{const on=tk.has(r.xi),tag=r.q.tag&&r.q.tag!=="Warm up"&&r.q.tag!=="Finish"?`<small class="mvTag${r.q.tag==="Easier on knees"||r.q.tag==="Knee care"?" knee":""}">${esc(r.q.tag)}</small>`:"";
+    return `<li class="mv${on?" on":""}"><button class="mvTick" data-act="exTick" data-k="${k}" data-i="${r.xi}" aria-pressed="${on}" aria-label="Tick off this move"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="mvS" data-act="exHow" data-k="${k}" data-i="${r.xi}"><span class="mvFig">${r.g?fig(r.g[1]):"•"}</span><span class="mvTx">${tag}<b>${esc(r.q.name)}</b>${r.q.amt?`<span class="mvAmt">${esc(r.q.amt)}</span>`:""}</span><i class="mvChev" aria-hidden="true"></i></button>${r.q.tag==="Easier on knees"?`<div class="mvAct">${r.alt?`<button data-act="exAlt" data-k="${k}" data-i="${r.xi}">⇄ Swap for a no-bend move</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${r.xi}">Skip</button></div>`:""}</li>`},
+  part=(t,L)=>L.length?`<h4 class="mvSec">${t}</h4><ol class="mvL">${L.map(row).join("")}</ol>`:"";
+  return `<div class="mvProg"><span>${d} of ${n} moves done</span><i style="--p:${n?Math.round(d/n*100):0}%"></i></div>${part("Warm up",sec.warm)}${part(sec.warm.length||sec.end.length?"Workout":"Moves",sec.main)}${part("Finish",sec.end)}${tips.length?`<div class="mvTips"><b>Good to know</b><ul>${tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`:""}<p class="mvHint">Tap a move to see how to do it. Tick the circle when you finish it.</p>`}
+/* the how-to card floats above the list like frosted glass, with the previous and next move a tap away */
+let howAt=null;
+function howShow(k,xi){const pd=S.plan&&S.plan.days.find(x=>x.date===k);if(!pd||!pd.exercise)return howClose();const{all}=exMoves(pd.exercise),p=all.findIndex(r=>r.xi===xi);if(p<0)return howClose();
+  const r=all[p],on=new Set(((S.plan.ticks)||{})[k]||[]).has(r.xi),g=r.g;howAt={k,xi};
+  let el=$("#howPop");if(!el){el=document.createElement("div");el.id="howPop";el.className="howPop";document.body.appendChild(el)}
+  el.innerHTML=`<div class="howBack" data-act="howClose"></div><section class="howCard" role="dialog" aria-modal="true" aria-label="${esc(r.q.name)}">
+   <div class="howTop"><span>${p+1} of ${all.length}</span><button class="howX" data-act="howClose" aria-label="Close">✕</button></div>
+   <div class="howFig">${g?fig(g[1]):""}</div>
+   ${r.q.tag&&r.q.tag!=="Finish"?`<small class="mvTag${/knee/i.test(r.q.tag)?" knee":""}">${esc(r.q.tag)}</small>`:""}<h3>${esc(r.q.name)}</h3>${r.q.amt?`<p class="howAmt">${esc(r.q.amt)}</p>`:""}
+   ${g?`<div class="howBody"><p>${g[2]}</p><p class="howTip"><b>Watch for</b>${g[3]}</p><p class="howSub">Common mistakes</p><ul>${g[4].map(m=>`<li>${m}</li>`).join("")}</ul><a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent("how to do "+r.q.name.replace(/\(.*?\)/g,"").trim()+" proper form")}"><i>▶</i><span>Watch a video of this move</span></a></div>`:""}
+   ${r.q.tag==="Easier on knees"?`<div class="mvAct howKn">${r.alt?`<button data-act="exAlt" data-k="${k}" data-i="${r.xi}">⇄ Swap for a no-bend move</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${r.xi}">Skip</button></div>`:""}
+   <div class="howNav"><button data-act="howGo" data-k="${k}" data-i="${p>0?all[p-1].xi:-1}" ${p>0?"":"disabled"} aria-label="Previous move">‹</button><button class="${on?"":"primary "}howDone" data-act="exTick" data-k="${k}" data-i="${r.xi}" aria-pressed="${on}">${on?"✓ Done":"Tick off"}</button><button data-act="howGo" data-k="${k}" data-i="${p<all.length-1?all[p+1].xi:-1}" ${p<all.length-1?"":"disabled"} aria-label="Next move">›</button></div>
+  </section>`;
+  if(el.hidden||!el.classList.contains("in")){el.hidden=false;requestAnimationFrame(()=>el.classList.add("in"));document.body.classList.add("howOpen")}
+  const c=el.querySelector(".howCard");if(c){c.scrollTop=0;el.querySelector(".howDone")?.focus({preventScroll:true})}}
+function howClose(){const el=$("#howPop");howAt=null;document.body.classList.remove("howOpen");if(!el)return;el.classList.remove("in");setTimeout(()=>{if(!howAt)el.hidden=true},calm?0:260)}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&howAt)howClose()});
 const stepMain=x=>String(x).split(" || ")[0],stepAlt=x=>String(x).split(" || ")[1]||"";
 
 /* follow-along videos: free YouTube workouts that match the kind of session */
@@ -3636,7 +3740,7 @@ function renderPlan(){fixPlan();const p=S.plan;$("#planForm").hidden=true;
   const tk=sum("kcal"),pct=T?Math.min(100,tk/T.kcal*100):100;
   const sub=S.planSub==="meals"||S.planSub==="ex"?S.planSub:"",gentle=S.prefs.gentle===today()&&k===today(),ents=day(k).entries,lg=d.meals.filter(m=>ents.some(e=>e.name===m.name)).length,exFig=ex?(ex.intensity==="rest"?fig("walk"):(()=>{const g=ex.steps.map(guideOf).find(Boolean);return g?fig(g[1]):fig("march")})()):fig("walk"),nxt=k===today()?d.meals.find(m=>!ents.some(e=>e.name===m.name)&&!skips.includes(m.slot)):null;
   const mealsH=`<ol class="sched">${d.meals.map((m,i)=>{const g=m.p*4+m.c*4+m.f*9||1,home=/^home$/i.test(m.place);const sk=skips.includes(m.slot);return `<li class="mc${sk?" skipped":""}" style="animation-delay:${i*70}ms">${fe(m)}<div class="mh"><small>${esc(m.time)} ${esc(SLOTNAME[m.slot])}</small><b>${esc(m.name)}</b><small class="place">${esc(m.place||"")}</small>${priceOf(m)?`<small>${priceOf(m)}</small>`:""}</div><span class="kc">${fmt(m.kcal)}<small>kcal</small></span><div class="mac"><div class="macbar"><i style="width:${m.p*4/g*100}%"></i><i style="width:${m.c*4/g*100}%"></i><i style="width:${m.f*9/g*100}%"></i></div><div class="macl"><span>Protein <b>${fmt(m.p)} g</b></span><span>Carbs <b>${fmt(m.c)} g</b></span><span>Fat <b>${fmt(m.f)} g</b></span></div></div>${m.order?`<details><summary>${home?"How to make it":"How to order"}</summary><p>${esc(m.order)}</p></details>`:""}${KITMAP[m.base]&&canLog&&!sk?`<button class="cz" data-act="buildPlan" data-k="${k}" data-i="${i}">Make it my way</button>`:""}<div class="mb">${canLog&&!sk?`<button class="go" data-act="logPlan" data-k="${k}" data-i="${i}">I ate this</button>`:"<span></span>"}${canLog?`<button data-act="skipMeal" data-k="${k}" data-s="${m.slot}">${sk?"Undo skip":"Skip"}</button>`:"<span></span>"}<button class="icb" data-act="swap" data-k="${k}" data-i="${i}" aria-label="Swap ${esc(m.name)}" title="Swap">${ic(I.swap)}</button><button class="icb" data-act="neverPlan" data-k="${k}" data-i="${i}" aria-label="Never suggest ${esc(m.name)} again" title="Never suggest again">${ic(I.ban)}</button></div></li>`}).join("")}</ol>
-  <p class="note">${ic(I.swap).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px"')} swaps a dish. ${ic(I.ban).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px;color:var(--sambal)"')} means never suggest it again. Prices are rough guides.</p>`,exH=`${ex?`<div class="card exp"><h3>${esc(ex.title)}</h3><div class="xChips"><span>⏱ ${fmt(ex.minutes)} min</span>${ex.burn?`<span>🔥 about ${fmt(ex.burn)} kcal</span>`:""}<span>${({rest:"🌙",light:"🌱",moderate:"💪",vigorous:"⚡"})[ex.intensity]||"💪"} ${esc(ex.intensity)}</span></div><div class="xGoals">${GOALS(p.settings||{}).map(g=>`<em>🎯 ${esc(GOALN[g]||g)}</em>`).join("")}</div>${ex.gentle?"":`<div class="pills" style="margin-top:8px" role="group" aria-label="Difficulty">${[["easy","Easy"],["medium","Medium"],["hard","Hard"]].map(([v,t])=>`<button data-act="setDiff" data-v="${v}" aria-pressed="${(p.settings?.diff||"easy")===v}">${t}</button>`).join("")}</div>`}${ex.steps.length?`<ol class="exs xs">${ex.steps.map((x0,xi)=>{const x=stepMain(x0),alt=stepAlt(x0),g=guideOf(x),q=exParse(x);if(q.tip)return `<li class="xtip"><span>💡</span><p>${esc(x)}</p></li>`;return `<li class="xm">${g?`<span class="xfig">${fig(g[1])}</span>`:`<span class="xfig xn">${q.tag==="Rest"?"⏸":"•"}</span>`}<div class="xb">${q.tag?`<em class="xtag">${esc(q.tag)}</em>`:""}<b>${esc(q.name)}</b>${q.amt?`<span class="xamt">${esc(q.amt)}</span>`:""}${q.tag==="Easier on knees"?`<span class="xkn">${alt?`<button data-act="exAlt" data-k="${k}" data-i="${xi}">Swap</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${xi}">Skip</button></span>`:""}</div>${g?`<details><summary>Show me how</summary><div class="gd">${fig(g[1])}<p>${g[2]}</p><p><b>Watch for</b> ${g[3]}</p><p><b>Common mistakes</b></p><ul>${g[4].map(m=>`<li>${m}</li>`).join("")}</ul><a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent("how to do "+q.name.replace(/\(.*?\)/g,"").trim()+" proper form")}"><i>▶</i><span>Watch a video of this move</span></a></div></details>`:""}</li>`}).join("")}</ol>${exVideos(ex)}`:""}<div class="rowb"><button class="doneBtn" data-act="exDone" data-k="${k}" aria-pressed="${done}">${done?"Done":"Mark as done"}</button>${done?`<button data-act="exMore" data-k="${k}">I did extra today</button>`:""}<button data-act="kneeMode">${p.settings?.knees==="yes"?"Back to regular moves":"Go easy on my knees"}</button></div>${xtra>=2?`<p class="careMsg"><b>${xtra+1} sessions today.</b> That is plenty. Rest now so tired muscles don't lose their form.</p>`:xtra===1?`<p class="careMsg">One extra round logged. Keep the rest of today easy.</p>`:""}${run>=5?`<p class="careMsg"><b>${run} days in a row.</b> Take a rest day soon. Rest is when your body gets stronger.</p>`:""}<div class="xSafe"><span>🛑 Stop if it hurts sharply</span><span>🙂 Mild ache is normal</span><span>🩺 Sore knees? See a physio first</span></div><details class="xMore"><summary>Why exercise isn't added to your food</summary><p>Your activity level already counts it, so adding it again would count it twice.</p></details></div>`:""}`;
+  <p class="note">${ic(I.swap).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px"')} swaps a dish. ${ic(I.ban).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px;color:var(--sambal)"')} means never suggest it again. Prices are rough guides.</p>`,exH=`${ex?`<div class="card exp"><h3>${esc(ex.title)}</h3><div class="xChips"><span>⏱ ${fmt(ex.minutes)} min</span>${ex.burn?`<span>🔥 about ${fmt(ex.burn)} kcal</span>`:""}<span>${({rest:"🌙",light:"🌱",moderate:"💪",vigorous:"⚡"})[ex.intensity]||"💪"} ${esc(ex.intensity)}</span></div><div class="xGoals">${GOALS(p.settings||{}).map(g=>`<em>🎯 ${esc(GOALN[g]||g)}</em>`).join("")}</div>${ex.gentle?"":`<div class="pills" style="margin-top:8px" role="group" aria-label="Difficulty">${[["easy","Easy"],["medium","Medium"],["hard","Hard"]].map(([v,t])=>`<button data-act="setDiff" data-v="${v}" aria-pressed="${(p.settings?.diff||"easy")===v}">${t}</button>`).join("")}</div>`}${ex.steps.length?`${exList(ex,k)}${exVideos(ex)}`:""}<div class="mvDone"><button class="doneBtn${done?"":" primary"}" data-act="exDone" data-k="${k}" aria-pressed="${done}">${done?"✓ Workout done":"Mark workout as done"}</button>${done?`<button data-act="exMore" data-k="${k}">I did extra today</button>`:""}<button class="mvKnee" data-act="kneeMode">${p.settings?.knees==="yes"?"Back to regular moves":"Go easy on my knees"}</button></div>${xtra>=2?`<p class="careMsg"><b>${xtra+1} sessions today.</b> That is plenty. Rest now so tired muscles don't lose their form.</p>`:xtra===1?`<p class="careMsg">One extra round logged. Keep the rest of today easy.</p>`:""}${run>=5?`<p class="careMsg"><b>${run} days in a row.</b> Take a rest day soon. Rest is when your body gets stronger.</p>`:""}<div class="xSafe"><span>🛑 Stop if it hurts sharply</span><span>🙂 Mild ache is normal</span><span>🩺 Sore knees? See a physio first</span></div><details class="xMore"><summary>Why exercise isn't added to your food</summary><p>Your activity level already counts it, so adding it again would count it twice.</p></details></div>`:""}`;
   const html=`${gentle?`<div class="gentle"><span aria-hidden="true">${SLOTICO.dinner()}</span><p><b>Gentle day</b>Light, comforting meals and rest. Eat what you can.</p><button data-act="gentleOff">Back to normal</button></div>`:""}<div class="days" role="group" aria-label="Days">${p.dates.map(x=>`<button data-act="pday" data-k="${x}" aria-pressed="${x===k}"><small>${x===today()?"Today":short(x)}</small><b>${toDate(x).getDate()}</b><small>${p.done?.[x]?"Done":" "}</small></button>`).join("")}</div><h2>${longDate(k)}</h2><div class="dayBar"><p>${fmt(tk)}${T?" of "+fmt(T.kcal):""} kcal <span>${fmt(sum("p"))} g protein</span></p><div class="macbar"><i style="width:${pct}%"></i></div></div>
   <!--B-->${sub?`<div class="psub"><button class="pback" data-act="planSub" data-v="" aria-label="Back to the day">${ic(I.left)}<span>Back</span></button><div class="seg psg" role="group" aria-label="Section"><i></i><button data-act="planSub" data-v="meals" aria-pressed="${sub==="meals"}">Meals</button><button data-act="planSub" data-v="ex" aria-pressed="${sub==="ex"}">Exercise</button></div></div><div class="psubIn ${S.planDir<0?"inL":"inR"}">${sub==="meals"?mealsH:exH||'<p class="empty">No workout on this day. Enjoy the rest.</p>'}</div>`:`<div class="pgo"><button class="pgc" data-act="planSub" data-v="meals"><span class="pgArt meals">${d.meals.slice(0,4).map(m=>fe(m,1)).join("")}</span><b>Meals</b><small>${d.meals.length} meal${d.meals.length===1?"":"s"}, ${fmt(tk)} kcal</small><em>${canLog?`${lg} of ${d.meals.length} logged`:"Coming up"}</em><span class="chev" aria-hidden="true">${ic(I.right)}</span></button><button class="pgc" data-act="planSub" data-v="ex"><span class="pgArt">${exFig}</span><b>Exercise</b><small>${ex?esc(ex.title):"Rest day"}</small><em class="${done?"ok":""}">${ex?(done?"Done":fmt(ex.minutes)+" min"):"Rest"}</em><span class="chev" aria-hidden="true">${ic(I.right)}</span></button></div>${nxt?`<div class="upnext">${fe(nxt,1)}<p><small>Up next, ${esc(nxt.time)}</small><b>${esc(nxt.name)}</b></p><button class="go" data-act="logPlan" data-k="${k}" data-i="${d.meals.indexOf(nxt)}">I ate this</button></div>`:""}
   <p class="note">Calories are estimates for typical servings. Check a place is open and still sells the dish.</p>
@@ -4444,7 +4548,11 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="neverPlan"){const m=S.plan?.days.find(x=>x.date===b.dataset.k)?.meals[num(b.dataset.i)];if(m){never(m.base||m.name);renderPlan()}}
   else if(a==="neverSug"){const n=b.dataset.n;never(n);sugRes=sugRes.filter(o=>!o.meals.some(m=>(m.base||m.name)===n));renderSug()}
   else if(a==="unNever"){S.prefs.never=(S.prefs.never||[]).filter(x=>x!==b.dataset.n);store.set("prefs",S.prefs);renderNever();toast("Allowed again")}
-  else if((a==="exAlt"||a==="exSkip")&&S.plan){const pd=S.plan.days.find(x=>x.date===k);if(pd&&pd.exercise&&pd.exercise.steps[i]!=null){const x=pd.exercise.steps[i];if(a==="exAlt"&&stepAlt(x))pd.exercise.steps[i]=stepAlt(x);else pd.exercise.steps.splice(i,1);store.set("plan",S.plan);renderPlan();toast(a==="exAlt"?"Swapped for a move that is gentler on your knees":"Skipped. Listen to your knees.")}}
+  else if(a==="exHow"&&S.plan)howShow(k,i);
+  else if(a==="howGo"&&S.plan){if(i>=0)howShow(k,i)}
+  else if(a==="howClose")howClose();
+  else if(a==="exTick"&&S.plan){S.plan.ticks=S.plan.ticks||{};const L=new Set(S.plan.ticks[k]||[]);L.has(i)?L.delete(i):L.add(i);S.plan.ticks[k]=[...L];store.set("plan",S.plan);const pd=S.plan.days.find(x=>x.date===k),n=pd?pd.exercise.steps.filter(x=>{const q=exParse(stepMain(x));return!(q.tip||q.tag==="Rest"||/^(Pick|Tip|No mat)\b/.test(x))}).length:0;renderPlan();if(howAt)howShow(k,i);if(n&&L.size>=n&&!S.plan.done?.[k])setTimeout(()=>{const d=document.querySelector(`[data-act="exDone"][data-k="${k}"]`);if(d)d.click()},350)}
+  else if((a==="exAlt"||a==="exSkip")&&S.plan){const pd=S.plan.days.find(x=>x.date===k);if(pd&&pd.exercise&&pd.exercise.steps[i]!=null){const x=pd.exercise.steps[i];if(a==="exAlt"&&stepAlt(x))pd.exercise.steps[i]=stepAlt(x);else{pd.exercise.steps.splice(i,1);if(S.plan.ticks&&S.plan.ticks[k])S.plan.ticks[k]=S.plan.ticks[k].filter(v=>v!==i).map(v=>v>i?v-1:v)}store.set("plan",S.plan);renderPlan();if(howAt){if(a==="exAlt")howShow(k,i);else howClose()}toast(a==="exAlt"?"Swapped for a move that is gentler on your knees":"Skipped. Listen to your knees.")}}
   else if(a==="kneeMode"&&S.plan){const st=S.plan.settings=S.plan.settings||readSettings();st.knees=st.knees==="yes"?"no":"yes";regenEx();toast(st.knees==="yes"?"Switched to gentle, knee-friendly workouts":"Switched to regular workouts")}
   else if(a==="setDiff"&&S.plan){const st=S.plan.settings=S.plan.settings||readSettings();st.diff=b.dataset.v;regenEx();toast(b.dataset.v==="hard"?"Set to hard. Drop back to medium if your form slips.":"Difficulty set to "+b.dataset.v)}
   else if(a==="saveMeas")saveMeas();
