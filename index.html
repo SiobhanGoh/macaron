@@ -543,7 +543,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .vrw{width:120px}.vrw::after{right:auto;left:0;width:70px}
 .vtrack{width:120px;background:linear-gradient(var(--ink) 0 2px,transparent 2px) 0 0/44px 80px repeat-y,linear-gradient(var(--mute) 0 2px,transparent 2px) 0 0/32px 40px repeat-y,linear-gradient(var(--mute) 0 1.5px,transparent 1.5px) 0 0/18px 8px repeat-y}
 .vtrack span{right:auto;left:54px}.vtrack span.h5{font-size:11px;opacity:.75}
-.opt.ico{grid-template-columns:60px minmax(0,1fr);column-gap:12px;align-items:center}.opt.ico>span{grid-row:1/span 2;width:60px;height:60px;border-radius:18px;background:var(--a3);display:grid;place-items:center;overflow:hidden}.opt.ico>span svg{width:100%;height:100%}.opt.ico b{align-self:end}.opt.ico small{align-self:start}
+.opt.ico{grid-template-columns:60px minmax(0,1fr);column-gap:12px;align-items:center}.opt.ico>span{grid-row:1/-1;grid-column:1;width:60px;height:60px;border-radius:18px;background:var(--a3);display:grid;place-items:center;overflow:hidden}.opt.ico>span svg{width:100%;height:100%}.opt.ico{grid-template-rows:1fr auto auto 1fr;row-gap:2px}.opt.ico b{grid-row:2;grid-column:2;align-self:end}.opt.ico small{grid-row:3;grid-column:2;align-self:start}.opt.ico small.sug{grid-row:4}
 .spd{font:700 30px/1 var(--text);color:var(--a2);letter-spacing:-6px;white-space:nowrap}.spd i{display:inline-block;font-style:normal;animation:spd var(--t,2s) linear infinite}@keyframes spd{0%{transform:translateX(-26px);opacity:0}25%,70%{opacity:1}100%{transform:translateX(26px);opacity:0}}
 .gmeter{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:10px}.gmeter i{height:10px;border-radius:6px;background:var(--a3)}.gmeter i.on{background:var(--a2)}.gmeter.bad i.on{background:var(--sambal)}
 .glab{display:flex;justify-content:space-between;font-size:12px;color:var(--mute);font-weight:600;margin-top:4px}
@@ -596,7 +596,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .dq{display:grid;grid-template-columns:36px 28px;align-items:center;text-align:center;padding-right:6px}.dq button{width:36px;min-height:36px;padding:0;border-radius:50%;font-size:20px}.dq b{font-variant-numeric:tabular-nums}
 #dishSheet .panel.tall{grid-template-rows:auto auto auto auto auto minmax(0,1fr) auto}#dFoot{padding-top:8px;border-top:1.5px solid var(--line)}#dFoot button{width:100%;min-height:52px}
 .slot .empty{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.sug{color:var(--ink)!important;font-weight:700!important}.opt.ico .sug{grid-column:2;grid-row:auto}.dq{background:var(--wh);border:1.5px solid var(--line);border-radius:99px;margin:0 8px 0 4px}.drow>button .kc{padding-right:2px}
+.sug{color:var(--ink)!important;font-weight:700!important}.opt.ico .sug{grid-column:2}.dq{background:var(--wh);border:1.5px solid var(--line);border-radius:99px;margin:0 8px 0 4px}.drow>button .kc{padding-right:2px}
 .ai-bob{animation:aiBob 2.4s ease-in-out infinite}@keyframes aiBob{50%{transform:translateY(-3px)}}
 .ai-steam{opacity:0;animation:aiSteam 2.4s ease-in-out infinite}@keyframes aiSteam{0%{opacity:0;transform:translateY(4px)}40%{opacity:1}100%{opacity:0;transform:translateY(-9px)}}
 .ai-sway{transform-box:fill-box;transform-origin:50% 100%;animation:aiSway 3s ease-in-out infinite}@keyframes aiSway{0%,100%{transform:rotate(-5deg)}50%{transform:rotate(5deg)}}
@@ -2449,7 +2449,7 @@ function restoreData(){try{const o=JSON.parse($("#restoreBox").value.trim());if(
 
 /* plan wizard: the same page-by-page flow as setup */
 let wzMode="onb",P=null,pi=0,bldT=null;
-const PW=[["start","When should your week start?","",[["today","Today"],["monday","Next Monday"]]],
+const PW=[["start","When do you want to start?","",[["today","Today","Start your plan right away"],["monday","Next Monday","Start fresh with a new week"]]],
 ["style","How do you want to eat this week?","",[["Mostly eating out","Mostly eating out","Hawker, kopitiam, mamak and restaurants"],["Half eating out, half simple home cooking","Half and half","Some meals out, some quick home cooking"],["Mostly home cooking","Mostly home cooking","Simple recipes under 20 minutes"]]],
 ["budget","What's your budget for a meal out?","",[["Under RM10","Under RM10"],["RM10 to RM20","RM10 to RM20"],["RM20 to RM35","RM20 to RM35"],["Any","No limit"]]],
 ["place","Where will you exercise?","",[["At home, no equipment","At home","No equipment needed"],["Outdoors, walking or jogging","Outdoors","Walking or jogging"],["Gym","At the gym","Machines and weights"]]],
