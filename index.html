@@ -469,7 +469,7 @@ svg text{paint-order:stroke;stroke:var(--bg);stroke-width:4px;font:600 13px var(
     <span class="grab"></span>
     <header><h2 id="h-add">Add food</h2><button class="ghost" data-act="closeSheet">Close</button></header>
     <div class="addGrid">
-      <button class="hot" data-act="openDish" data-t="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span>Search food<small>200+ local dishes and drinks</small></span></button>
+      <button class="hot" data-act="openDish" data-t="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span>Search food<small>260 local dishes and drinks</small></span></button>
       <button data-act="go" data-m="photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo<small>Recognise a dish on this phone</small></span></button>
       <button data-act="go" data-m="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>Type a label<small>Numbers from a packet</small></span></button>
       <button data-act="openDish" data-t="recent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span>Favourites and recent<small>One tap to log again</small></span></button>
@@ -758,11 +758,67 @@ Tofu, braised|2 pieces|140|11|5|9|1|2|500|1.5|0|x|Economy rice stall|1|veg prote
 Har gow|3 pieces|130|8|16|4|1|1|400|1|0|s|Dim sum restaurant|1|chinese seafood|
 Siew mai|3 pieces|180|12|8|11|0.5|1|450|3.5|0|s|Dim sum restaurant|1|chinese pork|
 Dhal curry|1 small bowl|130|6|14|6|4|2|450|2|0.3|x|Mamak|1|indian veg|
+Nasi lemak ayam goreng (Village Park)|1 plate with a fried chicken leg|780|36|78|36|4|6|1300|13|0.3|bl|Village Park Restaurant, Damansara Uptown|2|malay rice mild fried a-damansara|Order: nasi lemak ayam goreng. Ask for the sambal on the side, and leave some of the rice
+Lontong (Village Park)|1 bowl|500|14|60|22|6|6|1400|15|1|b|Village Park Restaurant, Damansara Uptown|2|malay rice mild veg a-damansara|Order the lontong and leave some of the kuah
+Economy rice (Home Kitchen)|Rice, 1 meat, 2 veg|600|25|75|22|6|6|1300|6|2|ld|Restaurant Home Kitchen, Damansara Uptown|1|chinese rice a-damansara|Pick a steamed or braised meat and two vegetables. No gravy on the rice
+Chicken chop (Steven's Corner)|Deep-fried, with fries, coleslaw and egg|900|42|70|48|5|8|1500|12|0.5|ld|Steven's Corner, Damansara Uptown|2|western fried a-damansara|Share the fries, or swap them for extra coleslaw
+Banana leaf rice (Kanna Curry House)|Rice, 3 vegetables, chicken curry|700|28|95|22|10|6|1400|6|2.5|l|Kanna Curry House, Section 17 PJ|2|indian rice mild a-pj|Ask for less rice and no refill. Choose the chicken curry and say not spicy
+Roasted chicken rice (Choon Yien)|1 plate|620|27|75|22|2|3|1300|6.5|0.3|l|Choon Yien Chicken Rice, Section 17 PJ|1|chinese rice a-pj|Ask for breast meat. Lunch only, so go early
+Fried chicken with curry rice (Lim Fried Chicken)|1 plate|750|32|80|32|3|4|1300|9|0.3|ld|Lim Fried Chicken, SS2 PJ|2|malay rice fried mild a-pj|Ask for the curry on the side and less rice
+Hainan chicken rice (Hometown Hainan Coffee)|1 set|600|30|74|19|2|3|1300|5.5|0.3|ld|Hometown Hainan Coffee, Sea Park PJ|2|chinese rice protein a-pj|Order the steamed chicken rice
+Nasi lemak ayam goreng (Nasi Lemak Bumbung)|1 plate with a fried egg|800|36|80|37|4|6|1300|13|0.3|d|Nasi Lemak Bumbung, Sea Park PJ|1|malay rice mild fried a-pj|Ask for the sambal on the side. It opens at night, so plan a lighter lunch
+Wantan mee (PJ Old Town)|1 plate, dry|410|18|55|13|3|5|1600|4|0.3|bl|PJ Old Town Hawker Centre|1|chinese noodles pork a-pj|Ask for more vegetables
+Yong tau foo (PJ Old Town)|6 pieces in soup|300|20|28|12|5|5|1700|3|1|bl|PJ Old Town Hawker Centre|1|chinese soupy light seafood a-pj|Pick tofu, okra and bitter gourd. Skip the fried pieces
+Chee cheong fun (SS2 morning market)|1 plate|260|6|50|4|1|8|900|1|0|b|SS2 Morning Market, PJ|1|chinese light veg a-pj|Ask for less sauce
+Claypot chicken rice (Uncle Mani's)|1 pot, chicken satti soru|800|35|95|28|3|5|1500|9|0.3|ld|Uncle Mani's Banana Leaf, PJ|2|indian rice mild a-pj|The portion is large, so share it. Say not spicy
+Hainanese chicken chop (Yut Kee)|1 plate|800|38|60|44|4|8|1400|11|0.4|bl|Yut Kee, Jalan Kamunting KL|2|western fried a-kl|Breakfast and lunch only. Share the potatoes
+Hailam mee (Yut Kee)|1 plate|560|24|68|20|3|4|1700|5|0.5|bl|Yut Kee, Jalan Kamunting KL|2|chinese noodles pork seafood a-kl|
+Beef noodles (Soong Kee)|1 bowl, dry noodles with soup|480|26|58|15|2|3|1800|5|0.2|bl|Soong Kee Beef Noodle, Jalan Tun H S Lee KL|2|chinese noodles soupy beef pork a-kl|Leave some of the soup
+Fish porridge (Hon Kee)|1 bowl|260|18|36|4|1|1|900|1|0|bl|Hon Kee Porridge, Petaling Street KL|1|chinese soupy light seafood protein a-kl|It opens very early and closes after lunch
+Banana leaf rice (Sri Nirwana Maju)|Rice, 3 vegetables, fried fish|750|30|95|26|10|6|1400|6|2.5|l|Sri Nirwana Maju, Bangsar KL|2|indian rice mild seafood a-kl|Ask for less rice and no refill
+Nasi bojari (Madam Kwan's)|1 plate|900|40|100|36|4|8|1600|11|0.5|ld|Madam Kwan's, KL|3|malay rice mild fried a-kl|Share it, or pack half
+Poached chicken rice (Chicken Rice Hub)|1 plate|560|28|72|17|2|3|1200|5|0.3|ld|Chicken Rice Hub, SS15 Subang Jaya|2|chinese rice protein a-subang|Ask for breast meat
+Karaage don (Hungry Don)|1 bowl|700|30|85|26|2|6|1200|6|0.2|ld|Hungry Don, SS15 Subang Jaya|2|japanese rice fried a-subang|
+Food court meal (Rock Cafe)|Noodle soup, or economy rice with 2 veg|550|24|70|18|5|5|1400|5|1.5|bld|Rock Cafe, Bandar Sunway|1|chinese rice a-sunway|Go for a soup noodle, or economy rice with two vegetables
+Burger (myBurgerLab)|1 single burger, no fries|550|28|42|30|2|8|1000|12|0.3|ld|myBurgerLab, Bandar Sunway|2|western beef a-sunway|Order a single-patty burger and skip the fries and soda
+Japanese set (Hana Dining)|Sashimi or grilled fish set|550|32|65|14|3|6|1300|3|0.5|ld|Hana Dining, Sunway Pyramid|3|japanese rice seafood protein light a-sunway|Pick a sashimi or grilled fish set over a fried one
+Gyoza|5 pieces, pan-fried|220|9|24|10|2|2|500|3|0.2|s|Japanese restaurant|2|japanese pork|
+Takoyaki|6 balls|300|10|36|13|1|6|700|3|0|s|Pasar malam|1|japanese seafood|
+Pho|1 bowl of beef noodle soup|450|26|60|10|3|4|1800|3.5|0.5|ld|Vietnamese restaurant|2|noodles soupy beef light|Leave some of the soup
+Spring rolls, fried|3 pieces|250|6|28|13|2|3|500|3|0.3|s|Dim sum restaurant|1|chinese fried veg|
+Chicken curry with rice|1 plate|650|30|75|24|3|5|1300|10|0.3|ld|Mamak|1|indian rice mild|Say: kuah sikit, tak pedas
+Roast duck rice|1 plate|650|28|72|27|2|4|1300|8|0.3|ld|Chicken rice shop|2|chinese rice|Remove the skin to save about 100 kcal
+Waffle with syrup|1 waffle|350|7|50|13|2|22|450|6|0|bs|Western cafe|2|western sweet veg|
+Pancakes with syrup|3 pancakes|450|10|75|12|2|30|700|5|0|b|Western cafe|2|western sweet veg|
+French toast|2 slices|380|12|42|18|2|14|450|7|0|b|Kopitiam|1|western sweet veg|
+Club sandwich|1 sandwich|550|28|45|28|3|6|1100|8|0.5|ld|Western cafe|2|western|
+Steak with vegetables|200 g sirloin, no fries|520|46|10|32|3|4|600|13|1.5|d|Western food stall|3|western beef protein|Swap the fries for vegetables. Sauce on the side
+Hot dog|1 bun|300|11|26|17|1|5|800|6|0|s|7-Eleven|1|western|
+Tiramisu|1 slice|400|6|40|24|1|28|100|14|0|s|Western cafe|2|western sweet veg|
+Lasagna|1 portion|600|30|45|32|4|10|1100|15|0.5|ld|Western cafe|2|western beef|
+Macaroni and cheese|1 bowl|550|20|55|27|2|8|1000|15|0|ld|Western cafe|2|western veg|
+Garlic bread|2 slices|200|4|24|10|1|2|350|5|0|s|Pizza restaurant|1|western veg|
+Samosa|1 piece|150|3|18|8|2|1|250|2|0.2|s|Mamak|1|indian fried veg|
+Cupcake|1 cupcake|300|3|40|15|1|28|200|8|0|s|Bakery|1|western sweet veg|
+Frozen yogurt|1 small cup|150|4|30|2|0|24|80|1|0|s|Ice cream shop|2|western sweet veg|
+Tacos|2 tacos|400|20|36|19|4|4|800|7|0.5|ld|Western cafe|2|western beef|
+Macarons|3 pieces|210|3|30|9|1|27|30|3|0|s|Bakery|2|western sweet veg|
+Fried calamari|1 plate|400|18|30|22|1|2|900|4|0|s|Western cafe|2|western seafood fried|
+Eggs Benedict|2 eggs on a muffin|600|26|32|40|2|4|1200|18|0|b|Western cafe|3|western|
+Apple pie|1 slice|300|3|43|14|2|20|250|6|0.3|s|Bakery|1|western sweet veg|
+Masala thosai|1 piece with chutney|380|9|58|12|5|4|800|3|0.5|bld|Mamak|1|indian veg mild|Say: tak pedas
 `;
 const FOODS=DB.trim().split("\n").map(r=>{const a=r.split("|");return{name:a[0],detail:a[1],kcal:+a[2],p:+a[3],c:+a[4],f:+a[5],fib:+a[6],sug:+a[7],sod:+a[8],sat:+a[9],fv:+a[10],slots:a[11],place:a[12],tier:+a[13],tags:a[14],order:a[15]||"",low:a[2]*.85,high:a[2]*1.2,thumb:""}});
 const has=(f,t)=>(" "+f.tags+" ").includes(" "+t+" ");
 const CUISINES=["malay","chinese","indian","japanese","korean","thai","western","mideast"];
 const cuisineOf=f=>{const c=CUISINES.find(x=>has(f,x));return c?c==="mideast"?"Middle Eastern":c[0].toUpperCase()+c.slice(1):""};
+const AREAS=[["a-sunway","Bandar Sunway",3.068,101.604],["a-subang","Subang Jaya",3.076,101.587],["a-pj","Petaling Jaya",3.113,101.632],["a-damansara","Damansara",3.136,101.623],["a-kl","Kuala Lumpur",3.147,101.699]];
+const areaOf=f=>AREAS.find(a=>has(f,a[0]))?.[0]||"",areaOk=f=>{const a=areaOf(f);return !a||(S.prefs.areas||AREAS.map(x=>x[0])).includes(a)};
+/* learning: every pick, log, pass and swap nudges a score per kind of food */
+const LEARN=new Set([...CUISINES,"rice","noodles","soupy","light","protein","sweet","fried"]),TAGNAME={malay:"Malay",chinese:"Chinese",indian:"Indian and mamak",japanese:"Japanese",korean:"Korean",thai:"Thai",western:"Western",mideast:"Middle Eastern",rice:"rice dishes",noodles:"noodles",soupy:"soupy dishes",light:"lighter dishes",protein:"high-protein dishes",sweet:"sweet things",fried:"fried food",home:"home cooking",out:"eating out"};
+const learnTags=f=>[...f.tags.split(" ").filter(t=>LEARN.has(t)),f.place==="Home"?"home":"out"];
+function learn(name,w){const f=FOODS.find(x=>x.name===name);if(!f)return;const T=S.prefs.tag=S.prefs.tag||{};for(const t of learnTags(f))T[t]=Math.max(-12,Math.min(12,(T[t]||0)+w));if(w>0){const P=S.prefs.pick=S.prefs.pick||{};P[f.name]=(P[f.name]||0)+1}}
+const affinity=f=>{const T=S.prefs.tag||{};return learnTags(f).reduce((a,t)=>a+Math.tanh((T[t]||0)/4)*.35,0)+Math.min((S.prefs.pick||{})[f.name]||0,4)*.2};
 const SLETTER={breakfast:"b",lunch:"l",dinner:"d",snack:"s"},HOMEY=new Set(["Home","Supermarket","Fruit stall"]);
 function dislikes(){const out=[],re=/(?:hate|no|dislike|don't eat|dont eat|allergic to|avoid)\s+([a-z ]{3,24}?)(?=,|\.|;|$|\n| and | or )/g,t=(S.prefs.note||"").toLowerCase();let m;while((m=re.exec(t)))out.push(m[1].trim());return out}
 function okDiet(f){const d=(S.profile?.diet||"").toLowerCase(),l=(S.profile?.likes||"").toLowerCase();
@@ -787,7 +843,8 @@ const cleanDay=v=>({entries:Array.isArray(v?.entries)?v.entries.filter(e=>e&&typ
 const day=k=>S.days[k]||(S.days[k]=cleanDay(LS.get("d"+k)));
 const saveDay=k=>store.set("d"+k,S.days[k]);
 const safeThumb=t=>typeof t==="string"&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(t)?t:"";
-const cleanPrefs=v=>({craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
+const numMap=(o,n)=>o&&typeof o==="object"?Object.fromEntries(Object.entries(o).slice(0,n).map(([k,x])=>[String(k),num(x)])):{};
+const cleanPrefs=v=>({tag:numMap(v?.tag,60),pick:numMap(v?.pick,400),areas:Array.isArray(v?.areas)?v.areas.map(String).slice(0,5):null,near:String(v?.near||""),craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
 function loadLocal(){S.profile=LS.get("profile");S.plan=LS.get("plan");S.weights=LS.get("weights")||{list:[]};S.favs=LS.get("favs")||{list:[]};S.prefs=cleanPrefs(LS.get("prefs"));for(const k of LS.keys())if(k[0]==="d"&&isKey(k.slice(1)))S.days[k.slice(1)]=cleanDay(LS.get(k))}
 
 function targets(p){
@@ -859,7 +916,7 @@ function renderToday(){
   $("#mealsH").textContent=isT?"Meals today":"Meals on "+dm(k);
   $("#meals").innerHTML=SLOTS.map(([key,name])=>{const es=d.entries.filter(e=>e.slot===key);return `<div class="slot"><h3>${name}<span>${fmt(es.reduce((a,e)=>a+val(e,"kcal"),0))} kcal</span></h3>${es.length?`<ul class="entries">${es.map(entryHtml).join("")}</ul>`:isT&&T?`<p class="empty">Nothing logged yet.<button data-act="suggest" data-s="${key}">Suggest ideas</button></p>`:'<p class="empty">Nothing logged yet.</p>'}</div>`}).join("")}
 function bumpTier(slot){const i=SLOTS.findIndex(s=>s[0]===slot),g=$("#tg"+i);if(g&&!calm&&g.animate)g.animate([{transform:"scale(1)"},{transform:"scale(1.07)"},{transform:"scale(1)"}],{duration:420,easing:"cubic-bezier(.215,.61,.355,1)"})}
-function addEntry(k,e,quiet){day(k).entries.push(e);saveDay(k);if(curView==="today")renderToday();setTimeout(()=>bumpTier(e.slot),350);if(!quiet)toast(`Added to ${SLOTNAME[e.slot]}${k===today()?"":", "+short(k)}`,()=>removeEntry(k,e.id))}
+function addEntry(k,e,quiet){learn(String(e.name||"").split(", with ")[0],1);store.set("prefs",S.prefs);day(k).entries.push(e);saveDay(k);if(curView==="today")renderToday();setTimeout(()=>bumpTier(e.slot),350);if(!quiet)toast(`Added to ${SLOTNAME[e.slot]}${k===today()?"":", "+short(k)}`,()=>removeEntry(k,e.id))}
 function removeEntry(k,id){const d=day(k),i=d.entries.findIndex(e=>e.id===id);if(i<0)return null;const [e]=d.entries.splice(i,1);saveDay(k);renderToday();return[e,i]}
 const tpl=e=>({name:e.name,detail:e.detail||"",place:e.place||"",cuisine:e.cuisine||"",kcal:num(e.kcal),p:num(e.p),c:num(e.c),f:num(e.f),fib:num(e.fib),sug:num(e.sug),sod:num(e.sod),sat:num(e.sat),fv:num(e.fv),low:num(e.low),high:num(e.high),thumb:safeThumb(e.thumb)});
 
@@ -873,7 +930,8 @@ function habits(){const ks=Object.keys(S.days).sort().slice(-60),food={},place={
   const low=[];if(days>=3){if(avg("fib")<18)low.push("fibre");if(avg("fv")<3)low.push("fruit and vegetables");if(T&&avg("p")<T.protein*.8)low.push("protein")}
   const pd=S.plan?.days||[],exAll=pd.filter(d=>d.exercise&&d.exercise.intensity!=="rest"&&d.date<=today()).length,exDone=pd.filter(d=>S.plan.done?.[d.date]).length;
   return{days,foods:top(food,6),places:top(place,5),cuisines:top(cui,4),times:Object.fromEntries(Object.entries(times).filter(([,a])=>a.length>=3).map(([s,a])=>[s,med(a)])),over,low,weekend:wkn>=3&&wen>=2?Math.round(we/wen-wk/wkn):0,exAll,exDone,favs:S.favs.list.slice(0,8).map(f=>f.name),swapped:S.prefs.swapped.slice(0,10)}}
-function habitLines(){const h=habits(),L=[];if(h.days<3)return L;
+function habitLines(){const h=habits(),L=[],tg=Object.entries(S.prefs.tag||{}).sort((a,b)=>b[1]-a[1]),up=tg.filter(x=>x[1]>=2).slice(0,4).map(x=>TAGNAME[x[0]]||x[0]),dn=tg.filter(x=>x[1]<=-2.5).slice(-3).map(x=>TAGNAME[x[0]]||x[0]);
+  if(up.length)L.push("From what you pick, you usually go for: "+up.join(", "));if(dn.length)L.push("You tend to pass on: "+dn.join(", "));if(h.days<3)return L;
   if(h.foods.length)L.push("Eats most often: "+h.foods.join(", "));if(h.favs.length)L.push("Saved favourites: "+h.favs.join(", "));if(h.places.length)L.push("Places you go: "+h.places.join(", "));if(h.cuisines.length)L.push("Cuisines you pick: "+h.cuisines.join(", "));
   const tm=Object.entries(h.times).map(([s,t])=>SLOTNAME[s].toLowerCase()+" around "+t);if(tm.length)L.push("Usual times: "+tm.join(", "));
   if(h.over.length)L.push("Often over the limit on "+h.over.join(" and "));if(h.low.length)L.push("Often short on "+h.low.join(" and "));
@@ -942,7 +1000,7 @@ function slotBudget(slot){const T=targets(S.profile),d=day(S.view),t=totals(d);i
 function renderOrder(){const pl=$("#place").value,slot=$("#scanSlot").value,b=slotBudget(slot),o=$("#scanOut"),all=FOODS.map((f,i)=>({f,i})).filter(x=>x.f.place===pl),ok=all.filter(x=>okDiet(x.f)&&(slot==="snack"||!has(x.f,"drink")));
   const picks=ok.map(x=>({...x,sc:-Math.abs(x.f.kcal-b.kcal)/b.kcal*2-(x.f.kcal>b.kcal*1.15?1.5:0)+healthOf(x.f)})).sort((a,c)=>c.sc-a.sc).slice(0,3),skip=all.filter(x=>!picks.some(q=>q.i===x.i)).sort((a,c)=>c.f.kcal-a.f.kcal)[0];
   o.innerHTML=`<p class="ptot" style="margin-top:14px">For ${SLOTNAME[slot].toLowerCase()}, aim for about <b>${fmt(b.kcal)} kcal</b>.</p>`+(picks.length?picks.map(({f,i})=>`<div class="card pick"><header><div><h3>${esc(f.name)}</h3><p class="sub">${esc(whyText(f))}. ${esc(f.detail)}</p></div><span class="kc">${fmt(f.kcal)}<small>kcal</small></span></header>${f.order?`<p class="order">${esc(f.order)}</p>`:""}<div class="chips"><span class="chip">Protein ${fmt(f.p)} g</span><span class="chip">Carbs ${fmt(f.c)} g</span><span class="chip">Fat ${fmt(f.f)} g</span><span class="chip">Sodium ${fmt(f.sod)} mg</span></div><div class="rowb"><button class="primary" data-act="logFood" data-i="${i}">I ordered this</button></div></div>`).join(""):'<p class="empty">Nothing here fits your food rules.</p>')+(skip&&skip.f.kcal>b.kcal*1.2?`<p class="ask"><b>Go easy on:</b> ${esc(skip.f.name)}, about ${fmt(skip.f.kcal)} kcal.</p>`:"")}
-function logFood(i){const f=FOODS[i];if(!f)return;const e=entryOf(f,$("#scanSlot").value,"order");location.hash="today";addEntry(S.view,e)}
+function logFood(i,slot){const f=FOODS[i];if(!f)return;const e=entryOf(f,SLOTNAME[slot]?slot:$("#scanSlot").value,"order");closeSheets();if(curView!=="today")location.hash="today";addEntry(S.view,e)}
 
 /* plan: built from the food list by rules, on the phone */
 function rngOf(str){let h=1779033703;for(let i=0;i<str.length;i++){h=Math.imul(h^str.charCodeAt(i),3432918353);h=h<<13|h>>>19}let a=h>>>0;return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
@@ -952,9 +1010,9 @@ function mkCx(seed,o){const eat={};for(const k of Object.keys(S.days))for(const 
   return{rng:rngOf(seed),tier:o.tier||3,ex:new Set([...S.prefs.swapped,...(o.ex||[])]),moods:o.moods||[],mw:o.mw??1,hw:o.hw??1,novel:!!o.novel,likes:String(S.profile?.likes||"").split(",").map(x=>MOODTAG[x.trim()]).filter(Boolean),fav:new Set(S.favs.list.map(f=>f.name)),eaten:eat,used:{},pl:{},times:habits().times,where:"any",needP:false}}
 function mk(f,slot,cx,side){const m={slot,time:cx.times[slot]||DEFTIME[slot],base:f.name,name:side?f.name+", with "+side.name.toLowerCase():f.name,portion:f.detail,place:f.place,order:[f.order,side?"Add "+side.name.toLowerCase()+(side.order?" ("+side.order+")":""):""].filter(Boolean).join(". "),tip:whyText(f)};for(const k of NF)m[k]=f[k]+(side?side[k]:0);m.low=m.kcal*.85;m.high=m.kcal*1.15;return m}
 function pickMeal(slot,budget,cx){const L=SLETTER[slot],main=slot!=="snack",fits=f=>cx.where==="any"||(cx.where==="home"?HOMEY.has(f.place):f.place!=="Home");
-  let c=FOODS.filter(f=>f.slots.includes(L)&&okDiet(f)&&f.tier<=cx.tier&&!cx.ex.has(f.name)&&fits(f)&&(!main||(!has(f,"side")&&!has(f,"drink")&&f.kcal>=200)));
+  let c=FOODS.filter(f=>f.slots.includes(L)&&okDiet(f)&&f.tier<=cx.tier&&!cx.ex.has(f.name)&&fits(f)&&areaOk(f)&&(!main||(!has(f,"side")&&!has(f,"drink")&&f.kcal>=200)));
   if(!c.length)c=FOODS.filter(f=>f.slots.includes(L)&&okDiet(f)&&(!main||(f.kcal>=200&&!has(f,"drink"))));if(!c.length)return null;
-  const sc=f=>{let v=-Math.abs(f.kcal-budget)/budget*3-(f.kcal>budget*1.12?1.5:0)+healthOf(f)*cx.hw+cx.rng()*.9+cx.moods.filter(t=>has(f,t)).length*cx.mw+(cx.likes.some(t=>has(f,t))?.6:0)+(cx.fav.has(f.name)?.5:0)-(cx.used[f.name]||0)*3-((cx.pl[f.place]||0)>=2&&f.place!=="Home"?1:0)+(main?Math.min(f.p,40)/22:0);
+  const sc=f=>{let v=-Math.abs(f.kcal-budget)/budget*3-(f.kcal>budget*1.12?1.5:0)+healthOf(f)*cx.hw+cx.rng()*.9+cx.moods.filter(t=>has(f,t)).length*cx.mw+(cx.likes.some(t=>has(f,t))?.6:0)+(cx.fav.has(f.name)?.5:0)-(cx.used[f.name]||0)*3-((cx.pl[f.place]||0)>=2&&f.place!=="Home"?1:0)+(main?Math.min(f.p,40)/22:0)+affinity(f);const ar=areaOf(f);if(ar)v+=!S.prefs.near?.3:ar===S.prefs.near?1.4:-.8;
     if(cx.novel)v+=cx.eaten[f.name]?-1.5:.8;if(cx.needP)v+=f.p/Math.max(f.kcal,1)*25;if(!main&&has(f,"sweet")&&!cx.moods.includes("sweet"))v-=.8;if(!main&&has(f,"drink")&&f.kcal<30)v-=2;return v};
   const best=c.map(f=>[sc(f),f]).sort((a,b)=>b[0]-a[0])[0][1],rem=budget-best.kcal;cx.used[best.name]=(cx.used[best.name]||0)+1;cx.pl[best.place]=(cx.pl[best.place]||0)+1;let side=null;
   if(main&&rem>=70){const ss=FOODS.filter(f=>has(f,"side")&&okDiet(f)&&f.kcal<=rem+25&&(f.slots.includes(L)||f.slots.includes("s"))&&(f.place===best.place||f.place==="Fruit stall"||f.place==="Supermarket"||(best.place==="Home"&&f.place==="Home"))).map(f=>[(best.fv<1?f.fv*1.2:0)+(best.p<22?f.p/8:0)-Math.abs(rem-f.kcal)/rem+cx.rng()*.4-(cx.used[f.name]||0)*.5,f]).sort((a,b)=>b[0]-a[0]);if(ss.length){side=ss[0][1];cx.used[side.name]=(cx.used[side.name]||0)+1}}
@@ -998,7 +1056,7 @@ function renderPlan(){const p=S.plan,edit=!p||S.planEdit;$("#planForm").hidden=!
   <p class="note">Calories are estimates for typical servings. Check a place is open and still sells the dish.</p>
   <div class="rowb"><button class="primary" data-act="nextWeek">Plan the next 7 days</button><button class="ghost" data-act="editPlan">Change plan settings</button></div>`}
 function logPlan(k,i){const m=S.plan?.days.find(d=>d.date===k)?.meals[i];if(!m)return;const e={id:uid(),slot:m.slot,name:m.name,detail:m.place?(/^home$/i.test(m.place)?"Home cooked":"At "+m.place):"From your plan",mult:1,thumb:"",src:"plan",place:m.place,at:Date.now(),low:m.kcal*.85,high:m.kcal*1.15};for(const f of NF)e[f]=num(m[f]);addEntry(k,e)}
-function swap(k,i){const d=S.plan?.days.find(x=>x.date===k),m=d?.meals[i];if(!m)return;const base=m.base||m.name;S.prefs.swapped=[base,...S.prefs.swapped.filter(x=>x!==base)].slice(0,30);store.set("prefs",S.prefs);
+function swap(k,i){const d=S.plan?.days.find(x=>x.date===k),m=d?.meals[i];if(!m)return;const base=m.base||m.name;learn(base,-1.5);S.prefs.swapped=[base,...S.prefs.swapped.filter(x=>x!==base)].slice(0,30);store.set("prefs",S.prefs);
   const cx=mkCx("swap"+k+base+Date.now(),{tier:tierOf(S.plan.settings?.budget),ex:d.meals.map(x=>x.base||x.name)}),nm=pickMeal(m.slot,Math.max(100,m.kcal),cx);if(!nm){toast("Nothing else fits right now.");return}nm.time=m.time;d.meals[i]=nm;store.set("plan",S.plan);renderPlan()}
 
 /* progress */
@@ -1107,7 +1165,7 @@ function addSweet(i){const x=SWF[i];if(!x)return;const e={id:uid(),slot:"snack",
 /* daily picker and suggestions: choose a mood, get 3 options built on the phone, pick one */
 const CRAVE=["Rice","Noodles","Soupy","Light and fresh","High protein","Malay","Chinese","Indian or mamak","Japanese","Korean","Western","Middle Eastern","Something sweet"],WHERE=["Eating out","Home","Either"];
 const crave=new Set();let where="Either",sugCtl=null,sugRes=null,sugSlots=[],sugSeed=0;
-function renderFeel(T,isT){$("#feel").innerHTML=!T||!isT?"":`<div class="card" style="margin-top:16px"><h3>What do you feel like eating today?</h3><p class="sub">Tap as many as you like. You get 3 plans to choose from, each fitted to what you have left today.</p><div class="pills" style="margin-top:12px">${CRAVE.map(v=>`<button data-act="crave" data-v="${v}" aria-pressed="${crave.has(v)}">${v}</button>`).join("")}</div><div class="seg" id="whereSeg" role="group" aria-label="Where you'll eat"><i></i>${WHERE.map(v=>`<button data-act="where" data-v="${v}" aria-pressed="${where===v}">${v}</button>`).join("")}</div><button class="primary" data-act="suggestDay">Show me 3 plans for today</button></div>`;
+function renderFeel(T,isT){$("#feel").innerHTML=!T||!isT?"":`<div class="card" style="margin-top:16px"><h3>What do you feel like eating today?</h3><p class="sub">Tap as many as you like. You get 3 plans to choose from, each fitted to what you have left today.</p><div class="pills" style="margin-top:12px">${CRAVE.map(v=>`<button data-act="crave" data-v="${v}" aria-pressed="${crave.has(v)}">${v}</button>`).join("")}</div><div class="seg" id="whereSeg" role="group" aria-label="Where you'll eat"><i></i>${WHERE.map(v=>`<button data-act="where" data-v="${v}" aria-pressed="${where===v}">${v}</button>`).join("")}</div><div class="inl" style="margin-bottom:14px"><div><label for="areaSel">Where are you today?</label><select id="areaSel"><option value="">Anywhere</option>${AREAS.map(a=>`<option value="${a[0]}"${S.prefs.near===a[0]?" selected":""}>${a[1]}</option>`).join("")}</select></div><button data-act="locate">Find me</button></div><button class="primary" data-act="suggestDay">Show me 3 plans for today</button></div>`;
   const sg=$("#whereSeg");if(sg)setSeg(sg,WHERE.indexOf(where),3)}
 function tipHtml(T,t,d,isT){if(!T||!isT)return"";const h=new Date().getHours(),pl=T.protein-t.p,left=T.kcal-t.kcal,empty=SLOTS.map(x=>x[0]).filter(sl=>!d.entries.some(e=>e.slot===sl)),now=slotNow(),next=empty.includes(now)?now:["breakfast","lunch","snack","dinner"].find(x=>empty.includes(x));let x;
   if(!t.n)x=h<11?"Start the day with protein so you stay full for longer: 2 half-boiled eggs with wholemeal toast, or thosai with dhal.":"Nothing logged yet today. Log your first meal with the + button, or let me suggest one.";
@@ -1123,19 +1181,26 @@ function suggest(slots,more){const T=targets(S.profile);if(!T){openOnb();return}
   const k=today(),d=day(k),t=totals(d),empty=SLOTS.map(x=>x[0]).filter(sl=>!d.entries.some(e=>e.slot===sl));if(!slots)slots=empty.length?empty:["snack"];sugSlots=slots;
   if(more)sugSeed++;else{sugSeed=0;if(crave.size){S.prefs.craves=S.prefs.craves||{};for(const v of crave)S.prefs.craves[v]=(S.prefs.craves[v]||0)+1;store.set("prefs",S.prefs)}}
   const sh=x=>SLOTS.find(y=>y[0]===x)[2],all=[...new Set([...empty,...slots])],tot=all.reduce((a,x)=>a+sh(x),0),left=T.kcal-t.kcal,moods=[...crave].map(x=>MOODTAG[x]).filter(Boolean),prev=more&&sugRes?sugRes.flatMap(o=>o.meals.map(m=>m.base)):[],tier=tierOf(S.plan?.settings?.budget);
-  const build=(tag,o)=>{const cx=mkCx(k+tag+sugSeed+[...crave].join()+slots.join(),{...o,ex:[...(o.ex||[]),...prev],tier});let pr=t.p;
+  const build=(tag,o)=>{const cx=mkCx(k+tag+sugSeed+Date.now()+slots.join(),{...o,ex:[...(o.ex||[]),...prev],tier});let pr=t.p;
     return slots.map(x=>{cx.where=where==="Eating out"?"out":where==="Home"?"home":"any";cx.needP=x==="snack"&&pr<T.protein*.6;const m=pickMeal(x,Math.max(x==="snack"?100:250,Math.round(left*sh(x)/tot)),cx);if(m)pr+=m.p;return m}).filter(Boolean).sort(byTime)};
   const m1=build("a",{moods,mw:2.5,hw:.4}),m2=build("b",{moods,mw:2,hw:2.2,ex:m1.map(m=>m.base)}),m3=build("c",{moods:[],mw:0,hw:1.2,novel:true,ex:[...m1,...m2].map(m=>m.base)}),sum=(ms,f)=>ms.reduce((a,m)=>a+m[f],0),diff=sum(m1,"sat")-sum(m2,"sat"),gap=t.fv<2?"vegetables":t.fib<12?"fibre":"protein";
   sugRes=[{title:crave.size?"Just what you fancy":"Your kind of food",why:crave.size?`Closest to your mood: ${[...crave].join(", ").toLowerCase()}.`:"Built from the kinds of food you choose most.",meals:m1},{title:"A lighter take",why:diff>=1?`The same idea with less oil: about ${fmt(diff)} g less saturated fat than the first option.`:"The same idea, chosen for less oil, sugar and salt.",meals:m2},{title:"Something new",why:`Dishes you haven't logged yet, picked to add more ${gap}.`,meals:m3}].filter(o=>o.meals.length);
   openSheet("#sugSheet");renderSug()}
 function renderSug(){const one=sugSlots.length===1,body=$("#sugBody");$("#h-sug").textContent=one?"Ideas for "+SLOTNAME[sugSlots[0]].toLowerCase():"3 plans for today";
-  body.innerHTML=(sugRes.length?sugRes.map((o,i)=>`<div class="card pick"><h3>${esc(o.title)}</h3><p class="sub">${esc(o.why)}</p><ul class="entries" style="gap:0;margin-top:10px">${o.meals.map(m=>`<li class="prow"><time>${esc(m.time)}</time><span class="en"><b>${esc(m.name)}</b><small>${esc(m.place||SLOTNAME[m.slot])}, protein ${fmt(m.p)} g</small>${m.order?`<small>${esc(m.order)}</small>`:""}</span><span class="kc">${fmt(m.kcal)}<small>kcal</small></span></li>`).join("")}</ul>${one?"":`<p class="ptot" style="margin-top:8px"><b>${fmt(o.meals.reduce((a,m)=>a+m.kcal,0))} kcal</b>, ${fmt(o.meals.reduce((a,m)=>a+m.p,0))} g protein</p>`}<div class="rowb"><button class="primary" data-act="pickOpt" data-i="${i}">${one?"I'll have this":"Choose this plan"}</button></div></div>`).join(""):'<p class="empty">Nothing fits your food rules for this. Try another mood.</p>')+'<div class="rowb"><button data-act="sugMore">Show me 3 different ones</button></div><p class="note">Calories are estimates for typical servings. Check the dish is still sold.</p>';body.scrollTop=0}
-function pickOpt(i){const o=sugRes?.[i];if(!o)return;const k=today();
+  body.innerHTML=(sugRes.length?sugRes.map((o,i)=>`<div class="card pick"><h3>${esc(o.title)}</h3><p class="sub">${esc(o.why)}</p><ul class="entries" style="gap:0;margin-top:10px">${o.meals.map(m=>`<li class="prow"><time>${esc(m.time)}</time><span class="en"><b>${esc(m.name)}</b><small>${esc(m.place||SLOTNAME[m.slot])}, protein ${fmt(m.p)} g</small>${m.order?`<small>${esc(m.order)}</small>`:""}</span><span class="kc">${fmt(m.kcal)}<small>kcal</small></span></li>`).join("")}</ul>${one?"":`<p class="ptot" style="margin-top:8px"><b>${fmt(o.meals.reduce((a,m)=>a+m.kcal,0))} kcal</b>, ${fmt(o.meals.reduce((a,m)=>a+m.p,0))} g protein</p>`}<div class="rowb"><button class="primary" data-act="pickOpt" data-i="${i}">${one?"I'll have this":"Choose this plan"}</button></div></div>`).join(""):'<p class="empty">Nothing fits your food rules for this. Try another mood.</p>')+'<div class="rowb"><button data-act="sugMore">Show me 3 different ones</button></div>'+nearHtml()+'<p class="note">Calories are estimates for typical servings. Check the dish is still sold and the place is open.</p>';body.scrollTop=0}
+function nearHtml(){const a=AREAS.find(x=>x[0]===S.prefs.near);if(!a)return"";const L=sugSlots.map(x=>SLETTER[x]),slot=sugSlots.length===1?sugSlots[0]:slotNow(),b=slotBudget(slot),list=FOODS.map((f,i)=>({f,i})).filter(x=>areaOf(x.f)===a[0]&&okDiet(x.f)&&L.some(c=>x.f.slots.includes(c))).sort((x,y)=>Math.abs(x.f.kcal-b.kcal)-Math.abs(y.f.kcal-b.kcal)).slice(0,5);if(!list.length)return"";
+  return `<h3 style="margin:20px 0 4px">Well-known places near you in ${a[1]}</h3><p class="sub">These are local favourites, so some run over your budget. The tip under each shows how to make it fit.</p>`+list.map(({f,i})=>`<div class="swrow"><span class="en"><b>${esc(f.name)}</b><small>${esc(f.place)}. ${fmt(f.kcal)} kcal, protein ${fmt(f.p)} g</small>${f.order?`<small>${esc(f.order)}</small>`:""}</span><button data-act="logFood" data-i="${i}" data-s="${f.slots.includes(SLETTER[slot])?slot:sugSlots.find(x=>f.slots.includes(SLETTER[x]))}">Log</button></div>`).join("")}
+function pickOpt(i){const o=sugRes?.[i];if(!o)return;const k=today();sugRes.forEach((x,j)=>x.meals.forEach(m=>learn(m.base,j===i?1.5:-.15)));store.set("prefs",S.prefs);
   if(sugSlots.length===1){const m=o.meals[0],e={id:uid(),slot:m.slot,name:m.name,detail:m.place?(/^home$/i.test(m.place)?"Home cooked":"At "+m.place):"Suggested",mult:1,thumb:"",src:"suggest",place:m.place,at:Date.now(),low:m.kcal*.85,high:m.kcal*1.15};for(const f of NF)e[f]=num(m[f]);closeSheets();addEntry(k,e);return}
   const pl=S.plan;if(pl&&pl.dates.includes(k)){const dd=pl.days.find(x=>x.date===k);dd.meals=[...dd.meals.filter(m=>!sugSlots.includes(m.slot)),...o.meals].sort(byTime)}
   else if(pl&&k<pl.dates[0]){pl.dates.unshift(k);pl.days.unshift({date:k,meals:o.meals,exercise:null});pl.start=k}
   else S.plan={start:k,dates:[k],settings:pl?.settings||readSettings(),summary:"",days:[{date:k,meals:o.meals,exercise:null}],done:pl?.done||{},week:num(pl?.week),created:Date.now()};
   store.set("plan",S.plan);closeSheets();renderToday();toast("Today's plan is set. Tap Log as you eat.")}
+function fillPlaces(){const nearName=AREAS.find(a=>a[0]===S.prefs.near),isNear=pl=>!!S.prefs.near&&FOODS.some(f=>f.place===pl&&areaOf(f)===S.prefs.near),cur=$("#place").value;
+  $("#place").innerHTML=[...new Set(FOODS.map(f=>f.place))].filter(x=>x!=="Home"&&x!=="Supermarket").sort((a,b)=>(isNear(b)-isNear(a))||a.localeCompare(b)).map(x=>`<option${x===cur?" selected":""}>${esc(x)}</option>`).join("")}
+function setNear(a,say){S.prefs.near=a;store.set("prefs",S.prefs);fillPlaces();const sel=$("#areaSel");if(sel)sel.value=a;if(say)toast(a?"You're near "+AREAS.find(x=>x[0]===a)[1]+". Suggestions will favour places there.":"You're outside the areas I know, so suggestions stay general.")}
+function locate(){const fail=()=>toast("Location isn't available here. Pick your area from the list.");try{if(!navigator.geolocation){fail();return}
+    navigator.geolocation.getCurrentPosition(pos=>{const{latitude:la,longitude:lo}=pos.coords,d=AREAS.map(a=>[Math.hypot((a[2]-la)*111,(a[3]-lo)*111*Math.cos(la*Math.PI/180)),a[0]]).sort((x,y)=>x[0]-y[0])[0];setNear(d[0]<=9?d[1]:"",true)},fail,{timeout:10000,maximumAge:600000})}catch(e){fail()}}
 function restoreData(){try{const o=JSON.parse($("#restoreBox").value.trim());if(!o||typeof o!=="object"||!o.days||typeof o.days!=="object")throw 0;
     for(const k of["profile","plan","weights","favs"])if(o[k]&&typeof o[k]==="object"){S[k]=o[k];store.set(k,o[k])}if(o.prefs){S.prefs=cleanPrefs(o.prefs);store.set("prefs",S.prefs)}
     for(const k of Object.keys(o.days))if(isKey(k)){S.days[k]=cleanDay(o.days[k]);saveDay(k)}$("#restoreBox").value="";show(curView);toast("Your data is restored")}
@@ -1222,7 +1287,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="stop")scanCtl?.abort();
   else if(a==="oil"&&scanRes){scanRes.oil=num(b.dataset.v,1);updateScanTotal()}
   else if(a==="addScan")addScan();
-  else if(a==="logFood")logFood(i);
+  else if(a==="logFood")logFood(i,b.dataset.s);
   else if(a==="pickCand")pickCand(i);
   else if(a==="clearScan"){scanRes=null;renderScan()}
     else if(a==="planStop")planCtl?.abort();
@@ -1241,6 +1306,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="where"){where=b.dataset.v;setSeg($("#whereSeg"),WHERE.indexOf(where),3);$$("#whereSeg button").forEach(x=>x.setAttribute("aria-pressed",x===b))}
   else if(a==="openSweet"){closeSheets(true);renderSweet();openSheet("#sweetSheet");$("#sweetBody").scrollTop=0}
   else if(a==="addSweet")addSweet(i);
+  else if(a==="locate")locate();
   else if(a==="suggestDay")suggest(null);
   else if(a==="suggest")suggest([b.dataset.s]);
   else if(a==="sugMore")suggest(sugSlots,true);
@@ -1254,11 +1320,11 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="rStep"){if(rul)rul(num(b.dataset.d))}
   else if(a==="copyData")copyData();
   else if(a==="erase"){if(!b.dataset.armed){b.dataset.armed="1";b.textContent="Tap again to erase everything";clearTimeout(armTimer);armTimer=setTimeout(()=>{delete b.dataset.armed;b.textContent="Erase everything"},4000)}
-    else{delete b.dataset.armed;b.textContent="Erase everything";store.wipe();S.profile=null;S.plan=null;S.weights={list:[]};S.favs={list:[]};S.prefs={note:"",swapped:[]};S.days={};fillMe();renderCalc();renderLearn();toast("Everything erased")}}});
+    else{delete b.dataset.armed;b.textContent="Erase everything";store.wipe();S.profile=null;S.plan=null;S.weights={list:[]};S.favs={list:[]};S.prefs=cleanPrefs({});S.days={};fillMe();renderCalc();renderLearn();toast("Everything erased")}}});
 document.addEventListener("input",ev=>{const el=ev.target;if(el.id==="q"){renderDish();return}if(!scanRes)return;
   if(el.id==="mult"){scanRes.mult=num(el.value,1);updateScanTotal()}
   else if(el.classList.contains("ik")){const x=scanRes.items[+el.dataset.i];if(!x)return;const nv=pos(el.value);if(x.kcal){const r=nv/x.kcal;for(const f of["low","high","p","c","f","fib","sug","sod","sat"])x[f]*=r}else{x.low=nv*.85;x.high=nv*1.15}x.kcal=nv;updateScanTotal()}});
-document.addEventListener("change",ev=>{const el=ev.target;if(el.classList.contains("iton")&&scanRes){scanRes.items[+el.dataset.i].on=el.checked;updateScanTotal()}else if(el.id==="scanSlot"||el.id==="place"){updateScanTotal();if(scanMode==="order")renderOrder()}else if(el.id==="cam"||el.id==="gal"){setPhoto(el.files?.[0]);el.value=""}});
+document.addEventListener("change",ev=>{const el=ev.target;if(el.classList.contains("iton")&&scanRes){scanRes.items[+el.dataset.i].on=el.checked;updateScanTotal()}else if(el.id==="areaSel")setNear(el.value);else if(el.id==="scanSlot"||el.id==="place"){updateScanTotal();if(scanMode==="order")renderOrder()}else if(el.id==="cam"||el.id==="gal"){setPhoto(el.files?.[0]);el.value=""}});
 document.addEventListener("keydown",ev=>{if(ev.key==="Escape")closeSheets();else if(ev.key==="Enter"&&ev.target.id==="onbName")onbNext()});
 $("#planForm").addEventListener("submit",ev=>{ev.preventDefault();const st=readSettings();genPlan(st.start==="monday"?nextMonday():today(),st)});
 $("#meForm").addEventListener("submit",ev=>{ev.preventDefault();const g=id=>$("#"+id).value.trim();
@@ -1273,8 +1339,7 @@ window.addEventListener("hashchange",route);
 
 /* boot */
 const opts=SLOTS.map(([k,n])=>`<option value="${k}">${n}</option>`).join("");$("#scanSlot").innerHTML=opts;$("#listSlot").innerHTML=opts;$("#scanSlot").value=slotNow();
-$("#place").innerHTML=[...new Set(FOODS.map(f=>f.place))].filter(x=>x!=="Home"&&x!=="Supermarket").sort((a,b)=>a.localeCompare(b)).map(x=>`<option>${esc(x)}</option>`).join("");
-loadLocal();buildTk();buildToday();renderStrip();setMode("photo");route();
+loadLocal();fillPlaces();buildTk();buildToday();renderStrip();setMode("photo");route();
 hasModel().then(()=>{if(scanMode==="photo"&&!scanRes&&!scanCand)setMode("photo")});
 if(!targets(S.profile))openOnb();
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(()=>{});
