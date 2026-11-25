@@ -29,6 +29,10 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **A look back at yesterday.** On the first open of a new day the app reviews the day before. If you ate very little it asks how you feel and can switch today to a gentle day of light, comforting food and rest.
 - **Notes tailored to each meal.** Light-hearted nudges after carb-heavy, sugary, salty, oily or low-protein meals, and end-of-day notes on fibre, fruit and veg, and protein.
 - **Light or dark, chosen on the first screen.**
+- **Scan button in the middle.** Tap to open the camera and name the dish; hold for search, labels and more.
+- **Hot pot builder.** Pick one or two broths, tap each item you ate (fish tofu, lettuce, beef slices…) and your sauce bowl.
+- **Protein drinks.** Whey shakes, Herbalife, Ensure, Anlene, Dutch Lady +Protein and Barebells, from their own labels.
+- **My supplements.** Your own daily checklist, ticked off on Today. The app never suggests supplements.
 - **Six languages.** English, Bahasa Melayu, 简体中文, 繁體中文, 한국어 and 日本語. Chosen on the first screen (it starts with your phone's language) and changeable any time in Me. Food names stay in their usual local spelling.
 - **Rough price bands** on suggested dishes.
 - **A drawing for every dish.** All 458 items have their own illustration, built from a small set of parts.
