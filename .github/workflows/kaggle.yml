@@ -59,7 +59,11 @@ jobs:
               try: rows = json.load(open(f))
               except Exception: print(open(f, errors="ignore").read()[-6000:]); continue
               text = "".join(r.get("data", "") for r in rows)
-              print("----- last part of the Kaggle log -----"); print(text[-7000:])
+              lines = text.split("\n")
+              few = [l for l in lines if "too few" in l]; ok = [l for l in lines if l.rstrip().endswith("photos")]
+              print("dishes with enough photos:", len(ok), "| left out:", len(few)); print("left out:", "; ".join(l.split(":")[0] for l in few)[:1500])
+              print("\n".join(l for l in lines if any(k in l for k in ("classes", "training photos", "accuracy", "epoch", "MB", "weakest")))[-3000:])
+              print("----- last part of the Kaggle log -----"); print(text[-5000:])
           PY
               if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
             fi
