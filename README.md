@@ -27,6 +27,8 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Build my own.** Yogurt bowls, oats, subs, toast, rice plates, salads and kopitiam drinks: choose every part and amount, and watch the dish assemble as the calories add up.
 - **Equipment-aware workouts.** Tell it what you have at home or which gym machines are available, with a drawing of each, and the plan only uses those.
+- **Light and dark mode**, or match your phone.
+- **Log several foods at once** from the food list, and skip a meal with one tap.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
