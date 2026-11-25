@@ -17,6 +17,10 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Gentle workouts** for sore knees or beginners (no jumping, deep squats, lunges or stairs), with a moving picture, form tips and common mistakes for each exercise.
 - **Nine colour moods** on a cream base: pink, lilac, lavender, aquamarine, turquoise, lemon, peach, sky blue and mint.
 - **Gentle check-ins.** Skip a meal with one tap; after two skipped meals the app suggests something small instead. Extra workouts are welcome once, then it asks you to rest.
+- **Preference chips** at sign-up and under Edit profile: sweet tooth, snacker, no pork, no beef, no seafood, less spicy, lactose-free, vegetarian, vegan and more.
+- **Workout goal and difficulty.** Pick a goal in plain words or let the app choose, then switch between easy, medium and hard on the workout card.
+- **Body measurements** (waist, hips, chest, thigh, upper arm) with change since your first entry.
+- **Backups.** Save a backup file to Files or iCloud Drive and restore from it on any phone.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
