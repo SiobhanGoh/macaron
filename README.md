@@ -38,7 +38,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Exercise videos.** Each move links to a how-to video, and each workout offers free follow-along videos.
 - **Six languages.** English, Bahasa Melayu, 简体中文, 繁體中文, 한국어 and 日本語. Chosen on the first screen (it starts with your phone's language) and changeable any time in Me. Food names stay in their usual local spelling.
 - **Rough price bands** on suggested dishes.
-- **A drawing for every dish.** All 1,446 items have their own illustration, built from a small set of parts.
+- **A drawing for every dish.** All 1,452 items have their own illustration, built from a small set of parts.
 - **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Build my own.** Yogurt bowls, oats, subs, toast, rice plates, salads and kopitiam drinks: choose every part and amount, and watch the dish assemble as the calories add up.
 - **Equipment-aware workouts.** Tell it what you have at home or which gym machines are available, with a drawing of each, and the plan only uses those.
