@@ -9,7 +9,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 ## What it does
 
 - **Step-by-step setup** with drag rulers for age, height and weight, ending in a daily calorie target.
-- **A built-in list of 339 local dishes, drinks, desserts and snacks**, from nasi lemak to Yakult, bubble tea, bingsu and frozen yogurt, filterable by kind, with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
+- **A built-in list of 409 local dishes, drinks, dim sum, pastries, desserts and snacks**, from nasi lemak to Yakult, bubble tea, har gow, croissants, bingsu and frozen yogurt, filterable by kind, with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
 - **7-day meal plans** that name the place, the dish and how to order it, plus simple home recipes and short workouts.
 - **"What do you feel like eating today?"** Pick a mood and get three plans to choose from.
 - **Local picks** around Bandar Sunway, Subang Jaya, Petaling Jaya, Damansara and Kuala Lumpur, with optional location to favour places near you.
@@ -30,7 +30,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **Notes tailored to each meal.** Light-hearted nudges after carb-heavy, sugary, salty, oily or low-protein meals, and end-of-day notes on fibre, fruit and veg, and protein.
 - **Light or dark, chosen on the first screen.**
 - **Rough price bands** on suggested dishes.
-- **A drawing for every dish.** All 339 items have their own illustration, built from a small set of parts.
+- **A drawing for every dish.** All 409 items have their own illustration, built from a small set of parts.
 - **After-meal and after-workout tips**, a cool-down guide, and optional daily reminders you can add to your phone's Calendar.
 - **Build my own.** Yogurt bowls, oats, subs, toast, rice plates, salads and kopitiam drinks: choose every part and amount, and watch the dish assemble as the calories add up.
 - **Equipment-aware workouts.** Tell it what you have at home or which gym machines are available, with a drawing of each, and the plan only uses those.
