@@ -35,7 +35,7 @@ jobs:
             ACTION="${{ github.event.inputs.action }}"
             [ -z "$ACTION" ] && ACTION=$(python -c "import json;print(json.load(open('training/kaggle_request.json'))['action'])")
             JOB=$(python -c "import json;print(json.load(open('training/kaggle_request.json')).get('job','model'))")
-            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art; NB=make_art.ipynb; TITLE="Macaron art images"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
+            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art-images; NB=make_art.ipynb; TITLE="Macaron art images"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
             export KERNEL NB TITLE
             echo "action: $ACTION  job: $JOB"; date -u
             [ -z "$KAGGLE_API_TOKEN" ] && echo "KAGGLE_API_TOKEN secret is missing"
