@@ -128,7 +128,7 @@ button:disabled{opacity:.55;cursor:default}
 .learn ul{padding-left:1.2em;margin-top:8px;display:grid;gap:6px;font-size:15px}
 .excard{margin-top:16px;background:var(--band);color:#fff;border:0;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:center}
 .excard p{font-size:14px;opacity:.88}
-.excard button{background:var(--wh);color:#0c3d2a;border-color:var(--wh)}
+.excard button{background:var(--wh);color:#0c3d2a;border-color:var(--wh)} :root[data-theme=dark] .excard button:not([aria-pressed=true]){background:var(--pk);border-color:var(--pk);color:#2a1018;font-weight:700}
 .excard button[aria-pressed=true],.doneBtn[aria-pressed=true]{background:var(--kaya);border-color:var(--kaya);color:#2e2100}
 .slot{border-top:1.5px solid var(--line);padding-top:14px;margin-top:14px}
 .slot h3{display:flex;justify-content:space-between;gap:10px}
@@ -1073,7 +1073,16 @@ const calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 const SLOTS=[["breakfast","Breakfast",.25],["lunch","Lunch",.35],["dinner","Dinner",.3],["snack","Snacks and drinks",.1]];
 const SLOTNAME=Object.fromEntries(SLOTS.map(s=>[s[0],s[1]]));
 const DEFTIME={breakfast:"07:30",lunch:"12:30",snack:"16:00",dinner:"19:00"};
-const slotNow=()=>{const h=new Date().getHours();return h<11?"breakfast":h<16?"lunch":h<21?"dinner":"snack"};
+const slotNow=()=>{const h=new Date().getHours();return h<5?"snack":h<11?"breakfast":h<16?"lunch":h<21?"dinner":"snack"};
+/* a greeting for each part of the day, with a different one each day */
+const GREET=[[0,["Still up, {name}?","Hello, night owl {name}","Burning the midnight oil, {name}?","Late one tonight, {name}?"]],
+ [5,["Early bird, {name}!","Rise and shine, {name}","Up with the sun, {name}","Bright and early, {name}!"]],
+ [8,["Good morning, {name}","Morning, {name}!","Hello sunshine, {name}","Fresh start, {name}"]],
+ [12,["Good afternoon, {name}","Lunchtime, {name}!","Halfway through the day, {name}","Hi {name}, hope it's going well"]],
+ [15,["Good afternoon, {name}","Afternoon, {name}!","Tea time, {name}?","Keep going, {name}"]],
+ [18,["Good evening, {name}","Evening, {name}!","Welcome back, {name}","Hi {name}, how was your day?"]],
+ [22,["Winding down, {name}?","Almost bedtime, {name}","Good night soon, {name}","Time to rest, {name}"]]];
+function greetFor(d,name){const h=d.getHours(),L=[...GREET].reverse().find(g=>h>=g[0])[1],n=Math.floor((d-new Date(d.getFullYear(),0,0))/864e5);return L[(n+GREET.findIndex(g=>g[1]===L))%L.length].replace("{name}",name)}
 const ACT={"1.2":"mostly sitting","1.375":"lightly active","1.55":"moderately active","1.725":"very active"};
 const PACE={"-0.25":"lose 0.25 kg a week","-0.5":"lose 0.5 kg a week","-0.75":"lose 0.75 kg a week","0":"keep weight","0.25":"gain 0.25 kg a week"};
 const PORTION={0.25:"A quarter",0.5:"Half",0.75:"Three quarters",1:"All of it",1.25:"A bit more",1.5:"One and a half",1.75:"Nearly double",2:"Double",2.5:"Two and a half",3:"Triple"};
@@ -1944,7 +1953,7 @@ function entryHtml(e){const m=num(e.mult,1),th=safeThumb(e.thumb),id=esc(e.id),o
   return `<li><button class="erow" data-act="toggle" data-id="${id}" aria-expanded="${open}"><span class="thumb">${th?`<img src="${th}" alt="">`:esc(String(e.name||"?").trim().charAt(0).toUpperCase())}</span><span class="en"><b>${esc(e.name)}</b><small>${esc(det)}</small></span><span class="kc">${fmt(val(e,"kcal"))}<small>kcal</small></span></button>${open?`<div class="edit"><p class="nutline">Protein ${fmt(val(e,"p"))} g, carbs ${fmt(val(e,"c"))} g, fat ${fmt(val(e,"f"))} g, fibre ${f1(val(e,"fib"))} g, sugar ${fmt(val(e,"sug"))} g, sodium ${fmt(val(e,"sod"))} mg, saturated fat ${f1(val(e,"sat"))} g</p><span>Portion</span><button data-act="mult" data-id="${id}" data-d="-0.25" aria-label="Smaller portion">−</button><b>×${m}</b><button data-act="mult" data-id="${id}" data-d="0.25" aria-label="Bigger portion">+</button><button data-act="fav" data-id="${id}" aria-pressed="${fav}">${fav?"Saved as favourite":"Save as favourite"}</button><button class="ghost danger" data-act="del" data-id="${id}">Remove</button></div>`:""}</li>`}
 function renderToday(){renderSupp();
   const k=S.view,isT=k===today(),T=targets(S.profile),d=day(k),t=totals(d),ln=$("#leftNum");
-  $("#hello").textContent=isT?(isBday()?"Happy birthday, ":(h=>h<12?"Good morning, ":h<18?"Good afternoon, ":"Good evening, ")(new Date().getHours()))+(S.profile?.name||"there"):longDate(k);
+  $("#hello").textContent=isT?(isBday()?"Happy birthday, "+(S.profile?.name||"there"):greetFor(new Date(),S.profile?.name||"there")):longDate(k);
   $$("#dayStrip button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
   const st=streak();$("#streak").hidden=st<1;$("#streakTxt").textContent=st+(st===1?" day":" days");
   if(T){const left=T.kcal-t.kcal;countTo(ln,left);ln.classList.toggle("over",left<0);$("#leftLbl").textContent=left<0?"kcal over":"kcal left";$("#eatLine").textContent=`${fmt(t.kcal)} eaten of ${fmt(T.kcal)}`;$("#setup").innerHTML=""}
@@ -4185,7 +4194,7 @@ function tipHtml(T,t,d,isT){if(!T||!isT)return"";if(S.prefs.gentle===today())ret
   if(sk>=2)x="You've skipped "+sk+" meals today. Try to have something small soon, even yogurt or a banana. Eating too little isn't the goal.";
   else if(h>=20&&t.n&&t.kcal<T.kcal*.6)x=`You've had ${fmt(t.kcal)} of ${fmt(T.kcal)} kcal and it's getting late. A light dinner is better than going to bed hungry.`;
   else if(left<-100)x="You're a little over today, and that's okay. One day doesn't undo a week. Keep the next meal light: clear soup, steamed fish or yong tau foo.";
-  else if(h>=22)x="Winding down? A glass of water and an early night will do more for you than a late snack.";
+  else if(h>=22||h<5)x=h<5?"Way past bedtime. If you're hungry, keep it light and warm, like a glass of warm milk or a few crackers, then try to get some sleep.":"Winding down? A glass of water and an early night will do more for you than a late snack.";
   else if(h<11&&!has1("breakfast"))x="Breakfast time. Start with some protein so you stay full for longer, like half-boiled eggs with wholemeal toast.";
   else if(h>=11&&h<14&&!has1("lunch"))x=`Lunch time. You have about ${fmt(room)} kcal left today. Shall I suggest something?`;
   else if(!t.n&&h>=14)x="Nothing logged yet today. Have you eaten? Scan it with the middle button, or let me suggest something.";
