@@ -557,6 +557,29 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .pHero{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:14px}.pHero div{display:grid;justify-items:center;gap:2px;padding:14px 6px;border-radius:22px;background:linear-gradient(135deg,rgb(255 255 255/.8),rgb(255 255 255/.45));border:1.5px solid #fff;box-shadow:0 8px 18px rgb(214 140 140/.14)}.pHero svg{width:64px;height:64px}.pHero .bg{fill:none;stroke:var(--a3);stroke-width:7}.pHero .fg{fill:none;stroke:var(--a2);stroke-width:7;stroke-linecap:round;stroke-dasharray:163;stroke-dashoffset:163;transition:stroke-dashoffset 1.2s var(--eo);transform:rotate(-90deg);transform-origin:50% 50%}.pHero b{font:700 20px var(--disp)}.pHero small{font-size:12px;color:var(--mute);font-weight:600;text-align:center}
 .wkMac{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-top:12px;padding:12px;border-radius:22px;background:linear-gradient(135deg,rgb(255 255 255/.8),rgb(255 255 255/.45));border:1.5px solid #fff}.wkMac div{display:grid;justify-items:center;gap:2px;font-size:12px;font-weight:700;color:var(--mute);animation:pop .5s var(--eo) both}.wkMac svg{width:100%;max-width:38px}.wkMac .off{opacity:.35;filter:grayscale(.6)}@keyframes pop{from{transform:scale(.3);opacity:0}60%{transform:scale(1.15)}}
 #noteFb{font-size:13px;margin-top:8px}
+.panel.bpanel{grid-template-rows:auto auto auto minmax(0,1fr) auto;overflow:hidden;height:94%;max-height:94%}
+.bpanel header{display:grid;grid-template-columns:auto minmax(0,1fr) auto}.bpanel header h2{text-align:center}
+#buildBody{overflow-y:auto;padding-bottom:10px}
+.kgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.kgrid button{display:grid;justify-items:center;gap:6px;padding:14px 8px;border-radius:22px;background:linear-gradient(145deg,#fff,var(--a3));border:1.5px solid #fff;box-shadow:0 6px 14px rgb(214 140 140/.14)}.kgrid span{width:72px;height:72px}.kgrid svg{width:100%;height:100%}
+.bstage{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:8px;align-items:center;padding:8px 10px;border-radius:24px;background:linear-gradient(135deg,rgb(255 255 255/.94),rgb(255 255 255/.8));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border:1.5px solid #fff;box-shadow:0 8px 20px rgb(214 140 140/.2)}
+.bsvg{width:100%;height:auto;max-height:190px;display:block;overflow:visible}
+.btot{text-align:center}.btot .big{font:700 clamp(34px,11vw,48px)/1 var(--disp);color:var(--ink)}.btot .chips{justify-content:center;margin-top:6px;gap:4px}.btot .chip{font-size:12px;padding:3px 8px}.btot>small{display:block;color:var(--mute);font-size:12px;font-weight:600;margin-top:4px}
+.bd{animation:bdrop .6s cubic-bezier(.3,1.5,.5,1) both}@keyframes bdrop{0%{transform:translateY(-70px);opacity:0}55%{opacity:1}}
+.blq{transform-box:fill-box;transform-origin:50% 100%;animation:brise .9s var(--eo) both}@keyframes brise{from{transform:scaleY(0)}}
+.ly{transform:translateY(var(--dy));transition:transform .7s cubic-bezier(.3,1.35,.5,1)}.joined .ly{transform:translateY(0)}
+.joined .bsvg{animation:bpop .9s var(--eo)}@keyframes bpop{0%{transform:scale(1)}55%{transform:scale(1.08) rotate(-2deg)}100%{transform:scale(1)}}
+.bg{margin-top:16px}.bg h3{font:700 18px var(--disp)}
+.bos{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:6px}
+.bo{display:grid;grid-template-columns:40px minmax(0,1fr) auto auto;gap:8px;align-items:center;padding:8px 10px;border-radius:18px;background:rgb(255 255 255/.5);border:1.5px solid transparent;transition:border-color .2s,background .2s}.bo.on{background:#fff;border-color:var(--a2)}
+.bo b{font-size:15px;display:block;line-height:1.25}.bo small{color:var(--mute);font-size:12px}
+.bsw{width:40px;height:40px;border-radius:13px;background:var(--a3);display:grid;place-items:center;flex:none}.bsw svg{width:34px;height:34px}.bsw i{width:20px;height:20px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgb(0 0 0/.15)}
+.stp{display:grid;grid-template-columns:36px 30px 36px;align-items:center;text-align:center}.stp button{min-height:36px;width:36px;padding:0;border-radius:50%;font-size:20px;line-height:1}.stp button:disabled{opacity:.35}.stp output{font-weight:700;font-variant-numeric:tabular-nums}
+.bun{min-height:32px;padding:4px 10px;border-radius:99px;font-size:12px;background:var(--a3);border-color:var(--a1)}
+#buildBody .pills button{display:inline-flex;align-items:center;gap:6px;padding:6px 12px 6px 6px}#buildBody .pills small{color:var(--mute);font-weight:500}#buildBody .pills .bsw{width:28px;height:28px;border-radius:9px}#buildBody .pills .bsw i{width:16px;height:16px}
+#buildFoot{display:grid;gap:8px;padding-top:8px;border-top:1.5px solid var(--line)}.bfr{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}.bfr input,.bfr select{margin:0}#bGo{min-height:52px;font-size:16px}
+.cz{grid-column:1/-1;justify-self:start;min-height:36px;padding:6px 14px;border-radius:99px;font-size:14px;background:var(--a3);border-color:var(--a1)}
+@media (prefers-reduced-motion:reduce){.bd,.blq,.joined .bsvg{animation:none}.ly{transition:none}}
+.opt.ico.big{grid-template-columns:84px minmax(0,1fr)}.opt.ico.big>span{width:84px;height:84px;border-radius:22px;background:#fff}
 </style>
 <script>try{document.documentElement.dataset.mood=JSON.parse(localStorage.getItem("tingkat:prefs")).mood||"pink"}catch(e){}</script>
 </head>
@@ -732,6 +755,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <header><h2 id="h-add">Add food</h2><button class="ghost" data-act="closeSheet">Close</button></header>
     <div class="addGrid">
       <button class="hot" data-act="openDish" data-t="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg><span>Search food<small>260 local dishes and drinks</small></span></button>
+      <button data-act="openBuild"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h16a8 8 0 0 1-16 0z"/><path d="M12 3v6M9 6h6"/></svg><span>Build my own<small>Pick every part and amount</small></span></button>
       <button data-act="go" data-m="photo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg><span>Photo<small>Recognise a dish on this phone</small></span></button>
       <button data-act="go" data-m="label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h3"/></svg><span>Type a label<small>Numbers from a packet</small></span></button>
       <button data-act="openDish" data-t="recent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg><span>Favourites and recent<small>One tap to log again</small></span></button>
@@ -753,6 +777,16 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   </div>
 </div>
 <div id="tour" hidden><div class="tRing"></div><div class="tBub" role="dialog" aria-live="polite" aria-labelledby="tTit"><small id="tN"></small><h3 id="tTit"></h3><p id="tTxt"></p><div class="rowb"><button class="ghost" data-act="tourSkip">Skip</button><button class="primary" data-act="tourNext" id="tNext">Next</button></div></div></div>
+<div class="sheet" id="buildSheet" hidden>
+  <div class="scrim" data-act="closeSheet"></div>
+  <div class="panel bpanel" role="dialog" aria-modal="true" aria-labelledby="h-build">
+    <span class="grab"></span>
+    <header><button class="ghost" data-act="bBack" aria-label="Back to the list">‹</button><h2 id="h-build">Build my own</h2><button class="ghost" data-act="closeSheet">Close</button></header>
+    <div class="bstage" id="bStage" hidden><div id="bArt"></div><div class="btot"><p class="big" id="bK">0</p><small>kcal</small><div class="chips" id="bM"></div><small id="bBud"></small></div></div>
+    <div id="buildBody"></div>
+    <div id="buildFoot" hidden><div class="bfr"><label class="sr" for="bName">Name it</label><input id="bName" placeholder="Name it (optional)" maxlength="60"><label class="sr" for="bSlot">Add to</label><select id="bSlot"></select></div><button class="primary" id="bGo" data-act="bGo">Put it together and add</button></div>
+  </div>
+</div>
 <div class="sheet" id="calcSheet" hidden>
   <div class="scrim" data-act="closeSheet"></div>
   <div class="panel three" role="dialog" aria-modal="true" aria-labelledby="h-calc">
@@ -1135,7 +1169,7 @@ const day=k=>S.days[k]||(S.days[k]=cleanDay(LS.get("d"+k)));
 const saveDay=k=>store.set("d"+k,S.days[k]);
 const safeThumb=t=>typeof t==="string"&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(t)?t:"";
 const numMap=(o,n)=>o&&typeof o==="object"?Object.fromEntries(Object.entries(o).slice(0,n).map(([k,x])=>[String(k),num(x)])):{};
-const cleanPrefs=v=>({flags:numMap(v?.flags,20),backupAt:pos(v?.backupAt),nagAt:pos(v?.nagAt),mood:String(v?.mood||"pink").slice(0,12),never:(Array.isArray(v?.never)?v.never:[]).map(String).slice(0,300),xp:pos(v?.xp),visits:numMap(v?.visits,500),badges:numMap(v?.badges,40),tag:numMap(v?.tag,60),pick:numMap(v?.pick,400),areas:Array.isArray(v?.areas)?v.areas.map(String).slice(0,5):null,near:String(v?.near||""),craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
+const cleanPrefs=v=>({builds:(Array.isArray(v?.builds)?v.builds:[]).filter(x=>x&&typeof x==="object"&&typeof x.kit==="string"&&x.q&&typeof x.q==="object").slice(0,6).map(x=>({kit:x.kit,nm:String(x.nm||"").slice(0,60),kcal:pos(x.kcal),q:numMap(x.q,60),u:numMap(x.u,60)})),flags:numMap(v?.flags,20),backupAt:pos(v?.backupAt),nagAt:pos(v?.nagAt),mood:String(v?.mood||"pink").slice(0,12),never:(Array.isArray(v?.never)?v.never:[]).map(String).slice(0,300),xp:pos(v?.xp),visits:numMap(v?.visits,500),badges:numMap(v?.badges,40),tag:numMap(v?.tag,60),pick:numMap(v?.pick,400),areas:Array.isArray(v?.areas)?v.areas.map(String).slice(0,5):null,near:String(v?.near||""),craves:v?.craves&&typeof v.craves==="object"?Object.fromEntries(Object.entries(v.craves).slice(0,40).map(([k,n])=>[String(k),pos(n)])):{},note:String(v?.note||"").slice(0,1500),swapped:(Array.isArray(v?.swapped)?v.swapped:[]).map(String).slice(0,30)});
 const joinC0=(a,b)=>[String(a||"").trim(),b].filter(Boolean).join(", ");
 function loadLocal(){S.profile=LS.get("profile");S.plan=LS.get("plan");S.weights=LS.get("weights")||{list:[]};S.favs=LS.get("favs")||{list:[]};S.prefs=cleanPrefs(LS.get("prefs"));S.meas=LS.get("meas")||{list:[]};if(S.profile&&!S.prefs.flags.m1){S.prefs.flags.m1=1;if(!/no meat-free|want meat/i.test(S.profile.diet||""))S.profile.diet=joinC0(S.profile.diet,"I always want meat or fish");if(!/sweet tooth/i.test(S.profile.traits||""))S.profile.traits=joinC0(S.profile.traits,"Sweet tooth");LS.set("profile",S.profile);LS.set("prefs",S.prefs)}if(S.profile&&S.profile.diet){const nd=normDiet(S.profile.diet);if(nd!==S.profile.diet){S.profile.diet=nd;LS.set("profile",S.profile)}}if(S.profile?.bday){const a=ageFrom(S.profile.bday);if(a>=13&&a<=90)S.profile.age=a}applyMood();for(const k of LS.keys())if(k[0]==="d"&&isKey(k.slice(1)))S.days[k.slice(1)]=cleanDay(LS.get(k))}
 
@@ -1362,7 +1396,7 @@ function pickMeal(slot,budget,cx){const L=SLETTER[slot],main=slot!=="snack",fits
 const FOCUS={legs:["Glute bridges","Standing side leg raises holding a chair"],arms:["Wall push-ups","Seated boxing"],core:["Dead bug","Superman"]};
 const GOALN={auto:"Chosen for you",lose:"Lose weight overall",legs:"Tone legs and bottom",arms:"Stronger arms and upper body",core:"Stronger tummy and back",all:"A bit of everything"},DF=st=>({easy:-2,hard:3})[st.diff]||0;
 function goalOf(st){const f=st.focus||"auto",bySex=S.profile?.sex==="male"?"arms":"legs";return f==="lose"?{x:bySex,cardio:true}:f==="auto"?{x:bySex,cardio:num(S.profile?.pace)<0}:{x:f,cardio:false}}
-function exDay(st,i,week,w){const e=exCore(st,i,week,w),g=goalOf(st),F=FOCUS[g.x];if(!/strength|Gym: full|circuit|Legs and core|Hips and core/i.test(e.title))return e;
+function exDay(st,i,week,w){const e=equipFix(exCore(st,i,week,w),st),g=goalOf(st),F=FOCUS[g.x];if(!/strength|Gym: full|circuit|Legs and core|Hips and core/i.test(e.title))return e;
   const add=line=>{const last=e.steps[e.steps.length-1];if(/^(Rest|Pick)/.test(last))e.steps.splice(e.steps.length-1,0,line);else e.steps.push(line)};
   if(F){const sr=(e.steps.join(" ").match(/\d+ sets of \d+/)||["2 sets of 8"])[0],pick=F.find(x=>!e.steps.some(t=>t.toLowerCase().includes(x.toLowerCase().split(" ").slice(0,2).join(" "))));if(pick)add("Extra for your goal: "+pick+(pick==="Seated boxing"?": 1 minute":": "+sr+(/leg raises|Dead bug/.test(pick)?" each side":"")))}
   if(g.cardio){add(st.knees==="yes"?"Finish with 5 minutes of seated march":"Finish with 5 minutes of brisk walking or marching on the spot");e.minutes+=5}return e}
@@ -1436,13 +1470,75 @@ ham:[[50,30,50,42,50,66,70,69,92,90,56,52,66,58],[60,36,56,46,50,66,70,69,92,90,
 squat:[ST,[52,34,54,45,46,66,66,70,62,92,66,50,78,50],""],lunge:[[60,18,60,30,60,56,60,74,60,92,62,42,64,54,60,74,60,92],[60,28,60,40,60,66,74,74,74,92,62,52,64,64,52,84,40,90],""],
 wsit:[[36,34,36,46,36,68,58,68,58,92,42,56,50,64],[36,35,36,47,36,68,58,68,58,92,42,57,50,65],"v"],
 desk:[[50,30,50,42,50,66,70,66,70,92,58,52,70,54],[50,31,50,43,50,66,70,66,70,92,58,53,72,57],"c"],run:[[66,20,63,32,58,56,74,66,86,82,72,40,80,30,46,70,34,62],[66,20,63,32,58,56,50,72,40,88,54,44,50,54,72,64,82,78],""],march:[ST,[60,18,60,30,60,56,72,60,72,78,66,40,74,36],""],walk:[[60,18,60,30,60,56,66,74,74,92,56,42,52,54,55,74,46,92],[60,18,60,30,60,56,55,74,46,92,64,42,68,54,66,74,74,92],""]};
-function fig(k){const P=POSE[k];if(!P)return"";const d=a=>`M${a[2]} ${a[3]}L${a[4]} ${a[5]}L${a[6]} ${a[7]}L${a[8]} ${a[9]}M${a[2]} ${a[3]+3}L${a[10]} ${a[11]}L${a[12]} ${a[13]}`+(a.length>14?`M${a[4]} ${a[5]}L${a[14]} ${a[15]}L${a[16]} ${a[17]}`:""),[A,B,pr]=P,an=(at,x,y)=>calm?"":`<animate attributeName="${at}" values="${x};${y};${x}" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".4 0 .2 1;.4 0 .2 1"/>`;
+function fig(k){if(EQART[k])return eqSvg(k);const P=POSE[k];if(!P)return"";const d=a=>`M${a[2]} ${a[3]}L${a[4]} ${a[5]}L${a[6]} ${a[7]}L${a[8]} ${a[9]}M${a[2]} ${a[3]+3}L${a[10]} ${a[11]}L${a[12]} ${a[13]}`+(a.length>14?`M${a[4]} ${a[5]}L${a[14]} ${a[15]}L${a[16]} ${a[17]}`:""),[A,B,pr]=P,an=(at,x,y)=>calm?"":`<animate attributeName="${at}" values="${x};${y};${x}" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".4 0 .2 1;.4 0 .2 1"/>`;
   const props={c:'<path d="M38 40V92M38 70H58V92"/>',w:'<path d="M101 8V92"/>',v:'<path d="M29 8V92"/>',h:'<path d="M84 46V92M84 68H100V92"/>',l:'<path d="M36 46V92M36 68H22V92"/>'}[pr]||"";
   return `<svg viewBox="0 0 120 100" role="img" aria-label="Moving picture of the exercise"><g fill="none" stroke="var(--line)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 94H114"/>${props}</g><path d="${d(A)}" fill="none" stroke="var(--pk)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">${an("d",d(A),d(B))}</path><circle cx="${A[0]}" cy="${A[1]}" r="7.5" fill="var(--pk)">${an("cx",A[0],B[0])}${an("cy",A[1],B[1])}</circle></svg>`}
+
+/* equipment: what you have at home, outdoors or at the gym, with a drawing of each */
+const eqS='fill="none" stroke="var(--ink)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"',eqF='fill="var(--a1)" stroke="var(--ink)" stroke-width="2.2" stroke-linejoin="round"',eqA='fill="var(--a2)" stroke="var(--ink)" stroke-width="2.2" stroke-linejoin="round"',stackBox=x=>`<rect x="${x}" y="14" width="12" height="38" rx="2" ${eqF}/><path d="M${x} 22h12M${x} 30h12M${x} 38h12M${x} 46h12" ${eqS} stroke-width="1.4"/>`;
+const EQART={
+mat:`<rect x="6" y="38" width="44" height="10" rx="3" ${eqF}/><circle cx="50" cy="38" r="10" ${eqA}/><path d="M50 38a4 4 0 1 1 4 4" ${eqS} stroke-width="1.8"/>`,
+db:`<path d="M20 32h24" ${eqS} stroke-width="4"/><rect x="10" y="22" width="8" height="20" rx="3" ${eqA}/><rect x="4" y="26" width="6" height="12" rx="2" ${eqF}/><rect x="46" y="22" width="8" height="20" rx="3" ${eqA}/><rect x="54" y="26" width="6" height="12" rx="2" ${eqF}/>`,
+bot:`<path d="M14 24q0-4 3-5v-5h8v5q3 1 3 5v28q0 3-3 3h-8q-3 0-3-3z" ${eqF}/><rect x="16" y="10" width="10" height="4" rx="1.5" ${eqA}/><path d="M14 34h14" ${eqS} stroke-width="1.6"/><path d="M36 24q0-4 3-5v-5h8v5q3 1 3 5v28q0 3-3 3h-8q-3 0-3-3z" ${eqF}/><rect x="38" y="10" width="10" height="4" rx="1.5" ${eqA}/><path d="M36 34h14" ${eqS} stroke-width="1.6"/>`,
+band:`<ellipse cx="32" cy="32" rx="22" ry="12" fill="none" stroke="var(--a2)" stroke-width="6"/><ellipse cx="32" cy="32" rx="22" ry="12" ${eqS} stroke-width="1.4"/><rect x="4" y="26" width="8" height="12" rx="3" ${eqF}/><rect x="52" y="26" width="8" height="12" rx="3" ${eqF}/>`,
+chair:`<path d="M20 8v30h24M20 38v18M44 38v18" ${eqS} stroke-width="3"/><rect x="18" y="34" width="28" height="7" rx="3" ${eqA}/><rect x="17" y="8" width="7" height="22" rx="3" ${eqF}/>`,
+tread:`<path d="M6 52h44l8-6" ${eqS} stroke-width="3"/><rect x="6" y="46" width="46" height="8" rx="4" ${eqA}/><path d="M44 46L50 14" ${eqS} stroke-width="3"/><rect x="42" y="8" width="16" height="9" rx="3" ${eqF}/><path d="M48 24L32 30" ${eqS} stroke-width="3"/>`,
+bike:`<circle cx="18" cy="44" r="12" ${eqF}/><circle cx="18" cy="44" r="3" ${eqA}/><path d="M18 44L34 44L28 22M34 44L46 18M46 18h8M40 30L28 30" ${eqS} stroke-width="3"/><rect x="20" y="18" width="14" height="5" rx="2.5" ${eqA}/><path d="M34 44v10M28 54h14" ${eqS} stroke-width="3"/>`,
+legp:`<path d="M6 54h52" ${eqS} stroke-width="3"/><path d="M10 50L20 28" ${eqS} stroke-width="3"/><rect x="6" y="40" width="22" height="8" rx="3" ${eqA} transform="rotate(-8 17 44)"/><rect x="12" y="20" width="8" height="24" rx="3" ${eqF} transform="rotate(-25 16 32)"/><path d="M26 50L52 16M32 54L58 22" ${eqS} stroke-width="2.4"/><rect x="38" y="16" width="20" height="8" rx="3" ${eqA} transform="rotate(38 48 20)"/>`,
+chest:stackBox(4)+`<rect x="26" y="40" width="18" height="6" rx="3" ${eqA}/><rect x="24" y="14" width="7" height="28" rx="3" ${eqF}/><path d="M32 46v10M24 56h18M10 52v4h14" ${eqS} stroke-width="3"/><path d="M30 26h16M46 22v8" ${eqS} stroke-width="3.4"/><path d="M16 14h14" ${eqS}/>`,
+lat:stackBox(6)+`<path d="M12 14V6h30v8" ${eqS} stroke-width="3"/><path d="M42 8v10" ${eqS} stroke-width="1.8"/><path d="M26 18q16 6 32 0" ${eqS} stroke-width="3.6"/><rect x="34" y="42" width="18" height="6" rx="3" ${eqA}/><rect x="36" y="32" width="14" height="5" rx="2.5" ${eqF}/><path d="M43 48v8M34 56h18M12 52v4" ${eqS} stroke-width="3"/>`,
+row:stackBox(4)+`<rect x="34" y="40" width="22" height="6" rx="3" ${eqA}/><path d="M38 46v10M52 46v10M30 56h28M10 52v4" ${eqS} stroke-width="3"/><rect x="20" y="36" width="6" height="16" rx="2" ${eqF}/><path d="M16 30h14M30 26v8" ${eqS} stroke-width="3.2"/><path d="M10 30h6" ${eqS} stroke-width="1.8"/>`,
+shld:stackBox(4)+`<rect x="28" y="42" width="18" height="6" rx="3" ${eqA}/><rect x="26" y="20" width="7" height="24" rx="3" ${eqF}/><path d="M36 48v8M28 56h18M10 52v4" ${eqS} stroke-width="3"/><path d="M22 16h30M38 12v8M52 12v8" ${eqS} stroke-width="3.2"/><path d="M16 14l6 2" ${eqS}/>`,
+curl:stackBox(4)+`<rect x="22" y="36" width="30" height="7" rx="3.5" ${eqA}/><path d="M28 43v13M46 43v13M24 56h26M10 52v4" ${eqS} stroke-width="3"/><circle cx="56" cy="30" r="5" ${eqF}/><path d="M52 39l4-5M16 30h8" ${eqS} stroke-width="2.4"/>`,
+cable:`<path d="M14 56V8h30M8 56h14" ${eqS} stroke-width="3.4"/><rect x="18" y="20" width="10" height="28" rx="2" ${eqF}/><path d="M18 28h10M18 36h10" ${eqS} stroke-width="1.4"/><circle cx="44" cy="10" r="4" ${eqA}/><path d="M44 14v22" ${eqS} stroke-width="1.8"/><path d="M38 38h12" ${eqS} stroke-width="4"/>`,
+bench:`<rect x="8" y="32" width="48" height="6" rx="3" ${eqA}/><rect x="8" y="18" width="48" height="6" rx="3" ${eqF}/><path d="M14 24v8M50 24v8M14 38v14M50 38v14" ${eqS} stroke-width="3"/>`,
+stairs:`<path d="M6 54h12V42h12V30h12V18h14" ${eqS} stroke-width="3.4"/><path d="M6 54h50V18" ${eqS} stroke-width="1.6" opacity=".4"/><path d="M40 12l8-4M44 6l4 2-2 4" ${eqS} stroke-width="2.2" stroke="var(--a2)"/>`};
+const eqSvg=k=>`<svg viewBox="0 0 64 64" role="img" aria-label="Drawing of the equipment">${EQART[k]||""}</svg>`;
+const EQ={home:[["mat","Yoga or exercise mat","A folded towel or carpet works too"],["db","Small dumbbells","Any weight"],["bot","Two water bottles","Filled 500 ml or 1.5 litre bottles work as weights"],["band","Resistance band","A stretchy loop or strip"],["chair","Sturdy chair","One that doesn't roll or fold"]],
+gym:[["tread","Treadmill","A moving belt you walk or run on"],["bike","Exercise bike","A bike that stays in place"],["legp","Leg press","You sit back and push a plate away with your feet"],["chest","Chest press machine","You sit upright and push two handles forward"],["lat","Lat pulldown","You sit and pull a wide bar down to your chest"],["row","Seated row","You sit and pull a handle toward your tummy"],["shld","Shoulder press machine","You sit and push handles up above your head"],["curl","Leg curl","You lie or sit and bend your knees against a padded roller"],["db","Dumbbells and a bench","A rack of hand weights"],["cable","Cable machine","A tall frame with a handle on a cable"]],
+out:[["bench","Park bench","For step-ups and push-ups"],["stairs","Stairs or a slope","For short climbs"]]};
+const plOf=st=>String(st.place).startsWith("Gym")?"gym":String(st.place).startsWith("Outdoors")?"out":"home";
+const eqDefault=pl=>pl==="gym"?EQ.gym.map(x=>x[0]):pl==="out"?["bench","stairs"]:["chair","mat"];
+function equipFix(e,st){const pl=plOf(st),E=new Set(Array.isArray(st.equip)?st.equip:eqDefault(pl)),h=x=>E.has(x),sr=(e.steps.join(" ").match(/\d+ sets of \d+/)||["2 sets of 8"])[0],sw=(re,to)=>{e.steps=e.steps.map(x=>re.test(x)?x.replace(re,to):x)},add=line=>{const last=e.steps[e.steps.length-1];if(/^(Rest|Pick)/.test(last))e.steps.splice(e.steps.length-1,0,line);else e.steps.push(line)},strength=/strength|Gym: full|circuit|Legs and core|Hips and core/i.test(e.title);
+  if(pl==="gym"){
+    sw(/Leg press or goblet squat/,h("legp")?"Leg press":h("db")?"Goblet squat with a dumbbell":"Squats to a bench");
+    if(!h("chest"))sw(/Chest press machine/,h("db")?"Dumbbell chest press on a bench":"Incline push-ups on a bench");
+    if(!h("lat"))sw(/Lat pulldown/,h("cable")?"Cable pulldown":h("row")?"Seated row":h("db")?"One-arm dumbbell row":"Superman");
+    if(!h("row"))sw(/Seated row/,h("db")?"One-arm dumbbell row":h("lat")?"Lat pulldown":h("cable")?"Cable row":"Superman");
+    if(!h("shld"))sw(/Shoulder press machine/,h("db")?"Seated dumbbell shoulder press":"Wall push-ups");
+    if(!h("curl"))sw(/Leg curl/,"Glute bridges");
+    if(!h("db"))sw(/Romanian deadlift with dumbbells/,"Glute bridges");
+    sw(/5 easy minutes on the treadmill or bike/,h("tread")&&h("bike")?"5 easy minutes on the treadmill or bike":h("tread")?"5 easy minutes on the treadmill":h("bike")?"5 easy minutes on the bike":"march on the spot for 3 minutes");
+    if(!h("tread")&&/treadmill/i.test(e.title)){if(h("bike")){e.title="Steady bike ride";e.steps=[`Cycle at a light to medium resistance for ${e.minutes} minutes`,"Keep a pace where you can still talk","Cool down with 2 minutes of very easy pedalling"]}else{e.title="Brisk walk";e.steps=[`Walk fast for ${e.minutes} minutes, around the gym or outside`,"Go at a pace where you can talk but not sing","Cool down with 2 minutes of slow walking"]}}
+    if(!h("bike")&&/Stationary bike/.test(e.title)){e.title=h("tread")?"Flat treadmill walk":"Flat-ground walk";e.steps=[`Walk on the flat for ${e.minutes} minutes at a pace where you can still talk`,"Stop and rest for 1 minute whenever you need to"]}
+    if(!h("bike")&&/Bike intervals/.test(e.title)){e.title=h("tread")?"Treadmill intervals":"Marching intervals";e.steps=e.steps.map(x=>x.replace("1 minute fast, 2 minutes easy",h("tread")?"1 minute fast walk, 2 minutes easy walk":"1 minute of fast marching on the spot, 2 minutes of slow walking"))}}
+  else if(pl==="out"){if(!h("bench")){sw(/Bench step-ups/,"Squats");sw(/Incline push-ups on a bench/,"Wall or knee push-ups")}
+    if(!h("stairs")&&/Slope or stair/.test(e.title)){e.title="Fast walk intervals";sw(/walk fast up a slope or stairs for 1 minute, then walk down slowly/,"walk as fast as you can for 1 minute, then stroll for 2 minutes")}}
+  else{const w=h("db")?"dumbbells":h("bot")?"two filled water bottles":"";
+    if(strength&&w)add(/Full-body|Chair strength/.test(e.title)?`Overhead press with ${w}: ${sr}`:`Bent-over row with ${w}: ${sr}`);
+    if(strength&&h("band")&&/Full-body|Chair strength/.test(e.title))add(`Band pull-aparts: ${sr}`);
+    if(!h("mat")&&e.steps.some(x=>/Glute bridges|Plank|Dead bug|Superman|Bird dog/.test(x)))add("No mat? Do the floor moves on a folded towel or a carpet");
+    if(!h("chair")&&st.knees==="yes")sw(/holding a chair/,"holding a wall or table")}
+  return e}
+GUIDE.unshift(
+[/leg press/i,"legp","Sit back with your whole back against the pad and feet hip-width apart on the plate. Push the plate away until your legs are almost straight, then lower it slowly.","Start with a light weight. Your lower back and bottom stay on the seat.",["Locking the knees straight at the top","Knees falling inward","Lowering so far that your bottom lifts off the seat"]],
+[/chest press machine/i,"chest","Set the seat so the handles line up with the middle of your chest. Push both handles forward until your arms are nearly straight, then return slowly.","Shoulders stay down and back against the pad.",["Seat too low, so the handles sit at shoulder height","Letting the weights slam back","Arching the back off the pad"]],
+[/lat pulldown|cable pulldown/i,"lat","Sit with your thighs under the pad and hold the bar wider than your shoulders. Pull it down to the top of your chest, then let it rise slowly.","Lean back only slightly and lead with your elbows.",["Pulling the bar behind the neck","Leaning far back and swinging","Shrugging the shoulders up"]],
+[/seated row|cable row/i,"row","Sit tall with feet on the plate and knees slightly bent. Pull the handle to your tummy, squeezing your shoulder blades together, then return slowly.","Your back stays tall the whole time.",["Rocking the body back and forth","Rounding the back to reach forward","Pulling with a shrug"]],
+[/shoulder press machine/i,"shld","Set the seat so the handles start level with your shoulders. Push up until your arms are nearly straight, then lower slowly.","Keep your back against the pad and your tummy tight.",["Arching the lower back","Locking the elbows hard","Starting with too much weight"]],
+[/leg curl/i,"curl","Line the roller pad up just above your heels. Bend your knees to bring the pad toward your bottom, then return slowly.","Hips stay down on the bench.",["Hips lifting off the pad","Letting the weight drop back fast","Using your back to swing the weight"]],
+[/overhead press|dumbbell shoulder press/i,"db","Hold a weight in each hand at shoulder height, palms facing forward. Push both up until your arms are nearly straight, then lower slowly. Sit down to make it easier on your back.","Tighten your tummy so your back doesn't arch.",["Leaning back to push","Elbows flaring far behind the body","Weights that are too heavy to control"]],
+[/bent-over row|dumbbell row/i,"db","Hinge forward from the hips with a flat back and soft knees. Pull the weights up to your ribs, squeezing your shoulder blades, then lower slowly.","Your back stays flat, like a table top.",["Rounding the back","Standing up with each pull","Yanking the weights up fast"]],
+[/goblet squat/i,"db","Hold one weight against your chest with both hands. Push your hips back and sit down as far as is comfortable, then stand up.","Heels stay down and knees follow the line of your toes.",["Knees caving inward","Letting the weight pull your chest forward","Heels lifting"]],
+[/dumbbell chest press/i,"db","Lie on a bench with a weight in each hand above your chest. Lower them until your elbows are level with the bench, then push back up.","Feet flat on the floor and wrists straight.",["Lowering too fast","Elbows straight out at 90 degrees","Bouncing at the bottom"]],
+[/Romanian deadlift/i,"db","Stand holding the weights in front of your thighs. With soft knees, push your hips back and slide the weights down your legs to mid-shin, then stand tall.","Feel the stretch behind your thighs, not in your lower back.",["Rounding the back","Bending the knees into a squat","Weights drifting away from the legs"]],
+[/band pull/i,"band","Hold the band in front of you at chest height with straight arms. Pull your hands apart until the band touches your chest, then return slowly.","Shoulders stay down.",["Shrugging","Bending the elbows a lot","Letting the band snap back"]],
+[/treadmill/i,"tread","Start slow and clip on the safety key. Walk tall and let your arms swing.","Look ahead, not down at your feet.",["Holding the handrails the whole time","Starting at a high speed","Stepping off while the belt is moving"]],
+[/bike|cycle|pedal/i,"bike","Set the saddle so your knee is only slightly bent at the bottom of each turn. Keep the resistance light and pedal smoothly.","You should be able to talk while you ride.",["Saddle too low, which strains the knees","Resistance too heavy","Knees swinging outward"]]);
 function planDay(date,T,cx,outP){const meals=[];let sum=0,pr=0;for(const slot of["breakfast","lunch","dinner"]){cx.where=cx.rng()<outP*(slot==="breakfast"?.8:1)?"out":"home";const m=pickMeal(slot,T.kcal*SLOTS.find(x=>x[0]===slot)[2],cx);if(m){meals.push(m);sum+=m.kcal;pr+=m.p}}
   cx.where="any";cx.needP=pr<T.protein*.85;const sn=pickMeal("snack",Math.max(60,Math.min(350,T.kcal-sum)),cx);cx.needP=false;if(sn)meals.push(sn);return meals.sort(byTime)}
 function nextMonday(){const g=new Date().getDay();return addDays(today(),((8-g)%7)||7)}
-function readSettings(){return{start:$("#pStart").value,style:$("#pStyle").value,budget:$("#pBudget").value,place:$("#pPlace").value,minutes:$("#pMin").value,level:$("#pLevel").value,knees:S.plan?.settings?.knees||"no",focus:S.plan?.settings?.focus||"auto",diff:S.plan?.settings?.diff||"easy"}}
+function readSettings(){return{start:$("#pStart").value,style:$("#pStyle").value,budget:$("#pBudget").value,place:$("#pPlace").value,minutes:$("#pMin").value,level:$("#pLevel").value,knees:S.plan?.settings?.knees||"no",focus:S.plan?.settings?.focus||"auto",diff:S.plan?.settings?.diff||"easy",equip:S.plan?.settings?.equip}}
 function genPlan(startKey,st,quiet){const T=targets(S.profile);if(!T){openOnb();return}const dates=[...Array(7)].map((_,i)=>addDays(startKey,i)),old=S.plan,doneN=old?old.dates.filter(d=>old.done?.[d]).length:0,week=old?num(old.week)+(doneN>=4?1:0):0;
   const top=Object.entries(S.prefs.craves||{}).sort((a,b)=>b[1]-a[1]).slice(0,2).map(x=>MOODTAG[x[0]]).filter(Boolean),cx=mkCx("plan"+startKey+Date.now(),{tier:tierOf(st.budget),moods:top,mw:.8,hw:1.2}),outP=st.style.startsWith("Mostly eating")?.85:st.style.startsWith("Mostly home")?.15:.5;
   const days=dates.map((d,i)=>({date:d,meals:planDay(d,T,cx,outP),exercise:exDay(st,i,week,T.w)}));
@@ -1602,7 +1698,7 @@ function draw(name,key){const rec=R[key||name];if(!rec)return null;const seed=hs
   if(v==="W"){const[k,...a]=t[0].split(":");let base=W[k]?W[k](...a):W.fruit(k);if(typeof base==="function")base=base(...a);return base+t.slice(1).map((x,i)=>{const[kk,a1,a2]=x.split(":"),[px,py]=[[52,48],[12,48],[52,18]][i%3];return I[kk]?I[kk](px,py,a1,a2):""}).join("")}
   const bowl=v[0]==="B"||v[0]==="K",sl=bowl?SLB:SLP;let i=0;
   return vessel(v,seed)+t.map(x=>{let pos=null;const m=x.match(/@(\d+),(\d+)$/);if(m){pos=[+m[1],+m[2]];x=x.replace(/@.*$/,"")}const[k,a,b]=x.split(":");if(!I[k])return"";const[px,py]=pos||sl[i++%sl.length];return I[k](px,py,a,b)}).join("")}
-return{draw,R,svg:(name,key)=>{const d=draw(name,key);return d?`<svg viewBox="0 0 64 64" aria-hidden="true">${d}</svg>`:""}}
+return{draw,R,I,vessel,glass,svg:(name,key)=>{const d=draw(name,key);return d?`<svg viewBox="0 0 64 64" aria-hidden="true">${d}</svg>`:""}}
 })();
 Object.assign(ART.R,{
 "Nasi lemak biasa":"P rice egh cuc sam nut",
@@ -1832,13 +1928,13 @@ function openCare(kind,n){const b=$("#careBody");
 function skipMeal(k,slot){const d=day(k),had=(d.skips||[]).includes(slot);d.skips=had?d.skips.filter(x=>x!==slot):[...(d.skips||[]),slot];saveDay(k);renderPlan();if(had)return;const n=mainSkips(d);if(slot!=="snack"&&n>=2)openCare("skip",n);else toast(SLOTNAME[slot]+" skipped. That's okay now and then.")}
 function doneRun(k){let n=0,x=k;while(S.plan?.done?.[x]){n++;x=addDays(x,-1)}return n}
 function renderPlan(){fixPlan();const p=S.plan;$("#planForm").hidden=true;
-  if(!p){$("#planView").innerHTML='<div class="card setupbox" style="margin-top:16px"><p><b>No plan yet.</b> Answer 9 quick questions and your week is built for you.</p><button class="primary" data-act="planWiz">Plan my week</button></div>';return}
+  if(!p){$("#planView").innerHTML='<div class="card setupbox" style="margin-top:16px"><p><b>No plan yet.</b> Answer 10 quick questions and your week is built for you.</p><button class="primary" data-act="planWiz">Plan my week</button></div>';return}
   if(!p.dates.includes(S.planDay))S.planDay=p.dates.includes(today())?today():p.dates[0];
   const T=targets(S.profile),k=S.planDay,d=p.days.find(x=>x.date===k)||{meals:[],exercise:null},sum=f=>d.meals.reduce((a,m)=>a+num(m[f]),0),canLog=k<=today(),done=!!p.done?.[k],ex=d.exercise,skips=day(k).skips||[],xtra=num(p.extra?.[k]),run=doneRun(k);
   const tk=sum("kcal"),pct=T?Math.min(100,tk/T.kcal*100):100;
   $("#planView").innerHTML=`<div class="days" role="group" aria-label="Days">${p.dates.map(x=>`<button data-act="pday" data-k="${x}" aria-pressed="${x===k}"><small>${x===today()?"Today":short(x)}</small><b>${toDate(x).getDate()}</b><small>${p.done?.[x]?"Done":" "}</small></button>`).join("")}</div>
   <h2>${longDate(k)}</h2><div class="dayBar"><p>${fmt(tk)}${T?" of "+fmt(T.kcal):""} kcal <span>${fmt(sum("p"))} g protein</span></p><div class="macbar"><i style="width:${pct}%"></i></div></div>
-  <ol class="sched">${d.meals.map((m,i)=>{const g=m.p*4+m.c*4+m.f*9||1,home=/^home$/i.test(m.place);const sk=skips.includes(m.slot);return `<li class="mc${sk?" skipped":""}" style="animation-delay:${i*70}ms">${fe(m)}<div class="mh"><small>${esc(m.time)} ${esc(SLOTNAME[m.slot])}</small><b>${esc(m.name)}</b><small class="place">${esc(m.place||"")}</small>${priceOf(m)?`<small>${priceOf(m)}</small>`:""}</div><span class="kc">${fmt(m.kcal)}<small>kcal</small></span><div class="mac"><div class="macbar"><i style="width:${m.p*4/g*100}%"></i><i style="width:${m.c*4/g*100}%"></i><i style="width:${m.f*9/g*100}%"></i></div><div class="macl"><span>Protein <b>${fmt(m.p)} g</b></span><span>Carbs <b>${fmt(m.c)} g</b></span><span>Fat <b>${fmt(m.f)} g</b></span></div></div>${m.order?`<details><summary>${home?"How to make it":"How to order"}</summary><p>${esc(m.order)}</p></details>`:""}<div class="mb">${canLog&&!sk?`<button class="go" data-act="logPlan" data-k="${k}" data-i="${i}">Log it</button>`:"<span></span>"}${canLog?`<button data-act="skipMeal" data-k="${k}" data-s="${m.slot}">${sk?"Undo skip":"Skip"}</button>`:"<span></span>"}<button class="icb" data-act="swap" data-k="${k}" data-i="${i}" aria-label="Swap ${esc(m.name)}" title="Swap">${ic(I.swap)}</button><button class="icb" data-act="neverPlan" data-k="${k}" data-i="${i}" aria-label="Never suggest ${esc(m.name)} again" title="Never suggest again">${ic(I.ban)}</button></div></li>`}).join("")}</ol>
+  <ol class="sched">${d.meals.map((m,i)=>{const g=m.p*4+m.c*4+m.f*9||1,home=/^home$/i.test(m.place);const sk=skips.includes(m.slot);return `<li class="mc${sk?" skipped":""}" style="animation-delay:${i*70}ms">${fe(m)}<div class="mh"><small>${esc(m.time)} ${esc(SLOTNAME[m.slot])}</small><b>${esc(m.name)}</b><small class="place">${esc(m.place||"")}</small>${priceOf(m)?`<small>${priceOf(m)}</small>`:""}</div><span class="kc">${fmt(m.kcal)}<small>kcal</small></span><div class="mac"><div class="macbar"><i style="width:${m.p*4/g*100}%"></i><i style="width:${m.c*4/g*100}%"></i><i style="width:${m.f*9/g*100}%"></i></div><div class="macl"><span>Protein <b>${fmt(m.p)} g</b></span><span>Carbs <b>${fmt(m.c)} g</b></span><span>Fat <b>${fmt(m.f)} g</b></span></div></div>${m.order?`<details><summary>${home?"How to make it":"How to order"}</summary><p>${esc(m.order)}</p></details>`:""}${KITMAP[m.base]&&canLog&&!sk?`<button class="cz" data-act="buildPlan" data-k="${k}" data-i="${i}">Make it my way</button>`:""}<div class="mb">${canLog&&!sk?`<button class="go" data-act="logPlan" data-k="${k}" data-i="${i}">Log it</button>`:"<span></span>"}${canLog?`<button data-act="skipMeal" data-k="${k}" data-s="${m.slot}">${sk?"Undo skip":"Skip"}</button>`:"<span></span>"}<button class="icb" data-act="swap" data-k="${k}" data-i="${i}" aria-label="Swap ${esc(m.name)}" title="Swap">${ic(I.swap)}</button><button class="icb" data-act="neverPlan" data-k="${k}" data-i="${i}" aria-label="Never suggest ${esc(m.name)} again" title="Never suggest again">${ic(I.ban)}</button></div></li>`}).join("")}</ol>
   <p class="note">${ic(I.swap).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px"')} swaps a dish. ${ic(I.ban).replace("<svg",'<svg style="width:14px;height:14px;vertical-align:-2px;color:var(--sambal)"')} means never suggest it again. Prices are rough guides.</p>
   ${ex?`<div class="card exp"><h3>${esc(ex.title)}</h3><p class="sub">${fmt(ex.minutes)} min, ${esc(ex.intensity)}${ex.burn?`, burns about ${fmt(ex.burn)} kcal`:""}</p><p class="sub" style="margin-top:6px">Goal: <b>${GOALN[p.settings?.focus||"auto"]||GOALN.auto}</b></p><div class="pills" style="margin-top:8px" role="group" aria-label="Difficulty">${[["easy","Easy"],["medium","Medium"],["hard","Hard"]].map(([v,t])=>`<button data-act="setDiff" data-v="${v}" aria-pressed="${(p.settings?.diff||"easy")===v}">${t}</button>`).join("")}</div>${ex.steps.length?`<ol class="exs">${ex.steps.map(x=>{const g=guideOf(x);return `<li>${esc(x)}${g?`<details><summary>Show me how</summary><div class="gd">${fig(g[1])}<p>${g[2]}</p><p><b>Watch for</b> ${g[3]}</p><p><b>Common mistakes</b></p><ul>${g[4].map(m=>`<li>${m}</li>`).join("")}</ul></div></details>`:""}</li>`}).join("")}</ol>`:""}<div class="rowb"><button class="doneBtn" data-act="exDone" data-k="${k}" aria-pressed="${done}">${done?"Done":"Mark as done"}</button>${done?`<button data-act="exMore" data-k="${k}">I did extra today</button>`:""}<button data-act="kneeMode">${p.settings?.knees==="yes"?"Back to regular moves":"Go easy on my knees"}</button></div>${xtra>=2?`<p class="careMsg"><b>${xtra+1} sessions today.</b> That is plenty. Rest now so tired muscles don't lose their form.</p>`:xtra===1?`<p class="careMsg">One extra round logged. Keep the rest of today easy.</p>`:""}${run>=5?`<p class="careMsg"><b>${run} days in a row.</b> Take a rest day soon. Rest is when your body gets stronger.</p>`:""}<p class="note">Stop if you feel sharp pain. A mild muscle ache is normal. If your knees already hurt, or you have a health condition, check with a doctor or physiotherapist first.</p><p class="note">Exercise isn't added back to your food budget, because your activity level already counts it.</p></div>`:""}
   <p class="note">Calories are estimates for typical servings. Check a place is open and still sells the dish.</p>
@@ -1908,6 +2004,272 @@ function renderCalc(){const T=targets(S.profile),c=$("#calc");if(!T){c.innerHTML
   <p class="sub">Sugar, salt and saturated fat limits follow WHO guidance used by Malaysia's Ministry of Health. Fruit, vegetable and water goals follow the Malaysian Food Pyramid 2020. BMI now ${T.bmi.toFixed(1)}${T.gbmi?`, at your goal ${T.gbmi.toFixed(1)}`:""}; 18.5 to 22.9 is the healthy range used for Asian adults.</p>
   ${T.gbmi&&T.gbmi<18.5?'<p class="warn">Your goal weight is under a BMI of 18.5, which counts as underweight. Please check it with a doctor or dietitian before aiming for it.</p>':""}`}
 
+
+/* build your own: pick parts and amounts, watch the dish come together */
+Object.assign(ART.I,{
+berry:(x,y)=>`<path d="M${x-4.5} ${y-2}q4.5-4.5 9 0q1 6.5-4.5 9q-5.5-2.5-4.5-9z" fill="#e8475f"/><path d="M${x-3} ${y-3.500}l3-2l3 2" stroke="#5fae78" stroke-width="1.7" fill="none" stroke-linecap="round"/><circle cx="${x-1.5}" cy="${y+1}" r=".6" fill="#ffd9a8"/><circle cx="${x+1.6}" cy="${y+2.2}" r=".6" fill="#ffd9a8"/>`,
+blue:(x,y)=>[[-3,1],[2,-2],[3,3]].map(([a,b])=>`<circle cx="${x+a}" cy="${y+b}" r="2.7" fill="#5b6fd6"/><circle cx="${x+a-.8}" cy="${y+b-.8}" r=".8" fill="#fff" opacity=".5"/>`).join(""),
+coin:(x,y,a)=>[[-3.5,0],[3,1.5]].map(([p,q])=>`<circle cx="${x+p}" cy="${y+q}" r="3.8" fill="${a||"#fbe9a8"}" stroke="rgba(160,120,40,.35)" stroke-width=".8"/><circle cx="${x+p}" cy="${y+q}" r="1.1" fill="rgba(160,120,40,.3)"/>`).join(""),
+kiwi:(x,y)=>`<circle cx="${x}" cy="${y}" r="5" fill="#9fcf5f" stroke="#7a5a3a" stroke-width="1"/><circle cx="${x}" cy="${y}" r="1.8" fill="#f1f6d6"/>${[0,60,120,180,240,300].map(d=>`<circle cx="${x+3*Math.cos(d*Math.PI/180)}" cy="${y+3*Math.sin(d*Math.PI/180)}" r=".5" fill="#3a2a26"/>`).join("")}`,
+driz:(x,y,a)=>`<path d="M${x-9} ${y}q3-5 6 0t6 0t6 0" fill="none" stroke="${a||"#e8a94e"}" stroke-width="2" stroke-linecap="round"/>`,
+dust:(x,y,a)=>[[-5,0],[-2,-3],[1,1],[4,-2],[6,2],[-1,4],[-6,3]].map(([p,q])=>`<circle cx="${x+p}" cy="${y+q}" r=".9" fill="${a||"#6b4630"}"/>`).join(""),
+seed:(x,y,a)=>[[-5,-1],[-1,-3],[3,0],[0,2],[-4,3],[5,3]].map(([p,q])=>`<ellipse cx="${x+p}" cy="${y+q}" rx="1.3" ry=".8" fill="${a||"#4a3a36"}"/>`).join(""),
+avo:(x,y)=>`<path d="M${x-6} ${y+2}q0-9 6-9q6 0 6 9q0 4-6 4q-6 0-6-4z" fill="#8fbf5a"/><path d="M${x-4} ${y+2}q0-6 4-6q4 0 4 6q0 2.5-4 2.5q-4 0-4-2.5z" fill="#d6ea9a"/><circle cx="${x}" cy="${y+2}" r="2" fill="#8a5a3a"/>`,
+leafy:(x,y,a)=>`<path d="M${x-8} ${y+3}q2-9 8-8q7-1 8 8q-8 4-16 0z" fill="${a||"#8fcf6e"}"/><path d="M${x-4} ${y+2}q4-5 8 0" fill="none" stroke="#fff" stroke-width="1" opacity=".5"/>`,
+});
+const N0=[0,0,0,0,0,0,0,0,0];
+const B_FRUIT=[
+["straw","Strawberries",[["strawberry|strawberries",1,1],["g",1/12,20]],[4,.1,.9,0,.25,.6,0,0,.15],"berry",4],
+["blue","Blueberries",[["tbsp",1,1],["g",.1,20]],[6,.1,1.4,0,.25,1,0,0,.12],"blue",2],
+["ban","Banana",[["half|halves",1,1]],[45,.5,11.5,.2,1.3,6,0,0,.6],"coin:#fbe9a8",1],
+["mango","Mango",[["small handful|small handfuls",1,1],["g",.02,25]],[30,.4,7.5,.2,.8,7,0,0,.6],"cube:#ffc04d",1],
+["kiwi","Kiwi",[["kiwi|kiwis",1,1]],[42,.8,10,.4,2.1,6,2,0,.9],"kiwi",1],
+["apple","Apple",[["half|halves",1,1]],[47,.2,12.5,.2,2.2,9.5,1,0,.6],"cube:#f6c9c0",1],
+["drag","Dragon fruit",[["small handful|small handfuls",1,1],["g",.02,25]],[30,.6,6.5,0,1.5,4,0,0,.6],"cube:#e85a9a",1],
+["pap","Papaya",[["small handful|small handfuls",1,1],["g",.02,25]],[21,.2,5.4,.1,.9,3.9,4,0,.6],"cube:#f39a4a",1]];
+const B_TOP=[
+["honey","Honey",[["tsp",1,1],["tbsp",3,1],["dash|dashes",.5,1]],[21,0,5.8,0,0,5.7,0,0,0],"driz:#e8a94e",1],
+["maple","Maple syrup",[["tsp",1,1],["tbsp",3,1]],[17,0,4.5,0,0,4,0,0,0],"driz:#b9793f",1],
+["gran","Granola",[["tbsp",1,1],["g",1/8,10]],[36,.8,5.2,1.3,.5,1.6,2,.2,0],"mince:#d9a877",2],
+["oatt","Rolled oats",[["tbsp",1,1]],[23,.8,4,.4,.6,0,0,.1,0],"mince:#ecd9b8",2],
+["chia","Chia seeds",[["tsp",1,1],["tbsp",3,1]],[19,.7,1.7,1.2,1.4,0,1,.1,0],"seed",1],
+["cocoa","Cocoa powder",[["tsp",1,1],["tbsp",3,1]],[6,.5,1.4,.3,.9,0,1,.2,0],"dust:#6b4630",1],
+["nuts","Mixed nuts",[["tbsp",1,1],["g",1/9,10]],[55,1.6,2,4.8,.7,.4,0,.6,0],"nut",1],
+["pb","Peanut butter",[["tsp",1,1],["tbsp",3,1]],[30,1.2,1,2.5,.3,.5,21,.5,0],"driz:#c98d5a",1],
+["choc","Dark chocolate chips",[["tsp",1,1],["tbsp",3,1]],[25,.3,3,1.5,.4,2.4,0,.9,0],"dust:#4a3128",1],
+["rj","Royal jelly",[["tsp",1,1]],[7,.6,.7,.2,0,.6,0,0,0],"driz:#f6e3a8",1]];
+const KITS={
+yog:{nm:"Yogurt bowl",view:"bowl",fill:"#fffdf8",slot:"breakfast",place:"Home",icon:"Greek yogurt with fruit and oats",g:[
+ ["Yogurt","one",[
+  ["gy","Greek yogurt",[["scoop",1,1],["g",.02,25]],[37,5,2,1,0,2,18,.6,0],"",3,"dairy"],
+  ["py","Plain low-fat yogurt",[["scoop",1,1],["g",.02,25]],[31,2.6,3.5,.8,0,3.5,35,.5,0],"",3,"dairy"],
+  ["fy","Flavoured yogurt",[["scoop",1,1],["g",.02,25]],[45,2,8,.7,0,7,30,.4,0],"",3,"dairy"],
+  ["sy","Soy yogurt, unsweetened",[["scoop",1,1],["g",.02,25]],[27,2,1.2,1.3,.4,.4,15,.2,0],"",3]],"A scoop is 2 heaped tablespoons, about 50 g."],
+ ["Fruit","many",B_FRUIT],["Toppings","many",B_TOP]]},
+oats:{nm:"Oats bowl",view:"bowl",fill:"#f1e2c6",slot:"breakfast",place:"Home",icon:"Oats with milk and banana",g:[
+ ["Oats","one",[["oat","Rolled oats, dry",[["tbsp",1,1],["g",1/7,10]],[27,.9,4.7,.5,.7,0,0,.1,0],"",5],["ioat","Instant oats, dry",[["tbsp",1,1],["g",1/7,10]],[26,.9,4.6,.5,.6,0,0,.1,0],"",5]],"5 tablespoons is a normal bowl."],
+ ["Cooked with","one",[["wat","Water",[["splash|splashes",1,1]],N0,"",1],["lf","Low-fat milk",[["half cup|half cups",1.25,1],["ml",.01,50]],[46,3.4,5,1.5,0,5,45,1,0],"",1,"dairy"],["fc","Full cream milk",[["half cup|half cups",1.25,1],["ml",.01,50]],[64,3.3,4.8,3.6,0,4.8,44,2.3,0],"",1,"dairy"],["soy","Soy milk, unsweetened",[["half cup|half cups",1.25,1],["ml",.01,50]],[33,3,1,1.8,.5,.5,35,.3,0],"",1],["oatm","Oat milk",[["half cup|half cups",1.25,1],["ml",.01,50]],[45,1,7,1.5,.8,3.5,40,.2,0],"",1]]],
+ ["Fruit","many",B_FRUIT],["Toppings","many",B_TOP]]},
+sub:{nm:"Sub sandwich",view:"stack",top:1,slot:"lunch",place:"Sandwich shop",icon:"6-inch roasted chicken sub",g:[
+ ["Bread","pick",[
+  ["wm","Wholemeal",[["6-inch",1,1]],[200,8,36,2.5,4,4,330,.5,0],"",1,"",["bun","#c98d5a"]],
+  ["wh","Italian white",[["6-inch",1,1]],[190,7,36,2,1,3,340,.5,0],"",1,"",["bun","#f0cf8f"]],
+  ["ho","Honey oat",[["6-inch",1,1]],[210,8,39,2.5,4,7,320,.5,0],"",1,"",["bun","#d9a352","oat"]],
+  ["fl","Flatbread",[["6-inch",1,1]],[220,7,38,4.5,2,2,380,1,0],"",1,"",["bun","#f3e0b8","flat"]]],"",1],
+ ["Filling","one",[
+  ["rc","Roasted chicken",[["portion",1,1]],[90,16,3,2,0,1,280,.5,0],"",1,"meat",[9,"#e9c9a0","slab"]],
+  ["tk","Chicken teriyaki",[["portion",1,1]],[110,16,8,2,0,7,470,.5,0],"",1,"meat",[9,"#9a5a34","slab"]],
+  ["tu","Tuna mayo",[["portion",1,1]],[250,13,1,22,0,0,300,3.5,0],"",1,"seafood egg",[9,"#f3c9b8","slab"]],
+  ["em","Egg mayo",[["portion",1,1]],[200,9,2,17,0,1,270,3.5,0],"",1,"egg",[9,"#fbe58a","slab"]],
+  ["eg","Egg, sliced",[["portion",1,1]],[80,6.5,.6,5.5,0,.3,65,1.7,0],"",1,"egg",[8,"#fff6d6","egg"]],
+  ["tr","Turkey slices",[["portion",1,1]],[60,10,2,1,0,1,400,.3,0],"",1,"meat",[7,"#f1d6c6","slab"]],
+  ["rb","Roast beef",[["portion",1,1]],[90,15,2,2.5,0,1,330,1,0],"",1,"meat beef",[8,"#8a4a3a","slab"]],
+  ["mb","Meatballs in tomato sauce",[["portion",1,1]],[220,11,14,13,2,6,600,5,0],"",1,"meat beef",[11,"#a4452f","dots"]],
+  ["vp","Veggie patty",[["portion",1,1]],[160,10,14,7,3,1,400,1,0],"",1,"",[9,"#8fae5a","slab"]]],"Tap + twice for double."],
+ ["Cheese","pick",[["chd","Cheddar",[["x",1,1]],[60,3,0,5,0,0,190,3,0],"",1,"dairy",[5,"#ffc83a","zig"]],["moz","Mozzarella",[["x",1,1]],[40,3,0,3,0,0,60,2,0],"",1,"dairy",[5,"#fff3c9","zig"]]]],
+ ["Salad","tog",[
+  ["let","Lettuce",[["x",1,1]],[2,0,.4,0,.2,.2,1,0,.15],"",1,"",[6,"#8fcf6e","wave"]],
+  ["tom","Tomato",[["x",1,1]],[4,.2,.8,0,.2,.5,1,0,.2],"",1,"",[6,"#e2607a","dots"]],
+  ["cuc","Cucumber",[["x",1,1]],[2,.1,.4,0,.1,.2,0,0,.15],"",1,"",[5,"#b9e08f","dots"]],
+  ["oni","Onion",[["x",1,1]],[5,.1,1.2,0,.2,.5,0,0,.1],"",1,"",[5,"#b98ad6","rings"]],
+  ["cap","Capsicum",[["x",1,1]],[3,.1,.6,0,.2,.3,0,0,.1],"",1,"",[4,"#5fae78","dash"]],
+  ["oli","Olives",[["x",1,1]],[15,0,.5,1.5,.3,0,110,.2,0],"",1,"",[4,"#3a2a26","rings"]],
+  ["pic","Pickles",[["x",1,1]],[1,0,.2,0,.1,0,115,0,0],"",1,"",[4,"#9aa84a","dots"]],
+  ["jal","Jalapeños",[["x",1,1]],[2,0,.4,0,.2,.2,70,0,0],"",1,"hot",[4,"#4f9a4a","rings"]]],"Tap once to add, twice for extra."],
+ ["Sauce","many",[
+  ["so","Sweet onion",[["line",1,1]],[40,0,9,0,0,8,85,0,0],"",1,"",[3,"#e9c98f","line"]],
+  ["hm","Honey mustard",[["line",1,1]],[30,0,7,0,0,6,115,0,0],"",1,"",[3,"#e8b830","line"]],
+  ["bbq","BBQ",[["line",1,1]],[35,0,8,0,0,7,180,0,0],"",1,"",[3,"#6b3524","line"]],
+  ["may","Mayonnaise",[["line",1,1]],[100,0,0,11,0,0,80,1.5,0],"",1,"egg",[3,"#fff6d6","line"]],
+  ["lm","Light mayonnaise",[["line",1,1]],[50,0,1,5,0,0,100,1,0],"",1,"egg",[3,"#fffbe8","line"]],
+  ["ran","Ranch",[["line",1,1]],[80,0,1,8.5,0,1,150,1.3,0],"",1,"dairy egg",[3,"#f1f1e6","line"]],
+  ["chi","Chilli sauce",[["line",1,1]],[20,0,5,0,0,4,200,0,0],"",1,"hot",[3,"#d94a3d","line"]],
+  ["oo","Olive oil",[["drizzle",1,1]],[45,0,0,5,0,0,0,.7,0],"",1,"",[3,"#c9c95a","line"]]]]]},
+toast:{nm:"Toast or sandwich",view:"stack",slot:"breakfast",place:"Home",icon:"Kaya toast set",g:[
+ ["Bread","one",[
+  ["wm","Wholemeal bread",[["slice",1,1]],[70,3.5,12,1,2,1.5,130,.2,0],"",2,"",["slice","#d9a877"]],
+  ["wh","White bread",[["slice",1,1]],[75,2.5,14,1,.7,1.5,140,.2,0],"",2,"",["slice","#f6e3c0"]],
+  ["sd","Sourdough",[["slice",1,1]],[95,3.8,18,.6,.8,.8,200,.1,0],"",2,"",["slice","#ecd2a0"]],
+  ["hn","Hainan thick toast",[["slice",1,1]],[110,3.5,20,1.5,1,2.5,190,.4,0],"",2,"",["slice","#e8b86a"]]],"One slice makes open toast. Two makes a sandwich.",1],
+ ["Spread","many",[
+  ["bu","Butter",[["tsp",1,1]],[34,0,0,3.8,0,0,30,2.4,0],"",1,"dairy",[3,"#ffe9a0","slab"]],
+  ["mg","Margarine",[["tsp",1,1]],[30,0,0,3.4,0,0,35,.7,0],"",1,"",[3,"#fff0b8","slab"]],
+  ["ka","Kaya",[["tsp",1,1]],[20,.2,3.8,.5,0,3.3,5,.4,0],"",1,"egg",[3,"#b9a13a","slab"]],
+  ["pb","Peanut butter",[["tsp",1,1],["tbsp",3,1]],[30,1.2,1,2.5,.3,.5,21,.5,0],"",1,"",[4,"#c98d5a","slab"]],
+  ["jam","Jam",[["tsp",1,1]],[17,0,4.4,0,0,3.3,2,0,0],"",1,"",[3,"#d9566f","slab"]],
+  ["nut","Chocolate hazelnut spread",[["tsp",1,1]],[27,.3,2.9,1.5,.2,2.8,2,.5,0],"",1,"dairy",[3,"#5a3524","slab"]],
+  ["cc","Cream cheese",[["tsp",1,1]],[17,.3,.3,1.7,0,.2,16,1,0],"",1,"dairy",[3,"#fffaf2","slab"]]]],
+ ["On top or inside","many",[
+  ["hb","Half-boiled egg",[["egg",1,1]],[70,6,.5,5,0,0,62,1.6,0],"",1,"egg",[7,"#fff","egg"]],
+  ["fe","Fried egg",[["egg",1,1]],[90,6,.5,7,0,0,95,2,0],"",1,"egg",[6,"#fff","egg"]],
+  ["sc","Scrambled eggs",[["egg",1,1]],[95,6.5,1,7.5,0,.5,110,2.5,0],"",1,"egg dairy",[7,"#ffd75e","wave"]],
+  ["ch","Cheese slice",[["slice",1,1]],[60,3.5,.5,5,0,.5,250,3,0],"",1,"dairy",[4,"#ffc83a","zig"]],
+  ["cs","Chicken slice",[["slice",1,1]],[35,5,1,1.2,0,.5,220,.4,0],"",1,"meat",[5,"#f1c9c0","slab"]],
+  ["tn","Tuna, in water",[["tbsp",1,1]],[18,4,0,.2,0,0,55,0,0],"",2,"seafood",[6,"#f3d6c6","slab"]],
+  ["bn","Banana",[["half|halves",1,1]],[45,.5,11.5,.2,1.3,6,0,0,.6],"",1,"",[6,"#fbe9a8","dots"]],
+  ["av","Avocado",[["quarter",1,1]],[80,1,4,7.5,3.3,.3,3,1,.5],"",1,"",[6,"#a8cf6a","wave"]],
+  ["tm","Tomato",[["slice",1,1]],[4,.2,.8,0,.2,.5,1,0,.1],"",2,"",[5,"#e2607a","dots"]],
+  ["lt","Lettuce",[["leaf|leaves",1,1]],[2,0,.4,0,.2,.2,1,0,.1],"",1,"",[5,"#8fcf6e","wave"]]]]]},
+rice:{nm:"Rice or home plate",view:"plate",slot:"lunch",place:"Home",icon:"Economy rice: 1 meat, 2 veg",g:[
+ ["Rice, potatoes or noodles","many",[
+  ["wr","White rice",[["half bowl|half bowls",1,1],["g",.01,50]],[130,2.5,28,.3,.4,0,1,.1,0],"rice",2],
+  ["br","Brown rice",[["half bowl|half bowls",1,1],["g",.01,50]],[112,2.6,23,.9,1.8,0,5,.2,0],"rice:#d9b98a",2],
+  ["cr","Chicken rice (oily rice)",[["half bowl|half bowls",1,1]],[165,3,29,4,.3,0,250,1.2,0],"rice:#fff3c9",2],
+  ["pot","Roast potatoes",[["chunk",1,1]],[40,.8,7,1.2,.6,.3,60,.2,0],"pot",4],
+  ["nd","Noodles, plain",[["half bowl|half bowls",1,1]],[140,4.5,27,1,1,0,150,.2,0],"nood",2],
+  ["bd","Bread",[["slice",1,1]],[70,3,13,1,1.5,1.5,130,.2,0],"papad",1]]],
+ ["Chicken, fish, egg and more","many",[
+  ["dr","Baked chicken drumstick",[["piece",1,1]],[140,16,0,8,0,0,90,2.2,0],"drum:br",1,"meat"],
+  ["th","Baked chicken thigh",[["piece",1,1]],[200,20,0,13,0,0,95,3.5,0],"piece:br",1,"meat"],
+  ["cb","Grilled chicken breast",[["palm-size piece|palm-size pieces",1,1],["g",.01,50]],[165,31,0,3.6,0,0,74,1,0],"fil:#e8b86a",1,"meat"],
+  ["stc","Steamed chicken, no skin",[["portion",1,1]],[120,22,0,3.5,0,0,70,1,0],"slc:pale:#fff3e0",1,"meat"],
+  ["rtc","Roasted chicken, with skin",[["portion",1,1]],[190,20,0,12,0,0,300,3.3,0],"slc:pale:br",1,"meat"],
+  ["fc","Fried chicken",[["piece",1,1]],[250,18,9,16,0,0,500,4,0],"drum:gold",1,"meat"],
+  ["cur","Curry chicken, with gravy",[["piece",1,1]],[180,15,4,12,.5,1,450,5,0],"drum:or",1,"meat hot"],
+  ["sf","Steamed fish",[["fillet",1,1]],[110,22,0,2,0,0,80,.5,0],"fil:grey",1,"meat seafood"],
+  ["ff","Fried fish",[["piece",1,1]],[200,17,7,12,0,0,300,2.5,0],"fish:gold",1,"meat seafood"],
+  ["pr","Prawns",[["prawn",1,1]],[13,2.5,0,.2,0,0,45,0,0],"prawn",4,"meat seafood"],
+  ["be","Boiled egg",[["egg",1,1]],[70,6,.5,5,0,0,62,1.6,0],"egh",1,"egg"],
+  ["fe","Fried egg",[["egg",1,1]],[90,6,.5,7,0,0,95,2,0],"egf",1,"egg"],
+  ["tf","Braised tofu",[["piece",1,1]],[40,3.5,1.5,2.5,.3,.5,125,.4,0],"tofu:#f0d9a8",2],
+  ["tp","Fried tempeh",[["slice",1,1]],[37,3,1.7,2.3,.7,0,33,.4,0],"tofu:#d9a352",3],
+  ["bf","Beef stir-fry",[["scoop",1,1]],[150,15,4,8,0,2,400,3,0],"mince:br",1,"meat beef"],
+  ["pk","Pork slices",[["scoop",1,1]],[180,14,3,12,0,2,380,4.3,0],"slc:#e9b8a8:#c96a5a",1,"meat pork"]]],
+ ["Vegetables","many",[
+  ["sg","Stir-fried greens",[["scoop",1,1]],[50,2,4,3.5,2,1,250,.5,1],"grn",1],
+  ["bv","Steamed or blanched vegetables",[["scoop",1,1]],[25,2,4,.3,2,1.5,60,0,1],"brc",1],
+  ["mv","Mixed vegetables",[["scoop",1,1]],[60,2,6,3.5,2,2,280,.5,1],"car",1],
+  ["lb","Long beans",[["scoop",1,1]],[55,2,5,3.2,2.2,2,240,.5,.9],"bean",1],
+  ["bs","Bean sprouts",[["scoop",1,1]],[30,2,3,1.5,1,1,150,.2,.6],"nood:#f6f0e0",1],
+  ["sl","Salad leaves",[["handful",1,1]],[8,.5,1.5,.1,.8,.6,8,0,.5],"leafy",1],
+  ["cu","Cucumber",[["few slices|lots of slices",1,1]],[4,.2,.9,0,.2,.5,0,0,.25],"cuc",1],
+  ["to","Tomato",[["wedge",1,1]],[5,.2,1,0,.3,.7,1,0,.15],"tom",2]]],
+ ["Gravy, sauce and oil","many",[
+  ["cg","Curry gravy",[["ladle",1,1]],[45,.8,2,3.8,.3,.8,220,2,0],"sauce:cur",1,"hot"],
+  ["sg2","Soy sauce gravy",[["ladle",1,1]],[20,.5,3,.6,0,1.5,350,.1,0],"sauce:#5a3a2a",1],
+  ["sb","Sambal",[["tsp",1,1]],[15,.3,1.5,1,.3,1,90,.2,0],"sam",1,"hot"],
+  ["ks","Chilli or tomato sauce",[["tsp",1,1]],[6,0,1.4,0,0,1.1,55,0,0],"sam:#e2607a",1],
+  ["oil","Extra oil or butter",[["tsp",1,1]],[40,0,0,4.5,0,0,0,.7,0],"driz:#f6d77a",1],
+  ["sp","Clear soup",[["small bowl",1,1]],[20,2,1,.8,0,0,400,.2,0],"sauce:#f1e6c0",1]],"Home cooking is usually oilier than it looks. Add a teaspoon of oil if the tray looked shiny."]]},
+salad:{nm:"Salad bowl",view:"bowl",fill:"#b9e08f",slot:"lunch",place:"Home",icon:"Build-your-own salad bowl",g:[
+ ["Leaves","one",[["rom","Romaine or lettuce",[["cup",1,1]],[10,.6,1.5,.1,1,.6,4,0,1],"",2],["mix","Mixed leaves",[["cup",1,1]],[9,.8,1.4,.1,.8,.4,10,0,1],"",2],["spi","Baby spinach",[["cup",1,1]],[7,.9,1.1,.1,.7,.1,24,0,1],"",2]]],
+ ["Protein","many",[
+  ["gc","Grilled chicken",[["palm-size piece|palm-size pieces",1,1],["g",.01,50]],[165,31,0,3.6,0,0,74,1,0],"slc:pale:gold",1,"meat"],
+  ["eg","Boiled egg",[["egg",1,1]],[70,6,.5,5,0,0,62,1.6,0],"egh",1,"egg"],
+  ["tu","Tuna, in water",[["half can|half cans",1,1]],[60,13,0,.5,0,0,180,.1,0],"mince:#f3c9b8",1,"meat seafood"],
+  ["sa","Salmon",[["small fillet",1,1]],[165,17,0,10,0,0,50,2,0],"fil:sal",1,"meat seafood"],
+  ["tf","Tofu",[["piece",1,1]],[38,4,1,2.2,.3,.3,5,.3,0],"tofu",2],
+  ["cp","Chickpeas",[["tbsp",1,1]],[23,1.2,3.8,.4,1,.6,40,0,0],"mince:#e9c98f",2]]],
+ ["Add-ins","many",[
+  ["ct","Cherry tomatoes",[["tomato|tomatoes",1,1]],[3,.2,.7,0,.2,.5,1,0,.2],"tom",4],
+  ["cu","Cucumber",[["few slices|lots of slices",1,1]],[4,.2,.9,0,.2,.5,0,0,.25],"cuc",1],
+  ["co","Sweetcorn",[["tbsp",1,1]],[13,.4,2.8,.2,.3,.6,30,0,.15],"mince:#f6d04a",2],
+  ["cr","Carrot, grated",[["tbsp",1,1]],[4,.1,1,0,.3,.5,7,0,.15],"car",2],
+  ["av","Avocado",[["quarter",1,1]],[80,1,4,7.5,3.3,.3,3,1,.5],"avo",1],
+  ["sw","Sweet potato cubes",[["tbsp",1,1]],[14,.2,3.3,0,.5,1,6,0,0],"cube:#f39a4a",3],
+  ["qu","Quinoa, cooked",[["tbsp",1,1]],[14,.5,2.5,.2,.3,0,1,0,0],"mince:#ecd9b8",2],
+  ["cn","Croutons",[["tbsp",1,1]],[15,.4,2.2,.5,.2,0,35,.1,0],"cube:#e8b86a",2],
+  ["pa","Parmesan",[["tbsp",1,1]],[22,2,.2,1.4,0,0,75,.9,0],"dust:#f6e3a8",1,"dairy"],
+  ["nt","Mixed nuts",[["tbsp",1,1]],[55,1.6,2,4.8,.7,.4,0,.6,0],"nut",1]]],
+ ["Dressing","many",[
+  ["cz","Caesar",[["tbsp",1,1]],[80,.3,.5,8.5,0,.4,160,1.3,0],"driz:#f6ecd2",1,"dairy egg"],
+  ["ss","Roasted sesame",[["tbsp",1,1]],[60,.5,2.5,5.5,0,2,170,.8,0],"driz:#d9b98a",1,"egg"],
+  ["ti","Thousand island",[["tbsp",1,1]],[60,.2,2.3,5.5,0,2.5,140,.8,0],"driz:#f7a98a",1,"egg"],
+  ["ol","Olive oil and lemon",[["tsp",1,1]],[40,0,.1,4.5,0,0,0,.6,0],"driz:#c9c95a",2],
+  ["ba","Balsamic vinegar",[["tbsp",1,1]],[15,0,3,0,0,2.5,5,0,0],"driz:#5a2a2a",1]],"Dressing is where salad calories hide. Ask for it on the side."]]},
+drink:{nm:"Kopitiam or café drink",view:"glass",slot:"snack",place:"Kopitiam",icon:"Teh tarik",g:[
+ ["Drink","pick",[
+  ["teh","Teh (tea)",[["cup",1,1]],[2,0,.4,0,0,0,3,0,0],"",1,"",["#b5713f"]],
+  ["kopi","Kopi (coffee)",[["cup",1,1]],[5,.3,.8,0,0,0,5,0,0],"",1,"",["#3a2218"]],
+  ["milo","Milo",[["cup",1,1]],[95,2.8,15.5,2.3,1.5,10,38,1.4,0],"",1,"dairy",["#6b3f2a"]],
+  ["mat","Matcha",[["cup",1,1]],[5,.6,.8,0,.4,0,1,0,0],"",1,"",["#8fb56a"]],
+  ["cho","Hot chocolate powder",[["cup",1,1]],[75,1.5,15,1.2,1,12,60,.7,0],"",1,"dairy",["#5a3524"]],
+  ["lim","Lime juice",[["cup",1,1]],[8,.1,2.6,0,.1,.5,1,0,0],"",1,"",["#d6f0b8"]]],"",1],
+ ["Milk","many",[
+  ["cond","Condensed milk",[["tbsp",1,1],["tsp",1/3,1]],[65,1.6,11,1.7,0,11,25,1.1,0],"",2,"dairy",[1]],
+  ["evap","Evaporated milk",[["tbsp",1,1]],[20,1,1.5,1.1,0,1.5,16,.7,0],"",2,"dairy",[1]],
+  ["fm","Fresh milk",[["splash|splashes",.5,1],["ml",.01,50]],[64,3.3,4.8,3.6,0,4.8,44,2.3,0],"",2,"dairy",[2.2]],
+  ["lf","Low-fat milk",[["splash|splashes",.5,1],["ml",.01,50]],[46,3.4,5,1.5,0,5,45,1,0],"",2,"dairy",[2.2]],
+  ["om","Oat milk",[["splash|splashes",.5,1],["ml",.01,50]],[45,1,7,1.5,.8,3.5,40,.2,0],"",2,"",[2]],
+  ["sm","Soy milk, unsweetened",[["splash|splashes",.5,1],["ml",.01,50]],[33,3,1,1.8,.5,.5,35,.3,0],"",2,"",[2]]],"A splash is about 50 ml."],
+ ["Sweetness","many",[
+  ["sug","Sugar",[["tsp",1,1]],[16,0,4,0,0,4,0,0,0],"",1],
+  ["bss","Brown sugar syrup",[["tbsp",1,1]],[50,0,13,0,0,13,3,0,0],"",1,"",["syr"]],
+  ["hon","Honey",[["tsp",1,1]],[21,0,5.8,0,0,5.7,0,0,0],"",1]],"Kosong means none. Kurang manis is about half."],
+ ["Extras","tog",[
+  ["ice","Ice",[["x",1,1]],N0,"",1,"",["ice"]],
+  ["prl","Pearls",[["x",1,1]],[80,0,20,0,0,8,5,0,0],"",1,"",["pearl"]],
+  ["gj","Grass jelly",[["x",1,1]],[15,0,3.5,0,.3,2,5,0,0],"",1,"",["jelly"]],
+  ["wc","Whipped cream",[["x",1,1]],[50,.3,1.5,5,0,1.5,5,3,0],"",1,"dairy",["cream"]]],"Tap once to add, twice for extra."]]}
+};
+/* dishes that open straight in the builder, with a starting recipe */
+const KITMAP={"Greek yogurt with fruit and oats":["yog",{gy:4,straw:4,blue:2,ban:1,oatt:2,honey:1}],"Greek yogurt":["yog",{gy:3}],"Plain yogurt":["yog",{py:3}],
+"Oats with milk and banana":["oats",{oat:6,lf:1,ban:2,honey:1}],
+"6-inch roasted chicken sub":["sub",{wm:1,rc:1,let:1,tom:1,cuc:1,so:1}],"6-inch chicken teriyaki sub":["sub",{wm:1,tk:1,let:1,tom:1,oni:1}],"6-inch tuna sub":["sub",{wm:1,tu:1,let:1,cuc:1}],"6-inch Veggie Delite with egg":["sub",{wm:1,eg:1,let:1,tom:1,cuc:1,cap:1}],
+"Kaya toast set":["toast",{hn:2,bu:1,ka:2,hb:2}],"Hainan toast with kaya, and eggs":["toast",{hn:2,ka:2,hb:2}],"Half-boiled eggs with wholemeal toast":["toast",{wm:1,hb:2}],"Scrambled eggs on wholemeal toast":["toast",{wm:1,sc:2}],"Peanut butter banana toast":["toast",{wm:2,pb:4,bn:2}],"Egg sandwich":["toast",{wm:2,fe:2,lt:1}],"Egg mayo sandwich":["toast",{wh:2,sc:1,lt:1}],
+"Economy rice: 1 meat, 2 veg":["rice",{wr:2,dr:1,sg:1,mv:1}],"Economy rice: steamed fish, tofu, greens":["rice",{wr:2,sf:1,tf:2,sg:1}],"Economy rice (Home Kitchen)":["rice",{wr:2,dr:1,tf:2,sg:1,be:1}],"Chicken rice, steamed":["rice",{cr:2,stc:1,cu:1}],"Chicken rice, roasted":["rice",{cr:2,rtc:1,cu:1}],"Steamed chicken rice set":["rice",{cr:2,stc:1,bv:1,sp:1}],"Baked chicken thigh with potatoes and salad":["rice",{pot:6,th:1,sl:1,oil:2}],"Steamed chicken, rice and broccoli":["rice",{wr:2,stc:1,bv:1}],"Steamed fish with rice and greens":["rice",{wr:2,sf:1,sg:1}],"Pan-seared salmon, rice and greens":["rice",{wr:2,sf:1,sg:1,oil:1}],"Omelette with rice and cucumber":["rice",{wr:2,fe:2,cu:1}],"Food court meal (Rock Cafe)":["rice",{wr:2,dr:1,mv:1,fe:1}],
+"Build-your-own salad bowl":["salad",{rom:2,gc:1,eg:1,ct:4,cu:1,av:1,ol:2}],"Chicken caesar salad":["salad",{rom:2,gc:1,cn:4,pa:2,cz:2}],"Garden salad":["salad",{mix:2,ct:4,cu:1,cr:2,ol:1}],
+"Teh tarik":["drink",{teh:1,cond:3}],"Teh O ais kurang manis":["drink",{teh:1,sug:2,ice:1}],"Teh C kosong":["drink",{teh:1,evap:2}],"Kopi (condensed milk)":["drink",{kopi:1,cond:2}],"Kopi O kosong":["drink",{kopi:1}],"Milo ais":["drink",{milo:1,cond:2,ice:1}],"Milo kosong":["drink",{milo:1}],"Limau ais kurang manis":["drink",{lim:1,sug:2,ice:1}],"Bubble milk tea":["drink",{teh:1,fm:4,sug:4,prl:1,ice:1}],"Milk tea, 0% sugar, no pearls":["drink",{teh:1,fm:4,ice:1}],"Latte":["drink",{kopi:1,fm:4}],"White coffee":["drink",{kopi:1,cond:1,evap:1,sug:2}]};
+let B=null;
+const bOpts=k=>KITS[k].g.flatMap(g=>g[2]),bOpt=(k,id)=>bOpts(k).find(o=>o[0]===id),bGrp=(k,id)=>KITS[k].g.find(g=>g[2].some(o=>o[0]===id));
+function bOk(o){const d=(S.profile?.diet||"").toLowerCase(),l=(S.profile?.likes||"").toLowerCase(),t=" "+(o[6]||"")+" ",h=x=>t.includes(" "+x+" ");
+  if(h("pork")&&/halal|pork/.test(d))return false;if(h("beef")&&/beef/.test(d))return false;if(h("seafood")&&/seafood/.test(d))return false;
+  if(h("hot")&&(!/spicy/.test(l)||/less spicy|take spicy/.test(d)))return false;if(h("dairy")&&/lactose|vegan/.test(d))return false;if(h("egg")&&/vegan/.test(d))return false;if(h("meat")&&/vegetarian|vegan/.test(d))return false;
+  const n=o[1].toLowerCase();return !dislikes().some(x=>n.includes(x)||(/^(milk|dairy)$/.test(x)&&h("dairy"))||(/^eggs?$/.test(x)&&h("egg")))}
+const bUnit=o=>o[2][B.u[o[0]]||0],bU=(o,q)=>{const[s,p]=bUnit(o)[0].split("|");return q===1?s:(p||(/^(g|ml|tsp|tbsp|x|6-inch)$/.test(s)?s:s+"s"))};
+const bQty=(o,q)=>{const u=bUnit(o)[0];return u==="x"?(q>1?"extra ":""):`${f1(q)} ${bU(o,q)} `};
+function bTot(){const t=NF.map(()=>0);for(const o of bOpts(B.kit)){const q=num(B.q[o[0]]);if(!q)continue;const f=q*bUnit(o)[1];o[3].forEach((v,i)=>{t[i]+=v*f})}return t}
+function openBuild(kit,preset,ctx){closeSheets(true);B=kit?{kit,q:{...(preset||{})},u:{},order:Object.keys(preset||{}),last:"",slot:ctx?.slot||KITS[kit].slot,date:ctx?.date||"",from:ctx?.from||"",uu:ctx?.u||null}:null;if(B&&B.uu)B.u={...B.uu};if(B)for(const id of Object.keys(B.q))if(!bOpt(kit,id)||!bOk(bOpt(kit,id)))delete B.q[id];openSheet("#buildSheet");renderBuild(true)}
+function renderBuild(first){const body=$("#buildBody"),foot=$("#buildFoot");
+  if(!B){$("#h-build").textContent="Build my own";foot.hidden=true;$("#bStage").hidden=true;const rec=(S.prefs.builds||[]).filter(r=>KITS[r.kit]);
+    body.innerHTML=`<p class="sub">Choose what you're making. You pick every part and how much, and the calories add up as you go.</p><div class="kgrid">${Object.entries(KITS).map(([k,v])=>`<button data-act="bKit" data-k="${k}"><span>${ART.svg(v.icon)}</span><b>${v.nm}</b></button>`).join("")}</div>${rec.length?`<h3 style="margin-top:16px">Make it again</h3><ul class="entries" style="gap:0">${rec.map((r,i)=>`<li class="prow" style="grid-template-columns:40px minmax(0,1fr) auto"><span class="fe art sm">${ART.svg(KITS[r.kit].icon)}</span><span class="en"><b>${esc(r.nm)}</b><small>${fmt(r.kcal)} kcal</small></span><button data-act="bAgain" data-i="${i}">Open</button></li>`).join("")}</ul>`:""}`;return}
+  const K=KITS[B.kit];$("#h-build").textContent=K.nm;foot.hidden=false;$("#bStage").hidden=false;
+  if(first){$("#bArt").classList.remove("joined");body.innerHTML=`${K.g.map((g,gi)=>`<section class="bg"><h3>${g[0]}</h3>${g[3]?`<p class="sub">${g[3]}</p>`:""}<div id="bg${gi}"></div></section>`).join("")}<p class="note">Amounts are household measures and the numbers are estimates. Oil and sauces vary the most.</p>`;
+    $("#bSlot").innerHTML=SLOTS.map(([k,n])=>`<option value="${k}"${k===B.slot?" selected":""}>${n}</option>`).join("");body.scrollTop=0}
+  K.g.forEach((g,gi)=>{const opts=g[2].filter(bOk),el=$("#bg"+gi);
+    if(g[1]==="pick"||g[1]==="tog")el.innerHTML=`<div class="pills">${opts.map(o=>{const q=num(B.q[o[0]]);return `<button data-act="bPick" data-id="${o[0]}" aria-pressed="${q>0}">${bSw(o)}${esc(o[1])}${q>1?" ×2":""}<small>${fmt(o[3][0])} kcal</small></button>`}).join("")}</div>`;
+    else el.innerHTML=`<ul class="bos">${opts.map(o=>{const q=num(B.q[o[0]]),u=bUnit(o),per=o[3][0]*u[1]*u[2];return `<li class="bo${q?" on":""}">${bSw(o)}<div><b>${esc(o[1])}</b><small>${fmt(per)} kcal per ${u[2]>1?u[2]+" ":""}${u[0].split("|")[0]}</small></div>${o[2].length>1?`<button class="bun" data-act="bUnit" data-id="${o[0]}" aria-label="Change unit for ${esc(o[1])}">${bU(o,2)}</button>`:"<span></span>"}<div class="stp"><button data-act="bStep" data-id="${o[0]}" data-d="-1" aria-label="Less ${esc(o[1])}"${q?"":" disabled"}>−</button><output>${f1(q)}</output><button data-act="bStep" data-id="${o[0]}" data-d="1" aria-label="More ${esc(o[1])}">+</button></div></li>`}).join("")}</ul>`});
+  const t=bTot(),bud=slotBudget(B.slot);$("#bK").textContent=fmt(t[0]);$("#bM").innerHTML=`<span class="chip">Protein ${fmt(t[1])} g</span><span class="chip">Carbs ${fmt(t[2])} g</span><span class="chip">Fat ${fmt(t[3])} g</span>`;
+  $("#bBud").textContent=t[0]?(t[0]<=bud.kcal*1.1?`Fits your ${SLOTNAME[B.slot].toLowerCase()} (about ${fmt(bud.kcal)} kcal)`:`About ${fmt(t[0]-bud.kcal)} kcal over your usual ${SLOTNAME[B.slot].toLowerCase()}. Fine now and then.`):"Tap + to start adding";
+  $("#bArt").innerHTML=bDraw();$("#bGo").disabled=!t[0]&&!Object.values(B.q).some(Boolean);B.last=""}
+function bSw(o){const a=o[4],ly=o[7];if(a){const[k,p,q]=a.split(":");return `<span class="bsw"><svg viewBox="-11 -11 22 22">${ART.I[k]?ART.I[k](0,0,p,q):""}</svg></span>`}
+  const col=ly?(ly[0]==="bun"||ly[0]==="slice"?ly[1]:typeof ly[1]==="string"?ly[1]:/^#/.test(ly[0])?ly[0]:"var(--a1)"):KITS[B.kit].fill||"var(--a1)";return `<span class="bsw"><i style="background:${col}"></i></span>`}
+function bSet(id,q){const o=bOpt(B.kit,id),g=bGrp(B.kit,id);q=Math.max(0,Math.min(o[2][B.u[id]||0][2]*40,q));if(q>0&&(g[1]==="one"||g[1]==="pick"))for(const x of g[2])if(x[0]!==id&&B.q[x[0]]){delete B.q[x[0]];B.order=B.order.filter(y=>y!==x[0])}
+  if(q>0){if(!B.q[id]){B.order=B.order.filter(y=>y!==id).concat(id);B.last=id}B.q[id]=q}else{delete B.q[id];B.order=B.order.filter(y=>y!==id)}renderBuild()}
+function bDraw(){const K=KITS[B.kit],sel=B.order.map(id=>bOpt(B.kit,id)).filter(o=>o&&B.q[o[0]]),dr=(o,inner)=>`<g class="${o[0]===B.last?"bd":""}">${inner}</g>`;
+  if(K.view==="stack"){const bread=sel.find(o=>o[7]&&(o[7][0]==="bun"||o[7][0]==="slice")),L=[];
+    const two=bread&&(K.top||B.q[bread[0]]>=2);if(bread)L.push([bread,bread[7][0]==="bun"?18:11,bread[7][0]==="bun"?"bunB":"slice",bread[7][1],bread[7][2]]);
+    for(const g of K.g)for(const o of g[2]){if(!B.q[o[0]]||o===bread||!o[7])continue;const n=Math.min(2,Math.round(B.q[o[0]]));for(let i=0;i<n;i++)L.push([o,o[7][0],o[7][2],o[7][1]])}
+    if(two)L.push([bread,bread[7][0]==="bun"?24:11,bread[7][0]==="bun"?"bunT":"slice",bread[7][1],bread[7][2]]);
+    if(!L.length)return bEmpty("Start with the bread");const tot=L.reduce((a,l)=>a+l[1],0),gap=Math.max(2,Math.min(9,(172-tot)/Math.max(1,L.length-1)));let y=180,out="";
+    L.forEach((l,i)=>{y-=l[1];out+=`<g class="ly" style="--dy:${(-gap*i).toFixed(1)}px">${dr(l[0],bLayer(l[2],y,l[1],l[3],l[4]))}</g>`});
+    return `<svg viewBox="0 0 200 190" class="bsvg" role="img" aria-label="Your ${K.nm.toLowerCase()}, layer by layer"><ellipse cx="100" cy="183" rx="74" ry="5" fill="#6a3442" opacity=".1"/>${out}</svg>`}
+  if(K.view==="glass"){const base=sel.find(o=>o[7]&&/^#/.test(o[7][0]));if(!base)return bEmpty("Choose your drink");let milk=0;for(const o of sel)if(o[7]&&typeof o[7][0]==="number")milk+=o[7][0]*B.q[o[0]]*bUnit(o)[1];const has=x=>sel.some(o=>o[7]&&o[7][0]===x),pct=Math.max(30,100-milk*13),G="M64 22H136L126 132Q100 139 74 132Z";
+    return `<svg viewBox="0 0 200 150" class="bsvg" role="img" aria-label="Your drink"><ellipse cx="100" cy="140" rx="40" ry="5" fill="#6a3442" opacity=".1"/><clipPath id="bgc"><path d="${G}"/></clipPath><path d="${G}" fill="#fff" opacity=".7"/><g clip-path="url(#bgc)"><rect class="${B.last===base[0]?"blq":""}" x="50" y="38" width="100" height="102" style="fill:color-mix(in srgb,${base[7][0]} ${pct}%,#fff6e8);transition:fill .5s"/>${has("syr")?dr(sel.find(o=>o[7]&&o[7][0]==="syr"),'<path d="M70 44q6 30 2 80M128 46q-8 34-3 82M100 40q4 26-4 60" fill="none" stroke="#5a3524" stroke-width="5" stroke-linecap="round" opacity=".55"/>'):""}${has("jelly")?dr(sel.find(o=>o[7]&&o[7][0]==="jelly"),[[84,112],[100,120],[114,110],[92,124],[108,100]].map(([x,y])=>`<rect x="${x}" y="${y}" width="10" height="10" rx="2" fill="#2e2622" opacity=".85"/>`).join("")):""}${has("pearl")?dr(sel.find(o=>o[7]&&o[7][0]==="pearl"),[[82,126],[92,128],[102,127],[112,128],[120,124],[88,118],[98,119],[108,119],[116,116]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="4.6" fill="#2e2622"/>`).join("")):""}${has("ice")?dr(sel.find(o=>o[7]&&o[7][0]==="ice"),'<rect x="76" y="46" width="20" height="20" rx="4" fill="#fff" opacity=".6" transform="rotate(12 86 56)"/><rect x="102" y="58" width="20" height="20" rx="4" fill="#fff" opacity=".6" transform="rotate(-14 112 68)"/><rect x="84" y="76" width="18" height="18" rx="4" fill="#fff" opacity=".5" transform="rotate(8 93 85)"/>'):""}</g><path d="${G}" fill="none" stroke="#d9c9cf" stroke-width="2.5"/><path d="M73 30L80 124" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".6"/>${has("cream")?dr(sel.find(o=>o[7]&&o[7][0]==="cream"),'<path d="M66 36Q62 20 80 22Q84 8 100 12Q116 6 120 22Q138 20 134 36Z" fill="#fffaf2" stroke="#f1e6d6" stroke-width="1.5"/>'):""}${has("ice")||has("pearl")?'<path d="M112 6L104 96" stroke="var(--a2)" stroke-width="6" stroke-linecap="round"/>':'<path d="M88 14q-5 6 0 12M104 10q-5 6 0 12" fill="none" stroke="var(--a1)" stroke-width="3" stroke-linecap="round"/>'}</svg>`}
+  const plate=K.view==="plate",P=plate?[[66,84],[128,70],[130,100],[92,106],[98,62],[52,66],[152,86],[100,86],[72,104],[118,86]]:[[100,58],[74,56],[126,56],[86,66],[114,66],[58,60],[142,60],[100,70],[72,68],[128,68],[100,48]];let i=0,out="";
+  const base=K.view==="bowl"?sel.find(o=>!o[4]):null;
+  for(const o of sel){if(!o[4])continue;const[k,a,b]=o[4].split(":"),n=Math.max(1,Math.min(3,Math.round(B.q[o[0]]*bUnit(o)[1]/(o[5]||1)+.3)));if(!ART.I[k])continue;for(let j=0;j<n;j++){const[x,y]=P[i++%P.length];out+=`<g transform="translate(${x} ${y}) scale(1.9)"><g style="animation-delay:${j*90}ms" class="${o[0]===B.last?"bd":""}">${ART.I[k](0,0,a,b)}</g></g>`}}
+  if(plate)return `<svg viewBox="0 0 200 150" class="bsvg" role="img" aria-label="Your plate"><ellipse cx="100" cy="134" rx="78" ry="7" fill="#6a3442" opacity=".1"/><ellipse cx="100" cy="84" rx="92" ry="56" fill="#fff"/><ellipse cx="100" cy="84" rx="92" ry="56" fill="none" stroke="var(--a1)" stroke-width="4"/><ellipse cx="100" cy="84" rx="72" ry="42" fill="#fff9f1"/>${out||'<text x="100" y="88" text-anchor="middle" style="font:600 12px var(--text);fill:var(--mute)">Your plate is empty</text>'}</svg>`;
+  return `<svg viewBox="0 0 200 150" class="bsvg" role="img" aria-label="Your bowl"><ellipse cx="100" cy="140" rx="60" ry="6" fill="#6a3442" opacity=".1"/><path d="M24 60H176Q172 130 100 136Q28 130 24 60Z" fill="var(--a1)"/><path d="M24 60H176Q175 74 171 84H29Q25 74 24 60Z" fill="#fff" opacity=".28"/><ellipse cx="100" cy="60" rx="76" ry="19" fill="${base?K.fill:"#fff9f1"}" style="transition:fill .5s"/>${base?`<path class="${base[0]===B.last?"bd":""}" d="M58 60q14-10 28 0t28 0t28 0" fill="none" stroke="#fff" stroke-width="3" opacity=".5" stroke-linecap="round"/>`:""}${out}${!base&&!out?'<text x="100" y="64" text-anchor="middle" style="font:600 12px var(--text);fill:var(--mute)">An empty bowl</text>':""}</svg>`}
+const bEmpty=t=>`<svg viewBox="0 0 200 150" class="bsvg"><rect x="40" y="40" width="120" height="70" rx="20" fill="none" stroke="var(--a1)" stroke-width="3" stroke-dasharray="8 8"/><text x="100" y="80" text-anchor="middle" style="font:600 13px var(--text);fill:var(--mute)">${t}</text></svg>`;
+function bLayer(s,y,h,col,x){const W=144,X=28,dk=`color-mix(in srgb,${col} 78%,#5a2338)`;
+  if(s==="bunB")return `<path d="M${X} ${y}H${X+W}V${y+h-9}Q${X+W} ${y+h} ${X+W-9} ${y+h}H${X+9}Q${X} ${y+h} ${X} ${y+h-9}Z" fill="${col}"/><rect x="${X}" y="${y}" width="${W}" height="5" fill="#fff" opacity=".3"/>`;
+  if(s==="bunT")return x==="flat"?`<rect x="${X}" y="${y+h-13}" width="${W}" height="13" rx="6.5" fill="${col}"/>`:`<path d="M${X} ${y+h}Q${X} ${y} 100 ${y}Q${X+W} ${y} ${X+W} ${y+h}Z" fill="${col}"/><path d="M52 ${y+10}q48-12 96 0" fill="none" stroke="#fff" stroke-width="2.5" opacity=".35" stroke-linecap="round"/>${x==="oat"?[[60,14],[82,8],[104,12],[126,8],[142,15],[72,18],[116,18]].map(([a,b])=>`<ellipse cx="${a}" cy="${y+b}" rx="3" ry="1.6" fill="#fff3d6"/>`).join(""):""}`;
+  if(s==="slice")return `<rect x="38" y="${y}" width="124" height="${h}" rx="4" fill="${col}"/><rect x="42" y="${y+2}" width="116" height="${h-4}" rx="3" fill="#fff" opacity=".28"/>`;
+  if(s==="zig"){let d=`M${X+4} ${y}H${X+W-4}`;for(let a=X+W-4;a>X+4;a-=17)d+=`L${a-8.5} ${y+h}L${a-17} ${y}`;return `<path d="${d}Z" fill="${col}"/>`}
+  if(s==="wave"){let d=`M${X} ${y+h/2}`;for(let a=0;a<8;a++)d+=`q9 ${a%2?h:-h} 18 0`;return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${h}" stroke-linecap="round"/>`}
+  if(s==="dots")return [...Array(8)].map((_,i)=>`<circle cx="${X+10+i*17.7}" cy="${y+h/2}" r="${h/2+1.5}" fill="${col}"/><circle cx="${X+10+i*17.7}" cy="${y+h/2}" r="${h/4}" fill="#fff" opacity=".35"/>`).join("");
+  if(s==="rings")return [...Array(9)].map((_,i)=>`<ellipse cx="${X+9+i*15.8}" cy="${y+h/2}" rx="6.5" ry="${h/2}" fill="none" stroke="${col}" stroke-width="2.2"/>`).join("");
+  if(s==="dash")return [...Array(7)].map((_,i)=>`<rect x="${X+4+i*20}" y="${y}" width="15" height="${h}" rx="${h/2}" fill="${col}"/>`).join("");
+  if(s==="line"){let d=`M${X+6} ${y+h/2}`;for(let a=0;a<11;a++)d+=`q6 ${a%2?4:-4} 12 0`;return `<path d="${d}" fill="none" stroke="${col}" stroke-width="${h}" stroke-linecap="round"/>`}
+  if(s==="egg")return `<rect x="50" y="${y}" width="100" height="${h}" rx="${h/2}" fill="#fff" stroke="#f1e6d6" stroke-width="1"/><ellipse cx="100" cy="${y+h/2}" rx="13" ry="${h/2-.5}" fill="#ffc94d"/>`;
+  return `<rect x="${X+4}" y="${y}" width="${W-8}" height="${h}" rx="${Math.min(h/2,5)}" fill="${col}"/><rect x="${X+4}" y="${y}" width="${W-8}" height="2.5" rx="1.2" fill="#fff" opacity=".3"/><rect x="${X+4}" y="${y+h-2.5}" width="${W-8}" height="2.5" rx="1.2" fill="${dk}" opacity=".35"/>`}
+function buildLog(){const K=KITS[B.kit],sel=B.order.map(id=>bOpt(B.kit,id)).filter(o=>o&&B.q[o[0]]);if(!sel.length){toast("Add something first");return}
+  const t=bTot(),nm=($("#bName").value.trim()||(B.from?B.from+", my way":"My "+K.nm.toLowerCase())).slice(0,60),e={id:uid(),slot:$("#bSlot").value||B.slot,name:nm,detail:sel.map(o=>(bQty(o,B.q[o[0]])+o[1].toLowerCase()).trim()).join(", "),mult:1,thumb:"",src:"build",place:K.place,at:Date.now(),build:{kit:B.kit,q:{...B.q},u:{...B.u}}};
+  NF.forEach((f,i)=>{e[f]=Math.round(t[i]*10)/10});e.low=e.kcal*.9;e.high=e.kcal*1.2;if(B.from)learn(B.from,1);
+  const R=S.prefs.builds=(S.prefs.builds||[]).filter(r=>r.nm!==nm);R.unshift({kit:B.kit,nm,kcal:Math.round(e.kcal),q:{...B.q},u:{...B.u}});S.prefs.builds=R.slice(0,6);store.set("prefs",S.prefs);
+  const k=B.date||S.view,fromPlan=!!B.date;$("#bArt").classList.add("joined");$("#bGo").disabled=true;
+  setTimeout(()=>{closeSheets();if(!fromPlan&&curView!=="today")location.hash="today";addEntry(k,e);if(fromPlan&&curView==="plan")renderPlan();if(!calm)setTimeout(confetti,300)},calm?0:950)}
 
 /* first-time tour */
 const TOUR=[["#tiles","Not sure what to eat?","Tap Pick my meals and choose from three plans made for today."],["#fab","Log what you eat","Tap the + to add a meal by search, food label or photo."],['.tabs a[href="#plan"]',"Your personal plan","Tap Plan for a week of meals and workouts made for you."],['.tabs a[href="#progress"]',"See how you're doing","Progress has your check-in calendar, weight, measurements and weekly review."],['.tabs a[href="#me"]',"Make it yours","Me is where you edit your preferences, change the colour mood and back up your data."]];
@@ -2050,6 +2412,7 @@ const PW=[["start","When should your week start?","",[["today","Today"],["monday
 ["style","How do you want to eat this week?","",[["Mostly eating out","Mostly eating out","Hawker, kopitiam, mamak and restaurants"],["Half eating out, half simple home cooking","Half and half","Some meals out, some quick home cooking"],["Mostly home cooking","Mostly home cooking","Simple recipes under 20 minutes"]]],
 ["budget","What's your budget for a meal out?","",[["Under RM10","Under RM10"],["RM10 to RM20","RM10 to RM20"],["RM20 to RM35","RM20 to RM35"],["Any","No limit"]]],
 ["place","Where will you exercise?","",[["At home, no equipment","At home","No equipment needed"],["Outdoors, walking or jogging","Outdoors","Walking or jogging"],["Gym","At the gym","Machines and weights"]]],
+["equip","What do you have to use?","Tap everything you have. Having nothing at all is fine too.",[]],
 ["minutes","How much time do you have each day?","Short and regular beats long and rare.",[["15","15 minutes"],["20","20 minutes"],["30","30 minutes"],["45","45 minutes"]]],
 ["knees","Do your knees need looking after?","Go gentle if you carry extra weight, get knee pain, or are new to exercise.",[["yes","Yes, go gentle","No jumping, deep squats, lunges or stairs"],["no","My knees are fine","Regular beginner-friendly moves"]]],
 ["focus","What's your main goal?","Not sure? Leave it on the first one and it is chosen for you.",[["auto","Choose for me","Uses your profile and your weight goal"],["lose","Lose weight overall","Full-body moves with extra walking"],["legs","Tone legs and bottom"],["arms","Stronger arms and upper body"],["core","Stronger tummy and back"]]],
@@ -2058,7 +2421,8 @@ const PW=[["start","When should your week start?","",[["today","Today"],["monday
 const sugDiff=()=>P.knees==="yes"?"easy":P.level==="Fit and active"?"hard":P.level==="Some experience"?"medium":"easy";
 function openPlanWiz(){if(!targets(S.profile)){openOnb();return}P={style:"Half eating out, half simple home cooking",budget:"RM10 to RM20",place:"At home, no equipment",minutes:"20",level:"Beginner",focus:"auto",knees:(()=>{const T=targets(S.profile),h=num(S.profile?.height)/100;return T&&h&&T.w/(h*h)>=30?"yes":"no"})(),...(S.plan?.settings||{}),start:"today"};if(P.focus==="all")P.focus="auto";pi=0;wzMode="plan";closeSheets(true);$("#onb").hidden=false;planShow(1)}
 function planShow(dir){const body=$("#onbBody"),nx=$("#onbNext"),n=PW.length;let h;clearTimeout(bldT);
-  if(pi<n){const[k,q,sub,list]=PW[pi];if(k==="diff"&&!P.diff)P.diff=sugDiff();h=`<h1 id="onbQ">${q}</h1>${sub?`<p class="lead">${sub}</p>`:""}<div class="opts">${list.map(([v,t,d])=>`<button class="opt" data-act="onbOpt" data-k="${k}" data-v="${v}" aria-pressed="${String(P[k])===v}"><b>${t}</b>${d?`<small>${d}</small>`:""}${k==="diff"&&v===sugDiff()?"<small><b>Suggested for you</b></small>":""}</button>`).join("")}</div>`}
+  if(pi<n&&PW[pi][0]==="equip"){const pl=plOf(P);if(P.eqFor!==pl||!Array.isArray(P.equip)){P.equip=Array.isArray(P.equip)&&P.eqFor===undefined&&P.equip.every(x=>EQ[pl].some(y=>y[0]===x))?P.equip:eqDefault(pl);P.eqFor=pl}h=`<h1 id="onbQ">${pl==="gym"?"Which machines does your gym have?":"What do you have to use?"}</h1><p class="lead">${pl==="gym"?"Tap the ones you can use. The drawings show what each one looks like.":PW[pi][2]}</p><div class="opts">${EQ[pl].map(([v,t,d])=>`<button class="opt ico big" data-act="onbMulti" data-v="${v}" aria-pressed="${P.equip.includes(v)}"><span aria-hidden="true">${eqSvg(v)}</span><b>${t}</b><small>${d}</small></button>`).join("")}</div>`}
+  else if(pi<n){const[k,q,sub,list]=PW[pi];if(k==="diff"&&!P.diff)P.diff=sugDiff();h=`<h1 id="onbQ">${q}</h1>${sub?`<p class="lead">${sub}</p>`:""}<div class="opts">${list.map(([v,t,d])=>`<button class="opt" data-act="onbOpt" data-k="${k}" data-v="${v}" aria-pressed="${String(P[k])===v}"><b>${t}</b>${d?`<small>${d}</small>`:""}${k==="diff"&&v===sugDiff()?"<small><b>Suggested for you</b></small>":""}</button>`).join("")}</div>`}
   else if(pi===n)h='<div class="bld" aria-hidden="true"><i></i><i></i><i></i></div><h1 id="onbQ" class="c">Building your week</h1><p class="lead c" id="bldTxt">Choosing breakfasts</p>';
   else{const ms=S.plan.days.flatMap(d=>d.meals);h=`<h1 id="onbQ" class="c">Your week is ready</h1><p class="bigT" id="onbK">0</p><p class="lead c">kcal a day</p><div class="chips" style="justify-content:center"><span class="chip">${ms.length} meals</span><span class="chip">${ms.filter(m=>m.place!=="Home").length} eating out</span><span class="chip">${S.plan.days.filter(d=>d.exercise&&d.exercise.intensity!=="rest").length} workouts</span></div><p class="sub c">Tap Swap on anything you don't fancy.</p>`}
   body.innerHTML=h;body.classList.remove("inR","inL");void body.offsetWidth;body.classList.add(dir>0?"inR":"inL");body.scrollTop=0;
@@ -2068,14 +2432,14 @@ function planShow(dir){const body=$("#onbBody"),nx=$("#onbNext"),n=PW.length;let
 function planNext(){const n=PW.length;if(pi>n){$("#onb").hidden=true;if(curView!=="plan")location.hash="plan";else renderPlan();return}if(pi<n){pi++;planShow(1)}}
 
 /* getting-to-know-you flow: one question a page, rulers for numbers */
-const ONB=["name","sex","age","height","weight","goal","activity","pace","food","done"];
+const ONB=["name","sex","age","height","weight","goal","meas","activity","pace","food","done"];
 const TRAITS=["Sweet tooth","Snacker","Late-night eater","Coffee or tea lover","Mostly eat out","Small appetite"],DIETS=["Halal only","I don't eat pork","I don't eat beef","I don't eat seafood","I can't take spicy food","I'm lactose intolerant","I'm vegetarian","I'm vegan","I always want meat or fish"],OLDD={"halal":"Halal only","no pork":"I don't eat pork","no beef":"I don't eat beef","no seafood":"I don't eat seafood","less spicy":"I can't take spicy food","lactose-free":"I'm lactose intolerant","vegetarian":"I'm vegetarian","vegan":"I'm vegan","no meat-free meals":"I always want meat or fish"},normDiet=str=>String(str||"").split(",").map(x=>x.trim()).filter(Boolean).map(x=>OLDD[x.toLowerCase()]||x).join(", "),CUIS=["Malay","Chinese","Indian","Japanese","Korean","Thai","Western","Middle Eastern"];
 const ACTS=[["1.2","Mostly sitting","Desk, classes or studying most of the day"],["1.375","Lightly active","On your feet some of the day, 1 to 3 workouts a week"],["1.55","Moderately active","3 to 5 workouts a week"],["1.725","Very active","Hard exercise most days"]];
 let O=null,oi=0,snapT=null,rul=null;
 const splitC=(str,opts)=>{const c=new Set(),rest=[];for(const x of String(str||"").split(",").map(x=>x.trim()).filter(Boolean)){const m=opts.find(o=>o.toLowerCase()===x.toLowerCase());if(m)c.add(m);else rest.push(x)}return[c,rest.join(", ")]};
 const joinC=(c,t)=>[...c,String(t||"").trim()].filter(Boolean).join(", ");
 function openOnb(){const p=S.profile||{},[dc,dt]=splitC(normDiet(p.diet),DIETS),[lc,lt]=splitC(p.likes,CUIS),[tc]=splitC(p.traits,TRAITS);
-  O={name:p.name||"",sex:p.sex||"",age:num(p.age)||25,height:num(p.height)||160,weight:num(p.weight)||60,goal:num(p.goal)||0,activity:p.activity||"1.375",pace:p.pace!=null?String(p.pace):"-0.5",dc,dt,lc,lt,tc,bday:/^\d{4}-\d\d-\d\d$/.test(p.bday||"")?p.bday:`${new Date().getFullYear()-(num(p.age)||25)}-01-01`};oi=0;wzMode="onb";$("#onbNext").hidden=false;closeSheets(true);$("#onb").hidden=false;onbShow(1)}
+  O={name:p.name||"",sex:p.sex||"",age:num(p.age)||25,height:num(p.height)||160,weight:num(p.weight)||60,goal:num(p.goal)||0,activity:p.activity||"1.375",pace:p.pace!=null?String(p.pace):"-0.5",meas:{},dc,dt,lc,lt,tc,bday:/^\d{4}-\d\d-\d\d$/.test(p.bday||"")?p.bday:`${new Date().getFullYear()-(num(p.age)||25)}-01-01`};oi=0;wzMode="onb";$("#onbNext").hidden=false;closeSheets(true);$("#onb").hidden=false;onbShow(1)}
 const onbProfile=()=>({...(S.profile||{}),name:O.name,sex:O.sex,age:O.age,bday:O.bday,height:O.height,weight:O.weight,goal:O.goal||O.weight,activity:O.activity,pace:O.pace,diet:joinC(O.dc,O.dt),likes:joinC(O.lc,O.lt),traits:joinC(O.tc,"")});
 function paceOpts(){const d=O.goal-O.weight,wk=r=>`About ${Math.ceil(Math.abs(d)/r)} weeks to reach ${O.goal} kg`;
   if(d<0)return[["-0.25","Gentle","Lose 0.25 kg a week. "+wk(.25)],["-0.5","Steady","Lose 0.5 kg a week. "+wk(.5)],["-0.75","Fast","Lose 0.75 kg a week. "+wk(.75)+". The hardest to keep up"],["0","Keep my weight for now","Eat what you burn"]];
@@ -2125,17 +2489,18 @@ function onbShow(dir){const st=ONB[oi],body=$("#onbBody"),nx=$("#onbNext");let h
   else if(st==="height"){h=`<h1 id="onbQ">How tall are you?</h1><p class="rnum"><b id="rVal"></b><small>cm</small></p><div class="vh"><div class="vfig"><svg id="hfig" viewBox="0 0 80 200" aria-hidden="true"><g fill="var(--a2)"><circle cx="40" cy="20" r="16"/><path d="M22 44Q40 36 58 44L64 104Q64 110 58 108L54 80L56 118L52 192Q52 198 46 198Q41 198 41 192L40 130L39 192Q39 198 34 198Q28 198 28 192L24 118L26 80L22 108Q16 110 16 104Z"/></g><ellipse cx="34" cy="14" rx="6" ry="3" fill="#fff" opacity=".45"/></svg></div><div class="vrw"><div class="vruler" id="vruler" tabindex="0" role="slider" aria-label="Height in centimetres"><div class="vtrack" id="vtrack"></div></div></div></div><p class="sub c">Drag the ruler up or down, or tap the buttons</p><div class="rbtns"><button data-act="rStep" data-d="-1" aria-label="Shorter">−</button><button data-act="rStep" data-d="1" aria-label="Taller">+</button></div>`;r=["v"]}
   else if(st==="weight"){h=`<h1 id="onbQ">What do you weigh now?</h1><p class="lead">A rough number is fine. You can update it any time.</p>`+rulerHtml("kg","Weight in kilograms");r=["weight",30,250,.5]}
   else if(st==="goal"){if(!O.goal)O.goal=O.weight;h=`<h1 id="onbQ">What weight are you aiming for?</h1>`+rulerHtml("kg","Goal weight in kilograms");r=["goal",30,250,.5,goalNote]}
+  else if(st==="meas")h=`<h1 id="onbQ">Want to track your measurements?</h1><p class="lead">Optional. A tape measure often shows change when the scale doesn't. Leave it blank to skip, and add them later in Progress.</p><div class="mgrid">${MEAS.map(([k,n])=>`<label>${n} (cm)<input id="om_${k}" type="number" inputmode="decimal" step="0.1" min="10" max="250" value="${O.meas[k]||""}"></label>`).join("")}</div>`;
   else if(st==="activity")h=`<h1 id="onbQ">How active are you on a normal day?</h1>`+optHtml("activity",ACTS,v=>fig(ACTFIG[v]));
   else if(st==="pace"){const po=paceOpts(),d=O.goal-O.weight;if(!po.some(x=>x[0]===O.pace))O.pace=d<0?"-0.5":d>0?"0.25":"0";h=`<h1 id="onbQ">How quickly do you want to reach your goal?</h1><p class="lead">Slower is easier to keep up, and you can change this later.</p>`+optHtml("pace",po,spdIco)}
   else if(st==="food")h=`<h1 id="onbQ">Tell me about your food</h1><p class="lbl">What describes you?</p>${pillHtml("trait",TRAITS,O.tc)}<p class="lbl">Tap what's true for you</p>${pillHtml("diet",DIETS,O.dc)}<label for="onbDiet" class="sr">Other diet needs</label><input id="onbDiet" placeholder="Anything else, e.g. I'm allergic to prawns" value="${esc(O.dt)}"><p class="lbl">What do you love?</p>${pillHtml("like",CUIS,O.lc)}<label for="onbLike" class="sr">Other food you like</label><input id="onbLike" placeholder="Anything else, e.g. spicy, matcha, soup" value="${esc(O.lt)}">`;
   else{const T=targets(onbProfile());h=`<h1 id="onbQ" class="c">You're all set${O.name?", "+esc(O.name):""}</h1><p class="lead c">Your daily target</p><div class="macBig"><svg viewBox="0 0 200 200" aria-hidden="true">${REALMAC}</svg><div><p class="bigT" id="onbK">0</p><small>kcal a day</small></div></div><div class="mtiles">${[["egg",T.protein+" g","Protein"],["bowl",T.carbs+" g","Carbs"],["oil",T.fat+" g","Fat"],["drop","8","Glasses"]].map(([i,v,n])=>`<div><span>${ic(I[i])}</span><b>${v}</b><small>${n}</small></div>`).join("")}</div>${T.floored?`<p class="warn">Your number came out below ${fmt(T.floor)} kcal, so it's held at ${fmt(T.floor)}. A slower pace works better than eating less than that.</p>`:""}<p class="sub c">The Me tab shows how this was worked out, step by step. You can change any answer there.</p>`}
   body.innerHTML=h;body.classList.remove("inR","inL");void body.offsetWidth;body.classList.add(dir>0?"inR":"inL");body.scrollTop=0;$("#onb").scrollTop=0;window.scrollTo(0,0);requestAnimationFrame(()=>{body.scrollTop=0});setTimeout(()=>{body.scrollTop=0},380);
-  $("#onbProg").style.width=oi/(ONB.length-1)*100+"%";$("#onbBack").style.visibility=oi?"visible":"hidden";nx.textContent=st==="done"?"Start tracking":"Next";nx.disabled=st==="sex"&&!O.sex;
+  $("#onbProg").style.width=oi/(ONB.length-1)*100+"%";$("#onbBack").style.visibility=oi?"visible":"hidden";nx.textContent=st==="done"?"Start tracking":st==="meas"&&!Object.keys(O.meas).length?"Skip for now":"Next";nx.disabled=st==="sex"&&!O.sex;
   if(r&&r[0]==="v")setupVRuler("height",120,230);else if(r)setupRuler(...r);if(st==="done")countTo($("#onbK"),targets(onbProfile()).kcal)}
 function bdRead(){const d=$("#bdD"),m=$("#bdM"),y=$("#bdY");if(!d)return;const dim=new Date(num(y.value),num(m.value),0).getDate(),dd=Math.min(num(d.value),dim);O.bday=`${y.value}-${pad(num(m.value))}-${pad(dd)}`;O.age=ageFrom(O.bday);const a=$("#bdAge");if(a)a.textContent=O.age}
-function onbCollect(){const st=ONB[oi];if(st==="age")bdRead();if(st==="name")O.name=$("#onbName").value.trim();if(st==="food"){O.dt=$("#onbDiet").value;O.lt=$("#onbLike").value}}
+function onbCollect(){const st=ONB[oi];if(st==="meas"){O.meas={};for(const[k]of MEAS){const v=num($("#om_"+k).value);if(v>=10&&v<=250)O.meas[k]=Math.round(v*10)/10}}if(st==="age")bdRead();if(st==="name")O.name=$("#onbName").value.trim();if(st==="food"){O.dt=$("#onbDiet").value;O.lt=$("#onbLike").value}}
 function onbNext(){if(wzMode==="plan"){planNext();return}onbCollect();if(ONB[oi]==="sex"&&!O.sex)return;if(ONB[oi]==="age"&&(O.age<13||O.age>90)){toast("Please check the year. Macaron is for ages 13 to 90.");return}if(ONB[oi]==="done"){onbFinish();return}oi++;onbShow(1)}
-function onbFinish(){const p=onbProfile(),k=today();if(/sweet tooth/i.test(p.traits||"")&&!S.prefs.flags.st){S.prefs.flags.st=1;S.prefs.tag.sweet=num(S.prefs.tag.sweet)+2;store.set("prefs",S.prefs)}S.prefs.flags.m1=1;S.profile=p;store.set("profile",p);
+function onbFinish(){const p=onbProfile(),k=today();if(/sweet tooth/i.test(p.traits||"")&&!S.prefs.flags.st){S.prefs.flags.st=1;S.prefs.tag.sweet=num(S.prefs.tag.sweet)+2;store.set("prefs",S.prefs)}S.prefs.flags.m1=1;S.profile=p;store.set("profile",p);if(Object.keys(O.meas||{}).length){S.meas=S.meas||{list:[]};const old=S.meas.list.find(x=>x.date===k);if(old)Object.assign(old,O.meas);else S.meas.list.push({date:k,...O.meas});store.set("meas",S.meas)}
   if(!(S.weights.list||[]).some(w=>w.date===k)){S.weights={list:[...(S.weights.list||[]),{date:k,kg:p.weight}].slice(-400)};store.set("weights",S.weights)}
   $("#onb").hidden=true;show(curView);setTimeout(checkIn,900);toast(`Your target is ${fmt(targets(p).kcal)} kcal a day`)}
 
@@ -2203,6 +2568,15 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="useBurn"&&S.profile){S.profile.tdee=pos(b.dataset.v);store.set("profile",S.profile);renderAdapt();toast(`Target updated to ${fmt(targets(S.profile).kcal)} kcal a day`)}
   else if(a==="useFormula"&&S.profile){delete S.profile.tdee;store.set("profile",S.profile);renderAdapt();toast("Back to the formula")}
   else if(a==="saveMemo"){S.prefs.note=$("#memo").value.trim().slice(0,1500);store.set("prefs",S.prefs);fixPlan();noteFb();toast("Remembered")}
+  else if(a==="openBuild")openBuild();
+  else if(a==="bKit"){B={kit:b.dataset.k,q:{},u:{},order:[],last:"",slot:slotNow()==="snack"?KITS[b.dataset.k].slot:(b.dataset.k==="drink"?"snack":slotNow()),date:"",from:""};$("#bName").value="";renderBuild(true)}
+  else if(a==="bAgain"){const r=(S.prefs.builds||[]).filter(x=>KITS[x.kit])[num(b.dataset.i)];if(r){openBuild(r.kit,r.q,{u:r.u,slot:slotNow()});$("#bName").value=r.nm}}
+  else if(a==="bBack"){if(B){B=null;renderBuild()}else closeSheets()}
+  else if(a==="bStep"&&B){const o=bOpt(B.kit,b.dataset.id),u=bUnit(o),q=num(B.q[o[0]]),d=num(b.dataset.d);bSet(o[0],q===0&&d>0?Math.max(u[2],Math.round((o[5]||1)*o[2][0][1]/u[1]/u[2])*u[2]):Math.round((q+d*u[2])*100)/100)}
+  else if(a==="bUnit"&&B){const o=bOpt(B.kit,b.dataset.id),id=o[0],old=bUnit(o),ni=((B.u[id]||0)+1)%o[2].length,nu=o[2][ni],q=num(B.q[id]);B.u[id]=ni;if(q)B.q[id]=Math.max(nu[2],Math.round(q*old[1]/nu[1]/nu[2])*nu[2]);renderBuild()}
+  else if(a==="bPick"&&B){const o=bOpt(B.kit,b.dataset.id),g=bGrp(B.kit,o[0]),q=num(B.q[o[0]]);bSet(o[0],g[1]==="tog"?(q+1)%3:q?(g[4]?1:0):1)}
+  else if(a==="bGo"&&B)buildLog();
+  else if(a==="buildPlan"){const m=S.plan?.days.find(x=>x.date===b.dataset.k)?.meals[num(b.dataset.i)],km=m&&KITMAP[m.base];if(km){openBuild(km[0],km[1],{slot:m.slot,date:b.dataset.k,from:m.base});$("#bName").value=""}}
   else if(a==="openCalc"){renderCalc();openSheet("#calcSheet")}
   else if(a==="reminders")reminders();
   else if(a==="crave"){const v=b.dataset.v;if(crave.has(v))crave.delete(v);else crave.add(v);b.setAttribute("aria-pressed",crave.has(v))}
@@ -2218,6 +2592,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="onbClose"){clearTimeout(bldT);$("#onb").hidden=true}
   else if(a==="onbBack"){if(wzMode==="plan"){if(pi>0){pi=pi>PW.length?PW.length-1:pi-1;planShow(-1)}}else if(oi>0){onbCollect();oi--;onbShow(-1)}}
   else if(a==="onbNext")onbNext();
+  else if(a==="onbMulti"){const v=b.dataset.v;P.equip=P.equip.includes(v)?P.equip.filter(x=>x!==v):[...P.equip,v];b.setAttribute("aria-pressed",P.equip.includes(v))}
   else if(a==="onbOpt"){(wzMode==="plan"?P:O)[b.dataset.k]=b.dataset.v;$$("#onbBody .opt").forEach(x=>x.setAttribute("aria-pressed",x===b));$("#onbNext").disabled=false}
   else if(a==="onbChip"){const set=b.dataset.g==="diet"?O.dc:b.dataset.g==="trait"?O.tc:O.lc,v=b.dataset.v;if(set.has(v))set.delete(v);else set.add(v);b.setAttribute("aria-pressed",set.has(v))}
   else if(a==="rStep"){if(rul)rul(num(b.dataset.d))}
@@ -2243,7 +2618,9 @@ window.addEventListener("hashchange",route);
 /* boot */
 const opts=SLOTS.map(([k,n])=>`<option value="${k}">${n}</option>`).join("");$("#scanSlot").innerHTML=opts;$("#listSlot").innerHTML=opts;$("#scanSlot").value=slotNow();
 loadLocal();fillPlaces();try{navigator.storage&&navigator.storage.persist&&navigator.storage.persist()}catch(e){}
+$("#onbBody").addEventListener("input",ev=>{if(ev.target.id&&ev.target.id.startsWith("om_"))$("#onbNext").textContent=[...$$("#onbBody .mgrid input")].some(x=>x.value)?"Next":"Skip for now"});
 $("#onbBody").addEventListener("change",ev=>{if(ev.target.closest(".bdRow"))bdRead()});
+$("#bSlot").addEventListener("change",ev=>{if(B){B.slot=ev.target.value;renderBuild()}});
 $("#restoreFile").addEventListener("change",ev=>{const f=ev.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{$("#restoreBox").value=String(r.result||"");restoreData();ev.target.value=""};r.readAsText(f)});
 buildTk();buildToday();renderStrip();setMode("photo");route();renderLvl();
 hasModel().then(()=>{if(scanMode==="photo"&&!scanRes&&!scanCand)setMode("photo")});
