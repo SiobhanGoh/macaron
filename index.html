@@ -2146,10 +2146,30 @@ const emo=n=>{n=String(n||"").toLowerCase().replace(/\(.*?\)/g,"");for(const[r,e
     glass: (id) => [0, 3, 6, 9, 12].map((d, i) => `<path d="M-22 ${-7 + d * .85}c6-7 10 7 16 0s10 7 16 0s9 6 12 1" stroke="#fffdf8" stroke-opacity=".75" stroke-width="1.6" fill="none" stroke-linecap="round"/>`).join(""),
     youtiao: (id) => `<rect x="-20" y="-7" width="40" height="7" rx="3.5" fill="#e3a447"/><rect x="-19" y="0" width="40" height="7" rx="3.5" fill="#d48f34"/><path d="M-16 -5h32" stroke="#ffe0a0" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>`,
   };
-  const SPOTS = [[160, 100], [112, 90], [208, 90], [132, 116], [190, 118], [86, 106], [236, 106], [160, 132], [110, 134], [212, 134], [146, 80], [178, 80], [80, 124], [242, 124], [158, 118], [134, 96], [186, 98], [96, 90], [226, 90]];
+  // landing spots: an even grid over the broth, kept clear of the divider, then ordered so each new piece
+  // lands as far as possible from the ones already there (farthest-point order)
+  function divX(y) { let best = CX, bd = 1e9; for (let t = 0; t <= 1; t += .02) { const u = 1 - t, py = u*u*u*(BY-BRY-8) + 3*u*u*t*(BY-22) + 3*u*t*t*(BY+22) + t*t*t*(BY+BRY+8), px = u*u*u*(CX+4) + 3*u*u*t*(CX-50) + 3*u*t*t*(CX+50) + t*t*t*(CX-4), d = Math.abs(py - y); if (d < bd) { bd = d; best = px; } } return best; }
+  const SPOT_CACHE = {};
+  function spots(two) {
+    if (SPOT_CACHE[two]) return SPOT_CACHE[two];
+    const c = [];
+    for (let r = 0, y = BY - BRY + 18; y <= BY + BRY - 20; y += 14, r++) {
+      const w = BRX * Math.sqrt(Math.max(0, 1 - Math.pow((y - BY) / BRY, 2))) - 18;
+      for (let x = CX - w + (r % 2) * 15; x <= CX + w; x += 30) if (!two || Math.abs(x - divX(y)) > 22) c.push([Math.round(x), Math.round(y)]);
+    }
+    const out = [], left = c.slice();
+    let i0 = left.reduce((b, p, i) => Math.abs(p[0] - (CX - 52)) + Math.abs(p[1] - BY) < Math.abs(left[b][0] - (CX - 52)) + Math.abs(left[b][1] - BY) ? i : b, 0);
+    out.push(left.splice(i0, 1)[0]);
+    while (left.length) {
+      let bi = 0, bd = -1;
+      left.forEach((p, i) => { const d = Math.min(...out.map(q => (p[0] - q[0]) ** 2 + ((p[1] - q[1]) * 1.8) ** 2)); if (d > bd) { bd = d; bi = i; } });
+      out.push(left.splice(bi, 1)[0]);
+    }
+    return SPOT_CACHE[two] = out;
+  }
   function items(id, list, br, last) {
     const flat = []; list.forEach(([k, n]) => { for (let j = 0; j < Math.min(n, 3); j++) flat.push(k); });
-    const placed = flat.map((k, i) => [k, SPOTS[i % SPOTS.length], i]).sort((a, b) => a[1][1] - b[1][1]);
+    const SP = spots(br.length > 1), placed = flat.map((k, i) => [k, SP[i % SP.length], i]).sort((a, b) => a[1][1] - b[1][1]);
     let lastIdx = -1; if (last) placed.forEach((p, j) => { if (p[0] === last) lastIdx = j; });
     return placed.map(([k, [x, y], i], j) => {
       if (!ING[k]) return "";
