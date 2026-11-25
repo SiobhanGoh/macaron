@@ -2112,7 +2112,8 @@ function toast(msg,undo){const host=$("#toastHost");host.innerHTML="";const t=do
   setTimeout(()=>{if(!t.isConnected)return;t.classList.add("bye");setTimeout(()=>{if(t.isConnected){t.remove();if(lastUndo===undo)lastUndo=null}},360)},(life+.35)*1000)}
 function countTo(el,to){const from=num(el._v);el._v=to;if(calm||!window.gsap||from===to){el.textContent=fmt(Math.abs(to));return}const o={v:from};gsap.to(o,{v:to,duration:.8,ease:"power3.out",overwrite:true,onUpdate:()=>{el.textContent=fmt(Math.abs(o.v))}})}
 /* #166 like burst: squeeze .78, pop to 1.45 in .12 s, damped settle, ring 15 to 33 px, six dots */
-function burst(el){if(calm||!el)return;const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,fx=document.createElementNS("http://www.w3.org/2000/svg","svg");fx.setAttribute("class","fx");fx.setAttribute("width",innerWidth);fx.setAttribute("height",innerHeight);
+function burst(el){if(calm||!el)return;const r=el.getBoundingClientRect();sparkle(r.left+r.width/2,r.top+r.height/2)}
+function burstOld(el){if(calm||!el)return;const r=el.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height/2,fx=document.createElementNS("http://www.w3.org/2000/svg","svg");fx.setAttribute("class","fx");fx.setAttribute("width",innerWidth);fx.setAttribute("height",innerHeight);
   const cols=["#ff8fb0","var(--kaya)","#ffc2d2"];fx.innerHTML=`<circle cx="${cx}" cy="${cy}" r="15" fill="none" stroke="#ff8fb0" stroke-width="3"/>`+[0,1,2,3,4,5].map(i=>`<circle r="4" fill="${cols[i%3]}"/>`).join("");document.body.append(fx);
   const ring=fx.firstChild,dots=[...fx.children].slice(1),t0=performance.now();
   (function tick(now){const t=(now-t0)/1000;let s;if(t<.12){const k=t/.12;s=.78+(1.45-.78)*(1-(1-k)**3)}else{const u=t-.12;s=1+.45*Math.exp(-7*u)*Math.cos(15*u)}el.style.transform=`scale(${s})`;
@@ -2239,8 +2240,7 @@ Object.assign(I,{star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.
 const LVNAME=["Fresh macaron","Kopitiam regular","Hawker scout","Pasar pro","Mamak insider","Nasi lemak ninja","Kuih connoisseur","Food court captain","Macaron master","Macaron legend"];
 function levelOf(xp){let lv=1,need=100,rest=xp;while(rest>=need){rest-=need;lv++;need=lv*100}return{lv,rest,need,name:LVNAME[Math.min(lv,LVNAME.length)-1]}}
 function renderLvl(){const L=levelOf(S.prefs.xp||0);$("#lvlN").textContent="Lv "+L.lv;$("#lvlBar").style.width=L.rest/L.need*100+"%";if(curView==="me")renderGame()}
-function confetti(){if(calm)return;const h=document.createElement("div");h.className="conf";const cols=["#ff8fb0","#f0cf9a","#3aa878","#ffc2d2","#ffffff"];let seed=Date.now()%2147483647;const r=()=>(seed=seed*16807%2147483647)/2147483647;
-  h.innerHTML=[...Array(44)].map((_,i)=>`<i style="left:${r()*100}%;background:${cols[i%5]};--d:${1.5+r()*1.2}s;--w:${r()*.35}s;--x:${(r()-.5)*160}px;--r:${(r()-.5)*1400}deg"></i>`).join("");document.body.append(h);setTimeout(()=>h.remove(),3400)}
+function confetti(){sparkle(innerWidth/2,innerHeight*.5,true)}
 const cheerQ=[];let cheerBusy=false;
 function cheer(title,sub,icon,quiet){cheerQ.push([title,sub,icon,quiet]);if(!cheerBusy)nextCheer()}
 function nextCheer(){const c=cheerQ.shift();if(!c){cheerBusy=false;return}cheerBusy=true;const el=document.createElement("div");el.className="cheer";el.setAttribute("role","status");el.innerHTML=`<span class="ci">${ic(I[c[2]]||I.star)}</span><span><b>${esc(c[0])}</b><small>${esc(c[1])}</small></span>`;document.body.append(el);if(!c[3])confetti();let gone=0;const bye=()=>{if(gone)return;gone=1;el.classList.add("bye");setTimeout(()=>{el.remove();nextCheer()},360)};el.addEventListener("click",bye);setTimeout(bye,Math.min(9000,Math.max(2600,(c[0].length+c[1].length)*42)))}
@@ -2395,7 +2395,7 @@ const KNEEM=[["Seated knee extensions","hold 2 seconds at the top, 10 each leg"]
 const goalText=st=>GOALS(st).map(x=>GOALN[x]).join(", ");
 function goalOf(st){const gs=GOALS(st),bySex=S.profile?.sex==="male"?"arms":"legs",auto=gs.includes("auto");let xs=gs.filter(x=>FOCUS[x]);if(gs.includes("all"))xs=["legs","arms","core"];else if(auto||(!xs.length&&gs.includes("lose")))xs=[bySex];return{xs,x:xs[0],cardio:gs.includes("lose")||(auto&&num(S.profile?.pace)<0),knee:gs.includes("knees")}}
 function exDay(st,i,week,w){const e=kneeSafe(equipFix(exCore(st,i,week,w),st),st),g=goalOf(st);if(e.intensity==="rest")return e;
-  const add=line=>{let j=e.steps.length;while(j>0&&/^(Rest|Pick|Tip)/.test(e.steps[j-1]))j--;e.steps.splice(j,0,line)},strong=/strength|Gym: full|circuit|Legs and core|Hips and core/i.test(e.title),has2=t=>e.steps.some(x=>x.toLowerCase().includes(t.toLowerCase().split(" ").slice(0,2).join(" ")));
+  const add=line=>{let j=e.steps.length;while(j>0&&/^(Rest|Pick|Tip)/.test(e.steps[j-1]))j--;e.steps.splice(j,0,line)},strong=/strength|Gym: full|Park strength circuit|Legs and core|Hips and core/i.test(e.title),has2=t=>e.steps.some(x=>x.toLowerCase().includes(t.toLowerCase().split(" ").slice(0,2).join(" ")));
   if(strong){const sr=(e.steps.join(" ").match(/\d+ sets of \d+/)||["2 sets of 8"])[0],use=g.xs.length>2?[g.xs[i%g.xs.length],g.xs[(i+1)%g.xs.length]]:g.xs;
     for(const x of use){const FL=focusFor(x,st),o=((i>>1)+week)%FL.length,pick=[...FL.slice(o),...FL.slice(0,o)].find(t=>!has2(t));if(pick)add("Extra for your goal: "+pick+(pick==="Seated boxing"?": 1 minute":": "+sr+(/leg raises|Dead bug/.test(pick)?" each side":/kickbacks/.test(pick)?" each leg":"")))}}
   if(g.knee){const free=KNEEM.filter(m=>!has2(m[0])),n=strong?2:1;for(let j=0;j<n&&free.length;j++){const m=free[(i+week+j*2)%free.length];free.splice(free.indexOf(m),1);const pl=plOf(st);add("Knee care: "+(pl==="gym"?m[0].replace("holding a chair","holding a rail"):pl==="out"?m[0].replace("holding a chair","holding a bench or fence"):m[0])+": "+m[1])}e.minutes+=n*2}
@@ -2434,6 +2434,17 @@ function kneeSafe(e,st){if(st.knees!=="yes"||e.intensity==="rest")return e;const
   ease(/^Squats:/,"Half squats to a high chair",["Sit to stand from a high chair"]);
   ease(/^Goblet squat with a dumbbell\b/,"Goblet squat to a high bench, half depth",["Romanian deadlift with dumbbells","Glute bridge with a dumbbell"]);
   ease(/^Smith machine squat\b/,"Smith machine squat, half depth, light",["Glute bridge with a dumbbell","Glute bridges"]);
+  ease(/^Jumping jacks\b/,"Step jacks, no jumping",["Shadow boxing","Standing arm circles"]);
+  ease(/^Burpees\b/,"Walk-out burpees, no jump",["Plank","Shadow boxing"]);
+  ease(/^Mountain climbers\b/,"Slow mountain climbers, hands on a bench",["Plank","Shadow boxing"]);
+  ease(/^Skaters\b/,"Side steps, no jumping",["Standing arm circles","Shadow boxing"]);
+  ease(/^Squat jumps\b/,"Half squats, no jump",["Glute bridges","Shadow boxing"]);
+  ease(/^High knees\b/,"Marching on the spot",["Seated march","Standing arm circles"]);
+  ease(/^Marching with high knees\b/,"Marching on the spot",["Seated march","Standing arm circles"]);
+  ease(/^(Butt kicks|Slow butt kicks)\b/,"Slow butt kicks "+hold,["Seated march","Standing arm circles"]);
+  ease(/^Step jacks\b/,"Toe taps, no jumping",["Shadow boxing","Standing arm circles"]);
+  ease(/^Standing knee drives\b/,"Gentle knee lifts "+hold,["Seated march","Standing arm circles"]);
+  ease(/^Fast feet\b/,"Quick marching on the spot",["Shadow boxing","Standing arm circles"]);
   ease(/^Leg extension\b/,"Leg extension, light weight, small range",["Straight leg raises lying down","Glute bridges"]);
   if(e.steps.some(x=>/^(Leg press|Leg curl|Sit to stand)/.test(x))){const t="Tip: keep leg moves light and bend your knees no more than a right angle";if(!e.steps.includes(t))e.steps.push(t)}
   if(e.steps.some(x=>x.startsWith("Knee-easy"))){const t="Tip: moves marked Easier on knees can be swapped or skipped if they still hurt";if(!e.steps.includes(t))e.steps.push(t)}
@@ -2469,6 +2480,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&howAt)howClose()});
 function moveKcal(x){x=stepMain(x);const w=num(S.profile?.weight)||60,lo=x.toLowerCase();let min=0,met=3.5,m;
   if(m=x.match(/(\d+) sets of (\d+)/)){min=+m[1]*(+m[2]*3+40)/60;met=/dead bug|superman|bird dog|crunch|leg raise|side plank/.test(lo)?3:/bridge|heel raise|abduction|kickback/.test(lo)?3.2:3.5}
   else if(m=x.match(/(\d+) holds? of (\d+) seconds/)){min=+m[1]*(+m[2]+30)/60;met=3}
+  else if(m=x.match(/(\d+) rounds of (\d+) seconds/)){min=+m[1]*+m[2]/60;met=/burpee/.test(lo)&&!/walk-out/.test(lo)?8:/squat jump|mountain climber/.test(lo)&&!/slow/.test(lo)?8:/jumping jack|skater|high knees|fast feet/.test(lo)&&!/march/.test(lo)?7:/butt kick/.test(lo)?(/slow/.test(lo)?4.5:6.5):/boxing|arm circles/.test(lo)?5:/step jack|side step|march|knee drive|half squat|walk-out/.test(lo)?4.5:/seated/.test(lo)?2.5:4}
   else if(m=x.match(/^Repeat (\d+) times/)){min=+m[1]*3;met=/slope|stair/.test(lo)?6:5.5}
   else if(m=x.match(/^Do (\d+) rounds/)){min=+m[1]*3.7;met=/seated/.test(lo)?3:4}
   else if(m=x.match(/(\d+) (?:easy )?minutes?/)){min=+m[1];met=/stair climber/.test(lo)?(/slowest/.test(lo)?5:7):/rowing/.test(lo)?6:/elliptical/.test(lo)?5:/bike|cycl|pedal/.test(lo)?5.5:/jog/.test(lo)?6:/incline/.test(lo)?5:/seated/.test(lo)?2.5:/stretch|child|cat-cow/.test(lo)?2.3:/brisk|fast/.test(lo)?4.3:/walk|treadmill|march/.test(lo)?3.8:3.5}
@@ -2499,7 +2511,7 @@ function exVideos(ex){if(!ex||ex.intensity==="rest"&&!ex.steps.length)return"";c
   return `<details class="xVid"><summary><i>▶</i><span>Follow along with a video</span></summary><div class="vl">${L.map(([id,t,m])=>`<a class="vcard" target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=${id}"><span class="vth"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/${id}/mqdefault.jpg" onerror="this.remove()"><i>▶</i></span><span class="vt"><b data-notr>${t}</b><small data-notr>${m}</small></span></a>`).join("")}</div><p class="sub">Opens YouTube, so you need internet. Go at your own pace and stop if anything hurts.</p></details>`}
 function exParse(x){if(/^(No mat|No |Pick |Tip|If )/.test(x)&&!/:\s*\d/.test(x))return{tip:1};let tag="",t=x;const m=t.match(/^(Extra for your goal|Knee care|Warm up|Cool down|Finish with|Cardio|Stretch|Knee-easy)[:\s]+/i);if(m){tag={"knee-easy":"Easier on knees","extra for your goal":"For your goal","knee care":"Knee care","warm up":"Warm up","cool down":"Cool down","finish with":"Finish","cardio":"Cardio","stretch":"Stretch"}[m[1].toLowerCase()];t=t.slice(m[0].length)}
   if(/^Rest\b/.test(t))return{tag:"Rest",name:t};const i=t.lastIndexOf(": ");let name=t,amt="";if(i>0){name=t.slice(0,i);amt=t.slice(i+2)}else{const r=t.match(/^(.*?)(?:\s+for\s+)?(\d+(?:\s*to\s*\d+)?\s*(?:minutes?|min|seconds?))$/i);if(r&&r[1]){name=r[1].replace(/\s+for$/,"");amt=r[2]}}
-  amt=amt.replace(/(\d+) sets of (\d+)/i,"$1 × $2").replace(/(\d+) holds of (\d+) seconds/i,"$1 × $2 s").replace(/ seconds?/," s").replace(/ minutes?/," min");name=name.charAt(0).toUpperCase()+name.slice(1);return{tag,name,amt}}
+  amt=amt.replace(/(\d+) rounds of (\d+) seconds/i,"$1 × $2 s").replace(/(\d+) sets of (\d+)/i,"$1 × $2").replace(/(\d+) holds of (\d+) seconds/i,"$1 × $2 s").replace(/ seconds?/," s").replace(/ minutes?/," min");name=name.charAt(0).toUpperCase()+name.slice(1);return{tag,name,amt}}
 function regenEx(){const st=S.plan.settings,T=targets(S.profile);S.plan.days.forEach((d,i)=>{d.exercise=exDay(st,i,num(S.plan.week),T.w)});store.set("plan",S.plan);renderPlan()}
 function exCore(st,i,week,w){const L=Math.max(0,["Beginner","Some experience","Fit and active"].indexOf(st.level)),min=num(st.minutes,20),r=Math.max(5,[8,12,15][L]+Math.min(week,4)+DF(st)),sets=(min>=30?3:2)+(L===2?1:0)+(st.diff==="hard"?1:0),hold=[20,30,45][L]+Math.min(week,4)*5,pl=String(st.place).startsWith("Gym")?"gym":String(st.place).startsWith("Outdoors")?"out":"home",kind=["a","cardio","b","rest","hiit","core","rest"][i%7],SR=`${sets} sets of ${r}`,rounds=Math.max(3,Math.floor(min/4));
   let title,steps,inten="moderate",met=3.5,m=min;
@@ -2514,6 +2526,10 @@ function exCore(st,i,week,w){const L=Math.max(0,["Beginner","Some experience","F
     else{title="Full-body strength at home";steps=["Warm up: march on the spot for 2 minutes",`Squats: ${SR}`,`${L?"Push-ups":"Wall or knee push-ups"}: ${sets} sets of ${Math.max(5,r-3)}`,`Glute bridges: ${SR}`,`Plank: ${sets} holds of ${hold} seconds`,"Rest 45 seconds between sets"]}}
   else if(kind==="b"){if(pl==="gym"){title="Gym: full body B";steps=["Warm up: 5 easy minutes on the treadmill or bike",`Romanian deadlift with dumbbells: ${SR}`,`Seated row: ${SR}`,`Shoulder press machine: ${SR}`,`Leg curl: ${SR}`,`Side plank: ${sets} holds of ${Math.round(hold/2)} seconds each side`]}
     else{title=pl==="out"?"Legs and core outdoors":"Legs and core at home";steps=["Warm up: march on the spot for 2 minutes",`Reverse lunges: ${sets} sets of ${r} each leg`,`Wall sit: ${sets} holds of ${hold} seconds`,`Dead bug: ${sets} sets of ${r} each side`,`Superman: ${SR}`]}}
+  else if(kind==="hiit"&&(pl==="home"||week%2===1)){met=6;const sec=st.diff==="hard"?45:st.diff==="medium"?40:30,
+      LV=[["Step jacks","Shadow boxing","Marching with high knees","Side steps","Slow butt kicks","Standing knee drives"],["Jumping jacks","High knees","Mountain climbers","Skaters","Butt kicks","Shadow boxing","Fast feet"],["Jumping jacks","Burpees","Mountain climbers","Skaters","Squat jumps","High knees","Fast feet"]][L],
+      o=(week*2)%LV.length,mv=[...LV.slice(o),...LV.slice(0,o)].slice(0,5),rr=Math.max(2,Math.min(6,Math.floor((min-5)/(5*(sec+20)/60))));
+    title=pl==="gym"?"Cardio circuit on the mats":"Cardio circuit";steps=["Warm up: march on the spot for 2 minutes",...mv.map(n=>`${n}: ${rr} rounds of ${sec} seconds`),`Tip: do the moves in order, then repeat the whole set ${rr} times`,"Rest 20 seconds after each move, and 1 minute after each round","Cool down with 2 minutes of slow walking"];inten=L?"moderate":"easy"}
   else if(kind==="hiit"){met=5.5;if(pl==="gym"){title="Bike intervals";steps=["Warm up: 3 easy minutes",`Repeat ${rounds} times: 1 minute fast, 2 minutes easy`,"Cool down with 2 easy minutes"]}
     else if(pl==="out"){title="Slope or stair repeats";steps=["Warm up: brisk walk for 3 minutes",`Repeat ${rounds} times: walk fast up a slope or stairs for 1 minute, then walk down slowly`,"Cool down with 2 minutes of slow walking"]}
     else{title="Low-impact intervals";steps=[`Do ${rounds} rounds of the four steps below`,"40 seconds of step jacks","40 seconds of marching with high knees","40 seconds of shadow boxing","Rest for 60 seconds"]}}
@@ -2610,6 +2626,13 @@ gPushd:[[...ST2,62,46,74,38],[...ST2,62,46,68,59],COL(82),[["h",'<path d="M-5 0H
 gTriOH:[[...ST2,64,20,54,28],[...ST2,64,20,66,6],"",[["h",DB]]],
 gKick:[[66,20,64,32,58,56,60,74,60,92,70,42,80,46,58,74,58,92],[66,20,64,32,58,56,48,72,36,82,70,42,80,46,58,74,58,92],W(3,"M96 8V92M86 92H106M82 46H96"),[["c",96,90,"f"]]],
 gBird:[[30,58,38,64,72,66,72,88,92,88,38,76,38,88,72,88,92,88],[30,58,38,64,72,66,90,64,108,62,26,62,12,60,72,88,92,88],"",[]],
+gJack:[[60,18,60,30,60,56,58,74,56,92,54,42,52,56,62,74,64,92,66,42,68,56],[60,16,60,28,60,54,52,72,44,90,50,20,44,6,68,72,76,90,70,20,76,6],"",[]],
+gButt:[[60,18,60,30,60,56,60,74,60,92,66,42,70,32,60,74,60,92,54,42,50,52],[60,18,60,30,60,56,60,74,60,92,54,42,50,52,62,74,50,64,66,42,70,32],"",[]],
+gClimb:[[22,60,32,66,62,72,80,78,100,88,32,77,32,88,80,78,100,88],[22,60,32,66,62,72,80,78,100,88,32,77,32,88,48,78,60,88],"",[]],
+gSkate:[[66,24,63,35,58,58,68,74,74,92,52,44,44,52,48,72,36,84,70,44,78,38],[54,24,57,35,62,58,52,74,46,92,68,44,76,52,72,72,84,84,50,44,42,38],"",[]],
+gSqJ:[[52,34,54,45,46,66,66,70,62,92,64,50,76,50],[60,6,60,18,60,44,60,62,60,80,54,28,50,14],"",[]],
+gBurp:[[44,52,48,62,58,66,66,72,62,92,48,76,48,90],[22,62,32,68,62,72,80,78,100,88,32,78,32,90],"",[]],
+gBoxS:[[60,18,60,30,60,56,54,74,50,92,68,40,70,32,66,74,70,92,54,40,60,32],[60,18,60,30,60,56,54,74,50,92,74,34,90,30,66,74,70,92,54,40,60,32],"",[]],
 gThrust:[[20,84,30,86,58,86,76,68,88,90,40,90,52,90],[20,84,30,85,58,70,76,64,88,90,40,90,52,90],"",[["p",'<circle cy="-6" r="5" fill="var(--p1)"/>']]]})}
 function fig(k){if(EQART[k])return eqSvg(k);const P=POSE[k];if(!P)return"";const d=a=>`M${a[2]} ${a[3]}L${a[4]} ${a[5]}L${a[6]} ${a[7]}L${a[8]} ${a[9]}M${a[2]} ${a[3]+3}L${a[10]} ${a[11]}L${a[12]} ${a[13]}`+(a.length>14?`M${a[4]} ${a[5]}L${a[14]} ${a[15]}L${a[16]} ${a[17]}`:"")+(a.length>18?`M${a[2]} ${a[3]+3}L${a[18]} ${a[19]}L${a[20]} ${a[21]}`:""),[A,B,pr,gear]=P,an=(at,x,y)=>calm?"":`<animate attributeName="${at}" values="${x};${y};${x}" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".4 0 .2 1;.4 0 .2 1"/>`;
   if(gear||pr&&pr[0]==="<"){const J={h:12,f:8,k:6,n:2,p:4,f2:16,k2:14,h2:20},at=(a,j)=>[a[J[j]],a[J[j]+1]],mv=(j,svg)=>{const[x,y]=at(A,j),[u,v]=at(B,j);return `<g transform="translate(${x} ${y})">${calm?"":`<animateTransform attributeName="transform" type="translate" values="${x} ${y};${u} ${v};${x} ${y}" dur="2.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.5;1" keySplines=".4 0 .2 1;.4 0 .2 1"/>`}${svg}</g>`},
@@ -2655,7 +2678,7 @@ gym:[["tread","Treadmill","A moving belt you walk or run on"],["bike","Exercise 
 out:[["bench","Park bench","For step-ups and push-ups"],["stairs","Stairs or a slope","For short climbs"]]};
 const plOf=st=>String(st.place).startsWith("Gym")?"gym":String(st.place).startsWith("Outdoors")?"out":"home";
 const eqDefault=pl=>pl==="gym"?EQ.gym.slice(0,10).map(x=>x[0]):pl==="out"?["bench","stairs"]:["chair","mat"];
-function equipFix(e,st){const pl=plOf(st),E=new Set(Array.isArray(st.equip)?st.equip:eqDefault(pl)),h=x=>E.has(x),sr=(e.steps.join(" ").match(/\d+ sets of \d+/)||["2 sets of 8"])[0],sw=(re,to)=>{e.steps=e.steps.map(x=>re.test(x)?x.replace(re,to):x)},add=line=>{const last=e.steps[e.steps.length-1];if(/^(Rest|Pick)/.test(last))e.steps.splice(e.steps.length-1,0,line);else e.steps.push(line)},strength=/strength|Gym: full|circuit|Legs and core|Hips and core/i.test(e.title);
+function equipFix(e,st){const pl=plOf(st),E=new Set(Array.isArray(st.equip)?st.equip:eqDefault(pl)),h=x=>E.has(x),sr=(e.steps.join(" ").match(/\d+ sets of \d+/)||["2 sets of 8"])[0],sw=(re,to)=>{e.steps=e.steps.map(x=>re.test(x)?x.replace(re,to):x)},add=line=>{const last=e.steps[e.steps.length-1];if(/^(Rest|Pick)/.test(last))e.steps.splice(e.steps.length-1,0,line);else e.steps.push(line)},strength=/strength|Gym: full|Park strength circuit|Legs and core|Hips and core/i.test(e.title);
   if(pl==="gym"){
     sw(/Leg press or goblet squat/,h("legp")?"Leg press":h("db")?"Goblet squat with a dumbbell":"Squats to a bench");
     if(!h("chest"))sw(/Chest press machine/,h("db")?"Dumbbell chest press on a bench":"Incline push-ups on a bench");
@@ -2682,6 +2705,18 @@ function equipFix(e,st){const pl=plOf(st),E=new Set(Array.isArray(st.equip)?st.e
     if(!h("mat")&&e.steps.some(x=>/Glute bridges|Plank|Dead bug|Superman|Bird dog|Straight leg raises/.test(x)))add("No mat? Do the floor moves on a folded towel or a carpet");
     if(!h("chair")&&st.knees==="yes")sw(/holding a chair/,"holding a wall or table")}
   return e}
+GUIDE.unshift(
+[/jumping jacks/i,"gJack","Stand tall with feet together. Jump your feet apart as your arms swing up overhead, then jump back together as your arms come down.","Land softly on the balls of your feet.",["Landing on flat, stiff legs","Arms only going halfway up","Holding your breath"]],
+[/step jacks/i,"gJack","Step one foot out to the side as both arms swing up, step it back as your arms come down, then switch sides. No jumping.","Keep a steady rhythm.",["Leaning to one side","Arms only going halfway up"]],
+[/burpees/i,"gBurp","Squat down and put your hands on the floor, jump or step your feet back to a plank, bring them back in, then stand up and reach up. Walk-out version: step back one foot at a time, no jump.","Keep your back flat in the plank.",["Hips sagging in the plank","Landing heavily","Rushing so form falls apart"]],
+[/mountain climbers/i,"gClimb","Start in a high plank, hands under shoulders. Drive one knee toward your chest, then switch legs in a running rhythm. Slow version: hands on a bench, one knee at a time.","Keep your hips level with your shoulders.",["Bottom pushed up in the air","Shoulders drifting behind the hands","Bouncing the feet"]],
+[/skaters/i,"gSkate","Leap sideways from one foot to the other, landing softly with a small bend, and swing your arms across like a speed skater.","Land quietly and stay low through the hips.",["Knee caving in on landing","Leaping further than you can control"]],
+[/butt kicks/i,"gButt","Jog on the spot and kick each heel up toward your bottom. Slow version: hold a support and curl one heel up at a time.","Stay tall, with your knees pointing down.",["Leaning forward","Knees swinging forward"]],
+[/squat jumps/i,"gSqJ","Sit back into a squat, then jump straight up, and land softly back into the squat.","Land on the balls of your feet, knees over toes.",["Landing with straight, locked legs","Knees caving in"]],
+[/half squats, no jump/i,"squat","Sit back halfway, as if to a high chair, then stand up. No jump.","Knees stay over your toes.",["Going too deep","Knees caving in"]],
+[/shadow boxing|arm circles/i,"gBoxS","Stand with feet apart, fists by your chin, and throw quick punches forward, alternating arms. Arm circles: make big circles with straight arms.","Keep your tummy tight and your shoulders relaxed.",["Locking the elbows on each punch","Holding your breath"]],
+[/high knees|knee drives|knee lifts|marching on the spot|fast feet|side steps|toe taps/i,"march","Stand tall and lift one knee at a time, swinging the opposite arm. Speed it up for high knees or fast feet, or keep one foot on the floor for the easier version.","Land softly and stay tall.",["Leaning back","Stamping the feet","Looking down"]],
+[/^plank:|^plank$/i,"plank","Rest on your forearms and toes with your body in a straight line from head to heels. Hold.","Squeeze your tummy and bottom.",["Hips sagging","Bottom too high","Holding your breath"]]);
 GUIDE.unshift(
 [/bicep curl/i,"gCurlDb","Stand tall with a weight in each hand, palms facing forward. Bend your elbows to bring the weights up to your shoulders, then lower slowly.","Keep your elbows tucked by your sides.",["Swinging the body to lift","Elbows drifting forward","Dropping the weights fast"]],
 [/triceps pushdown/i,"gPushd","Stand facing the cable with the bar at chest height. Keep your elbows by your sides and push the bar down until your arms are straight, then let it rise slowly.","Only your forearms move.",["Elbows moving forward and back","Leaning over the bar","Letting the bar fly up"]],
