@@ -14,6 +14,7 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 - **"What do you feel like eating today?"** Pick a mood and get three plans to choose from.
 - **Local picks** around Bandar Sunway, Subang Jaya, Petaling Jaya, Damansara and Kuala Lumpur, with optional location to favour places near you.
 - **Never suggest again.** One tap on any dish removes it from every plan and suggestion, and the list sits in your profile.
+- **Gentle workouts** for sore knees or beginners (no jumping, deep squats, lunges or stairs), with a moving picture, form tips and common mistakes for each exercise.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
