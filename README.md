@@ -9,10 +9,11 @@ On a phone, open the link, then choose **Add to Home Screen** from the browser m
 ## What it does
 
 - **Step-by-step setup** with drag rulers for age, height and weight, ending in a daily calorie target.
-- **A built-in list of 260 local dishes and drinks** with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
+- **A built-in list of 259 local dishes and drinks** with calories, protein, carbs, fat, fibre, sugar, sodium and saturated fat.
 - **7-day meal plans** that name the place, the dish and how to order it, plus simple home recipes and short workouts.
 - **"What do you feel like eating today?"** Pick a mood and get three plans to choose from.
 - **Local picks** around Bandar Sunway, Subang Jaya, Petaling Jaya, Damansara and Kuala Lumpur, with optional location to favour places near you.
+- **Never suggest again.** One tap on any dish removes it from every plan and suggestion, and the list sits in your profile.
 - **Learns your taste** from what you pick, log, pass on and swap.
 - **Order help.** Choose where you are eating and see the best picks for the calories you have left.
 - **Sweet swaps** for when you want dessert with less sugar.
