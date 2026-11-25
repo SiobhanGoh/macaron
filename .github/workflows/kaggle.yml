@@ -1,0 +1,83 @@
+name: Train the food photo model on Kaggle
+
+# Push training/kaggle_request.json with {"action": "launch" | "status" | "collect"} to drive a Kaggle GPU run.
+on:
+  push:
+    branches: [main]
+    paths: [training/kaggle_request.json]
+  workflow_dispatch:
+    inputs:
+      action:
+        description: launch, status or collect
+        default: status
+
+permissions:
+  contents: write
+
+env:
+  KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+  KERNEL: siobhangoh/macaron-food-photo-model
+
+jobs:
+  kaggle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Run the request
+        id: run
+        run: |
+          set +e
+          mkdir -p report
+          {
+            ACTION="${{ github.event.inputs.action }}"
+            [ -z "$ACTION" ] && ACTION=$(python -c "import json;print(json.load(open('training/kaggle_request.json'))['action'])")
+            echo "action: $ACTION"; date -u
+            [ -z "$KAGGLE_API_TOKEN" ] && echo "KAGGLE_API_TOKEN secret is missing"
+            pip -q install "kaggle>=1.8.0" 2>&1 | tail -2
+            kaggle --version
+            if [ "$ACTION" = "launch" ]; then
+              mkdir kernel && cp training/train_food_model.ipynb kernel/
+              python - <<'PY'
+          import json, os
+          json.dump({"id": os.environ["KERNEL"], "title": "Macaron food photo model", "code_file": "train_food_model.ipynb",
+                     "language": "python", "kernel_type": "notebook", "is_private": True, "enable_gpu": True,
+                     "enable_internet": True, "dataset_sources": [], "competition_sources": [], "kernel_sources": []},
+                    open("kernel/kernel-metadata.json", "w"), indent=1)
+          PY
+              kaggle kernels push -p kernel --accelerator NvidiaTeslaT4 2>&1 || kaggle kernels push -p kernel 2>&1
+            fi
+            kaggle kernels status "$KERNEL" 2>&1
+            if [ "$ACTION" = "collect" ]; then
+              mkdir out && kaggle kernels output "$KERNEL" -p out 2>&1 | tail -5
+              ls -la out
+              python - <<'PY'
+          import json, glob
+          for f in glob.glob("out/*.log"):
+              try: rows = json.load(open(f))
+              except Exception: print(open(f, errors="ignore").read()[-6000:]); continue
+              text = "".join(r.get("data", "") for r in rows)
+              print("----- last part of the Kaggle log -----"); print(text[-7000:])
+          PY
+              if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
+            fi
+          } > report/kaggle_status.txt 2>&1
+          cat report/kaggle_status.txt
+      - name: Save the model into the app
+        if: steps.run.outputs.ready == '1'
+        run: |
+          git config user.name "Siobhan Goh"
+          git config user.email "216317456+SiobhanGoh@users.noreply.github.com"
+          git add model/food.onnx model/labels.json
+          git commit -m "Add the trained food photo model" || true
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
+      - name: Publish the status report
+        if: always()
+        run: |
+          cd report && git init -q -b kaggle-status
+          git config user.name "Siobhan Goh"
+          git config user.email "216317456+SiobhanGoh@users.noreply.github.com"
+          git add . && git commit -q -m "Kaggle run status"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" kaggle-status
