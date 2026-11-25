@@ -675,6 +675,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 :root[data-theme=dark] .bo.on{background:var(--wh)}
 :root[data-theme=dark] .tRing{box-shadow:0 0 0 9999px rgb(0 0 0/.62),0 0 0 4px var(--a2),0 0 24px 6px var(--a2)}
 :root[data-theme=dark] .scrim{background:#000}
+.confPick{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}.confPick button{min-height:44px;font-size:14px}.confPick button:first-child{grid-column:1/-1}.confPick button[aria-pressed=true]{background:var(--pk);border-color:var(--pk);color:#2a1018;font-weight:700}
 .themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}.themes button{display:grid;justify-items:center;gap:4px;padding:10px 4px;font-size:13px}.themes span{font-size:22px;line-height:1}.themes button[aria-pressed=true]{border-color:var(--ink)}
 .drow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;border-top:1px solid var(--line)}.drow>button{grid-template-columns:40px minmax(0,1fr) auto!important;border-top:0!important;align-items:center}.drow.in{background:var(--a3)}
 .dq{display:grid;grid-template-columns:36px 28px;align-items:center;text-align:center;padding-right:6px}.dq button{width:36px;min-height:36px;padding:0;border-radius:50%;font-size:20px}.dq b{font-variant-numeric:tabular-nums}
@@ -2240,7 +2241,7 @@ Object.assign(I,{star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.
 const LVNAME=["Fresh macaron","Kopitiam regular","Hawker scout","Pasar pro","Mamak insider","Nasi lemak ninja","Kuih connoisseur","Food court captain","Macaron master","Macaron legend"];
 function levelOf(xp){let lv=1,need=100,rest=xp;while(rest>=need){rest-=need;lv++;need=lv*100}return{lv,rest,need,name:LVNAME[Math.min(lv,LVNAME.length)-1]}}
 function renderLvl(){const L=levelOf(S.prefs.xp||0);$("#lvlN").textContent="Lv "+L.lv;$("#lvlBar").style.width=L.rest/L.need*100+"%";if(curView==="me")renderGame()}
-function confetti(){sparkle(innerWidth/2,innerHeight*.5,true)}
+function confetti(){setTimeout(()=>{const ch=document.querySelector(".cheer");sparkle(innerWidth/2,innerHeight*.5,true,null,ch?ch.getBoundingClientRect():null)},60)}
 const cheerQ=[];let cheerBusy=false;
 function cheer(title,sub,icon,quiet){cheerQ.push([title,sub,icon,quiet]);if(!cheerBusy)nextCheer()}
 function nextCheer(){const c=cheerQ.shift();if(!c){cheerBusy=false;return}cheerBusy=true;const el=document.createElement("div");el.className="cheer";el.setAttribute("role","status");el.innerHTML=`<span class="ci">${ic(I[c[2]]||I.star)}</span><span><b>${esc(c[0])}</b><small>${esc(c[1])}</small></span>`;document.body.append(el);if(!c[3])confetti();let gone=0;const bye=()=>{if(gone)return;gone=1;el.classList.add("bye");setTimeout(()=>{el.remove();nextCheer()},360)};el.addEventListener("click",bye);setTimeout(bye,Math.min(9000,Math.max(2600,(c[0].length+c[1].length)*42)))}
@@ -2487,19 +2488,40 @@ function moveKcal(x){x=stepMain(x);const w=num(S.profile?.weight)||60,lo=x.toLow
   const k=Math.round(met*w*min/60);return k>=1?k:0}
 
 /* sparkly confetti on a canvas: ribbons, dots and twinkling stars in pink, gold and white */
-function sparkle(x,y,big){if(calm)return;const c=document.createElement("canvas"),d=Math.min(2,devicePixelRatio||1),W=innerWidth,H=innerHeight;c.className="spk";c.width=W*d;c.height=H*d;document.body.append(c);const g=c.getContext("2d");g.scale(d,d);
-  const cols=["#ff8fb0","#ffc2d2","#ffd76a","#f0cf9a","#ffffff","#e8a48c","#ff6f9a"],P=[],R=Math.random,add=(px,py,vx,vy,life)=>{const t=R();P.push({x:px,y:py,vx,vy,life,age:0,col:cols[(R()*cols.length)|0],kind:t<.42?"rib":t<.72?"dot":"star",sz:t<.42?5+R()*5:t<.72?2+R()*3:4+R()*6,rot:R()*6.3,vr:(R()-.5)*14,flip:R()*6.3,vf:6+R()*10,tw:R()*6.3})};
-  const n=big?70:34;for(let i=0;i<n;i++){const a=-Math.PI/2+(R()-.5)*Math.PI*1.25,v=(big?420:300)+R()*(big?420:260);add(x,y,Math.cos(a)*v,Math.sin(a)*v,(big?2.2:1.15)+R()*.6)}
-  if(big){for(let i=0;i<150;i++)add(R()*W,-20-R()*H*.6,(R()-.5)*80,60+R()*120,3.2+R()*1.4);for(const sx of [W*.15,W*.85])for(let i=0;i<40;i++){const a=-Math.PI/2+(sx<W/2?.5:-.5)+(R()-.5)*.9,v=380+R()*380;add(sx,H*.9,Math.cos(a)*v,Math.sin(a)*v,2+R()*.8)}}
-  const star=(r)=>{g.beginPath();for(let i=0;i<8;i++){const q=i%2?r*.32:r,a=i*Math.PI/4;g.lineTo(Math.cos(a)*q,Math.sin(a)*q)}g.closePath();g.fill()};
-  let t0=performance.now(),last=t0;(function f(now){const dt=Math.min(.05,(now-last)/1000);last=now;g.clearRect(0,0,W,H);let alive=0;
-    for(const p of P){p.age+=dt;if(p.age>p.life)continue;alive++;p.vx*=1-dt*(p.kind==="rib"?1.6:1.1);p.vy=p.vy*(1-dt*1.2)+(p.kind==="rib"?520:640)*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.rot+=p.vr*dt;p.flip+=p.vf*dt;
-      const fade=Math.min(1,(p.life-p.age)/.4);g.save();g.translate(p.x,p.y);g.rotate(p.rot);g.globalAlpha=fade;g.fillStyle=p.col;
-      if(p.kind==="rib"){const sy=Math.cos(p.flip);g.scale(1,sy);g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.6);g.globalAlpha=fade*Math.max(0,sy)*.7;g.fillStyle="#fff";g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.14)}
-      else if(p.kind==="dot"){g.beginPath();g.arc(0,0,p.sz,0,6.3);g.fill()}
+/* confetti in four styles; each style has the movement that suits it best for the big celebration */
+const CONF=[["sparkle","Sparkle"],["petal","Sakura petals"],["glitter","Gold glitter"],["macaron","Macarons and hearts"]],CONFM={sparkle:"card",petal:"top",glitter:"below",macaron:"fireworks"};
+let confN=0;
+function confStyle(){const p=S.prefs.confetti||"surprise";if(p!=="surprise")return p;return CONF[(confN++ +new Date().getDate())%CONF.length][0]}
+function sparkle(x,y,big,style,box){if(calm)return;const kind=style||confStyle(),m=big?CONFM[kind]:"middle",R=Math.random;
+  const c=document.createElement("canvas"),d=Math.min(2,devicePixelRatio||1),W=innerWidth,H=innerHeight;c.className="spk";c.width=W*d;c.height=H*d;document.body.append(c);const g=c.getContext("2d");g.scale(d,d);
+  const PAL={sparkle:["#ff8fb0","#ffc2d2","#ffd76a","#f0cf9a","#ffffff","#e8a48c","#ff6f9a"],petal:["#ffc2d2","#ffd6e2","#ffb3c8","#fde4ec","#f7a1bb"],glitter:["#ffd76a","#f0cf9a","#e8a48c","#fff1c4","#ffffff"],macaron:["#ffb3c8","#c9e7c0","#cfe4fb","#ead4f5","#ffe7a8","#ffd3c2"]}[kind],P=[];
+  const add=(px,py,vx,vy,life)=>{const t=R(),k=kind==="sparkle"?(t<.42?"rib":t<.72?"dot":"star"):kind==="petal"?(t<.85?"petal":"star"):kind==="glitter"?(t<.75?"dust":"star"):(t<.45?"mac":t<.8?"heart":"star");
+    P.push({x:px,y:py,vx,vy,life,age:0,k,col:PAL[(R()*PAL.length)|0],sz:k==="rib"?5+R()*5:k==="dot"?2+R()*3:k==="dust"?1+R()*2.2:k==="petal"?6+R()*5:k==="mac"?6+R()*4:k==="heart"?5+R()*4:4+R()*6,rot:R()*6.3,vr:(R()-.5)*(k==="petal"?4:14),flip:R()*6.3,vf:(k==="petal"?3:6)+R()*8,tw:R()*6.3,sway:R()*6.3})};
+  const spd=kind==="petal"?.55:kind==="glitter"?.8:1,UP=-Math.PI/2,cone=(cx,cy,dir,spread,n,v0,v1,life,delay=0)=>{for(let i=0;i<n;i++){const a=dir+(R()-.5)*spread,v=(v0+R()*(v1-v0))*spd;add(cx,cy,Math.cos(a)*v,Math.sin(a)*v,life+R()*.6);P[P.length-1].age=-delay-R()*.05}};
+  if(m==="middle")cone(x,y,UP,Math.PI*2,big?140:36,250,big?820:480,big?2.4:1.2);
+  else if(m==="card"){const r=box||{left:W*.08,right:W*.92,top:H*.04,bottom:H*.14};for(const[cx,cy,dir] of [[r.left,r.top,-2.3],[r.right,r.top,-.85],[r.left,r.bottom,2.6],[r.right,r.bottom,.5],[(r.left+r.right)/2,r.bottom,Math.PI/2]])cone(cx,cy,dir,1.1,26,250,700,2.2);cone(W/2,H*.5,UP,Math.PI*2,50,200,600,2)}
+  else if(m==="below"){for(const[sx,dir] of [[0,UP+.45],[W,UP-.45]])cone(sx,H+10,dir,.55,90,700,1250,2.6)}
+  else if(m==="top"){for(let i=0;i<220;i++)add(R()*W,-20-R()*H*.5,(R()-.5)*60,40+R()*120,3.6+R()*1.2)}
+  else if(m==="fireworks"){for(let f=0;f<4;f++){const fx=W*(.2+R()*.6),fy=H*(.15+R()*.3);cone(fx,fy,0,Math.PI*2,60,200,520,1.8,f*.45)}}
+  const star=r=>{g.beginPath();for(let i=0;i<8;i++){const q=i%2?r*.32:r,a=i*Math.PI/4;g.lineTo(Math.cos(a)*q,Math.sin(a)*q)}g.closePath();g.fill()},
+    heart=r=>{g.beginPath();g.moveTo(0,r*.35);g.bezierCurveTo(-r*1.1,-r*.4,-r*.45,-r*1.1,0,-r*.4);g.bezierCurveTo(r*.45,-r*1.1,r*1.1,-r*.4,0,r*.35);g.fill()},
+    petal=r=>{g.beginPath();g.moveTo(0,-r);g.bezierCurveTo(r*.8,-r*.6,r*.7,r*.6,0,r);g.bezierCurveTo(-r*.7,r*.6,-r*.8,-r*.6,0,-r);g.fill();g.globalAlpha*=.5;g.fillStyle="#fff";g.beginPath();g.ellipse(-r*.15,-r*.25,r*.18,r*.45,0,0,6.3);g.fill()},
+    mac=r=>{const sh=(yy,h)=>{g.beginPath();g.ellipse(0,yy,r,h,0,0,6.3);g.fill()};sh(-r*.35,r*.42);sh(r*.35,r*.42);g.fillStyle="#fff8f0";g.fillRect(-r*.9,-r*.1,r*1.8,r*.2)};
+  let last=performance.now(),t0=last;(function f(now){const dt=Math.min(.05,(now-last)/1000);last=now;g.clearRect(0,0,W,H);let alive=0;
+    for(const p of P){p.age+=dt;if(p.age<0){alive++;continue}if(p.age>p.life)continue;alive++;
+      const drag=p.k==="petal"?2.4:p.k==="dust"?1.8:p.k==="rib"?1.6:1.1,grav=p.k==="petal"?140:p.k==="dust"?260:p.k==="rib"?520:640;
+      p.vx*=1-dt*drag;p.vy=p.vy*(1-dt*1.2)+grav*dt;if(p.k==="petal"){p.sway+=dt*2.2;p.vx+=Math.sin(p.sway)*60*dt}
+      p.x+=p.vx*dt;p.y+=p.vy*dt;p.rot+=p.vr*dt;p.flip+=p.vf*dt;
+      const fade=Math.min(1,(p.life-p.age)/.5);g.save();g.translate(p.x,p.y);g.rotate(p.rot);g.globalAlpha=fade;g.fillStyle=p.col;
+      if(p.k==="rib"){const sy=Math.cos(p.flip);g.scale(1,sy);g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.6);g.globalAlpha=fade*Math.max(0,sy)*.7;g.fillStyle="#fff";g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.14)}
+      else if(p.k==="dot"){g.beginPath();g.arc(0,0,p.sz,0,6.3);g.fill()}
+      else if(p.k==="dust"){const tw=.4+.6*Math.abs(Math.sin(p.age*9+p.tw));g.globalAlpha=fade*tw;g.shadowColor=p.col;g.shadowBlur=6;g.beginPath();g.arc(0,0,p.sz,0,6.3);g.fill()}
+      else if(p.k==="petal"){g.scale(1,.55+.45*Math.cos(p.flip));petal(p.sz)}
+      else if(p.k==="mac"){g.scale(1,.75+.25*Math.cos(p.flip));mac(p.sz)}
+      else if(p.k==="heart"){g.scale(.8+.2*Math.cos(p.flip),1);heart(p.sz)}
       else{const tw=.55+.45*Math.sin(p.age*14+p.tw);g.globalAlpha=fade*tw;g.shadowColor=p.col;g.shadowBlur=8;star(p.sz*(.8+.3*tw))}
       g.restore()}
-    if(alive&&now-t0<6000)requestAnimationFrame(f);else c.remove()})(t0)}
+    if(alive&&now-t0<7000)requestAnimationFrame(f);else c.remove()})(t0)}
 const stepMain=x=>String(x).split(" || ")[0],stepAlt=x=>String(x).split(" || ")[1]||"";
 
 /* follow-along videos: free YouTube workouts that match the kind of session */
@@ -3875,7 +3897,7 @@ function renderSuppMe(){const el=$("#supps");if(!el)return;const L=S.prefs.supps
   <p class="sub supNote">Macaron doesn't suggest supplements. Your doctor or pharmacist can tell you what's right for you.</p></div>`}
 function supAdd(){const n=($("#supName")?.value||"").trim();if(!n){toast("Type a name first.");$("#supName")?.focus();return}
   S.prefs.supps=cleanSupps([...(S.prefs.supps||[]),{id:uid(),n,w:supDraft.w,g:supDraft.g}]);store.set("prefs",S.prefs);supDraft={w:supDraft.w,g:0};renderSuppMe();toast("Added. Tick it off on Today.")}
-function renderMood(){const el=$("#mood");if(el)el.innerHTML=`<h2>Look</h2><div class="card"><p class="sub">Language</p><div class="langRow inMe" role="group" aria-label="Language" data-notr>${LANGS.map(([v,n,a])=>`<button data-act="lang" data-v="${v}" aria-pressed="${I18N.lang===v}"><i>${a}</i>${n}</button>`).join("")}</div><p class="sub" style="margin-top:14px">Light or dark</p><div class="themes" role="group" aria-label="Light or dark">${[["light","Light","☀"],["dark","Dark","☾"],["auto","Match my phone","◐"]].map(([v,n,g])=>`<button data-act="theme" data-v="${v}" aria-pressed="${(S.prefs.theme||"light")===v}"><span aria-hidden="true">${g}</span>${n}</button>`).join("")}</div><p class="sub" style="margin-top:14px">Colour mood</p><p class="sub">Change the colour of the whole app.</p><div class="moods">${MOODS.map(([k,n,a,b])=>`<button data-act="mood" data-m="${k}" aria-pressed="${(S.prefs.mood||"pink")===k}"><i style="background:linear-gradient(145deg,${a},${b})"></i>${n}</button>`).join("")}</div></div>`}
+function renderMood(){const el=$("#mood");if(el)el.innerHTML=`<h2>Look</h2><div class="card"><p class="sub">Language</p><div class="langRow inMe" role="group" aria-label="Language" data-notr>${LANGS.map(([v,n,a])=>`<button data-act="lang" data-v="${v}" aria-pressed="${I18N.lang===v}"><i>${a}</i>${n}</button>`).join("")}</div><p class="sub" style="margin-top:14px">Light or dark</p><div class="themes" role="group" aria-label="Light or dark">${[["light","Light","☀"],["dark","Dark","☾"],["auto","Match my phone","◐"]].map(([v,n,g])=>`<button data-act="theme" data-v="${v}" aria-pressed="${(S.prefs.theme||"light")===v}"><span aria-hidden="true">${g}</span>${n}</button>`).join("")}</div><p class="sub" style="margin-top:14px">Colour mood</p><p class="sub">Change the colour of the whole app.</p><div class="moods">${MOODS.map(([k,n,a,b])=>`<button data-act="mood" data-m="${k}" aria-pressed="${(S.prefs.mood||"pink")===k}"><i style="background:linear-gradient(145deg,${a},${b})"></i>${n}</button>`).join("")}</div><p class="sub" style="margin-top:14px">Confetti</p><p class="sub">Plays when you tick a move, finish a workout or earn a badge.</p><div class="confPick">${[["surprise","Surprise me"],...CONF].map(([v,n])=>`<button data-act="confPick" data-v="${v}" aria-pressed="${(S.prefs.confetti||"surprise")===v}">${n}</button>`).join("")}</div></div>`}
 function renderNever(){const L=S.prefs.never||[],el=$("#never");if(!el)return;el.innerHTML=L.length?`<h2>Never suggest</h2><div class="card"><p class="sub">Tap one to allow it again.</p><div class="nevc">${L.map(n=>`<button data-act="unNever" data-n="${esc(n)}">${emo(n)} ${esc(n)} ${ic(I.x)}</button>`).join("")}</div></div>`:""}
 
 /* care: skipped meals and doing too much */
@@ -4731,6 +4753,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="saveMeas")saveMeas();
   else if(a==="backup")backup();
   else if(a==="theme"){S.prefs.theme=b.dataset.v;store.set("prefs",S.prefs);applyTheme();renderMood()}
+  else if(a==="confPick"){const r=b.getBoundingClientRect();S.prefs.confetti=b.dataset.v;store.set("prefs",S.prefs);renderMood();sparkle(r.left+r.width/2,r.top+r.height/2,false,b.dataset.v==="surprise"?null:b.dataset.v)}
   else if(a==="mood"){S.prefs.mood=b.dataset.m;store.set("prefs",S.prefs);applyMood();renderMood()}
   else if(a==="skipMeal")skipMeal(b.dataset.k,b.dataset.s);
   else if(a==="careLog"){const f=FOODS[num(b.dataset.i)];if(f){const e={id:uid(),slot:"snack",name:f.name,detail:f.detail,mult:1,thumb:"",src:"care",place:f.place,at:Date.now(),low:f.low,high:f.high};for(const x of NF)e[x]=num(f[x]);closeSheets();addEntry(today(),e);if(curView==="plan")renderPlan()}}
