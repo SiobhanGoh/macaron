@@ -132,11 +132,11 @@ button:disabled{opacity:.55;cursor:default}
 .mvS{width:100%;text-align:left;background:none;border:0;border-radius:12px;color:inherit;font:inherit;box-shadow:none;min-height:52px}
 .mvS:active{background:rgb(var(--wr)/.25)}
 .mvChev{transform:rotate(-45deg)}
-.howPop{position:fixed;inset:0;z-index:60;display:grid;align-items:end;padding:12px 12px max(12px,env(safe-area-inset-bottom));pointer-events:none}
+.howPop{position:fixed;inset:0;z-index:60;display:grid;align-items:end;padding:max(12px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom));pointer-events:none}
 .howPop.in{pointer-events:auto}
-.howBack{position:absolute;inset:0;background:rgb(30 12 20/.16);opacity:0;transition:opacity .25s}
+.howBack{position:absolute;inset:0;background:rgb(30 12 20/.22);opacity:0;transition:opacity .25s}
 .howPop.in .howBack{opacity:1}
-.howCard{position:relative;max-width:520px;width:100%;justify-self:center;max-height:min(82vh,720px);overflow:auto;overscroll-behavior:contain;padding:14px 18px 16px;border-radius:30px;
+.howCard{position:relative;max-width:520px;width:100%;justify-self:center;height:calc(100vh - 24px - env(safe-area-inset-top));height:calc(100dvh - 24px - env(safe-area-inset-top));max-height:none;overflow:auto;display:flex;flex-direction:column;overscroll-behavior:contain;padding:14px 18px 16px;border-radius:30px;
  background:linear-gradient(150deg,rgb(255 255 255/.62),rgb(255 240 245/.38));-webkit-backdrop-filter:blur(26px) saturate(1.7);backdrop-filter:blur(26px) saturate(1.7);
  border:1px solid rgb(255 255 255/.7);box-shadow:inset 0 1.5px 0 rgb(255 255 255/.9),inset 0 -1px 0 rgb(255 255 255/.25),0 24px 60px rgb(60 20 35/.28);
  transform:translateY(24px) scale(.97);opacity:0;transition:transform .32s var(--eo),opacity .22s}
@@ -145,19 +145,19 @@ button:disabled{opacity:.55;cursor:default}
 .howTop{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
 .howX{width:34px;height:34px;min-height:0;padding:0;border-radius:50%;background:rgb(255 255 255/.35);border:1px solid rgb(255 255 255/.5);color:var(--ink);font-size:14px}
 :root[data-theme=dark] .howX{background:rgb(255 255 255/.08);border-color:rgb(255 255 255/.14)}
-.howFig{margin:6px auto 10px;width:100%;max-width:300px;aspect-ratio:6/5;border-radius:22px;background:rgb(255 255 255/.32);display:grid;place-items:center;overflow:hidden}
+.howFig{margin:6px auto 10px;width:100%;max-width:340px;height:min(30vh,250px);flex:none;border-radius:22px;background:rgb(255 255 255/.32);display:grid;place-items:center;overflow:hidden}
 :root[data-theme=dark] .howFig{background:rgb(255 255 255/.05)}
 .howFig svg{width:100%;height:100%}
 .howCard h3{margin:2px 0 0;font-size:21px;line-height:1.2}
 .howAmt{margin:2px 0 0;font-size:15px;color:var(--mute);font-variant-numeric:tabular-nums}
-.howBody{display:grid;gap:8px;margin-top:12px;font-size:14.5px;line-height:1.5}
+.howBody{display:grid;gap:8px;margin-top:12px;padding-bottom:8px;font-size:14.5px;line-height:1.5}
 .howBody p{margin:0}
 .howTip{padding:10px 12px;border-radius:14px;background:rgb(255 255 255/.34);display:grid;gap:2px}
 :root[data-theme=dark] .howTip{background:rgb(255 255 255/.06)}
 .howTip b,.howSub{font-size:12.5px;font-weight:700;color:var(--rose)}
 .howBody ul{margin:0;padding-left:1.1em;display:grid;gap:3px}
 .howKn{margin:12px 0 0}
-.howNav{position:sticky;bottom:-16px;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:10px;margin:14px -18px -16px;padding:12px 18px 16px;background:linear-gradient(transparent,rgb(255 240 245/.55) 30%);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.howNav{position:sticky;bottom:-16px;margin-top:auto!important;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:10px;margin:14px -18px -16px;padding:12px 18px 16px;background:linear-gradient(transparent,rgb(255 240 245/.55) 30%);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 :root[data-theme=dark] .howNav{background:linear-gradient(transparent,rgb(36 22 28/.7) 30%)}
 .howNav button{min-height:48px;border-radius:16px;font-size:16px}
 .howNav button[data-act=howGo]{font-size:24px;padding:0}
@@ -1563,6 +1563,90 @@ Cauliflower rice|1 cup|50|4|8|1|4|3|40|0.2|1.5|x|Home|1|veg light side|
 Butter toast|2 slices|240|5|28|12|1|3|360|7|0|bs|Kopitiam|0|veg|
 Peanut butter toast|2 slices|340|12|34|18|4|6|400|3.5|0|bs|Home|0|veg|
 Garlic toast|2 slices|260|5|30|13|1|2|450|6|0|x|Western cafe|1|western veg side|
+KitKat, 2 fingers|Kit Kat milk chocolate wafer, 1 pack (17 g)|87|1.1|10.6|4.4|0.3|8.2|10|3.0|0|s|7-Eleven|1|sweet veg snack|
+KitKat, 4 fingers|Kit Kat milk chocolate wafer, 1 bar (35 g)|180|2.3|22|9.1|0.6|17|20|6.2|0|s|7-Eleven|1|sweet veg snack|
+KitKat Chunky|Kit Kat chunky bar (38 g)|200|2.4|23|10.8|0.5|19|30|6.7|0|s|7-Eleven|1|sweet veg snack|
+KitKat Chunky Peanut Butter|Kit Kat chunky bar (42 g)|225|4|22|13.5|1|18|60|7|0|s|7-Eleven|1|sweet veg snack|
+KitKat Dark|Kit Kat dark chocolate, 4 fingers (35 g)|180|2.1|21|9.6|1.5|16|15|6|0|s|7-Eleven|1|sweet veg snack|
+KitKat Matcha|Kit Kat green tea, 1 mini (12 g)|64|0.8|7.6|3.4|0.1|6.6|10|2.2|0|s|7-Eleven|1|sweet veg snack|
+KitKat Strawberry|Kit Kat strawberry, 1 mini (12 g)|64|0.7|7.8|3.3|0.1|6.8|10|2.1|0|s|7-Eleven|1|sweet veg snack|
+KitKat White|Kit Kat white chocolate, 4 fingers (35 g)|185|2.2|22|9.8|0.2|18|35|6.4|0|s|7-Eleven|1|sweet veg snack|
+Cadbury Dairy Milk|4 pieces (25 g)|134|1.9|14.3|7.6|0.4|14|20|4.6|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk, whole bar|1 bar (160 g)|856|12|92|48|2.5|88|130|29|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Fruit & Nut|4 pieces (25 g)|125|2|14|6.8|0.7|13.5|15|3.6|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Roast Almond|4 pieces (25 g)|135|2.3|13.3|8|0.8|13|15|4.2|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Hazelnut|4 pieces (25 g)|137|2.1|13.5|8.3|0.6|13.2|15|4.3|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Black Forest|4 pieces (25 g)|128|1.7|15|6.8|0.4|14.6|20|4.2|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Caramello|4 pieces (25 g)|122|1.4|15.5|6|0.2|14.6|30|3.6|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk Oreo|4 pieces (25 g)|140|1.6|14.4|8.4|0.4|13|50|4.8|0|s|Supermarket|1|sweet veg snack|
+Cadbury Dairy Milk, mini bar|1 small bar (15 g)|81|1.1|8.6|4.6|0.2|8.4|12|2.8|0|s|Supermarket|1|sweet veg snack|
+Tim Tam Original|1 biscuit (18 g)|95|0.9|12|4.9|0.3|8.7|25|3|0|s|Supermarket|1|sweet veg snack|
+Tim Tam Double Coat|1 biscuit (19 g)|99|1|12.4|5.1|0.3|9.6|25|3.2|0|s|Supermarket|1|sweet veg snack|
+Tim Tam Dark Chocolate|1 biscuit (17.5 g)|92|1|11|5|0.8|7.5|20|3.1|0|s|Supermarket|1|sweet veg snack|
+Tim Tam Chewy Caramel|1 biscuit (20 g)|98|0.9|13.4|4.6|0.2|10|35|2.8|0|s|Supermarket|1|sweet veg snack|
+Tim Tam White|1 biscuit (18.5 g)|97|1|12|5|0.1|9.5|30|3.2|0|s|Supermarket|1|sweet veg snack|
+Pocky Chocolate|1 box (40 g)|200|3.2|26.4|8.8|1|12|80|5|0|s|Supermarket|1|sweet veg snack|
+Pocky Strawberry|1 box (40 g)|200|2.6|28|8.4|0.6|16|60|5.2|0|s|Supermarket|1|sweet veg snack|
+Pocky Matcha|1 box (40 g)|205|2.8|27|9.4|0.8|15|60|6|0|s|Supermarket|1|sweet veg snack|
+Pocky Cookies & Cream|1 box (40 g)|205|2.8|27.6|9.2|0.7|14|90|5.6|0|s|Supermarket|1|sweet veg snack|
+Pocky Banana|1 box (40 g)|200|2.6|28|8.6|0.5|16|60|5.2|0|s|Supermarket|1|sweet veg snack|
+Pocky Almond Crush|1 box (46 g)|240|4|27|12.8|1.8|13|70|6|0|s|Supermarket|1|sweet veg snack|
+Oreo Original|3 biscuits (29 g)|140|1.4|20.6|5.9|0.9|11.5|115|2.9|0|s|Supermarket|1|sweet veg snack|
+Oreo Strawberry Creme|3 biscuits (29 g)|140|1.3|21|5.8|0.7|12|110|2.8|0|s|Supermarket|1|sweet veg snack|
+Oreo Chocolate Creme|3 biscuits (29 g)|140|1.5|20.4|6|1|11.4|115|3|0|s|Supermarket|1|sweet veg snack|
+Oreo Peanut Butter|3 biscuits (29 g)|145|2|19.8|6.6|0.9|10.8|120|3|0|s|Supermarket|1|sweet veg snack|
+Oreo Blueberry Ice Cream|3 biscuits (29 g)|140|1.3|21|5.8|0.7|12|110|2.8|0|s|Supermarket|1|sweet veg snack|
+Oreo Thins|4 biscuits (26 g)|130|1.2|18.8|5.6|0.8|10|100|2.8|0|s|Supermarket|1|sweet veg snack|
+Oreo Mini|1 small pack (20 g)|100|1|14.2|4.2|0.6|8|80|2.1|0|s|Supermarket|1|sweet veg snack|
+Ferrero Rocher|1 piece (12.5 g)|73|1|5.5|5.3|0.5|4.4|4|1.6|0|s|Supermarket|1|sweet veg snack|
+Kinder Bueno|1 pack of 2 bars (43 g)|245|4|21|16|0.8|17|50|7.6|0|s|Supermarket|1|sweet veg snack|
+Kinder Bueno White|1 pack of 2 bars (39 g)|225|3.5|21|14|0.5|18|50|7|0|s|Supermarket|1|sweet veg snack|
+Kinder Joy|1 egg (20 g)|110|1.7|10.5|6.7|0.3|10.4|25|4.4|0|s|7-Eleven|1|sweet veg snack|
+Kinder Chocolate|1 small bar (12.5 g)|70|1.1|6.7|4.3|0.1|6.6|15|2.8|0|s|Supermarket|1|sweet veg snack|
+Toblerone|3 triangles (25 g)|134|1.4|15.2|7.4|0.5|14.8|10|4.4|0|s|Supermarket|1|sweet veg snack|
+Snickers|1 bar (51 g)|245|4.4|30|12|1|25|115|4.4|0|s|7-Eleven|1|sweet veg snack|
+Twix|1 pack of 2 fingers (50 g)|250|2.3|32|12.3|0.6|24|95|7.5|0|s|7-Eleven|1|sweet veg snack|
+Mars|1 bar (51 g)|230|2|35|8.6|0.6|31|80|4.2|0|s|7-Eleven|1|sweet veg snack|
+M&M's Milk Chocolate|1 pack (40 g)|197|1.9|27.6|8.4|0.8|26|25|5.2|0|s|7-Eleven|1|sweet veg snack|
+M&M's Peanut|1 pack (45 g)|230|4.5|26|11.8|1.5|22.5|25|4.4|0|s|7-Eleven|1|sweet veg snack|
+Hershey's Kisses|3 pieces (13.5 g)|72|1|8|4.3|0.3|7.5|10|2.6|0|s|Supermarket|1|sweet veg snack|
+Lindt Lindor|1 ball (12.5 g)|77|0.6|5.5|6|0.2|5.4|5|3.7|0|s|Supermarket|1|sweet veg snack|
+Hello Panda Chocolate|1 box (50 g)|260|3.4|33|12.6|1|14|140|6.2|0|s|Supermarket|1|sweet veg snack|
+Hello Panda Strawberry|1 box (50 g)|260|3|34|12.4|0.8|16|130|6|0|s|Supermarket|1|sweet veg snack|
+Yan Yan Chocolate|1 cup (50 g)|260|3|34|12.5|1|17|120|5.5|0|s|Supermarket|1|sweet veg snack|
+Yan Yan Strawberry|1 cup (50 g)|260|2.6|35|12.2|0.8|18|110|5.4|0|s|Supermarket|1|sweet veg snack|
+Koala's March Chocolate|1 box (37 g)|195|2|24.6|9.8|0.8|11|90|4.6|0|s|Supermarket|1|sweet veg snack|
+Koala's March Strawberry|1 box (37 g)|195|1.8|25|9.6|0.6|12|85|4.5|0|s|Supermarket|1|sweet veg snack|
+Lotte Choco Pie|1 piece (28 g)|125|1.4|18|5.4|0.5|11|70|2.8|0|s|Supermarket|1|sweet veg snack|
+Chipsmore Original|1 small pack (28 g)|140|1.6|18.5|6.8|0.8|8.4|90|3.4|0|s|Supermarket|1|sweet veg snack|
+Chipsmore Double Chocolate|1 small pack (28 g)|140|1.7|18.2|7|1.2|8.6|85|3.5|0|s|Supermarket|1|sweet veg snack|
+Julie's Peanut Butter Sandwich|1 pack of 2 biscuits (18 g)|90|2|11|4.4|0.6|3.6|70|2|0|s|Supermarket|1|sweet veg snack|
+Julie's Cheese Sandwich|1 pack of 2 biscuits (18 g)|90|1.8|11.4|4.2|0.4|3|110|2|0|s|Supermarket|1|sweet veg snack|
+Julie's Love Letters|3 rolls (15 g)|70|0.9|10|3|0.2|5|25|1.5|0|s|Supermarket|1|sweet veg snack|
+Hup Seng Cream Crackers|2 crackers (19 g)|90|1.9|12.6|3.4|0.5|0.6|125|1.6|0|s|Supermarket|1|sweet veg snack|
+Lexus Chocolate Cream Sandwich|1 pack of 2 biscuits (19 g)|95|1.3|12|4.8|0.5|5|60|2.4|0|s|Supermarket|1|sweet veg snack|
+Munchy's Oat Krunch Chocolate|1 pack of 2 biscuits (26 g)|130|2.3|17|5.8|1.6|6.4|75|2.8|0|s|Supermarket|1|sweet veg snack|
+Munchy's Oat Krunch Strawberry & Blackcurrant|1 pack of 2 biscuits (26 g)|128|2.2|17.4|5.5|1.5|6.6|70|2.6|0|s|Supermarket|1|sweet veg snack|
+Munchy's Oat Krunch Dark Chocolate|1 pack of 2 biscuits (26 g)|130|2.4|16.8|6|1.8|6|70|3|0|s|Supermarket|1|sweet veg snack|
+Apollo Chocolate Layer Cake|1 piece (18 g)|95|1|10|5.7|0.3|6|30|4|0|s|Supermarket|1|sweet veg snack|
+Apollo Pandan Layer Cake|1 piece (18 g)|95|1|10.4|5.5|0.2|6.2|30|3.9|0|s|Supermarket|1|sweet veg snack|
+Mamee Monster|1 small pack (25 g)|120|2.3|15.8|5.4|0.6|1|380|2.6|0|s|7-Eleven|1|veg fried snack|
+Twisties Cheese|1 pack (60 g)|310|4.2|37|16.2|1.2|2|470|7.8|0|s|7-Eleven|1|veg fried snack|
+Twisties Chicken|1 pack (60 g)|310|4.4|37|16|1.2|2|480|7.6|0|s|7-Eleven|1|veg fried snack|
+Mister Potato Original|1 small pack (25 g)|135|1.4|14.8|8|0.9|0.4|140|3.6|0|s|7-Eleven|1|veg fried snack|
+Mister Potato Hot & Spicy|1 small pack (25 g)|135|1.5|14.6|8|1|0.8|170|3.6|0|s|7-Eleven|1|veg fried snack|
+Mister Potato Barbecue|1 small pack (25 g)|135|1.5|14.8|7.9|1|1.2|160|3.5|0|s|7-Eleven|1|veg fried snack|
+Super Ring Cheese|1 pack (60 g)|315|4.4|37|16.6|0.8|2.4|600|7.6|0|s|7-Eleven|1|veg fried snack|
+Pringles Original|About 15 chips (25 g)|137|1|13|9|0.9|0.3|135|2.3|0|s|Supermarket|1|veg fried snack|
+Pringles Sour Cream & Onion|About 15 chips (25 g)|132|1.1|13|8.5|0.8|0.8|150|2.2|0|s|Supermarket|1|veg fried snack|
+Pringles Barbecue|About 15 chips (25 g)|133|1.1|13.2|8.5|0.9|1|150|2.2|0|s|Supermarket|1|veg fried snack|
+Pringles Cheesy Cheese|About 15 chips (25 g)|134|1.2|13|8.6|0.8|0.8|160|2.3|0|s|Supermarket|1|veg fried snack|
+Pringles Hot & Spicy|About 15 chips (25 g)|133|1.1|13|8.6|0.9|0.7|160|2.2|0|s|Supermarket|1|veg fried snack|
+Lay's Classic|1 small pack (28 g)|150|1.9|14.5|9.5|1.2|0.2|145|1.4|0|s|7-Eleven|1|veg fried snack|
+Lay's Sour Cream & Onion|1 small pack (28 g)|150|1.9|14.6|9.4|1.1|0.8|170|1.5|0|s|7-Eleven|1|veg fried snack|
+Lay's Nori Seaweed|1 small pack (28 g)|150|2|14.4|9.5|1.2|0.5|180|1.5|0|s|7-Eleven|1|veg fried snack|
+Lay's Hot & Spicy|1 small pack (28 g)|150|1.9|14.6|9.4|1.2|0.6|175|1.5|0|s|7-Eleven|1|veg fried snack|
+Doritos Nacho Cheese|1 small pack (25 g)|130|1.9|15.6|6.9|1|0.8|190|1.1|0|s|7-Eleven|1|veg fried snack|
 ABC soup with chicken and rice|1 bowl soup, half cup rice|380|28|45|9|5|8|700|2.5|2|ld|Home|1|chinese soupy light protein|Boil chicken, potato, carrot, onion and tomato for 20 minutes. Salt to taste. Eat with a little rice
 Steamed egg with minced chicken, rice|1 plate|430|27|52|12|1|2|700|3.5|0|ld|Home|1|chinese rice protein light|Beat 2 eggs with water and minced chicken. Steam for 10 minutes. Add a little soy sauce and serve with rice
 Pan-seared salmon, rice and greens|1 plate|560|34|52|23|4|2|500|4.5|1.5|ld|Home|2|western rice seafood protein|Pan-fry a salmon fillet for 3 minutes a side. Blanch any greens. Serve with a cup of rice
@@ -3319,7 +3403,7 @@ Object.assign(ART.R,{
 "Steamed chicken, rice and broccoli":"P rice slc:pale:#fff3e0 brc brc@30,48",
 "Egg fried rice with vegetables":"P frice egf car bean",
 "Tofu and vegetable stir-fry with rice":"P rice tofu brc car",
-"ABC soup with chicken and rice":"B:mint:clr car pot drum:pale",
+"ABC soup with chicken and rice":"B:mint:clr car pot drum:pale","KitKat, 2 fingers":"W bar:#d6203a","KitKat, 4 fingers":"W bar:#d6203a","KitKat Chunky":"W bar:#d6203a","KitKat Chunky Peanut Butter":"W bar:#d6203a","KitKat Dark":"W bar:#3a2418","KitKat Matcha":"W bar:#8fbf6a","KitKat Strawberry":"W bar:#f29bb4","KitKat White":"W bar:#f6e3c0","Cadbury Dairy Milk":"W bar:#4b1f6f","Cadbury Dairy Milk, whole bar":"W bar:#4b1f6f","Cadbury Dairy Milk Fruit & Nut":"W bar:#4b1f6f","Cadbury Dairy Milk Roast Almond":"W bar:#4b1f6f","Cadbury Dairy Milk Hazelnut":"W bar:#4b1f6f","Cadbury Dairy Milk Black Forest":"W bar:#4b1f6f","Cadbury Dairy Milk Caramello":"W bar:#4b1f6f","Cadbury Dairy Milk Oreo":"W bar:#4b1f6f","Cadbury Dairy Milk, mini bar":"W bar:#4b1f6f","Tim Tam Original":"W bar:#5a3a2a","Tim Tam Double Coat":"W bar:#5a3a2a","Tim Tam Dark Chocolate":"W bar:#3a2418","Tim Tam Chewy Caramel":"W bar:#c98d5a","Tim Tam White":"W bar:#f6e3c0","Pocky Chocolate":"W sticks:#6b3a1f","Pocky Strawberry":"W sticks:#f29bb4","Pocky Matcha":"W sticks:#8fbf6a","Pocky Cookies & Cream":"W sticks:#f6efe6","Pocky Banana":"W sticks:#f6d77a","Pocky Almond Crush":"W sticks:#c98d5a","Oreo Original":"W cook","Oreo Strawberry Creme":"W cook","Oreo Chocolate Creme":"W cook","Oreo Peanut Butter":"W cook","Oreo Blueberry Ice Cream":"W cook","Oreo Thins":"W cook","Oreo Mini":"W cook","Ferrero Rocher":"W ball:#c9a25a","Kinder Bueno":"W bar:#c98d5a","Kinder Bueno White":"W bar:#f6e3c0","Kinder Joy":"W ball:#f29bb4","Kinder Chocolate":"W bar:#f6efe6","Toblerone":"W bar:#e8b86a","Snickers":"W bar:#6b3a1f","Twix":"W bar:#c98d5a","Mars":"W bar:#3a2418","M&M's Milk Chocolate":"W pkt:#6b3a1f","M&M's Peanut":"W pkt:#f6c94a","Hershey's Kisses":"W ball:#b8b8c0","Lindt Lindor":"W ball:#d6203a","Hello Panda Chocolate":"W pkt:#e2607a","Hello Panda Strawberry":"W pkt:#f29bb4","Yan Yan Chocolate":"W sticks:#c98d5a","Yan Yan Strawberry":"W sticks:#f29bb4","Koala's March Chocolate":"W pkt:#d6203a","Koala's March Strawberry":"W pkt:#f29bb4","Lotte Choco Pie":"W cake:#5a3a2a:#fff6e6","Chipsmore Original":"W cook","Chipsmore Double Chocolate":"W cook","Julie's Peanut Butter Sandwich":"W crackers","Julie's Cheese Sandwich":"W crackers","Julie's Love Letters":"W sticks:#e8b86a","Hup Seng Cream Crackers":"W crackers","Lexus Chocolate Cream Sandwich":"W crackers","Munchy's Oat Krunch Chocolate":"W cook","Munchy's Oat Krunch Strawberry & Blackcurrant":"W cook","Munchy's Oat Krunch Dark Chocolate":"W cook","Apollo Chocolate Layer Cake":"W cake:#7a4a32:#f6e3c0","Apollo Pandan Layer Cake":"W cake:#8fbf6a:#f6e3c0","Mamee Monster":"W pkt:#f6c94a","Twisties Cheese":"W pkt:#f6a23a","Twisties Chicken":"W pkt:#e2607a","Mister Potato Original":"W pkt:#2e6fd8","Mister Potato Hot & Spicy":"W pkt:#d6203a","Mister Potato Barbecue":"W pkt:#7a4a32","Super Ring Cheese":"W pkt:#f6c94a","Pringles Original":"W can:#d6203a","Pringles Sour Cream & Onion":"W can:#2e9a5a","Pringles Barbecue":"W can:#7a4a32","Pringles Cheesy Cheese":"W can:#f6c94a","Pringles Hot & Spicy":"W can:#e2607a","Lay's Classic":"W pkt:#f6c94a","Lay's Sour Cream & Onion":"W pkt:#2e9a5a","Lay's Nori Seaweed":"W pkt:#2e6f4a","Lay's Hot & Spicy":"W pkt:#d6203a","Doritos Nacho Cheese":"W pkt:#d6203a",
 "Ramen, tonkotsu":"B:blk:#f3e6cf nood:y egh nori slc:pale:br",
 "Ramen, miso":"B:blk:#c98d4a nood:y egh nori slc:pale:br",
 "Ramen, shio":"B:blk:#f6e9b8 nood:y egh nori slc:pale:br",
