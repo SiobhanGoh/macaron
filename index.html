@@ -164,6 +164,13 @@ button:disabled{opacity:.55;cursor:default}
 .howNav button[disabled]{opacity:.35}
 body.howOpen{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.howCard,.howBack{transition:none}}
+.spk{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:90}
+.mvKc{color:var(--rose);font-weight:600}
+.howKc{display:inline-block;margin-left:10px;font-size:13.5px;font-weight:700;color:var(--rose);background:rgb(255 255 255/.3);border-radius:99px;padding:2px 10px}
+:root[data-theme=dark] .howKc{background:rgb(255 255 255/.07)}
+.mv.on .mvTick{animation:tickPop .38s var(--eo)}
+@keyframes tickPop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.mv.on .mvTick{animation:none}}
 .mvProg{display:grid;grid-template-columns:auto minmax(0,1fr);gap:12px;align-items:center;margin:16px 0 2px;font-size:13px;color:var(--mute);font-variant-numeric:tabular-nums}
 .mvProg i{height:6px;border-radius:99px;background:var(--line);position:relative;overflow:hidden}
 .mvProg i::after{content:"";position:absolute;inset:0 auto 0 0;width:var(--p);background:var(--pk);border-radius:inherit;transition:width .45s var(--eo)}
@@ -2436,11 +2443,11 @@ function exMoves(ex){const tips=[],sec={warm:[],main:[],end:[]};
   ex.steps.forEach((x0,xi)=>{const x=stepMain(x0),q=exParse(x);if(q.tip||q.tag==="Rest"||/^(Pick|Tip|No mat)\b/.test(x)){tips.push(x.replace(/^Tip:\s*/,""));return}
     (q.tag==="Warm up"?sec.warm:/^(Cardio|Stretch|Finish|Cool down)$/.test(q.tag)?sec.end:sec.main).push({x,alt:stepAlt(x0),xi,q,g:guideOf(x)})});
   return{tips,sec,all:[...sec.warm,...sec.main,...sec.end]}}
-function exList(ex,k){const tk=new Set(((S.plan&&S.plan.ticks)||{})[k]||[]),{tips,sec,all}=exMoves(ex),n=all.length,d=all.filter(r=>tk.has(r.xi)).length,
+function exList(ex,k){const tk=new Set(((S.plan&&S.plan.ticks)||{})[k]||[]),{tips,sec,all}=exMoves(ex),n=all.length,d=all.filter(r=>tk.has(r.xi)).length,kb=all.filter(r=>tk.has(r.xi)).reduce((a,r)=>a+moveKcal(r.x),0),
   row=r=>{const on=tk.has(r.xi),tag=r.q.tag&&r.q.tag!=="Warm up"&&r.q.tag!=="Finish"?`<small class="mvTag${r.q.tag==="Easier on knees"||r.q.tag==="Knee care"?" knee":""}">${esc(r.q.tag)}</small>`:"";
-    return `<li class="mv${on?" on":""}"><button class="mvTick" data-act="exTick" data-k="${k}" data-i="${r.xi}" aria-pressed="${on}" aria-label="Tick off this move"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="mvS" data-act="exHow" data-k="${k}" data-i="${r.xi}"><span class="mvFig">${r.g?fig(r.g[1]):"•"}</span><span class="mvTx">${tag}<b>${esc(r.q.name)}</b>${r.q.amt?`<span class="mvAmt">${esc(r.q.amt)}</span>`:""}</span><i class="mvChev" aria-hidden="true"></i></button>${r.q.tag==="Easier on knees"?`<div class="mvAct">${r.alt?`<button data-act="exAlt" data-k="${k}" data-i="${r.xi}">⇄ Swap for a no-bend move</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${r.xi}">Skip</button></div>`:""}</li>`},
+    return `<li class="mv${on?" on":""}"><button class="mvTick" data-act="exTick" data-k="${k}" data-i="${r.xi}" aria-pressed="${on}" aria-label="Tick off this move"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 8.5l3 3 6-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="mvS" data-act="exHow" data-k="${k}" data-i="${r.xi}"><span class="mvFig">${r.g?fig(r.g[1]):"•"}</span><span class="mvTx">${tag}<b>${esc(r.q.name)}</b>${r.q.amt||moveKcal(r.x)?`<span class="mvAmt">${esc(r.q.amt||"")}${moveKcal(r.x)?`${r.q.amt?" · ":""}<span class="mvKc">about ${moveKcal(r.x)} kcal</span>`:""}</span>`:""}</span><i class="mvChev" aria-hidden="true"></i></button>${r.q.tag==="Easier on knees"?`<div class="mvAct">${r.alt?`<button data-act="exAlt" data-k="${k}" data-i="${r.xi}">⇄ Swap for a no-bend move</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${r.xi}">Skip</button></div>`:""}</li>`},
   part=(t,L)=>L.length?`<h4 class="mvSec">${t}</h4><ol class="mvL">${L.map(row).join("")}</ol>`:"";
-  return `<div class="mvProg"><span>${d} of ${n} moves done</span><i style="--p:${n?Math.round(d/n*100):0}%"></i></div>${part("Warm up",sec.warm)}${part(sec.warm.length||sec.end.length?"Workout":"Moves",sec.main)}${part("Finish",sec.end)}${tips.length?`<div class="mvTips"><b>Good to know</b><ul>${tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`:""}<p class="mvHint">Tap a move to see how to do it. Tick the circle when you finish it.</p>`}
+  return `<div class="mvProg"><span>${d} of ${n} moves done${kb?` · about ${kb} kcal`:""}</span><i style="--p:${n?Math.round(d/n*100):0}%"></i></div>${part("Warm up",sec.warm)}${part(sec.warm.length||sec.end.length?"Workout":"Moves",sec.main)}${part("Finish",sec.end)}${tips.length?`<div class="mvTips"><b>Good to know</b><ul>${tips.map(t=>`<li>${esc(t)}</li>`).join("")}</ul></div>`:""}<p class="mvHint">Tap a move to see how to do it. Tick the circle when you finish it.</p>`}
 /* the how-to card floats above the list like frosted glass, with the previous and next move a tap away */
 let howAt=null;
 function howShow(k,xi){const pd=S.plan&&S.plan.days.find(x=>x.date===k);if(!pd||!pd.exercise)return howClose();const{all}=exMoves(pd.exercise),p=all.findIndex(r=>r.xi===xi);if(p<0)return howClose();
@@ -2449,7 +2456,7 @@ function howShow(k,xi){const pd=S.plan&&S.plan.days.find(x=>x.date===k);if(!pd||
   el.innerHTML=`<div class="howBack" data-act="howClose"></div><section class="howCard" role="dialog" aria-modal="true" aria-label="${esc(r.q.name)}">
    <div class="howTop"><span>${p+1} of ${all.length}</span><button class="howX" data-act="howClose" aria-label="Close">✕</button></div>
    <div class="howFig">${g?fig(g[1]):""}</div>
-   ${r.q.tag&&r.q.tag!=="Finish"?`<small class="mvTag${/knee/i.test(r.q.tag)?" knee":""}">${esc(r.q.tag)}</small>`:""}<h3>${esc(r.q.name)}</h3>${r.q.amt?`<p class="howAmt">${esc(r.q.amt)}</p>`:""}
+   ${r.q.tag&&r.q.tag!=="Finish"?`<small class="mvTag${/knee/i.test(r.q.tag)?" knee":""}">${esc(r.q.tag)}</small>`:""}<h3>${esc(r.q.name)}</h3>${r.q.amt||moveKcal(r.x)?`<p class="howAmt">${esc(r.q.amt||"")}${moveKcal(r.x)?`<span class="howKc">🔥 about ${moveKcal(r.x)} kcal</span>`:""}</p>`:""}
    ${g?`<div class="howBody"><p>${g[2]}</p><p class="howTip"><b>Watch for</b>${g[3]}</p><p class="howSub">Common mistakes</p><ul>${g[4].map(m=>`<li>${m}</li>`).join("")}</ul><a class="vlink" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent("how to do "+r.q.name.replace(/\(.*?\)/g,"").trim()+" proper form")}"><i>▶</i><span>Watch a video of this move</span></a></div>`:""}
    ${r.q.tag==="Easier on knees"?`<div class="mvAct howKn">${r.alt?`<button data-act="exAlt" data-k="${k}" data-i="${r.xi}">⇄ Swap for a no-bend move</button>`:""}<button data-act="exSkip" data-k="${k}" data-i="${r.xi}">Skip</button></div>`:""}
    <div class="howNav"><button data-act="howGo" data-k="${k}" data-i="${p>0?all[p-1].xi:-1}" ${p>0?"":"disabled"} aria-label="Previous move">‹</button><button class="${on?"":"primary "}howDone" data-act="exTick" data-k="${k}" data-i="${r.xi}" aria-pressed="${on}">${on?"✓ Done":"Tick off"}</button><button data-act="howGo" data-k="${k}" data-i="${p<all.length-1?all[p+1].xi:-1}" ${p<all.length-1?"":"disabled"} aria-label="Next move">›</button></div>
@@ -2458,6 +2465,29 @@ function howShow(k,xi){const pd=S.plan&&S.plan.days.find(x=>x.date===k);if(!pd||
   const c=el.querySelector(".howCard");if(c){c.scrollTop=0;el.querySelector(".howDone")?.focus({preventScroll:true})}}
 function howClose(){const el=$("#howPop");howAt=null;document.body.classList.remove("howOpen");if(!el)return;el.classList.remove("in");setTimeout(()=>{if(!howAt)el.hidden=true},calm?0:260)}
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&howAt)howClose()});
+/* calories for one move: MET x weight (kg) x minutes / 60, with minutes worked out from the sets, holds or time */
+function moveKcal(x){x=stepMain(x);const w=num(S.profile?.weight)||60,lo=x.toLowerCase();let min=0,met=3.5,m;
+  if(m=x.match(/(\d+) sets of (\d+)/)){min=+m[1]*(+m[2]*3+40)/60;met=/dead bug|superman|bird dog|crunch|leg raise|side plank/.test(lo)?3:/bridge|heel raise|abduction|kickback/.test(lo)?3.2:3.5}
+  else if(m=x.match(/(\d+) holds? of (\d+) seconds/)){min=+m[1]*(+m[2]+30)/60;met=3}
+  else if(m=x.match(/^Repeat (\d+) times/)){min=+m[1]*3;met=/slope|stair/.test(lo)?6:5.5}
+  else if(m=x.match(/^Do (\d+) rounds/)){min=+m[1]*3.7;met=/seated/.test(lo)?3:4}
+  else if(m=x.match(/(\d+) (?:easy )?minutes?/)){min=+m[1];met=/stair climber/.test(lo)?(/slowest/.test(lo)?5:7):/rowing/.test(lo)?6:/elliptical/.test(lo)?5:/bike|cycl|pedal/.test(lo)?5.5:/jog/.test(lo)?6:/incline/.test(lo)?5:/seated/.test(lo)?2.5:/stretch|child|cat-cow/.test(lo)?2.3:/brisk|fast/.test(lo)?4.3:/walk|treadmill|march/.test(lo)?3.8:3.5}
+  const k=Math.round(met*w*min/60);return k>=1?k:0}
+
+/* sparkly confetti on a canvas: ribbons, dots and twinkling stars in pink, gold and white */
+function sparkle(x,y,big){if(calm)return;const c=document.createElement("canvas"),d=Math.min(2,devicePixelRatio||1),W=innerWidth,H=innerHeight;c.className="spk";c.width=W*d;c.height=H*d;document.body.append(c);const g=c.getContext("2d");g.scale(d,d);
+  const cols=["#ff8fb0","#ffc2d2","#ffd76a","#f0cf9a","#ffffff","#e8a48c","#ff6f9a"],P=[],R=Math.random,add=(px,py,vx,vy,life)=>{const t=R();P.push({x:px,y:py,vx,vy,life,age:0,col:cols[(R()*cols.length)|0],kind:t<.42?"rib":t<.72?"dot":"star",sz:t<.42?5+R()*5:t<.72?2+R()*3:4+R()*6,rot:R()*6.3,vr:(R()-.5)*14,flip:R()*6.3,vf:6+R()*10,tw:R()*6.3})};
+  const n=big?70:34;for(let i=0;i<n;i++){const a=-Math.PI/2+(R()-.5)*Math.PI*1.25,v=(big?420:300)+R()*(big?420:260);add(x,y,Math.cos(a)*v,Math.sin(a)*v,(big?2.2:1.15)+R()*.6)}
+  if(big){for(let i=0;i<150;i++)add(R()*W,-20-R()*H*.6,(R()-.5)*80,60+R()*120,3.2+R()*1.4);for(const sx of [W*.15,W*.85])for(let i=0;i<40;i++){const a=-Math.PI/2+(sx<W/2?.5:-.5)+(R()-.5)*.9,v=380+R()*380;add(sx,H*.9,Math.cos(a)*v,Math.sin(a)*v,2+R()*.8)}}
+  const star=(r)=>{g.beginPath();for(let i=0;i<8;i++){const q=i%2?r*.32:r,a=i*Math.PI/4;g.lineTo(Math.cos(a)*q,Math.sin(a)*q)}g.closePath();g.fill()};
+  let t0=performance.now(),last=t0;(function f(now){const dt=Math.min(.05,(now-last)/1000);last=now;g.clearRect(0,0,W,H);let alive=0;
+    for(const p of P){p.age+=dt;if(p.age>p.life)continue;alive++;p.vx*=1-dt*(p.kind==="rib"?1.6:1.1);p.vy=p.vy*(1-dt*1.2)+(p.kind==="rib"?520:640)*dt;p.x+=p.vx*dt;p.y+=p.vy*dt;p.rot+=p.vr*dt;p.flip+=p.vf*dt;
+      const fade=Math.min(1,(p.life-p.age)/.4);g.save();g.translate(p.x,p.y);g.rotate(p.rot);g.globalAlpha=fade;g.fillStyle=p.col;
+      if(p.kind==="rib"){const sy=Math.cos(p.flip);g.scale(1,sy);g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.6);g.globalAlpha=fade*Math.max(0,sy)*.7;g.fillStyle="#fff";g.fillRect(-p.sz/2,-p.sz*.3,p.sz,p.sz*.14)}
+      else if(p.kind==="dot"){g.beginPath();g.arc(0,0,p.sz,0,6.3);g.fill()}
+      else{const tw=.55+.45*Math.sin(p.age*14+p.tw);g.globalAlpha=fade*tw;g.shadowColor=p.col;g.shadowBlur=8;star(p.sz*(.8+.3*tw))}
+      g.restore()}
+    if(alive&&now-t0<6000)requestAnimationFrame(f);else c.remove()})(t0)}
 const stepMain=x=>String(x).split(" || ")[0],stepAlt=x=>String(x).split(" || ")[1]||"";
 
 /* follow-along videos: free YouTube workouts that match the kind of session */
@@ -4645,7 +4675,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="pday"){S.planDay=k;renderPlan()}
   else if(a==="logPlan")logPlan(k,i);
   else if(a==="swap")swap(k,i);
-  else if(a==="exDone"&&S.plan){S.plan.done=S.plan.done||{};const was=!!S.plan.done[k];if(was)delete S.plan.done[k];else S.plan.done[k]=true;store.set("plan",S.plan);if(curView==="plan")renderPlan();else renderToday();if(!was){burst($(`[data-act=exDone][data-k="${k}"]`));toast("Workout done. Well done.");setTimeout(()=>openCare("cool"),900);S.plan.xpd=S.plan.xpd||{};if(!S.plan.xpd[k]){S.plan.xpd[k]=1;store.set("plan",S.plan);addXP(20)}}}
+  else if(a==="exDone"&&S.plan){S.plan.done=S.plan.done||{};const was=!!S.plan.done[k];if(was)delete S.plan.done[k];else S.plan.done[k]=true;store.set("plan",S.plan);if(curView==="plan")renderPlan();else renderToday();if(!was){const pd=S.plan.days.find(x=>x.date===k),kc=pd?.exercise?(exMoves(pd.exercise).all.reduce((a,r)=>a+moveKcal(r.x),0)||pd.exercise.burn||0):0;howClose();sparkle(innerWidth/2,innerHeight*.55,true);setTimeout(()=>cheer("Workout complete!",(kc?`About ${kc} kcal burned. `:"")+"Every move counts. Rest well.","star",true),450);setTimeout(()=>openCare("cool"),3600);S.plan.xpd=S.plan.xpd||{};if(!S.plan.xpd[k]){S.plan.xpd[k]=1;store.set("plan",S.plan);addXP(20)}}}
   else if(a==="editPlan"||a==="planWiz")openPlanWiz();
   else if(a==="openFeel"){renderFeel();openSheet("#feelSheet")}
   else if(a==="closeChk"){$("#chk").hidden=true;if(!S.prefs.flags.tour)setTimeout(startTour,600);else setTimeout(dailyInsight,650)}
@@ -4659,7 +4689,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="exHow"&&S.plan)howShow(k,i);
   else if(a==="howGo"&&S.plan){if(i>=0)howShow(k,i)}
   else if(a==="howClose")howClose();
-  else if(a==="exTick"&&S.plan){S.plan.ticks=S.plan.ticks||{};const L=new Set(S.plan.ticks[k]||[]);L.has(i)?L.delete(i):L.add(i);S.plan.ticks[k]=[...L];store.set("plan",S.plan);const pd=S.plan.days.find(x=>x.date===k),n=pd?pd.exercise.steps.filter(x=>{const q=exParse(stepMain(x));return!(q.tip||q.tag==="Rest"||/^(Pick|Tip|No mat)\b/.test(x))}).length:0;renderPlan();if(howAt)howShow(k,i);if(n&&L.size>=n&&!S.plan.done?.[k])setTimeout(()=>{const d=document.querySelector(`[data-act="exDone"][data-k="${k}"]`);if(d)d.click()},350)}
+  else if(a==="exTick"&&S.plan){S.plan.ticks=S.plan.ticks||{};const L=new Set(S.plan.ticks[k]||[]),was=L.has(i);was?L.delete(i):L.add(i);if(!was){const rc=b.getBoundingClientRect();sparkle(rc.left+rc.width/2,rc.top+rc.height/2)}S.plan.ticks[k]=[...L];store.set("plan",S.plan);const pd=S.plan.days.find(x=>x.date===k),n=pd?pd.exercise.steps.filter(x=>{const q=exParse(stepMain(x));return!(q.tip||q.tag==="Rest"||/^(Pick|Tip|No mat)\b/.test(x))}).length:0;renderPlan();if(howAt)howShow(k,i);if(n&&L.size>=n&&!S.plan.done?.[k])setTimeout(()=>{const d=document.querySelector(`[data-act="exDone"][data-k="${k}"]`);if(d)d.click()},350)}
   else if((a==="exAlt"||a==="exSkip")&&S.plan){const pd=S.plan.days.find(x=>x.date===k);if(pd&&pd.exercise&&pd.exercise.steps[i]!=null){const x=pd.exercise.steps[i];if(a==="exAlt"&&stepAlt(x))pd.exercise.steps[i]=stepAlt(x);else{pd.exercise.steps.splice(i,1);if(S.plan.ticks&&S.plan.ticks[k])S.plan.ticks[k]=S.plan.ticks[k].filter(v=>v!==i).map(v=>v>i?v-1:v)}store.set("plan",S.plan);renderPlan();if(howAt){if(a==="exAlt")howShow(k,i);else howClose()}toast(a==="exAlt"?"Swapped for a move that is gentler on your knees":"Skipped. Listen to your knees.")}}
   else if(a==="kneeMode"&&S.plan){const st=S.plan.settings=S.plan.settings||readSettings();st.knees=st.knees==="yes"?"no":"yes";regenEx();toast(st.knees==="yes"?"Switched to gentle, knee-friendly workouts":"Switched to regular workouts")}
   else if(a==="setDiff"&&S.plan){const st=S.plan.settings=S.plan.settings||readSettings();st.diff=b.dataset.v;regenEx();toast(b.dataset.v==="hard"?"Set to hard. Drop back to medium if your form slips.":"Difficulty set to "+b.dataset.v)}
