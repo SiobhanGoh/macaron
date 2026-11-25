@@ -2,7 +2,7 @@
 
 A free, offline calorie tracker built for Malaysian food.
 
-**Open the app:** https://siobhangoh.github.io/tingkat/
+**Open the app:** https://siobhangoh.github.io/macaron/
 
 On a phone, open the link, then choose **Add to Home Screen** from the browser menu. After the first visit it works with no internet.
 
