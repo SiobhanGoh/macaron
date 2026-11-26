@@ -114,6 +114,12 @@ button:disabled{opacity:.55;cursor:default}
 .primary{background:var(--pandan);border-color:var(--pandan);color:#fff}
 .ghost{background:transparent}
 .danger{color:var(--sambal)}
+button.danger[data-act=del],:root[data-theme=dark] button.ghost.danger[data-act=del]{color:var(--sambal)!important;border:1.5px solid var(--sambal)!important;background:color-mix(in srgb,var(--sambal) 9%,transparent)!important;font-weight:700}
+button[data-act=fav],:root[data-theme=dark] button[data-act=fav]{border:1.5px solid #dba93f!important;color:color-mix(in srgb,#b07a12 70%,var(--ink))!important;background:color-mix(in srgb,#f3c95c 14%,transparent)!important;font-weight:700}
+:root[data-theme=dark] button[data-act=fav]{color:#f6d98a!important}
+button[data-act=fav]::before{content:"♡";margin-right:7px;font-size:1.05em}
+button[data-act=fav][aria-pressed=true]::before{content:"♥"}
+button[data-act=fav][aria-pressed=true],:root[data-theme=dark] button[data-act=fav][aria-pressed=true]{background:linear-gradient(180deg,#f8dc8b,#eebd4f)!important;color:#4a3208!important}
 .rip{position:absolute;border-radius:50%;background:rgb(var(--wr)/.45);pointer-events:none;width:14px;height:14px;margin:-7px;animation:rip .45s var(--eo) forwards}
 @keyframes rip{to{transform:scale(4.14);opacity:0}}
 .setupbox{margin-top:16px;display:grid;gap:10px;justify-items:start;background:var(--panel)}
