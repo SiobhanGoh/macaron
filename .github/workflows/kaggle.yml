@@ -52,6 +52,17 @@ jobs:
           PY
               kaggle kernels push -p kernel --accelerator NvidiaTeslaT4 2>&1 || kaggle kernels push -p kernel 2>&1
             fi
+            if [ "$ACTION" = "quota" ]; then
+              python - <<'PY'
+          from kaggle.api.kaggle_api_extended import KaggleApi
+          from kagglesdk.kernels.types.kernels_api_service import ApiGetAcceleratorQuotaStatisticsRequest
+          api = KaggleApi(); api.authenticate()
+          with api.build_kaggle_client() as k:
+              r = k.kernels.kernels_api_client.get_accelerator_quota_statistics(ApiGetAcceleratorQuotaStatisticsRequest())
+              print("refresh:", r.quota_refresh_time)
+              print("gpu:", r.gpu_quota)
+          PY
+            fi
             if [ "$ACTION" = "logs" ]; then
               kaggle kernels logs "$KERNEL" 2>&1 | python -c "import sys,json
           t=sys.stdin.read()
