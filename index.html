@@ -697,6 +697,9 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .cChips{display:flex;gap:6px}.cChips button{min-height:38px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line);background:color-mix(in srgb,var(--card) 70%,transparent);color:var(--ink);font-weight:600}.cChips button[aria-pressed=true]{background:var(--pk);border-color:var(--pk)}
 .cCard .loList{padding:0}.cCard .loList label{border-top:0;min-height:42px}.cDone{width:100%;min-height:50px;margin-top:10px}
 .drow>button.custBtn{display:inline-flex!important;width:auto;align-items:center;gap:5px;grid-column:1/-1;grid-row:2;justify-self:start;margin:-4px 0 10px 62px;min-height:34px;padding:0 10px;border-radius:999px;border:1.5px solid color-mix(in srgb,var(--pk) 45%,var(--line));background:color-mix(in srgb,var(--pk) 10%,var(--card));color:var(--ink);font-size:13px;font-weight:600;white-space:nowrap}.custBtn svg{width:15px;height:15px;flex:none}.drow>button.custBtn.on{background:var(--pk);border-color:var(--pk)}
+#dEcon{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:18px;background:color-mix(in srgb,var(--pk) 14%,var(--card));border:1.5px solid color-mix(in srgb,var(--pk) 45%,var(--line))}#dEcon[hidden]{display:none}
+.econTxt{flex:1;display:grid;gap:2px;min-width:0}.econTxt b{font-size:15px}.econTxt small{color:var(--mute);font-size:13px}
+#dFoot #dEcon>button{width:auto!important;max-width:46%;margin:0!important;position:static!important;white-space:nowrap;flex:none;min-height:40px;padding:0 14px;border-radius:999px;font-weight:700;border:1.5px solid var(--pk);background:var(--card);color:var(--ink)}#dFoot #dEcon>button[aria-pressed=true]{background:var(--pk)!important;border-color:var(--pk)!important;color:#3b1020!important}
 .footSlot{margin:0 0 10px}.footSlot>span{display:block;color:var(--mute);font-size:13px;margin:0 0 6px 2px}.slotChips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.slotChips button{min-height:38px;padding:0 4px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap}.slotChips button[aria-pressed=true]{background:var(--pk);border-color:var(--pk)}.qWrap{position:relative}.qWrap svg{position:absolute;left:16px;top:50%;width:22px;height:22px;transform:translateY(-50%);color:color-mix(in srgb,var(--pk) 70%,var(--ink));pointer-events:none}.qWrap input{margin:0;padding-left:48px;min-height:56px;font-size:17px;font-weight:600;border:2px solid color-mix(in srgb,var(--pk) 70%,var(--line));background:color-mix(in srgb,var(--pk) 9%,var(--card));box-shadow:0 6px 18px -10px color-mix(in srgb,var(--pk) 80%,transparent)}.qWrap input::placeholder{color:color-mix(in srgb,var(--pk) 45%,var(--mute));font-weight:500}.qWrap input:focus{outline:none;border-color:var(--pk);box-shadow:0 0 0 4px color-mix(in srgb,var(--pk) 25%,transparent)}#dFoot button{width:100%;min-height:52px}
 .slot .empty{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .sug{color:var(--ink)!important;font-weight:700!important}.opt.ico .sug{grid-column:2}.dq{background:var(--wh);border:1.5px solid var(--line);border-radius:99px;margin:0 8px 0 4px}.drow>button .kc{padding-right:2px}
@@ -1082,7 +1085,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="seg" id="dishSeg" role="group" aria-label="List" style="margin:4px 0"><i></i><button data-act="dishTab" data-t="local">Local dishes</button><button data-act="dishTab" data-t="recent">Recent</button><button data-act="dishTab" data-t="fav">Favourites</button></div>
     <div><label for="q" class="sr">Search food</label><div class="qWrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="Search food: nasi lemak, teh ais…"></div><div class="cats" id="dCats" role="group" aria-label="Kind of food"></div></div>
     <ul class="flist" id="flist"></ul>
-    <div id="dFoot" hidden><div class="footSlot"><span>Add to</span><div class="slotChips" id="slotChips" role="group" aria-label="Which meal"></div><select id="listSlot" class="sr" tabindex="-1" aria-hidden="true"></select></div><button class="primary" data-act="dAdd" id="dAddBtn"></button></div>
+    <div id="dFoot" hidden><div id="dEcon" hidden></div><div class="footSlot"><span>Add to</span><div class="slotChips" id="slotChips" role="group" aria-label="Which meal"></div><select id="listSlot" class="sr" tabindex="-1" aria-hidden="true"></select></div><button class="primary" data-act="dAdd" id="dAddBtn"></button></div>
   </div>
 </div>
 <div id="custPop" hidden><div class="cScrim" data-act="cDone"></div><div class="cCard" role="dialog" aria-modal="true" aria-labelledby="cTitle"><div id="cBody"></div></div></div>
@@ -1229,6 +1232,44 @@ Chicken rice, steamed|1 plate|560|28|72|17|2|3|1200|5|0.3|ld|Chicken rice shop|1
 Chicken rice, roasted|1 plate|620|27|75|22|2|3|1300|6.5|0.3|ld|Chicken rice shop|1|chinese rice|Ask for breast meat and remove the skin to save about 80 kcal
 Steamed chicken rice set|1 set with soup and bean sprouts|600|32|74|18|4|4|1400|5|1|ld|The Chicken Rice Shop|2|chinese rice protein|Order a steamed chicken single meal with bean sprouts
 Economy rice: 1 meat, 2 veg|1 plate|600|25|75|22|6|6|1300|6|2|ld|Economy rice stall|1|chinese rice|Pick a steamed or braised meat and two vegetables. Ask for no gravy on the rice
+White rice (economy rice)|1 serving (about 200 g)|260|5|57|0.5|0.6|0|5|0.1|0|ld|Economy rice stall|1|econrice rice veg|
+Brown rice (economy rice)|1 serving (about 200 g)|220|5|46|1.8|3.5|0.7|10|0.4|0|ld|Economy rice stall|1|econrice rice veg|
+Oil rice (chicken rice)|1 serving (about 200 g)|330|6|55|9|0.6|0.5|450|2.5|0|ld|Economy rice stall|1|econrice rice|
+Nasi lemak rice|1 serving (about 200 g)|360|6|54|13|1|0.5|300|10|0|bld|Economy rice stall|1|econrice rice malay veg|
+Basmati rice, plain|1 serving (about 200 g)|260|5.5|56|0.8|0.8|0|5|0.2|0|ld|Economy rice stall|1|econrice rice indian veg|
+Briyani rice|1 serving (about 200 g)|370|7|58|12|1|1|450|4|0|ld|Economy rice stall|1|econrice rice indian veg|
+Turmeric rice (nasi kunyit)|1 serving (about 200 g)|340|5.5|55|10|0.8|0.5|300|7|0|ld|Economy rice stall|1|econrice rice malay veg|
+Plain fried rice|1 serving (about 200 g)|350|8|52|12|1.5|1|700|2|0.1|ld|Economy rice stall|1|econrice rice|
+Sweet and sour pork|1 scoop|260|11|20|15|0.8|12|380|3.5|0.3|ld|Economy rice stall|1|econ chinese meat pork fried|
+Sweet and sour chicken|1 scoop|220|13|19|10|0.8|12|380|2|0.3|ld|Economy rice stall|1|econ chinese meat fried|
+Marmite chicken|1 scoop|250|15|14|15|0.2|9|620|3.5|0|ld|Economy rice stall|1|econ chinese meat fried|
+Kung pao chicken|1 scoop|210|15|8|13|1.2|4|600|2.2|0.3|ld|Economy rice stall|1|econ chinese meat spicy|
+Black pepper chicken|1 scoop|200|15|8|12|0.8|4|600|2.6|0.2|ld|Economy rice stall|1|econ chinese meat|
+Lemon chicken|1 scoop|260|13|20|14|0.3|12|350|2.5|0|ld|Economy rice stall|1|econ chinese meat fried|
+Curry chicken (economy rice)|1 piece with gravy|200|14|5|14|0.8|1.5|450|6|0.2|ld|Economy rice stall|1|econ meat spicy|
+Braised pork belly (tau yu bak)|1 scoop|300|12|6|26|0.2|4|700|9.5|0|ld|Economy rice stall|1|econ chinese meat pork|
+Fried chicken wing (economy rice)|1 wing|180|12|6|12|0.2|0|350|3.2|0|ld|Economy rice stall|1|econ meat fried|
+Fried fish fillet|1 piece|200|14|10|12|0.3|1|380|2.4|0|ld|Economy rice stall|1|econ seafood fried|
+Steamed fish (economy rice)|1 piece|110|20|1|3|0|0.5|350|0.7|0|ld|Economy rice stall|1|econ seafood light|
+Sambal fish|1 piece|200|18|5|12|0.8|3|550|2.5|0.2|ld|Economy rice stall|1|econ seafood malay spicy|
+Sambal prawns|1 scoop|170|14|6|10|0.8|4|600|1.6|0.2|ld|Economy rice stall|1|econ seafood malay spicy|
+Luncheon meat slices|2 slices|180|7|3|16|0|0.5|700|5.6|0|ld|Economy rice stall|1|econ meat pork|
+Egg foo yong (omelette)|1 piece|190|9|2|16|0.3|1|350|4|0.2|bld|Economy rice stall|1|econ egg veg|
+Sambal egg|1 egg with sambal|130|7|4|10|0.5|3|300|2.4|0.1|bld|Economy rice stall|1|econ egg malay spicy veg|
+Braised tofu (economy rice)|1 scoop|120|8|5|7.5|0.8|2|450|1.2|0.2|ld|Economy rice stall|1|econ veg|
+Mapo tofu|1 scoop|170|10|6|12|0.8|1.5|600|3|0.1|ld|Economy rice stall|1|econ chinese pork spicy|
+Stir-fried spinach (bayam)|1 scoop|60|3|4|4|2.2|0.5|250|0.6|1|ld|Economy rice stall|1|econ veg light|
+Kangkung belacan|1 scoop|80|3|5|5.5|2.2|1.5|420|0.8|1|ld|Economy rice stall|1|econ veg malay spicy|
+Stir-fried cabbage|1 scoop|60|1.5|6|3.5|2|3|260|0.5|1|ld|Economy rice stall|1|econ veg light|
+Lettuce with oyster sauce|1 scoop|50|1.5|4|3|1.2|2|300|0.4|1|ld|Economy rice stall|1|econ veg light|
+Long beans with egg|1 scoop|90|4|6|5.5|2|2|280|1.1|0.8|ld|Economy rice stall|1|econ veg|
+Brinjal with sambal|1 scoop|130|1.5|9|10|3|5|300|1.4|1|ld|Economy rice stall|1|econ veg malay spicy|
+Bean sprouts stir-fry|1 scoop|60|3|4|3.5|1.2|1.5|220|0.5|0.8|ld|Economy rice stall|1|econ veg light|
+Curry vegetables (sayur lodeh)|1 scoop|110|3|8|7.5|2.5|3|420|5|1|ld|Economy rice stall|1|econ veg malay|
+Stir-fried broccoli|1 scoop|60|3|6|3|2.6|1.5|250|0.5|1|ld|Economy rice stall|1|econ veg light|
+Bitter gourd with egg|1 scoop|90|5|4|6|2|1|260|1.4|0.8|ld|Economy rice stall|1|econ veg|
+Stir-fried choy sum|1 scoop|55|2.5|4|3.5|2|1|260|0.5|1|ld|Economy rice stall|1|econ veg light|
+Curry gravy on rice|1 ladle|45|0.8|2|3.8|0.3|0.8|220|2|0|ld|Economy rice stall|1|econ veg spicy|
 Economy rice: steamed fish, tofu, greens|Half rice|450|30|45|15|6|4|1100|3|2|ld|Economy rice stall|1|chinese rice light protein seafood|Say: nasi separuh. Pick steamed fish, tofu and a green vegetable
 Nasi campur: ayam bakar, sayur, ulam|1 plate|580|32|68|18|6|5|1100|5|2|ld|Nasi campur stall|1|malay rice protein mild|Pick grilled chicken or fish, one vegetable and ulam. Kuah sikit
 Ikan bakar with rice and ulam|1 plate|560|38|62|16|4|4|1100|4|1|ld|Ikan bakar stall|2|malay rice protein seafood mild|Ask for the air asam on the side
@@ -3366,9 +3407,9 @@ function buildToday(){$("#wins").innerHTML=WINS.map(([k,n,i])=>`<div class="win"
   $("#rings").innerHTML=[["p","Protein",""],["c","Carbs","r2"],["f","Fat","r3"]].map(([k,n,c])=>`<div class="card ring ${c}" id="ring-${k}"><svg viewBox="0 0 76 76"><circle class="bgc" cx="38" cy="38" r="32"/><circle class="fgc" cx="38" cy="38" r="32"/></svg><b>0 g</b><small>${n}</small></div>`).join("");
   $("#nbars").innerHTML=BARS.map(([k,n])=>`<div class="kv" id="nb-${k}"><span>${n}<small></small></span><b></b><div class="track"><i></i></div></div>`).join("")}
 function renderStrip(){const t=today();$("#dayStrip").innerHTML=[...Array(7)].map((_,i)=>{const k=addDays(t,i-6);return `<button data-act="viewDay" data-k="${k}" aria-pressed="${k===S.view}"><small>${k===t?"Today":short(k)}</small><b>${toDate(k).getDate()}</b></button>`}).join("");const s=$("#dayStrip");s.scrollLeft=s.scrollWidth}
-const SZ={food:[["mini","Mini",.45],["regular","Regular",1],["large","Large",1.4]],drink:[["small","Small",.75],["regular","Regular",1],["large","Large",1.35]]};
+const SZ={food:[["mini","Mini",.45],["regular","Regular",1],["large","Large",1.4]],drink:[["small","Small",.75],["regular","Regular",1],["large","Large",1.35]],rice:[["half","Half",.5],["regular","One serving",1],["extra","Extra rice",1.5]]};
 const SZRX=/\b(puff|pau|bao|bun|croissant|tart|kuih|kueh|cake|cookie|biscuit|muffin|scone|donut|doughnut|waffle|pancake|roll|popiah|onde|karipap|cucur|pisang goreng|macaron|brownie|pie|pretzel|bagel|danish|eclair|samosa|spring roll|sandwich|burger|wrap|cupcake|mochi|taiyaki|dorayaki|bread|toast|loaf|youtiao|you tiao|kaya|sausage)\b/i;
-function sizeKind(e){const f=FOODS.find(x=>x.name===(e.sz0?.name||e.name)),tags=" "+(f?.tags||"")+" ",n=e.sz0?.name||e.name||"";if(f&&/^(Supermarket|7-Eleven|Petrol station)$/.test(f.place))return"";
+function sizeKind(e){const f=FOODS.find(x=>x.name===(e.sz0?.name||e.name)),tags=" "+(f?.tags||"")+" ",n=e.sz0?.name||e.name||"";if(/ econrice /.test(tags))return"rice";if(f&&/^(Supermarket|7-Eleven|Petrol station)$/.test(f.place))return"";
   if(/ drink /.test(tags)||/\b(latte|coffee|kopi|teh|tea|juice|milkshake|smoothie|frappuccino|lemonade|chocolate drink|milk)\b/i.test(n))return"drink";
   if(/ (pastry|snack|sweet) /.test(tags)||SZRX.test(n))return"food";return""}
 /* parts and servings that change the calories: chicken part, fried chicken piece, ice cream cup or cone, lean or fatty char siu */
@@ -3407,6 +3448,7 @@ const LO={
  dress:["Dressing",{kcal:-90,f:-9,sod:-150}],pearls:["Pearls",{kcal:-130,c:-32,sug:-8}],cream:["Whipped cream or foam",{kcal:-80,f:-8,sat:-5,sug:-2}],
  lard:["Crispy lard bits",{kcal:-45,f:-5,sat:-2}],fegg:["Fried egg",{kcal:-90,p:-6,f:-7}],ytiao:["Fried dough sticks",{kcal:-120,c:-14,f:-6}],gsauce:["Gravy",{kcal:-50,f:-3,sod:-350}]};
 function leaveOpts(e){const n=String(e.sz0?.name||e.name||""),dt=String(e.sz0?.detail||e.detail||""),f=FOODS.find(x=>x.name===n),t=" "+(f?.tags||"")+" ",nd=n+" "+dt,o=[],add=(...k)=>{for(const x of k)if(!o.includes(x))o.push(x)};
+  if(/ econ(rice)? /.test(t))return o;
   if(/ drink /.test(t)){if(/boba|bubble|pearl/i.test(nd))add("pearls");if(/frapp|whipped|cheese foam|cream cheese|cream top/i.test(nd))add("cream");return o}
   if(partKind(e)==="chick"||/chicken rice/i.test(n)&&!/claypot|fried rice/i.test(n)){if(partKind(e)==="chick")add("cskin");add("chili","ginger","cuke");if(/soup|set/i.test(nd))add("csoup");if(!/balls/i.test(n))add("crice")}
   if(/nasi lemak/i.test(n)){add("sambal","nuts","bilis");if(!/ayam goreng|fried chicken|rendang/i.test(n)||/egg/i.test(dt))add("hegg");add("cuke","nlrice")}
@@ -3598,7 +3640,7 @@ function renderDish(){const tabs=["local","recent","fav"],q=$("#q").value.trim()
   fl.innerHTML=list.length?list.slice(0,dShow).map(dRowOf).join(""):`<li class="empty">${S.dishTab==="local"?"Not in the list. Add it with Type a label, using your own numbers.":S.dishTab==="recent"?"Food you log shows up here.":"Open a logged meal and tap Save as favourite."}</li>`}
 function entryOf(f,slot,src){const e={...tpl(f),id:uid(),slot,mult:1,src,at:Date.now()};if(!e.low)e.low=e.kcal*.85;if(!e.high)e.high=e.kcal*1.2;if(!e.cuisine&&f.tags)e.cuisine=cuisineOf(f);return e}
 /* Painted dish pictures: used in place of the line drawing where one has been approved. Falls back to the drawing if the file cannot load. */
-const DISHPIC=[["nasi lemak biasa|^(Rich Kopitiam|Samtai|Nyonya Colors) nasi lemak$","c0"],["roast(ed)? chicken rice|chicken rice, roasted|^Food court chicken rice$","c82"],["curry laksa|nyonya laksa","c141"],["wantan mee|dry wantan noodles","c51"],["nasi goreng kampung","c103"],["kaya (butter )?toast","c13"],["^Fried wantan$","c1091"],["^(?!.*(almond|ham|taiyaki)).*croissant$","c788"],["^French fries|^Burger King fries$","c397"],["^(?!Portuguese).*egg tart$","c822"],["steamed chicken rice|chicken rice, steamed","c76"],["char k(way|uey) teow","c135"],["roti canai","p_roti"],["^Roti telur","c9"],["^Satay ayam$|^Pasar Eatai satay","c133"],["^(Nyonya Colors )?curry puff$","c935"],["(^| )pho( |$)","c833"],["yong tau foo, soup","c152"],["roast duck rice","c991"],["bubble milk tea|milk tea with (pearls|boba)|^Ticco milk tea$","c617"],["nasi lemak.*(ayam|rendang)","c572"],["mee goreng","p_meegoreng"],["^Fried chicken$|KFC Original Recipe, drumstick","p_drumstick"]].map(x=>[new RegExp(x[0],"i"),x[1]]);
+const DISHPIC=[["nasi lemak biasa|^(Rich Kopitiam|Samtai|Nyonya Colors) nasi lemak$","c0"],["roast(ed)? chicken rice|chicken rice, roasted|^Food court chicken rice$","c82"],["curry laksa|nyonya laksa","c141"],["wantan mee|dry wantan noodles","c51"],["nasi goreng kampung","c103"],["kaya (butter )?toast","c13"],["^Fried wantan$","c1091"],["^(?!.*(almond|ham|taiyaki)).*croissant$","c788"],["^French fries|^Burger King fries$","c397"],["^(?!Portuguese).*egg tart$","c822"],["steamed chicken rice|chicken rice, steamed","c76"],["char k(way|uey) teow","c135"],["roti canai","p_roti"],["^Roti telur","c9"],["^Prawn mee$","c148"],["^Nasi Lemak McD$","c396"],["char si(u|ew) rice","c484"],["^(Double )?cheeseburger$|^Five Guys (little )?cheeseburger$","c217"],["^Thosai with dhal|^(Paper|Rava) thosai$","c10"],["^Satay ayam$|^Pasar Eatai satay","c133"],["^(Nyonya Colors )?curry puff$","c935"],["(^| )pho( |$)","c833"],["yong tau foo, soup","c152"],["roast duck rice","c991"],["bubble milk tea|milk tea with (pearls|boba)|^Ticco milk tea$","c617"],["nasi lemak.*(ayam|rendang)","c572"],["mee goreng","p_meegoreng"],["^Fried chicken$|KFC Original Recipe, drumstick","p_drumstick"]].map(x=>[new RegExp(x[0],"i"),x[1]]);
 const PICMEMO=new Map(),PICOFF=new Set();
 function dishPic(n){if(!n)return"";n=String(n);let f=PICMEMO.get(n);if(f===undefined){const m=DISHPIC.find(x=>x[0].test(n));f=m?m[1]:"";PICMEMO.set(n,f)}return f&&!PICOFF.has(f)?`<img class="dpic" src="art/dish/${f}.webp" alt="" loading="lazy" decoding="async" data-pf="${f}" data-pn="${esc(n)}">`:""}
 document.addEventListener("error",e=>{const t=e.target;if(t&&t.classList&&t.classList.contains("dpic")){PICOFF.add(t.dataset.pf);try{t.outerHTML=ART.svg(t.dataset.pn)||""}catch(x){t.remove()}}},true);
@@ -3619,9 +3661,17 @@ function renderCust(){const t=dTray.find(x=>x.f.name===custName);if(!t){closeCus
   ${pk?`<label class="cRow cCol"><span>${PARTS[pk].lab}</span><select id="cPart">${PARTS[pk].opts.map(x=>{const dk=Math.round(num(x[2].kcal)-d0);return `<option value="${x[0]}"${(o.pt||pdf)===x[0]?" selected":""}>${esc(trS(x[1]))}${dk?` (${dk>0?"+":"−"}${Math.abs(dk)} kcal)`:""}</option>`}).join("")}</select></label>`:""}
   ${lo.length?`<div class="cCol"><span class="cLbl">Leave out</span><div class="loList">${lo.map(x=>`<label><input type="checkbox" data-clo="${x}"${(o.lo||[]).includes(x)?" checked":""}><span>${LO[x][0]}</span><small>−${Math.abs(LO[x][1].kcal)} kcal</small></label>`).join("")}</div></div>`:""}
   <button class="primary cDone" data-act="cDone">Done</button>`}
-function dFoot(){const sc=$("#slotChips"),cur=$("#listSlot").value;if(sc)sc.innerHTML=SLOTS.map(([k,nm])=>`<button data-act="slotPick" data-v="${k}" aria-pressed="${cur===k}">${nm==="Snacks and drinks"?"Snack":nm}</button>`).join("");const n=dTray.reduce((a,x)=>a+x.n,0),k=dTray.reduce((a,x)=>a+trayKcal(x),0);$("#dFoot").hidden=!n;$("#dAddBtn").textContent=n?`Add ${n} food${n===1?"":"s"} to ${SLOTNAME[$("#listSlot").value].toLowerCase()} (${fmt(k)} kcal)`:""}
+/* economy rice: a rice plus at least one dish from the economy rice list can be logged together as one plate */
+let dEcon=false;
+const isEconRice=f=>/ econrice /.test(" "+(f.tags||"")+" "),isEconDish=f=>/ econ /.test(" "+(f.tags||"")+" ");
+function econOK(){return dTray.some(x=>isEconRice(x.f))&&dTray.some(x=>isEconDish(x.f))}
+function econPlate(xs,slot){const es=xs.map(x=>trayEntry(x)),e={id:uid(),slot,name:"Economy rice plate",base:"Economy rice: 1 meat, 2 veg",place:"Economy rice stall",mult:1,src:"local",thumb:"",at:Date.now()};
+  for(const f of NF)e[f]=Math.round(es.reduce((a,x)=>a+val(x,f),0)*10)/10;
+  e.low=Math.round(es.reduce((a,x)=>a+(num(x.low)?val(x,"low"):val(x,"kcal")),0));e.high=Math.round(es.reduce((a,x)=>a+(num(x.high)?val(x,"high"):val(x,"kcal")),0));
+  e.detail=es.map(x=>{const m=num(x.mult,1);return (m!==1?fmt(m)+" × ":"")+x.name.replace(/ \(economy rice\)/,"")}).join(", ");e.plate=es.map(x=>({name:x.name,mult:num(x.mult,1)}));return e}
+function dFoot(){const sc=$("#slotChips"),cur=$("#listSlot").value;if(sc)sc.innerHTML=SLOTS.map(([k,nm])=>`<button data-act="slotPick" data-v="${k}" aria-pressed="${cur===k}">${nm==="Snacks and drinks"?"Snack":nm}</button>`).join("");const n=dTray.reduce((a,x)=>a+x.n,0),k=dTray.reduce((a,x)=>a+trayKcal(x),0);$("#dFoot").hidden=!n;{const ec=econOK(),el=$("#dEcon");el.hidden=!ec;if(!ec)dEcon=false;else el.innerHTML=`<div class="econTxt"><b>Having economy rice?</b><small>${dEcon?"The rice and dishes will be logged as one plate.":"Log the rice and dishes as one plate."}</small></div><button data-act="dEcon" aria-pressed="${dEcon}">${dEcon?"One plate ✓":"Put together"}</button>`}const pl=dEcon&&econOK()?dTray.filter(x=>isEconRice(x.f)||isEconDish(x.f)):[],nn=pl.length?n-pl.reduce((a,x)=>a+x.n,0)+1:n;$("#dAddBtn").textContent=n?`Add ${nn} ${pl.length?(nn===1?"plate":"items"):(nn===1?"food":"foods")} to ${SLOTNAME[$("#listSlot").value].toLowerCase()} (${fmt(k)} kcal)`:""}
 function addDish(i){const f=dishList[i];if(!f)return;const t=dTray.find(x=>x.f.name===f.name),pi=pieceInfo(f);if(t){if(t.full)t.pc=Math.min(t.full*4,t.pc+1);else t.n++}else dTray.push(pi?{f,n:1,pc:1,full:pi.n,tab:S.dishTab}:{f,n:1,tab:S.dishTab});renderDish();dFoot()}
-function dAddAll(){if(!dTray.length)return;const slot=$("#listSlot").value,k=S.view,n=dTray.reduce((a,x)=>a+x.n,0),dTray0=dTray.length;for(const x of dTray){const e=trayEntry(x);e.slot=slot;addEntry(k,e,true)}dTray=[];closeSheets();if(curView!=="today")location.hash="today";else renderToday();toast(`Added ${n} food${n===1?"":"s"} to ${SLOTNAME[slot]}`);if(k===today())mealTip(slot,day(k).entries.slice(-dTray0))}
+function dAddAll(){if(!dTray.length)return;const slot=$("#listSlot").value,k=S.view,n=dTray.reduce((a,x)=>a+x.n,0);let dTray0=dTray.length;const plate=dEcon&&econOK()?dTray.filter(x=>isEconRice(x.f)||isEconDish(x.f)):[];if(plate.length){addEntry(k,econPlate(plate,slot),true);dTray0=dTray0-plate.length+1}for(const x of dTray){if(plate.includes(x))continue;const e=trayEntry(x);e.slot=slot;addEntry(k,e,true)}dEcon=false;dTray=[];closeSheets();if(curView!=="today")location.hash="today";else renderToday();toast(`Added ${n} food${n===1?"":"s"} to ${SLOTNAME[slot]}`);if(k===today())mealTip(slot,day(k).entries.slice(-dTray0))}
 
 /* add food: on-device photo model, label form, order help. Nothing leaves the phone. */
 const MODES=["photo","label","order"];let ML=null,scanCand=null;
@@ -6142,6 +6192,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="dMinus"){const t=dTray.find(x=>x.f.name===b.dataset.n);if(t){if(t.full){t.pc--;if(t.pc<1)dTray=dTray.filter(x=>x!==t)}else{t.n--;if(!t.n)dTray=dTray.filter(x=>x!==t)}}renderDish();dFoot()}
   else if(a==="dPlus"){const t=dTray.find(x=>x.f.name===b.dataset.n);if(t&&t.full)t.pc=Math.min(t.full*4,t.pc+1);renderDish();dFoot()}
   else if(a==="dAdd")dAddAll();
+  else if(a==="dEcon"){dEcon=!dEcon;dFoot()}
   else if(a==="dCust")openCust(b.dataset.n);
   else if(a==="cDone")closeCust();
   else if(a==="cPlus"||a==="cMinus"){const t=dTray.find(x=>x.f.name===custName);if(t){const d=a==="cPlus"?1:-1;if(t.full)t.pc=Math.max(1,Math.min(t.full*4,t.pc+d));else t.n=Math.max(1,Math.min(20,t.n+d))}renderCust()}
