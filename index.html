@@ -700,6 +700,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 #dEcon{display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:8px;border-radius:18px;background:color-mix(in srgb,var(--pk) 14%,var(--card));border:1.5px solid color-mix(in srgb,var(--pk) 45%,var(--line))}#dEcon[hidden]{display:none}
 .econTxt{flex:1;display:grid;gap:2px;min-width:0}.econTxt b{font-size:15px}.econTxt small{color:var(--mute);font-size:13px}
 #dFoot #dEcon>button{width:auto!important;max-width:46%;margin:0!important;position:static!important;white-space:nowrap;flex:none;min-height:40px;padding:0 14px;border-radius:999px;font-weight:700;border:1.5px solid var(--pk);background:var(--card);color:var(--ink)}#dFoot #dEcon>button[aria-pressed=true]{background:var(--pk)!important;border-color:var(--pk)!important;color:#3b1020!important}
+.weekCard{margin-top:14px}.wkTop{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.wkTop small{color:var(--mute)}
+.wkBar{position:relative;height:12px;border-radius:12px;background:color-mix(in srgb,var(--pk) 14%,var(--card));margin:12px 0 8px;overflow:visible}.wkBar i{position:absolute;left:0;top:0;bottom:0;border-radius:12px;background:linear-gradient(90deg,var(--pk),color-mix(in srgb,var(--pk) 70%,#f6c66d))}.wkBar u{position:absolute;top:-4px;width:3px;height:20px;border-radius:3px;background:var(--ink);opacity:.45;transform:translateX(-50%)}
+.wkNum{font-size:15px;margin-bottom:4px}.wkNum b{font:700 22px var(--disp)}
+.paceLine{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-bottom:6px}.paceLine b{font:700 20px var(--disp)}.paceLine small{color:var(--mute)}.linkBtn{background:none!important;border:0!important;box-shadow:none!important;padding:0 2px!important;min-height:0!important;color:color-mix(in srgb,var(--pk) 60%,var(--ink));text-decoration:underline;font:inherit;font-weight:600}
 .footSlot{margin:0 0 10px}.footSlot>span{display:block;color:var(--mute);font-size:13px;margin:0 0 6px 2px}.slotChips{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.slotChips button{min-height:38px;padding:0 4px;border-radius:999px;border:1.5px solid var(--line);background:var(--card);color:var(--ink);font-size:14px;font-weight:600;white-space:nowrap}.slotChips button[aria-pressed=true]{background:var(--pk);border-color:var(--pk)}.qWrap{position:relative}.qWrap svg{position:absolute;left:16px;top:50%;width:22px;height:22px;transform:translateY(-50%);color:color-mix(in srgb,var(--pk) 70%,var(--ink));pointer-events:none}.qWrap input{margin:0;padding-left:48px;min-height:56px;font-size:17px;font-weight:600;border:2px solid color-mix(in srgb,var(--pk) 70%,var(--line));background:color-mix(in srgb,var(--pk) 9%,var(--card));box-shadow:0 6px 18px -10px color-mix(in srgb,var(--pk) 80%,transparent)}.qWrap input::placeholder{color:color-mix(in srgb,var(--pk) 45%,var(--mute));font-weight:500}.qWrap input:focus{outline:none;border-color:var(--pk);box-shadow:0 0 0 4px color-mix(in srgb,var(--pk) 25%,transparent)}#dFoot button{width:100%;min-height:52px}
 .slot .empty{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
 .sug{color:var(--ink)!important;font-weight:700!important}.opt.ico .sug{grid-column:2}.dq{background:var(--wh);border:1.5px solid var(--line);border-radius:99px;margin:0 8px 0 4px}.drow>button .kc{padding-right:2px}
@@ -912,6 +916,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
     <div class="card float wins" id="wins"></div>
     <div id="setup"></div>
     <div id="tipNow"></div>
+    <div id="weekCard"></div>
     <h2>Today's macros</h2>
     <div class="rings" id="rings"></div>
     <div class="tiles" id="tiles"></div>
@@ -993,6 +998,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
   <div id="progHero"></div>
     <h2>Check-in calendar</h2>
   <div class="card" id="cal"></div>
+  <h2>Your pace</h2>
+  <div id="paceCheck"></div>
   <h2>Your week in review</h2>
   <div class="review" id="review"></div>
   </div>
@@ -1033,7 +1040,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
       <div class="field"><label for="fGoal">Goal weight (kg)</label><input id="fGoal" type="number" inputmode="decimal" step="0.1" min="30" max="250"></div>
     </div>
     <div class="field"><label for="fAct">Everyday activity</label><select id="fAct"><option value="1.2">Mostly sitting (desk or study)</option><option value="1.375" selected>Lightly active (on your feet some, 1 to 3 workouts a week)</option><option value="1.55">Moderately active (3 to 5 workouts a week)</option><option value="1.725">Very active (hard exercise most days)</option></select></div>
-    <div class="field"><label for="fPace">Aim</label><select id="fPace"><option value="-0.25">Lose 0.25 kg a week (easiest)</option><option value="-0.5" selected>Lose 0.5 kg a week</option><option value="-0.75">Lose 0.75 kg a week (hardest)</option><option value="0">Keep my weight</option><option value="0.25">Gain 0.25 kg a week</option></select></div>
+    <div class="field"><label for="fPace">Aim</label><select id="fPace"><option value="-0.25">Lose 0.25 kg a week (easiest)</option><option value="-0.5" selected>Lose 0.5 kg a week</option><option value="-0.75">Lose 0.75 kg a week (hardest)</option><option value="0">Keep my weight</option><option value="0.25">Gain 0.25 kg a week (lean bulk)</option><option value="0.5">Gain 0.5 kg a week (bulk)</option></select></div>
     <div class="field"><label for="fDiet">Diet needs (optional)</label><input id="fDiet" placeholder="e.g. halal, no beef, allergic to prawns"></div>
     <div class="field"><label for="fLikes">Food you like (optional)</label><input id="fLikes" placeholder="e.g. Chinese, Malay, Japanese, spicy"></div>
     <p class="err" id="meErr" role="alert"></p>
@@ -3403,11 +3410,11 @@ function loadLocal(){S.profile=LS.get("profile");S.plan=LS.get("plan");S.weights
 function targets(p){
   if(!p||!(num(p.weight)>0)||!(num(p.height)>0)||!(num(p.age)>0))return null;
   const w=num(p.weight),h=num(p.height),a=num(p.age),male=p.sex==="male",act=num(p.activity,1.375),pace=num(p.pace,0);
-  const bmr=10*w+6.25*h-5*a+(male?5:-161),custom=pos(p.tdee),tdee=custom||bmr*act,adj=pace*7700/7,floor=male?1500:1200;
-  let kcal=Math.round((tdee+adj)/10)*10,floored=false;if(kcal<floor){kcal=floor;floored=true}
-  const protein=Math.round(1.6*w),fat=Math.round(kcal*.3/9),carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
+  const bmr=10*w+6.25*h-5*a+(male?5:-161),custom=pos(p.tdee),tdee=custom||bmr*act,adj=pace*7700/7,floor=male?1500:1200,kadj=Math.max(-300,Math.min(300,num(p.kadj))),mode=pace<0?"cut":pace>0?"bulk":"keep";
+  let kcal=Math.round((tdee+adj+kadj)/10)*10,floored=false;if(kcal<floor){kcal=floor;floored=true}
+  const protein=Math.round((mode==="bulk"?1.8:1.6)*w),fat=Math.round(kcal*.3/9),carbs=Math.max(0,Math.round((kcal-protein*4-fat*9)/4));
   const m2=(h/100)**2;
-  return{w,h,a,male,act,pace,bmr,tdee,custom,adj,kcal,floor,floored,protein,fat,carbs,fib:25,sug:Math.round(kcal*.1/4),sod:2000,sat:Math.round(kcal*.1/9),fv:5,bmi:w/m2,gbmi:num(p.goal)>0?num(p.goal)/m2:0,goal:num(p.goal)};
+  return{w,h,a,male,act,pace,mode,kadj,bmr,tdee,custom,adj,kcal,floor,floored,protein,fat,carbs,fib:25,sug:Math.round(kcal*.1/4),sod:2000,sat:Math.round(kcal*.1/9),fv:5,bmi:w/m2,gbmi:num(p.goal)>0?num(p.goal)/m2:0,goal:num(p.goal)};
 }
 const val=(e,f)=>num(e[f])*num(e.mult,1);
 function totals(d){const t={low:0,high:0,slot:{},n:d.entries.length};for(const f of NF)t[f]=0;for(const e of d.entries){for(const f of NF)t[f]+=val(e,f);const k=val(e,"kcal");t.low+=num(e.low)?val(e,"low"):k;t.high+=num(e.high)?val(e,"high"):k;t.slot[e.slot]=(t.slot[e.slot]||0)+k}return t}
@@ -3533,6 +3540,33 @@ function entryHtml(e){if(e.pt==="breastns")try{applyVar(e)}catch(x){}const m=num
 /* steps: typed in or pasted from an iPhone Health shortcut */
 const STEPBASE=a=>a<1.3?3000:a<1.45?5000:a<1.6?7500:a<1.8?10000:12500;
 const walkKcal=(st,w)=>.5*w*st*.7/1000;
+/* the week, Monday to Sunday: days are judged together, so one big day and one light day can even out.
+   Only logged days count. Evening out is gentle (at most 150 kcal a day when over, 250 when a bulk falls short) and never goes below the safe minimum. */
+function weekState(T){const k=today(),dow=(toDate(k).getDay()+6)%7,mon=addDays(k,-dow),left=7-dow;let tgt=0,eat=0,n=0;
+  for(let i=0;i<dow;i++){const x=addDays(mon,i),d=S.days[x];if(!d||!d.entries.length)continue;const t=totals(d);if(t.kcal<300)continue;tgt+=T.kcal+stepBonus(T,d);eat+=t.kcal;n++}
+  const bal=Math.round(eat-tgt);let adj=0;
+  if(n){if(bal>150&&T.mode!=="bulk")adj=-Math.min(150,Math.round(bal/left/10)*10);else if(bal<-150&&T.mode==="bulk")adj=Math.min(250,Math.round(-bal/left/10)*10);else if(bal<-150&&T.mode==="keep")adj=Math.min(150,Math.round(-bal/left/10)*10)}
+  if(T.kcal+adj<T.floor)adj=Math.min(0,T.floor-T.kcal);if(adj<0&&adj>-50)adj=0;
+  const td=S.days[k]?totals(S.days[k]).kcal:0;return{mon,dow,left,n,bal,adj,avg:n?eat/n:0,eatWeek:Math.round(eat+td),tgtWeek:T.kcal*7}}
+function weekCard(T){const w=weekState(T),pct=Math.min(100,w.eatWeek/w.tgtWeek*100),mark=Math.min(100,(w.dow+1)/7*100),b=Math.abs(w.bal);let msg;
+  if(!w.n)msg=w.dow?"Days you don't log are left out of the balance, so log what you can.":"A new week. Each day you log adds up here.";
+  else if(b<=150)msg="Right on track this week.";
+  else if(w.bal>0)msg=T.mode==="bulk"?`Over by ${fmt(b)} kcal so far, which is fine while bulking. Keep the extra mostly from protein and rice or noodles.`:w.adj?`Over by ${fmt(b)} kcal so far. Today's target eases by ${fmt(-w.adj)} kcal to even it out gently. Please don't skip meals to make up for it.`:`Over by ${fmt(b)} kcal so far. Your target is already at the safe minimum, so just keep to normal meals.`;
+  else msg=T.mode==="bulk"?`Short by ${fmt(b)} kcal so far this week. Today's target goes up by ${fmt(w.adj)} kcal. An extra snack covers it, like milk with a banana or peanut butter toast.`:T.mode==="keep"?`Under by ${fmt(b)} kcal so far. Today's target goes up by ${fmt(w.adj)} kcal to keep you steady.`:w.avg<T.floor?`Under by ${fmt(b)} kcal so far, and some days were below your safe minimum of ${fmt(T.floor)} kcal. Eating too little slows progress and makes cravings stronger, so aim for your target.`:`Under by ${fmt(b)} kcal so far. You're ahead of plan, no need to make it up.`;
+  return `<div class="card weekCard"><div class="wkTop"><h3>This week</h3><small>${esc(dm(w.mon))} – ${esc(dm(addDays(w.mon,6)))}</small></div><div class="wkBar" role="img" aria-label="${fmt(w.eatWeek)} of ${fmt(w.tgtWeek)} kcal this week"><i style="width:${pct.toFixed(1)}%"></i><u style="left:${mark.toFixed(1)}%"></u></div><p class="wkNum"><b>${fmt(w.eatWeek)}</b> <span>of ${fmt(w.tgtWeek)} kcal</span></p><p class="sub">${msg}</p></div>`}
+/* is the weight moving at the pace of the goal? Uses weigh-ins from the last 4 weeks */
+function paceCheck(T){const end=today(),start=addDays(end,-27),ws=WL.filter(w=>w.date>=start);if(ws.length<3)return{ready:false,n:ws.length};const span=dayDiff(ws[0].date,ws[ws.length-1].date);if(span<14)return{ready:false,n:ws.length,span};
+  const xs=ws.map(w=>dayDiff(start,w.date)),ys=ws.map(w=>num(w.kg)),n=xs.length,mx=xs.reduce((a,b)=>a+b)/n,my=ys.reduce((a,b)=>a+b)/n,den=xs.reduce((a,x)=>a+(x-mx)**2,0),wk=den?xs.reduce((a,x,i)=>a+(x-mx)*(ys[i]-my),0)/den*7:0,p=T.pace;let kind="ok",tip="",fix=0;
+  if(T.mode==="cut"){if(wk<p*1.6&&wk<-.6){kind="fast";tip="That's faster than planned, and very fast loss can cost muscle. Eat about 150 kcal more a day.";fix=150}else if(span>=21&&wk>-.1){kind="stuck";tip="Your weight has barely moved in 3 weeks. First check that every snack and drink is logged. If it is, try 100 kcal less a day, or 2,000 more steps.";fix=-100}else if(wk>p*.4){kind="slow";tip="A little slower than planned. Weight jumps around from water, so give it another week before changing anything."}}
+  else if(T.mode==="bulk"){if(wk<p*.4){kind="slow";tip="Slower than planned. Eat about 150 kcal more a day, for example an extra glass of milk.";fix=150}else if(wk>p*2&&wk>.6){kind="fast";tip="Faster than planned, so more of it is likely fat. Ease back by about 150 kcal a day.";fix=-150}}
+  else if(Math.abs(wk)>.25){kind=wk>0?"up":"down";tip=wk>0?"Your weight is creeping up. Try about 100 kcal less a day.":"Your weight is slipping down. Try about 100 kcal more a day.";fix=wk>0?-100:100}
+  if(fix<0&&T.kcal+fix<T.floor)fix=0;return{ready:true,wk,span,n,kind,tip,fix}}
+function renderPace(){const el=$("#paceCheck");if(!el)return;const T=targets(S.profile);if(!T){el.innerHTML="";return}const c=paceCheck(T),plan=T.pace,pl=plan?`${plan>0?"gain":"lose"} ${f1(Math.abs(plan))} kg a week`:"keep your weight";
+  const recent=S.profile.kadjAt&&dayDiff(S.profile.kadjAt,today())<14;
+  let h;if(!c.ready)h=`<p class="sub">Weigh in 2 or 3 mornings a week. After 2 weeks of weigh-ins, Macaron checks whether you're on pace to ${pl}.</p><p class="note">${c.n} weigh-in${c.n===1?"":"s"} in the last 4 weeks.</p>`;
+  else{const dir=c.wk>0?"Gaining":"Losing",amt=f1(Math.abs(c.wk));h=`<p class="paceLine"><b>${Math.abs(c.wk)<.05?"Steady":dir+" "+amt+" kg a week"}</b><small>Your plan: ${pl}</small></p><p class="sub">${c.kind==="ok"?"Right on pace. Keep doing what you're doing.":recent?`You changed your target on ${esc(dm(S.profile.kadjAt))}. Give it 2 weeks of weigh-ins before changing it again.`:c.tip}</p>`+(c.fix&&!recent?`<div class="rowb"><button class="primary" data-act="kAdj" data-v="${c.fix}">${c.fix>0?"Add":"Take away"} ${Math.abs(c.fix)} kcal a day</button></div>`:"")}
+  if(T.kadj)h+=`<p class="note">Your target includes a ${T.kadj>0?"+":"−"}${Math.abs(T.kadj)} kcal adjustment. <button class="linkBtn" data-act="kAdj" data-v="reset">Remove it</button></p>`;
+  el.innerHTML=`<div class="card paceCard">${h}</div>`}
 function stepBonus(T,d){if(!T||!d.steps)return 0;return Math.round(walkKcal(Math.max(0,d.steps-STEPBASE(T.act)),T.w)/5)*5}
 function renderSteps(T,d,isT){const el=$("#stepsCard");if(!el)return;const st=d.steps||0,base=T?STEPBASE(T.act):0,bonus=stepBonus(T,d),burn=T?Math.round(walkKcal(st,T.w)/5)*5:0;
   const line=!st?"Add your steps to count the extra walking.":!T?"Set your daily target to turn steps into calories.":bonus>0?`About ${fmt(burn)} kcal burned walking. The ${fmt(bonus)} kcal above your usual day is added to your food for ${isT?"today":"that day"}.`:`About ${fmt(burn)} kcal burned walking. Your target already counts about ${fmt(base)} steps a day, so nothing extra is added.`;
@@ -3548,7 +3582,7 @@ function renderToday(){renderSupp();
   $("#hello").textContent=isT?(isBday()?"Happy birthday, "+(S.profile?.name||"there"):greetFor(new Date(),S.profile?.name||"there")):longDate(k);
   $$("#dayStrip button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===k));
   const st=streak();$("#streak").hidden=st<1;$("#streakTxt").textContent=st+(st===1?" day":" days");
-  if(T){const sb=stepBonus(T,d),left=T.kcal+sb-t.kcal;countTo(ln,left);ln.classList.toggle("over",left<0);$("#leftLbl").textContent=left<0?"kcal over":"kcal left";$("#eatLine").textContent=`${fmt(t.kcal)} eaten of ${fmt(T.kcal+sb)}`+(sb?` (+${fmt(sb)} from steps)`:"");$("#setup").innerHTML=""}
+  if(T){const sb=stepBonus(T,d),wa=isT?weekState(T).adj:0,left=T.kcal+sb+wa-t.kcal;countTo(ln,left);ln.classList.toggle("over",left<0);$("#leftLbl").textContent=left<0?"kcal over":"kcal left";$("#eatLine").textContent=`${fmt(t.kcal)} eaten of ${fmt(T.kcal+sb+wa)}`+(sb?` (+${fmt(sb)} from steps)`:"")+(wa?` (${wa>0?"+":"−"}${fmt(Math.abs(wa))} this week)`:"");$("#setup").innerHTML="";$("#weekCard").innerHTML=isT?weekCard(T):""}
   else{countTo(ln,t.kcal);ln.classList.remove("over");$("#leftLbl").textContent="kcal eaten";$("#eatLine").textContent="No daily target yet";$("#setup").innerHTML='<div class="card setupbox"><p><b>Set your daily target first.</b> It takes a minute: age, height, weight and goal.</p><button class="primary" data-act="onb">Set my target</button></div>'}
   $("#rangeLine").textContent=t.high-t.low>20?`Likely between ${fmt(t.low)} and ${fmt(t.high)}`:"";
   $("#tiers").innerHTML=SLOTS.map(([key,name,sh])=>{const e=t.slot[key]||0,b=T?T.kcal*sh:0;return `<li><span class="sw${b&&e>b*1.05?" over":""}"></span><span>${name}</span><b>${fmt(e)}${T?" / "+fmt(b):""}</b></li>`}).join("");
@@ -3629,7 +3663,7 @@ function renderJourney(T){const el=$("#journey");cleanWeights();if(!T||!T.goal||
   requestAnimationFrame(()=>requestAnimationFrame(()=>{const tr=el.querySelector(".jtrack");if(tr){tr.querySelector("i").style.width=pct*100+"%";tr.querySelector("u").style.left=pct*100+"%"}}))}
 /* profile card and rankings */
 function renderGlass(){const p=S.profile,T=targets(p),el=$("#glass");if(!T){el.innerHTML='<div class="glassWrap"><div class="glass"><h2>Let\'s get to know you</h2><p style="margin-top:6px">A few quick questions set your daily target.</p><button class="gbtn" data-act="onb">Start</button></div></div>';return}
-  const chips=[ACTS.find(a=>a[0]===String(p.activity))?.[1],({"-0.25":"Losing gently","-0.5":"Losing steadily","-0.75":"Losing fast","0":"Keeping weight","0.25":"Gaining slowly"})[String(p.pace)],...String(p.traits||"").split(","),...String(p.diet||"").split(","),...String(p.likes||"").split(",")].map(x=>String(x||"").trim()).filter(Boolean);
+  const chips=[ACTS.find(a=>a[0]===String(p.activity))?.[1],({"-0.25":"Losing gently","-0.5":"Losing steadily","-0.75":"Losing fast","0":"Keeping weight","0.25":"Lean bulking","0.5":"Bulking"})[String(p.pace)],...String(p.traits||"").split(","),...String(p.diet||"").split(","),...String(p.likes||"").split(",")].map(x=>String(x||"").trim()).filter(Boolean);
   el.innerHTML=`<div class="glassWrap"><div class="glass"><div class="gh"><span class="av">${esc(String(p.name||"?").trim().charAt(0).toUpperCase()||"?")}</span><div><h2>${esc(p.name||"You")}</h2><p>${fmt(T.kcal)} kcal a day</p></div></div><div class="gs">${[["Age",p.age,"years"],["Height",p.height,"cm"],["Weight",p.weight,"kg"],["Goal",p.goal,"kg"]].map(([n,v,u],i)=>`<div><i>${ic(I[["cake","ruler","scale","flag"][i]])}</i><b>${esc(f1(v))}</b><small>${n}, ${u}</small></div>`).join("")}</div><div class="chips">${chips.map(c=>`<span class="chip">${esc(c)}</span>`).join("")}</div><button class="gbtn" data-act="onb">Edit profile</button></div></div>`}
 function rankData(){const pl={},fd={},cu={},tr={},by={};for(const k of Object.keys(S.days))for(const e of S.days[k].entries){const base=String(e.name||"").split(", with ")[0],f=FOODBY.get(base),place=e.place||f?.place||"",c=e.cuisine||(f?cuisineOf(f):"");if(!base)continue;fd[base]=(fd[base]||0)+1;
     if(place&&!HOMEY.has(place)){pl[place]=(pl[place]||0)+1;(by[place]=by[place]||{})[base]=(by[place][base]||0)+1}if(c)cu[c]=(cu[c]||0)+1;if(e.src==="sweet"||(f&&(has(f,"sweet")||has(f,"drink"))))tr[base]=(tr[base]||0)+1}
@@ -5432,7 +5466,8 @@ const isGentle=f=>okDiet(f)&&f.kcal<=460&&!has(f,"hot")&&!/banana leaf|tom yum|f
 function gentlePicks(){const G=FOODS.filter(isGentle),out=[];for(const r of[/porridge|bubur/i,/mee hoon|noodle|udon|soup/i,/toast|bread|bun|cracker/i,/banana|oats|chawanmushi/i]){const f=G.find(x=>r.test(x.name)&&!out.includes(x));if(f)out.push(f)}return out}
 function dailyInsight(){const T=targets(S.profile),k=today();if(!T||S.prefs.insight===k)return;S.prefs.insight=k;store.set("prefs",S.prefs);const y=addDays(k,-1),d=S.days[y];if(!d)return;const t=totals(d),sk=mainSkips(d),n=d.entries.length,wt=num(d.water);
   if((n&&t.kcal<T.kcal*.55)||sk>=2){openIns("low",t.kcal,T,sk,n);return}
-  if(t.kcal>T.kcal*1.25){openIns("over",t.kcal,T);return}
+  if(T.mode!=="bulk"&&t.kcal>T.kcal*1.25){openIns("over",t.kcal,T);return}
+  if(T.mode==="bulk"&&n&&t.kcal<T.kcal*.85){setTimeout(()=>cheer("Yesterday fell short of your bulk",`${fmt(t.kcal)} of ${fmt(T.kcal)} kcal. Today's target is a little higher to catch up. An extra snack covers it.`,"bowl"),500);return}
   if(n&&wt<4){setTimeout(()=>cheer("Yesterday was a dry day",`Only ${wt} glass${wt===1?"":"es"} of water. Let's aim for all 8 today. Start with one now.`,"drop",1),500);return}
   if(n>=3&&Math.abs(t.kcal-T.kcal)<=T.kcal*.1)setTimeout(()=>cheer("Yesterday was right on target",`${fmt(t.kcal)} of ${fmt(T.kcal)} kcal. Lovely balance.`,"star"),500)}
 function openIns(kind,kcal,T,sk,n){const b=$("#insBody"),h=$("#h-ins");
@@ -5498,12 +5533,12 @@ function renderProgress(){renderProgHero();const T=targets(S.profile),{ks,ts,log
   $("#progLead").innerHTML=n?`<span class="lc">📅 <b>${n}/7</b> days logged</span><span class="lc">🍽 <b>${fmt(avg("kcal"))}</b>${T?` / ${fmt(T.kcal)}`:""} kcal a day</span><span class="lc">🏃 <b>${exd}</b> workout${exd===1?"":"s"}</span>`:"Log a few days of meals and your week shows up here.";
   const lim={sug:T?.sug||50,sod:2000,sat:T?.sat||20};
   $("#avgs").innerHTML=n?[["🍽","Calories",avg("kcal"),"kcal",T?.kcal||2000,"t"],["🥚","Protein",avg("p"),"g",T?.protein||60,"a"],["🌾","Fibre",avg("fib"),"g",25,"a"],["🥦","Fruit and veg",avg("fv"),"",5,"a"],["💧","Water",water,"glasses",8,"a"],["🍬","Sugar",avg("sug"),"g",lim.sug,"l"],["🧂","Sodium",avg("sod"),"mg",lim.sod,"l"],["🧈","Sat. fat",avg("sat"),"g",lim.sat,"l"]].map(([e,nm,v,u,g,kind])=>{const r=v/g,bad=kind==="l"?r>1.05:kind==="t"?r>1.05:false,ok=kind==="a"?r>=.9:kind==="l"?r<=1:Math.abs(r-1)<=.08;return `<div class="avg${bad?" bad":ok?" ok":""}"><span class="ae">${e}</span><b>${u===""||u==="glasses"?f1(v):fmt(v)}<small> ${u}</small></b><small>${nm}</small><div class="ab"><i style="width:${Math.min(100,r*100).toFixed(0)}%"></i></div><small class="ag">${kind==="l"?"limit":"goal"} ${fmt(g)}${bad?" · over":ok?" ✓":""}</small></div>`}).join(""):'<p class="empty">No averages yet.</p>';
-  renderReview();cleanWeights();renderCal();renderMeas();progTabs();
+  cleanWeights();renderReview();renderPace();renderCal();renderMeas();progTabs();
   $("#wList").innerHTML=WL.slice(-8).reverse().map(w=>`<li><span>${esc(longDate(w.date))}</span><b>${num(w.kg).toFixed(1)} kg</b></li>`).join("")||'<li class="empty">No weights logged yet.</li>';drawW();renderAdapt()}
 function renderReview(){const T=targets(S.profile),{ks,logged}=weekData(),out=$("#review"),n=logged.length;if(n<2||!T){out.textContent=n<2?"Log at least 2 days to get a review of your week.":"Set your target in Me to get a review.";return}
   const avg=f=>logged.reduce((a,t)=>a+t[f],0)/n,water=ks.reduce((a,k)=>a+day(k).water,0)/7,exd=ks.filter(k=>S.plan?.done?.[k]).length,good=[`you logged ${n} of 7 days`];
   if(avg("p")>=T.protein*.9)good.push("you hit your protein");if(avg("fib")>=20)good.push("your fibre was solid");if(water>=6)good.push("you drank enough water");if(exd>=3)good.push(`you did ${exd} workouts`);if(Math.abs(avg("kcal")-T.kcal)<=T.kcal*.08)good.push("your calories stayed close to target");
-  const hi=[["sod",avg("sod")/2000,"Sodium ran high","skip the soup and gravy, and ask for sauce on the side"],["sug",avg("sug")/T.sug,"Sugar ran high","order drinks kosong and try the sweet swaps"],["sat",avg("sat")/T.sat,"Saturated fat ran high","choose steamed, grilled or soup dishes over fried and santan ones"],["kcal",avg("kcal")/T.kcal/1.03,"Calories ran over target","ask for kurang nasi, and swap one sweet drink a day for a kosong one"]].filter(x=>x[1]>1.05).sort((a,b)=>b[1]-a[1]);
+  const hi=[["sod",avg("sod")/2000,"Sodium ran high","skip the soup and gravy, and ask for sauce on the side"],["sug",avg("sug")/T.sug,"Sugar ran high","order drinks kosong and try the sweet swaps"],["sat",avg("sat")/T.sat,"Saturated fat ran high","choose steamed, grilled or soup dishes over fried and santan ones"],...(T.mode==="bulk"?[["kcal",T.kcal/Math.max(1,avg("kcal"))/1.03,"Calories ran under your bulk target","add a snack between meals, like milk with a banana or a peanut butter sandwich"]]:[["kcal",avg("kcal")/T.kcal/1.03,"Calories ran over target","ask for kurang nasi, and swap one sweet drink a day for a kosong one"],["kcal",T.floor/Math.max(1,avg("kcal")),"Calories were very low","eat at least your target. Eating too little slows progress and makes cravings stronger"]])].filter(x=>x[1]>1.05).sort((a,b)=>b[1]-a[1]);
   const lo=[["p",avg("p")/T.protein,"Protein was low","add an egg, tofu, fish or chicken to each meal"],["fib",avg("fib")/25,"Fibre was low","add a vegetable dish or a fruit to two meals a day"],["fv",avg("fv")/5,"Fruit and vegetables were low","add a plate of greens at lunch and a fruit as your snack"]].filter(x=>x[1]<.75).sort((a,b)=>a[1]-b[1]),top=hi[0]||lo[0];let p3="";
   if(hi[0]&&hi[0][0]!=="kcal"){const key=hi[0][0];let worst=null;for(const k of ks)for(const e of day(k).entries)if(!worst||val(e,key)>val(worst,key))worst=e;
     if(worst){const src=FOODBY.get(worst.name),alt=FOODS.filter(f=>okDiet(f)&&f.name!==worst.name&&f.kcal>=200&&f.slots!=="x"&&Math.abs(f.kcal-val(worst,"kcal"))<=val(worst,"kcal")*.4&&f[key]<val(worst,key)*.6&&(!src||[...src.slots].some(c=>f.slots.includes(c)))).sort((a,b)=>healthOf(b)-healthOf(a))[0];
@@ -5515,7 +5550,8 @@ function renderReview(){const T=targets(S.profile),{ks,logged}=weekData(),out=$(
 
 /* me */
 function fillMe(){const p=S.profile||{name:""};$("#fName").value=p.name||"";$("#fSex").value=p.sex||"";for(const[id,k]of[["fAge","age"],["fHeight","height"],["fWeight","weight"],["fGoal","goal"]])$("#"+id).value=num(p[k])||"";if(p.activity)$("#fAct").value=p.activity;if(p.pace!=null)$("#fPace").value=p.pace;$("#fDiet").value=p.diet||"";$("#fLikes").value=p.likes||""}
-function renderCalc(){const T=targets(S.profile),c=$("#calc");if(!T){c.innerHTML='<h3>How your targets are worked out</h3><p class="sub">Fill in the form and save to see each step with your numbers.</p>';return}
+function renderCalc(){renderCalc0();const T=targets(S.profile);if(T&&T.kadj)$("#calc").insertAdjacentHTML("beforeend",`<p class="note">Includes your ${T.kadj>0?"+":"−"}${Math.abs(T.kadj)} kcal pace adjustment from Progress.</p>`)}
+function renderCalc0(){const T=targets(S.profile),c=$("#calc");if(!T){c.innerHTML='<h3>How your targets are worked out</h3><p class="sub">Fill in the form and save to see each step with your numbers.</p>';return}
   const sx=T.male?"+ 5":"− 161",sign=T.adj<0?"−":"+",mis=(T.pace<0&&T.goal>=T.w)||(T.pace>0&&T.goal&&T.goal<=T.w);
   const ic2=x=>`<svg viewBox="0 0 64 64" aria-hidden="true">${x.replaceAll("var(--ink)","#6a3442")}</svg>`,S_=eqS,F_=eqF;
   const icRest=ic2(`<path d="M8 46h48M10 46V30M54 46V36" ${S_}/><rect x="10" y="36" width="44" height="10" rx="3" ${F_}/><circle cx="20" cy="31" r="5" fill="var(--p1)" stroke="var(--ink)" stroke-width="2.2"/><path d="M26 34h22q4 0 4 4" ${S_}/><g class="ai-tw"><path d="M38 14h7l-7 8h7" ${S_} stroke-width="2"/></g><g class="ai-tw" style="animation-delay:.6s"><path d="M48 6h5l-5 6h5" ${S_} stroke-width="1.8"/></g>`),
@@ -6035,7 +6071,10 @@ function tipHtml(T,t,d,isT){if(!T||!isT)return"";if(S.prefs.gentle===today())ret
   const sk=mainSkips(d);
   const tm=new Date().toLocaleTimeString("en-MY",{hour:"numeric",minute:"2-digit"}).toLowerCase(),has1=sl=>d.entries.some(e=>e.slot===sl),room=Math.max(0,Math.round(left/10)*10);
   if(sk>=2)x="You've skipped "+sk+" meals today. Try to have something small soon, even yogurt or a banana. Eating too little isn't the goal.";
+  else if(T.mode==="bulk"&&h>=19&&t.n&&t.kcal<T.kcal*.8)x=`You've had ${fmt(t.kcal)} of ${fmt(T.kcal)} kcal, and you're bulking. Make dinner a full plate, or add a filling snack: milk with a banana, peanut butter toast or a tuna sandwich.`;
   else if(h>=20&&t.n&&t.kcal<T.kcal*.6)x=`You've had ${fmt(t.kcal)} of ${fmt(T.kcal)} kcal and it's getting late. A light dinner is better than going to bed hungry.`;
+  else if(T.mode==="bulk"&&left<-T.kcal*.2)x="A big day, even for a bulk. That's fine once in a while. Keep the rest of today to water and your normal meals.";
+  else if(T.mode==="bulk"&&left<=0)x="Bulk target reached for today. Nice work. Protein-rich food keeps more of the gain as muscle.";
   else if(left<-100)x="You're a little over today, and that's okay. One day doesn't undo a week. Keep the next meal light: clear soup, steamed fish or yong tau foo.";
   else if(h>=22||h<5)x=h<5?"Way past bedtime. If you're hungry, keep it light and warm, like a glass of warm milk or a few crackers, then try to get some sleep.":"Winding down? A glass of water and an early night will do more for you than a late snack.";
   else if(h<11&&!has1("breakfast"))x="Breakfast time. Start with some protein so you stay full for longer, like half-boiled eggs with wholemeal toast.";
@@ -6147,7 +6186,7 @@ function openOnb(){const p=S.profile||{},[dc,dt]=splitC(normDiet(p.diet),DIETS),
 const onbProfile=()=>({...(S.profile||{}),name:O.name,sex:O.sex,age:O.age,bday:O.bday,height:O.height,weight:O.weight,goal:O.goal||O.weight,activity:O.activity,pace:O.pace,diet:joinC(O.dc,O.dt),likes:joinC(O.lc,O.lt),traits:joinC(O.tc,"")});
 function paceOpts(){const d=O.goal-O.weight,wk=r=>`About ${Math.ceil(Math.abs(d)/r)} weeks to reach ${O.goal} kg`;
   if(d<0)return[["-0.25","Gentle","Lose 0.25 kg a week. "+wk(.25)],["-0.5","Steady","Lose 0.5 kg a week. "+wk(.5)],["-0.75","Fast","Lose 0.75 kg a week. "+wk(.75)+". The hardest to keep up"],["0","Keep my weight for now","Eat what you burn"]];
-  if(d>0)return[["0.25","Gain slowly","Gain 0.25 kg a week. "+wk(.25)],["0","Keep my weight for now","Eat what you burn"]];
+  if(d>0)return[["0.25","Lean bulk","Gain 0.25 kg a week. "+wk(.25)+". Mostly muscle if you train"],["0.5","Bulk","Gain 0.5 kg a week. "+wk(.5)+". Faster, with some fat along the way"],["0","Keep my weight for now","Eat what you burn"]];
   return[["0","Keep my weight","Eat what you burn"]]}
 const optHtml=(k,list,ico)=>`<div class="opts">${list.map(([v,t,d])=>`<button class="opt${ico?" ico":""}" data-act="onbOpt" data-k="${k}" data-v="${v}" aria-pressed="${String(O[k])===v}">${ico?`<span aria-hidden="true">${ico(v)}</span>`:""}<b>${esc(t)}</b>${d?`<small>${esc(d)}</small>`:""}</button>`).join("")}</div>`;
 const ACTFIG={"1.2":"desk","1.375":"walk","1.55":"march","1.725":"run"},spdIco=v=>{const a=Math.abs(num(v));return a?`<span class="spd" style="--t:${a>=.75?".7s":a>=.5?"1.3s":"2.4s"}"><i>${"›".repeat(a>=.75?3:a>=.5?2:1)}</i></span>`:`<span class="spd"><b style="letter-spacing:0">=</b></span>`};
@@ -6302,6 +6341,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="nextWeek"&&S.plan){let s=addDays(S.plan.dates[S.plan.dates.length-1],1);if(s<today())s=today();const prev=S.plan.days.map(d=>d.exercise?`${short(d.date)}: ${d.exercise.title}, ${d.exercise.minutes} min${S.plan.done?.[d.date]?" (done)":" (skipped)"}`:"").filter(Boolean).join("; ");genPlan(s,S.plan.settings||readSettings())}
   else if(a==="restore")restoreData();
   else if(a==="useBurn"&&S.profile){S.profile.tdee=pos(b.dataset.v);store.set("profile",S.profile);renderAdapt();toast(`Target updated to ${fmt(targets(S.profile).kcal)} kcal a day`)}
+  else if(a==="kAdj"&&S.profile){if(b.dataset.v==="reset")delete S.profile.kadj;else{S.profile.kadj=Math.max(-300,Math.min(300,num(S.profile.kadj)+num(b.dataset.v)));S.profile.kadjAt=today()}if(b.dataset.v==="reset")delete S.profile.kadjAt;store.set("profile",S.profile);renderProgress();if(curView==="today")renderToday();toast(`Daily target is now ${fmt(targets(S.profile).kcal)} kcal`)}
   else if(a==="useFormula"&&S.profile){delete S.profile.tdee;store.set("profile",S.profile);renderAdapt();toast("Back to the formula")}
   else if(a==="saveMemo"){S.prefs.note=$("#memo").value.trim().slice(0,1500);store.set("prefs",S.prefs);fixPlan();noteFb();toast("Remembered")}
   else if(a==="openBuild")openBuild();
@@ -6355,7 +6395,7 @@ document.addEventListener("change",ev=>{const el=ev.target;if(el.id==="stepsIn")
 document.addEventListener("keydown",ev=>{if(ev.key==="Escape")closeSheets();else if(ev.key==="Enter"&&ev.target.id==="onbName")onbNext()});
 $("#planForm").addEventListener("submit",ev=>{ev.preventDefault();const st=readSettings();genPlan(st.start==="monday"?nextMonday():today(),st)});
 $("#meForm").addEventListener("submit",ev=>{ev.preventDefault();const g=id=>$("#"+id).value.trim();
-  const p={...(S.profile||{}),name:g("fName"),sex:g("fSex"),age:num(g("fAge")),height:num(g("fHeight")),weight:num(g("fWeight")),goal:num(g("fGoal")),activity:g("fAct"),pace:g("fPace"),diet:g("fDiet"),likes:g("fLikes")};
+  const p={...(S.profile||{}),name:g("fName"),sex:g("fSex"),age:num(g("fAge")),height:num(g("fHeight")),weight:num(g("fWeight")),goal:num(g("fGoal")),activity:g("fAct"),pace:g("fPace"),diet:g("fDiet"),likes:g("fLikes")};if(S.profile&&String(S.profile.pace)!==String(p.pace)){delete p.kadj;delete p.kadjAt}
   const bad=!p.sex?"Choose the sex to use in the formula.":!(p.age>=13&&p.age<=90)?"Enter an age between 13 and 90.":!(p.height>=120&&p.height<=230)?"Enter your height in cm, between 120 and 230.":!(p.weight>=30&&p.weight<=250)?"Enter your weight in kg, between 30 and 250.":!(p.goal>=30&&p.goal<=250)?"Enter a goal weight in kg, between 30 and 250.":"";
   $("#meErr").textContent=bad;if(bad)return;S.profile=p;store.set("profile",p);renderCalc();toast(`Saved. Your target is ${fmt(targets(p).kcal)} kcal a day`)});
 $("#wForm").addEventListener("submit",ev=>{ev.preventDefault();const kg=num($("#wIn").value);if(!(kg>=30&&kg<=250)){toast("Enter a weight between 30 and 250 kg.");return}
