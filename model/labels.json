@@ -92,10 +92,6 @@
   "food": "Barley, fu chuk and gingko"
  },
  {
-  "label": "beard_papa_original_cream_puff",
-  "food": "Beard Papa original cream puff"
- },
- {
   "label": "bibimbap",
   "food": "Bibimbap"
  },
@@ -162,10 +158,6 @@
  {
   "label": "butter_croissant",
   "food": "Butter croissant"
- },
- {
-  "label": "butter_prawns",
-  "food": "Butter prawns"
  },
  {
   "label": "california_roll",
@@ -304,10 +296,6 @@
   "food": "Churros with chocolate dip"
  },
  {
-  "label": "cinnabon_classic_roll",
-  "food": "Cinnabon Classic Roll"
- },
- {
   "label": "cinnamon_roll",
   "food": "Cinnamon roll"
  },
@@ -340,10 +328,6 @@
   "food": "Cromboloni"
  },
  {
-  "label": "crookie",
-  "food": "Crookie"
- },
- {
   "label": "cr_pe_with_banana_and_chocolate",
   "food": "Cr\u00eape with banana and chocolate"
  },
@@ -374,10 +358,6 @@
  {
   "label": "doughnut",
   "food": "Doughnut"
- },
- {
-  "label": "dubai_chewy_cookie",
-  "food": "Dubai chewy cookie"
  },
  {
   "label": "dubai_chocolate_bar",
@@ -580,10 +560,6 @@
   "food": "Jajangmyeon"
  },
  {
-  "label": "kfc_original_recipe_thigh",
-  "food": "KFC Original Recipe, thigh"
- },
- {
   "label": "kaya_toast_set",
   "food": "Kaya toast set"
  },
@@ -598,10 +574,6 @@
  {
   "label": "kolo_mee",
   "food": "Kolo mee"
- },
- {
-  "label": "kopi_c",
-  "food": "Kopi C"
  },
  {
   "label": "kopi_ais",
@@ -896,10 +868,6 @@
   "food": "Polo bun with butter"
  },
  {
-  "label": "popcorn_caramel",
-  "food": "Popcorn, caramel"
- },
- {
   "label": "popcorn_salted",
   "food": "Popcorn, salted"
  },
@@ -1182,10 +1150,6 @@
  {
   "label": "tteokbokki",
   "food": "Tteokbokki"
- },
- {
-  "label": "udon_in_soup",
-  "food": "Udon in soup"
  },
  {
   "label": "unagi_don",
