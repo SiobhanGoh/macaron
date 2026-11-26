@@ -376,10 +376,6 @@
   "food": "Doughnut"
  },
  {
-  "label": "dubai_chewy_cookie",
-  "food": "Dubai chewy cookie"
- },
- {
   "label": "dubai_chocolate_bar",
   "food": "Dubai chocolate bar"
  },
@@ -1194,10 +1190,6 @@
  {
   "label": "vadai",
   "food": "Vadai"
- },
- {
-  "label": "vitagen",
-  "food": "Vitagen"
  },
  {
   "label": "waffle_with_ice_cream",
