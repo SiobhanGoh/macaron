@@ -901,7 +901,7 @@ input[type=checkbox]{-webkit-appearance:none;appearance:none;display:inline-grid
 .slotTop{display:grid;gap:6px;margin:14px 0 14px}.slotTop>span{color:var(--mute);font-size:13px;font-weight:600}
 #modeSeg button{display:inline-flex;align-items:center;justify-content:center;gap:7px}#modeSeg button svg{width:18px;height:18px;flex:none}
 
-.lead:empty{display:none}#v-scan h1{margin-bottom:2px}.addOpts{margin-top:14px;gap:12px}.addOpts .opt.ico>span{padding:14px;color:var(--rose)}.addOpts .opt.ico{min-height:92px}.backLnk{display:inline-flex;align-items:center;gap:4px;font-weight:600;font-size:15px;color:var(--mute);text-decoration:none;margin-bottom:4px;min-height:36px}.backLnk svg{width:18px;height:18px}
+.lead:empty{display:none}.sheet.pg{align-items:stretch}.sheet.pg .scrim,.sheet.pg .grab,.sheet.pg #dishSeg{display:none}.sheet.pg .panel,.sheet.pg .panel.three,.sheet.pg .panel.bpanel,.sheet.pg .panel.tall{display:flex;flex-direction:column;gap:10px;width:100%;max-width:none;height:100%;max-height:100%;border-radius:0;box-shadow:none;padding:calc(14px + env(safe-area-inset-top,0px)) 16px calc(14px + env(safe-area-inset-bottom,0px));transform:none;opacity:0;transition:opacity .22s;overflow:hidden}.sheet.pg.open .panel{opacity:1;transform:none}.sheet.pg.closing{pointer-events:none}.sheet.pg.closing .panel{transform:none;opacity:0;transition:opacity .2s}.sheet.pg .panel>*{flex:none}.sheet.pg .panel>.flist,.sheet.pg #sweetBody,.sheet.pg #buildBody{flex:1 1 auto;min-height:0;overflow-y:auto}.sheet.pg .panel>header{flex-direction:column;align-items:flex-start;gap:0}.sheet.pg .panel>header h2{font:700 clamp(26px,7vw,34px)/1.1 var(--disp);letter-spacing:-.02em}button.backLnk{background:none;border:0;box-shadow:none;padding:0;cursor:pointer}.sheet.pg .panel.bpanel>header{display:flex}.sheet.pg .bpanel header h2{text-align:left}#sweetTop .cats{padding-top:2px}#sweetTop .lead{margin:0 0 6px;font-size:14.5px}.cSlot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:12px}.cSlot button{min-height:38px;padding:4px 2px;border-radius:99px;font-size:13.5px;font-weight:700;background:rgb(var(--wr)/.55);border:1.5px solid var(--line)}.cSlot button[aria-pressed=true]{background:var(--a1);border-color:var(--rose);color:var(--ink)}.cBtns{grid-template-columns:1fr 1fr}.cBtns .cGo{grid-column:1/-1;margin:0;width:100%}.cBtns .cMore{min-height:48px;border-radius:999px}#v-scan h1{margin-bottom:2px}.addOpts{margin-top:14px;gap:12px}.addOpts .opt.ico>span{padding:14px;color:var(--rose)}.addOpts .opt.ico{min-height:92px}.backLnk{display:inline-flex;align-items:center;gap:4px;font-weight:600;font-size:15px;color:var(--mute);text-decoration:none;margin-bottom:4px;min-height:36px}.backLnk svg{width:18px;height:18px}
 .quickAdd.qaGrid{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin:2px 0 12px}.quickAdd.qaGrid button{min-height:58px;padding:6px 2px;border-radius:16px;font-size:11.5px;gap:4px}.quickAdd.qaGrid button svg{width:20px;height:20px}
 #v-scan .slotTop{margin:8px 0 10px}#v-scan .slotChips button{min-height:34px}
 #v-scan .seg{margin:0 0 10px}#v-scan .drop{aspect-ratio:auto;height:min(230px,30vh);padding:12px}#v-scan .camBub{transform:scale(.85)}
@@ -1102,11 +1102,11 @@ input[type=checkbox]{-webkit-appearance:none;appearance:none;display:inline-grid
   <a href="#me" data-col="4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>Me</a>
 </nav>
 
-<div class="sheet" id="dishSheet" hidden>
+<div class="sheet pg" id="dishSheet" hidden>
   <div class="scrim" data-act="closeSheet"></div>
   <div class="panel tall" role="dialog" aria-modal="true" aria-labelledby="h-dish">
     <span class="grab"></span>
-    <header><h2 id="h-dish">Quick add</h2><button class="ghost" data-act="closeSheet">Close</button></header>
+    <header><button class="backLnk" data-act="closeSheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Back</button><h2 id="h-dish">Search</h2></header>
     <div class="seg" id="dishSeg" role="group" aria-label="List" style="margin:4px 0"><i></i><button data-act="dishTab" data-t="local">Local dishes</button><button data-act="dishTab" data-t="fav">Favourites</button></div>
     <div><label for="q" class="sr">Search food</label><div class="qWrap"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg><input id="q" type="search" enterkeyhint="search" autocomplete="off" placeholder="Search food: nasi lemak, teh ais…"></div><div class="cats" id="dCats" role="group" aria-label="Kind of food"></div></div>
     <ul class="flist" id="flist"></ul>
@@ -1115,11 +1115,11 @@ input[type=checkbox]{-webkit-appearance:none;appearance:none;display:inline-grid
 </div>
 <div id="custPop" hidden><div class="cScrim" data-act="cDone"></div><div class="cCard" role="dialog" aria-modal="true" aria-labelledby="cTitle"><div id="cBody"></div></div></div>
 <div id="tour" hidden><div class="tRing"></div><div class="tBub" role="dialog" aria-live="polite" aria-labelledby="tTit"><small id="tN"></small><h3 id="tTit"></h3><p id="tTxt"></p><div class="rowb"><button class="ghost" data-act="tourSkip">Skip</button><button class="primary" data-act="tourNext" id="tNext">Next</button></div></div></div>
-<div class="sheet" id="buildSheet" hidden>
+<div class="sheet pg" id="buildSheet" hidden>
   <div class="scrim" data-act="closeSheet"></div>
   <div class="panel bpanel" role="dialog" aria-modal="true" aria-labelledby="h-build">
     <span class="grab"></span>
-    <header><button class="ghost" data-act="bBack" aria-label="Back to the list">‹</button><h2 id="h-build">Build my own</h2><button class="ghost" data-act="closeSheet">Close</button></header>
+    <header><button class="backLnk" data-act="bBack"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Back</button><h2 id="h-build">Build your own</h2></header>
     <div class="bstage" id="bStage" hidden><div id="bArt"></div><div class="btot"><p class="big" id="bK">0</p><small>kcal</small><div class="chips" id="bM"></div><small id="bBud"></small></div></div>
     <div id="buildBody"></div>
     <div id="buildFoot" hidden><div class="bfr"><label class="sr" for="bName">Name it</label><input id="bName" placeholder="Name it (optional)" maxlength="60"><label class="sr" for="bSlot">Add to</label><select id="bSlot"></select></div><button class="primary" id="bGo" data-act="bGo">Put it together and add</button></div>
@@ -1156,11 +1156,12 @@ input[type=checkbox]{-webkit-appearance:none;appearance:none;display:inline-grid
     <div id="feelBody" style="overflow-y:auto;padding-bottom:8px"></div>
   </div>
 </div>
-<div class="sheet" id="sweetSheet" hidden>
+<div class="sheet pg" id="sweetSheet" hidden>
   <div class="scrim" data-act="closeSheet"></div>
   <div class="panel three" role="dialog" aria-modal="true" aria-labelledby="h-sweet">
     <span class="grab"></span>
-    <header><h2 id="h-sweet">Sweet swaps</h2><button class="ghost" data-act="closeSheet">Close</button></header>
+    <header><button class="backLnk" data-act="closeSheet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>Back</button><h2 id="h-sweet">Sweet swaps</h2></header>
+    <div id="sweetTop"></div>
     <div id="sweetBody" style="overflow-y:auto;padding-bottom:8px"></div>
   </div>
 </div>
@@ -3758,7 +3759,7 @@ document.addEventListener("DOMContentLoaded",()=>{const fl=document.getElementBy
 function trayEntry(t){const e=entryOf(t.f,$("#listSlot").value||"lunch",t.tab),o=t.opt||{};if(o.sz)setSize(e,o.sz);if(o.pt)setPart(e,o.pt);for(const k of o.lo||[])setLeave(e,k,true);e.mult=t.full?t.pc/t.full:t.n;return e}
 const trayKcal=t=>{const e=trayEntry(t);return num(e.kcal)*e.mult};
 function canCustom(f){const e={name:f.name,detail:f.detail};return!!(sizeKind(e)||partKind(e)||leaveOpts(e).length||pieceInfo(e))}
-let custName=null,custSnap=null; function openCust(n){custName=n;{const t=dTray.find(x=>x.f.name===n);custSnap=t?JSON.parse(JSON.stringify({n:t.n,pc:t.pc,opt:t.opt||{lo:[]}})):null}renderCust();const p=$("#custPop");p.hidden=false;requestAnimationFrame(()=>p.classList.add("open"))}
+let custName=null,custSnap=null; function openCust(n,fresh){custName=n;{const t=dTray.find(x=>x.f.name===n);custSnap=t&&!fresh?JSON.parse(JSON.stringify({n:t.n,pc:t.pc,opt:t.opt||{lo:[]}})):null}renderCust();const p=$("#custPop");p.hidden=false;requestAnimationFrame(()=>p.classList.add("open"))}
 function closeCust(){const p=$("#custPop");p.classList.remove("open");setTimeout(()=>{p.hidden=true},calm?0:180);custName=null;renderDish();dFoot()}
 function renderCust(){const t=dTray.find(x=>x.f.name===custName);if(!t){closeCust();return}const f=t.f,o=t.opt=t.opt||{lo:[]},e0={name:f.name,detail:f.detail},sk=sizeKind(e0),pk=partKind(e0),lo=leaveOpts(e0),pi=pieceInfo(e0),k=trayKcal(t);
   const pdf=pk?partDef(e0,pk):"",d0=pk?num(PARTS[pk].opts.find(x=>x[0]===pdf)[2].kcal):0;
@@ -3766,7 +3767,8 @@ function renderCust(){const t=dTray.find(x=>x.f.name===custName);if(!t){closeCus
   ${sk?`<div class="cRow"><span>Size</span><div class="cChips">${SZ[sk].map(x=>`<button data-act="cSize" data-v="${x[0]}" aria-pressed="${(o.sz||"regular")===x[0]}">${x[1]}</button>`).join("")}</div></div>`:""}
   ${pk?`<label class="cRow cCol"><span>${PARTS[pk].lab}</span><select id="cPart">${PARTS[pk].opts.map(x=>{const dk=Math.round(num(x[2].kcal)-d0);return `<option value="${x[0]}"${(o.pt||pdf)===x[0]?" selected":""}>${esc(trS(x[1]))}${dk?` (${dk>0?"+":"−"}${Math.abs(dk)} kcal)`:""}</option>`}).join("")}</select></label>`:""}
   ${lo.length?`<div class="cCol"><span class="cLbl">Leave out</span><div class="loList">${lo.map(x=>`<label><input type="checkbox" data-clo="${x}"${(o.lo||[]).includes(x)?" checked":""}><span>${LO[x][0]}</span><small>−${Math.abs(LO[x][1].kcal)} kcal</small></label>`).join("")}</div></div>`:""}
-  <div class="cBtns"><button class="ghost" data-act="cCancel">Cancel</button><button class="primary cDone" data-act="cDone">Done</button></div>`}
+  <div class="cSlot" role="group" aria-label="Which meal">${SLOTS.map(([sk2,nm])=>`<button data-act="cSlot" data-v="${sk2}" aria-pressed="${$("#listSlot").value===sk2}">${nm==="Snacks and drinks"?"Snack":nm}</button>`).join("")}</div>
+  <div class="cBtns"><button class="primary cGo" data-act="cGo">${(()=>{const nn=dTray.reduce((a,x)=>a+x.n,0),sl=SLOTNAME[$("#listSlot").value].toLowerCase().replace("snacks and drinks","snacks");return nn>1?`Add ${nn} foods to ${sl}`:`Add to ${sl}`})()}</button><button class="ghost" data-act="cCancel">Cancel</button><button class="ghost cMore" data-act="cDone">Pick more foods</button></div>`}
 /* economy rice: a rice plus at least one dish from the economy rice list can be logged together as one plate */
 let dEcon=false;
 const isEconRice=f=>/ econrice /.test(" "+(f.tags||"")+" "),isEconDish=f=>/ econ /.test(" "+(f.tags||"")+" ");
@@ -3776,7 +3778,7 @@ function econPlate(xs,slot){const es=xs.map(x=>trayEntry(x)),e={id:uid(),slot,na
   e.low=Math.round(es.reduce((a,x)=>a+(num(x.low)?val(x,"low"):val(x,"kcal")),0));e.high=Math.round(es.reduce((a,x)=>a+(num(x.high)?val(x,"high"):val(x,"kcal")),0));
   e.detail=es.map(x=>{const m=num(x.mult,1);return (m!==1?fmt(m)+" × ":"")+x.name.replace(/ \(economy rice\)/,"")}).join(", ");e.plate=es.map(x=>({name:x.name,mult:num(x.mult,1)}));return e}
 function dFoot(){const sc=$("#slotChips"),cur=$("#listSlot").value;if(sc)sc.innerHTML=SLOTS.map(([k,nm])=>`<button data-act="slotPick" data-v="${k}" aria-pressed="${cur===k}">${nm==="Snacks and drinks"?"Snack":nm}</button>`).join("");const n=dTray.reduce((a,x)=>a+x.n,0),k=dTray.reduce((a,x)=>a+trayKcal(x),0);$("#dFoot").hidden=!n;{const ec=econOK(),el=$("#dEcon");el.hidden=!ec;if(!ec)dEcon=false;else el.innerHTML=`<div class="econTxt"><b>Having economy rice?</b><small>${dEcon?"The rice and dishes will be logged as one plate.":"Log the rice and dishes as one plate."}</small></div><button data-act="dEcon" aria-pressed="${dEcon}">${dEcon?"One plate ✓":"Put together"}</button>`}const pl=dEcon&&econOK()?dTray.filter(x=>isEconRice(x.f)||isEconDish(x.f)):[],nn=pl.length?n-pl.reduce((a,x)=>a+x.n,0)+1:n;$("#dAddBtn").textContent=n?`Add ${nn} ${pl.length?(nn===1?"plate":"items"):(nn===1?"food":"foods")} to ${SLOTNAME[$("#listSlot").value].toLowerCase()} (${fmt(k)} kcal)`:""}
-function addDish(i){const f=dishList[i];if(!f)return;const t=dTray.find(x=>x.f.name===f.name),pi=pieceInfo(f);if(t){if(t.full)t.pc=Math.min(t.full*4,t.pc+1);else t.n++}else dTray.push(pi?{f,n:1,pc:1,full:pi.n,tab:S.dishTab}:{f,n:1,tab:S.dishTab});renderDish();dFoot()}
+function addDish(i){const f=dishList[i];if(!f)return;const t=dTray.find(x=>x.f.name===f.name),pi=pieceInfo(f);if(!t)dTray.push(pi?{f,n:1,pc:1,full:pi.n,tab:S.dishTab}:{f,n:1,tab:S.dishTab});renderDish();dFoot();openCust(f.name,!t)}
 function dAddAll(){if(!dTray.length)return;const slot=$("#listSlot").value,k=S.view,n=dTray.reduce((a,x)=>a+x.n,0);let dTray0=dTray.length;const plate=dEcon&&econOK()?dTray.filter(x=>isEconRice(x.f)||isEconDish(x.f)):[];if(plate.length){addEntry(k,econPlate(plate,slot),true);dTray0=dTray0-plate.length+1}for(const x of dTray){if(plate.includes(x))continue;const e=trayEntry(x);e.slot=slot;addEntry(k,e,true)}dEcon=false;dTray=[];closeSheets();if(curView!=="today")location.hash="today";else renderToday();toast(`Added ${n} food${n===1?"":"s"} to ${SLOTNAME[slot]}`);if(k===today())mealTip(slot,day(k).entries.slice(-dTray0))}
 
 /* add food: on-device photo model, label form, order help. Nothing leaves the phone. */
@@ -5937,7 +5939,7 @@ function buildArt(bd){try{if(!bd||!KITS[bd.kit])return"";const key=JSON.stringif
   BARTMEMO.set(key,svg);return svg.replace(/~~/g,"ba"+(++bArtN))}catch(e){return""}}
 function openBuild(kit,preset,ctx){closeSheets(true);B=kit?{kit,q:{...(preset||{})},u:{},order:Object.keys(preset||{}),last:"",slot:ctx?.slot||KITS[kit].slot,date:ctx?.date||"",from:ctx?.from||"",uu:ctx?.u||null}:null;if(B&&B.uu)B.u={...B.uu};if(B)bOldUnits(B);if(B)for(const id of Object.keys(B.q))if(!bOpt(kit,id)||!bOk(bOpt(kit,id)))delete B.q[id];openSheet("#buildSheet");renderBuild(true)}
 function renderBuild(first){const body=$("#buildBody"),foot=$("#buildFoot");
-  if(!B){$("#h-build").textContent="Build my own";foot.hidden=true;$("#bStage").hidden=true;const rec=(S.prefs.builds||[]).filter(r=>KITS[r.kit]);
+  if(!B){$("#h-build").textContent="Build your own";foot.hidden=true;$("#bStage").hidden=true;const rec=(S.prefs.builds||[]).filter(r=>KITS[r.kit]);
     body.innerHTML=`<p class="sub">Choose what you're making. You pick every part and how much, and the calories add up as you go.</p><div class="kgrid">${Object.entries(KITS).map(([k,v])=>`<button data-act="bKit" data-k="${k}"><span>${ART.svg(v.icon)}</span><b>${v.nm}</b></button>`).join("")}</div>${rec.length?`<h3 style="margin-top:16px">Make it again</h3><ul class="entries" style="gap:0">${rec.map((r,i)=>`<li class="prow" style="grid-template-columns:40px minmax(0,1fr) auto"><span class="fe art sm">${ART.svg(KITS[r.kit].icon)}</span><span class="en"><b>${esc(r.nm)}</b><small>${fmt(r.kcal)} kcal</small></span><button data-act="bAgain" data-i="${i}">Open</button></li>`).join("")}</ul>`:""}`;return}
   const K=KITS[B.kit];$("#h-build").textContent=K.nm;foot.hidden=false;$("#bStage").hidden=false;
   if(first){$("#bArt").classList.remove("joined");body.innerHTML=`${K.g.map((g,gi)=>`<section class="bg"><h3>${g[0]}</h3>${g[3]?`<p class="sub">${g[3]}</p>`:""}<div id="bg${gi}"></div></section>`).join("")}<p class="note">Amounts are household measures and the numbers are estimates. Oil and sauces vary the most.</p>`;body.insertAdjacentHTML("afterbegin",'<p class="recKey"><em class="rec">Green tags</em> point out the lighter or more nourishing picks. Everything else is still yours to choose.</p>');
@@ -6086,8 +6088,11 @@ const SWEETS=[["Drinks",[
 const SWF=SWEETS.flatMap(([g,l])=>l);
 function sugarLeft(){const T=targets(S.profile);return(T?T.sug:50)-totals(day(S.view)).sug}
 function renderSweetCard(){const l=sugarLeft();$("#sweet").innerHTML=`<div class="card tip"><h3>Craving something sweet?</h3><p>${l>0?`You have about ${fmt(l)} g of sugar left ${S.view===today()?"today":"for this day"}.`:"You've used up your sugar for the day."} These swaps still feel like a treat.</p><button data-act="openSweet">Show sweet swaps</button></div>`}
-function renderSweet(){const l=sugarLeft();let i=0;
-  $("#sweetBody").innerHTML=`<p class="lead">${l>0?`About ${fmt(l)} g of sugar left. Anything below fits, and you don't have to give up sweet things.`:"Sugar is used up for the day, so the lowest ones are at the top of each group."}</p>`+SWEETS.map(([g,list])=>`<h3>${g}</h3>`+list.map(x=>({x,i:i++})).sort((a,b)=>l>0?0:a.x[7]-b.x[7]).map(({x,i})=>`<div class="swrow"><span class="en"><b>${esc(x[0])}</b><small>${esc(x[1])}. ${fmt(x[2])} kcal, ${fmt(x[7])} g sugar</small><small class="was">Instead of ${esc(x[11])}</small></span><button data-act="addSweet" data-i="${i}">Log</button></div>`).join("")).join("")+'<p class="note">Numbers are estimates for typical servings. Sugar in whole fruit comes with fibre, which is gentler than added sugar, but it still counts in your total here.</p>'}
+let sweetG=0;
+function renderSweet(){const l=sugarLeft();let i=0;const G=SWEETS.map(([g,list])=>[g,list.map(x=>({x,i:i++}))]);if(!G[sweetG])sweetG=0;
+  $("#sweetTop").innerHTML=`<p class="lead">${l>0?`About ${fmt(l)} g of sugar left. Anything here fits.`:"Sugar is used up for the day, so the lowest ones are at the top."}</p><div class="cats" role="group" aria-label="Kind of swap">${G.map(([g],k)=>`<button data-act="sweetG" data-i="${k}" aria-pressed="${k===sweetG}">${SWG[g]||g}</button>`).join("")}</div>`;
+  $("#sweetBody").innerHTML=G[sweetG][1].sort((a,b)=>l>0?0:a.x[7]-b.x[7]).map(({x,i})=>`<div class="swrow"><span class="en"><b>${esc(x[0])}</b><small>${esc(x[1])}. ${fmt(x[2])} kcal, ${fmt(x[7])} g sugar</small><small class="was">Instead of ${esc(x[11])}</small></span><button data-act="addSweet" data-i="${i}">Log</button></div>`).join("")+'<p class="note">Numbers are estimates for typical servings. Sugar in whole fruit comes with fibre, which is gentler than added sugar, but it still counts in your total here.</p>'}
+const SWG={"Drinks":"Drinks","Cold and creamy":"Ice cream","Fruit that feels like dessert":"Fruit","Chocolate and baked":"Chocolate and bakes","Local favourites, made lighter":"Local desserts"};
 function addSweet(i){const x=SWF[i];if(!x)return;const e={id:uid(),slot:"snack",name:x[0],detail:x[1],kcal:x[2],p:x[3],c:x[4],f:x[5],fib:x[6],sug:x[7],sod:x[8],sat:x[9],fv:x[10],low:x[2]*.85,high:x[2]*1.2,mult:1,thumb:"",src:"sweet",at:Date.now()};closeSheets();addEntry(S.view,e)}
 
 /* daily picker and suggestions: choose a mood, get 3 options built on the phone, pick one */
@@ -6300,7 +6305,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="openAdd"){if($("#addSheet").hidden)openSheet("#addSheet");else closeSheets()}
   else if(a==="closeSheet")closeSheets();
   else if(a==="go"){closeSheets(true);setMode(b.dataset.m);$("#scanSlot").value=slotNow();scanChips();location.hash="scan"}
-  else if(a==="openDish"){closeSheets(true);dTray=[];$("#dFoot").hidden=true;S.dishTab=b.dataset.t;$("#listSlot").value=slotNow();$("#q").value="";openSheet("#dishSheet");renderDish()}
+  else if(a==="openDish"){closeSheets(true);dTray=[];$("#dFoot").hidden=true;S.dishTab=b.dataset.t;$("#h-dish").textContent=S.dishTab==="fav"?"Favourites":"Search";$("#listSlot").value=slotNow();$("#q").value="";openSheet("#dishSheet");renderDish()}
   else if(a==="dishTab"){S.dishTab=b.dataset.t;renderDish()}
   else if(a==="addDish")addDish(i);
   else if(a==="dMinus"){const t=dTray.find(x=>x.f.name===b.dataset.n);if(t){if(t.full){t.pc--;if(t.pc<1)dTray=dTray.filter(x=>x!==t)}else{t.n--;if(!t.n)dTray=dTray.filter(x=>x!==t)}}renderDish();dFoot()}
@@ -6309,7 +6314,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="dEcon"){dEcon=!dEcon;dFoot()}
   else if(a==="dCust")openCust(b.dataset.n);
   else if(a==="cDone")closeCust();
-  else if(a==="cCancel"){const t=dTray.find(x=>x.f.name===custName);if(t&&custSnap){t.n=custSnap.n;t.pc=custSnap.pc;t.opt=custSnap.opt}closeCust()}
+  else if(a==="cCancel"){const t=dTray.find(x=>x.f.name===custName);if(t&&custSnap){t.n=custSnap.n;t.pc=custSnap.pc;t.opt=custSnap.opt}else if(t)dTray=dTray.filter(x=>x!==t);closeCust()}else if(a==="cSlot"){$("#listSlot").value=b.dataset.v;renderCust()}else if(a==="cGo"){closeCust();dAddAll()}
   else if(a==="cPlus"||a==="cMinus"){const t=dTray.find(x=>x.f.name===custName);if(t){const d=a==="cPlus"?1:-1;if(t.full)t.pc=Math.max(1,Math.min(t.full*4,t.pc+d));else t.n=Math.max(1,Math.min(20,t.n+d))}renderCust()}
   else if(a==="cSize"){const t=dTray.find(x=>x.f.name===custName);if(t){t.opt.sz=b.dataset.v}renderCust()}
   else if(a==="scanSlotPick"){$("#scanSlot").value=b.dataset.v;scanChips();if(scanRes)updateScanTotal();if(scanMode==="order")renderOrder()}
@@ -6390,7 +6395,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="reminders")reminders();
   else if(a==="crave"){const v=b.dataset.v;if(crave.has(v))crave.delete(v);else crave.add(v);b.setAttribute("aria-pressed",crave.has(v))}
   else if(a==="where"){where=b.dataset.v;setSeg($("#whereSeg"),WHERE.indexOf(where),3);$$("#whereSeg button").forEach(x=>x.setAttribute("aria-pressed",x===b))}
-  else if(a==="openSweet"){closeSheets(true);renderSweet();openSheet("#sweetSheet");$("#sweetBody").scrollTop=0}
+  else if(a==="sweetG"){sweetG=+b.dataset.i;renderSweet();$("#sweetBody").scrollTop=0}else if(a==="openSweet"){closeSheets(true);sweetG=0;renderSweet();openSheet("#sweetSheet");$("#sweetBody").scrollTop=0}
   else if(a==="addSweet")addSweet(i);
   else if(a==="locate")locate();
   else if(a==="suggestDay"){closeSheets(true);suggest(null)}
