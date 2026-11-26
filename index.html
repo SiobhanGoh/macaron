@@ -3428,7 +3428,7 @@ function setSize(e,key){const k=sizeKind(e);if(!k)return;if(!SZ[k].some(o=>o[0]=
 function setLeave(e,key,on){if(!LO[key]||!leaveOpts(e).includes(key))return;keepBase(e);const l=new Set(Array.isArray(e.lo)?e.lo:[]);on?l.add(key):l.delete(key);e.lo=[...l];applyVar(e)}
 function setPart(e,key){const k=partKind(e);if(!k||!PARTS[k].opts.some(o=>o[0]===key))return;keepBase(e);e.pt=key;applyVar(e)}
 const SLOTOPEN=new Set();document.addEventListener("toggle",e=>{const d=e.target;if(d.matches&&d.matches(".loBox")){S.loOpen=d.open?d.dataset.loid:(S.loOpen===d.dataset.loid?null:S.loOpen);return}if(d.matches&&d.matches(".slotx")){d.open?SLOTOPEN.add(d.dataset.s):SLOTOPEN.delete(d.dataset.s)}},true);
-function entryArt(e){try{const n=String(e.base||e.name||"");return ART.svg(n)||ART.svg(n.split(", with ")[0])||ART.svg(String(e.sz0?.name||"")) ||ART.svg(n.replace(/, (mini|small|regular|large)$/i,""))||""}catch(x){return""}}
+function entryArt(e){try{if(e.build){const a=buildArt(e.build);if(a)return a}const n=String(e.base||e.name||"");return ART.svg(n)||ART.svg(n.split(", with ")[0])||ART.svg(String(e.sz0?.name||"")) ||ART.svg(n.replace(/, (mini|small|regular|large)$/i,""))||""}catch(x){return""}}
 /* countable foods (10 satay sticks, 6 dumplings...): count the pieces you actually ate */
 const PCRX=/^(\d+)\s+(pieces|pcs|sticks|skewers|balls|wings|buns|rolls|dumplings|slices|biscuits|cookies|scoops|drumsticks|nuggets|wontons|tarts|puffs|eggs|prawns|triangles|macarons|kuih)\b(.*)$/i;
 function pieceInfo(e){const n=String(e.sz0?.name||e.name||""),d=String(e.sz0?.detail||e.detail||"").trim();let m=d.match(PCRX);if(m&&/\d/.test(m[3]))m=null;if(!m){const k=n.match(/, (\d+) (pieces|sticks|skewers|wings|balls|rolls|slices)$/i);if(k)m=[k[0],k[1],k[2],""]}if(!m)return null;const c=+m[1];return c>1&&c<=40?{n:c,unit:m[2].toLowerCase()}:null}
@@ -5485,16 +5485,16 @@ const B_TOP=[
 const KITS={
 kbbq:{nm:"Korean BBQ",view:"grill",slot:"dinner",place:"Korean BBQ restaurant",icon:"Korean BBQ, typical meal",g:[
  ["Meat on the grill","many",[
-  ["samg","Pork belly (samgyeopsal)",[["piece|pieces",1,1]],[90,3.5,0,8.3,0,0,15,3,0],"",3,"meat pork"],
-  ["moks","Pork neck (moksal)",[["piece|pieces",1,1]],[65,5,0,5,0,0,20,1.8,0],"",3,"meat pork"],
-  ["galb","Marinated pork ribs (dwaeji galbi)",[["piece|pieces",1,1]],[75,5,3,4.8,0,2.5,150,1.7,0],"",3,"meat pork"],
-  ["bgal","Beef short rib (galbi)",[["piece|pieces",1,1]],[80,5,2,5.8,0,1.5,130,2.5,0],"",3,"meat beef"],
-  ["bulg","Beef bulgogi",[["small portion|small portions",1,1]],[113,9,4,6.5,0,3,250,2.5,0],"",1,"meat beef"],
-  ["chad","Beef brisket slices (chadolbagi)",[["slice|slices",1,1]],[35,1.6,0,3.2,0,0,8,1.3,0],"",3,"meat beef"],
-  ["dakg","Marinated chicken (dak galbi)",[["piece|pieces",1,1]],[50,5.5,1.5,2.3,0,1,140,.6,0],"",3,"meat"],
+  ["samg","Pork belly (samgyeopsal)",[["g",1/17,50,100],["piece|pieces",1,1]],[90,3.5,0,8.3,0,0,15,3,0],"",3,"meat pork"],
+  ["moks","Pork neck (moksal)",[["g",1/25,50,100],["piece|pieces",1,1]],[65,5,0,5,0,0,20,1.8,0],"",3,"meat pork"],
+  ["galb","Marinated pork ribs (dwaeji galbi)",[["g",1/30,50,100],["piece|pieces",1,1]],[75,5,3,4.8,0,2.5,150,1.7,0],"",3,"meat pork"],
+  ["bgal","Beef short rib (galbi)",[["g",1/24,50,100],["piece|pieces",1,1]],[80,5,2,5.8,0,1.5,130,2.5,0],"",3,"meat beef"],
+  ["bulg","Beef bulgogi",[["g",1/60,50,100],["small portion|small portions",1,1]],[113,9,4,6.5,0,3,250,2.5,0],"",1,"meat beef"],
+  ["chad","Beef brisket slices (chadolbagi)",[["g",1/10,50,100],["slice|slices",1,1]],[35,1.6,0,3.2,0,0,8,1.3,0],"",3,"meat beef"],
+  ["dakg","Marinated chicken (dak galbi)",[["g",1/28,50,100],["piece|pieces",1,1]],[50,5.5,1.5,2.3,0,1,140,.6,0],"",3,"meat"],
   ["gprw","Grilled prawns",[["piece|pieces",1,1]],[15,3.3,0,.2,0,0,80,0,0],"",2,"seafood"],
   ["gsqd","Grilled squid",[["piece|pieces",1,1]],[15,2.7,.5,.3,0,0,60,.1,0],"",2,"seafood"]],
-  "Count the pieces you ate, about the size of two fingers. Pork belly is the richest. Pork neck, chicken and prawns are lighter."],
+  "Tap + for 100 g, then 150 g, 200 g and so on, or tap the unit to count pieces instead. A serving on the menu is usually 150 to 200 g. Pork belly is the richest. Pork neck, chicken and prawns are lighter."],
  ["Wraps and grilled sides","many",[
   ["ssam","Lettuce wrap leaf",[["leaf|leaves",1,1]],[2,.1,.3,0,.2,.1,1,0,.1],"",3,""],
   ["peri","Perilla leaf",[["leaf|leaves",1,1]],[1,.1,.2,0,.2,0,1,0,.05],"",3,""],
@@ -5530,16 +5530,16 @@ hotpot:{nm:"Hot pot",view:"pot",slot:"dinner",place:"Hot pot restaurant",icon:"H
   ["bmala","Mala (spicy) broth",[["bowl sipped|bowls sipped",1,1]],[140,1,3,14,0,1,900,4,0],"",1,"hot",["broth","#b8322a"]]],
   "Pick one, or two for a split pot. Count only the soup you drink. Mala is oily and clings to the food, so add 1 bowl even if you don't sip it."],
  ["Meat","many",[
-  ["fbeef","Beef slices",[["half plate|half plates",1,1],["slice|slices",1/6,1]],[180,10,0,15.5,0,0,35,6.5,0],"slc:#c0574a:#f6d6cc",1,"meat beef"],
-  ["lbeef","Lean beef slices",[["half plate|half plates",1,1],["slice|slices",1/6,1]],[90,13,0,4,0,0,35,1.6,0],"slc:#b2453a:#e9b0a6",1,"meat beef"],
-  ["lamb","Lamb slices",[["half plate|half plates",1,1],["slice|slices",1/6,1]],[170,9.5,0,14.5,0,0,40,6.5,0],"slc:#b85a52:#f3dcd4",1,"meat"],
-  ["pork","Pork slices",[["half plate|half plates",1,1],["slice|slices",1/6,1]],[150,10,0,12,0,0,35,4.5,0],"slc:#f0b7a8:#fff1ea",1,"meat pork"],
-  ["chks","Chicken slices",[["half plate|half plates",1,1],["slice|slices",1/6,1]],[70,13,0,1.8,0,0,40,.5,0],"slc:#f3d9c4:#fff6ea",1,"meat"],
+  ["fbeef","Beef slices",[["g",1/60,50,100],["slice|slices",1/6,1]],[180,10,0,15.5,0,0,35,6.5,0],"slc:#c0574a:#f6d6cc",1,"meat beef"],
+  ["lbeef","Lean beef slices",[["g",1/60,50,100],["slice|slices",1/6,1]],[90,13,0,4,0,0,35,1.6,0],"slc:#b2453a:#e9b0a6",1,"meat beef"],
+  ["lamb","Lamb slices",[["g",1/60,50,100],["slice|slices",1/6,1]],[170,9.5,0,14.5,0,0,40,6.5,0],"slc:#b85a52:#f3dcd4",1,"meat"],
+  ["pork","Pork slices",[["g",1/60,50,100],["slice|slices",1/6,1]],[150,10,0,12,0,0,35,4.5,0],"slc:#f0b7a8:#fff1ea",1,"meat pork"],
+  ["chks","Chicken slices",[["g",1/60,50,100],["slice|slices",1/6,1]],[70,13,0,1.8,0,0,40,.5,0],"slc:#f3d9c4:#fff6ea",1,"meat"],
   ["lunc","Luncheon meat",[["slice|slices",1,1]],[62,2.5,.8,5.5,0,0,260,2,0],"fil:#f2a3a0",2,"meat pork"]],
-  "A half plate is about 60 g, roughly 6 thin slices."],
+  "Tap + for 100 g, then again for 150 g, 200 g and so on. A thin slice is about 10 g, and a restaurant plate is usually 100 to 150 g (the menu often says)."],
  ["Seafood and balls","many",[
   ["prawn","Prawns",[["piece|pieces",1,1]],[15,3.3,0,.2,0,0,80,0,0],"prawn",3,"seafood"],
-  ["fsl","Fish slices",[["half plate|half plates",1,1]],[55,12,0,.8,0,0,60,.2,0],"fil:#fff1e6",1,"seafood"],
+  ["fsl","Fish slices",[["g",1/60,50,100]],[55,12,0,.8,0,0,60,.2,0],"fil:#fff1e6",1,"seafood"],
   ["fball","Fish balls",[["piece|pieces",1,1]],[17,1.7,1.7,.2,0,.3,130,.1,0],"ball",3,"seafood"],
   ["ftofu","Fish tofu",[["piece|pieces",1,1]],[45,2.5,3,2.5,0,.5,180,.7,0],"tofu:#f3c98a",3,"seafood"],
   ["bball","Beef balls",[["piece|pieces",1,1]],[37,2.3,1.3,2.5,0,.3,150,.9,0],"ball:#a8735a",3,"meat beef"],
@@ -5760,7 +5760,15 @@ function bOk(o){const d=(S.profile?.diet||"").toLowerCase(),l=(S.profile?.likes|
 const bUnit=o=>o[2][B.u[o[0]]||0],bU=(o,q)=>{const[s,p]=bUnit(o)[0].split("|");return q===1?s:(p||(/^(g|ml|tsp|tbsp|x|6-inch)$/.test(s)?s:s+"s"))};
 const bQty=(o,q)=>{const u=bUnit(o)[0];return u==="x"?(q>1?"extra ":""):`${f1(q)} ${bU(o,q)} `};
 function bTot(){const t=NF.map(()=>0);for(const o of bOpts(B.kit)){const q=num(B.q[o[0]]);if(!q)continue;const f=q*bUnit(o)[1];o[3].forEach((v,i)=>{t[i]+=v*f})}return t}
-function openBuild(kit,preset,ctx){closeSheets(true);B=kit?{kit,q:{...(preset||{})},u:{},order:Object.keys(preset||{}),last:"",slot:ctx?.slot||KITS[kit].slot,date:ctx?.date||"",from:ctx?.from||"",uu:ctx?.u||null}:null;if(B&&B.uu)B.u={...B.uu};if(B)for(const id of Object.keys(B.q))if(!bOpt(kit,id)||!bOk(bOpt(kit,id)))delete B.q[id];openSheet("#buildSheet");renderBuild(true)}
+const GRAMS={fbeef:60,lbeef:60,lamb:60,pork:60,chks:60,fsl:60,samg:17,moks:25,galb:30,bgal:24,bulg:60,chad:10,dakg:28};
+/* builds saved before meat was counted in grams hold small numbers (plates or pieces): turn those into grams once */
+function bOldUnits(x){if(!x||!x.q||x.gv)return x;for(const id in GRAMS){const q=num(x.q[id]);if(!q)continue;const ui=num(x.u&&x.u[id]);if(ui===0&&q<=20)x.q[id]=Math.round(q*GRAMS[id]);else if(ui===1&&/^(fbeef|lbeef|lamb|pork|chks)$/.test(id)){}else if(ui===0){}}x.gv=1;return x}
+/* a built meal shows its own picture (the pot, grill, bowl or plate as it was filled) wherever the meal appears */
+const BARTMEMO=new Map();let bArtN=0;
+function buildArt(bd){try{if(!bd||!KITS[bd.kit])return"";const key=JSON.stringify([bd.kit,bd.q,bd.u,S.prefs.potStyle]);if(BARTMEMO.has(key))return BARTMEMO.get(key).replace(/~~/g,"ba"+(++bArtN));const sv=B;let out="";try{const x=bOldUnits({kit:bd.kit,q:{...bd.q},u:{...(bd.u||{})},gv:bd.gv});B={kit:x.kit,q:x.q,u:x.u,order:Object.keys(x.q).filter(id=>bOpt(x.kit,id)),last:""};out=bDraw()}finally{B=sv}
+  const m=out.match(/<svg[\s\S]*?<\/svg>/);if(!m)return"";let svg=m[0].replace(/ role="img" aria-label="[^"]*"/,' aria-hidden="true"');const ids=[...new Set([...svg.matchAll(/ id="([^"]+)"/g)].map(x=>x[1]))].sort((a,b)=>b.length-a.length);for(const id of ids)svg=svg.split('id="'+id+'"').join('id="~~'+id+'"').split("#"+id+")").join("#~~"+id+")").split('"#'+id+'"').join('"#~~'+id+'"');
+  BARTMEMO.set(key,svg);return svg.replace(/~~/g,"ba"+(++bArtN))}catch(e){return""}}
+function openBuild(kit,preset,ctx){closeSheets(true);B=kit?{kit,q:{...(preset||{})},u:{},order:Object.keys(preset||{}),last:"",slot:ctx?.slot||KITS[kit].slot,date:ctx?.date||"",from:ctx?.from||"",uu:ctx?.u||null}:null;if(B&&B.uu)B.u={...B.uu};if(B)bOldUnits(B);if(B)for(const id of Object.keys(B.q))if(!bOpt(kit,id)||!bOk(bOpt(kit,id)))delete B.q[id];openSheet("#buildSheet");renderBuild(true)}
 function renderBuild(first){const body=$("#buildBody"),foot=$("#buildFoot");
   if(!B){$("#h-build").textContent="Build my own";foot.hidden=true;$("#bStage").hidden=true;const rec=(S.prefs.builds||[]).filter(r=>KITS[r.kit]);
     body.innerHTML=`<p class="sub">Choose what you're making. You pick every part and how much, and the calories add up as you go.</p><div class="kgrid">${Object.entries(KITS).map(([k,v])=>`<button data-act="bKit" data-k="${k}"><span>${ART.svg(v.icon)}</span><b>${v.nm}</b></button>`).join("")}</div>${rec.length?`<h3 style="margin-top:16px">Make it again</h3><ul class="entries" style="gap:0">${rec.map((r,i)=>`<li class="prow" style="grid-template-columns:40px minmax(0,1fr) auto"><span class="fe art sm">${ART.svg(KITS[r.kit].icon)}</span><span class="en"><b>${esc(r.nm)}</b><small>${fmt(r.kcal)} kcal</small></span><button data-act="bAgain" data-i="${i}">Open</button></li>`).join("")}</ul>`:""}`;return}
@@ -5769,7 +5777,7 @@ function renderBuild(first){const body=$("#buildBody"),foot=$("#buildFoot");
     $("#bSlot").innerHTML=SLOTS.map(([k,n])=>`<option value="${k}"${k===B.slot?" selected":""}>${n}</option>`).join("");body.scrollTop=0}
   K.g.forEach((g,gi)=>{const opts=g[2].filter(bOk),el=$("#bg"+gi);
     if(g[1]==="pick"||g[1]==="tog")el.innerHTML=`<div class="pills">${opts.map(o=>{const q=num(B.q[o[0]]);return `<button data-act="bPick" data-id="${o[0]}" aria-pressed="${q>0}">${bSw(o)}${esc(o[1])}${q>1?" ×2":""}<small>${fmt(o[3][0])} kcal</small>${bRec(o)?`<em class="rec">${bRec(o)}</em>`:""}</button>`}).join("")}</div>`;
-    else el.innerHTML=`<ul class="bos">${opts.map(o=>{const q=num(B.q[o[0]]),u=bUnit(o),per=o[3][0]*u[1]*u[2];return `<li class="bo${q?" on":""}">${bSw(o)}<div><b>${esc(o[1])}</b><small>${fmt(per)} kcal per ${u[2]>1?u[2]+" ":""}${u[0].split("|")[0]}</small>${bRec(o)?`<em class="rec">${bRec(o)}</em>`:""}</div>${o[2].length>1?`<button class="bun" data-act="bUnit" data-id="${o[0]}" aria-label="Change unit for ${esc(o[1])}">${bU(o,2)}</button>`:"<span></span>"}<div class="stp"><button data-act="bStep" data-id="${o[0]}" data-d="-1" aria-label="Less ${esc(o[1])}"${q?"":" disabled"}>−</button><output>${f1(q)}</output><button data-act="bStep" data-id="${o[0]}" data-d="1" aria-label="More ${esc(o[1])}">+</button></div></li>`}).join("")}</ul>`});
+    else el.innerHTML=`<ul class="bos">${opts.map(o=>{const q=num(B.q[o[0]]),u=bUnit(o),per=o[3][0]*u[1]*u[2];return `<li class="bo${q?" on":""}">${bSw(o)}<div><b>${esc(o[1])}</b><small>${u[0]==="g"&&u[3]?fmt(o[3][0]*u[1]*100)+" kcal per 100 g":fmt(per)+" kcal per "+(u[2]>1?u[2]+" ":"")+u[0].split("|")[0]}</small>${bRec(o)?`<em class="rec">${bRec(o)}</em>`:""}</div>${o[2].length>1?`<button class="bun" data-act="bUnit" data-id="${o[0]}" aria-label="Change unit for ${esc(o[1])}">${bU(o,2)}</button>`:"<span></span>"}<div class="stp"><button data-act="bStep" data-id="${o[0]}" data-d="-1" aria-label="Less ${esc(o[1])}"${q?"":" disabled"}>−</button><output>${f1(q)}</output><button data-act="bStep" data-id="${o[0]}" data-d="1" aria-label="More ${esc(o[1])}">+</button></div></li>`}).join("")}</ul>`});
   const t=bTot(),bud=slotBudget(B.slot);$("#bK").textContent=fmt(t[0]);$("#bM").innerHTML=`<span class="chip">Protein ${fmt(t[1])} g</span><span class="chip">Carbs ${fmt(t[2])} g</span><span class="chip">Fat ${fmt(t[3])} g</span>`;
   $("#bBud").textContent=t[0]?(t[0]<=bud.kcal*1.1?`Fits your ${SLOTNAME[B.slot].toLowerCase()} (about ${fmt(bud.kcal)} kcal)`:`About ${fmt(t[0]-bud.kcal)} kcal over your usual ${SLOTNAME[B.slot].toLowerCase()}. Fine now and then.`):"Tap + to start adding";
   $("#bArt").innerHTML=bDraw();$("#bGo").disabled=!t[0]&&!Object.values(B.q).some(Boolean);B.last=""}
@@ -6199,7 +6207,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="bKit"){B={kit:b.dataset.k,q:{},u:{},order:[],last:"",slot:slotNow()==="snack"?KITS[b.dataset.k].slot:(b.dataset.k==="drink"?"snack":slotNow()),date:"",from:""};$("#bName").value="";renderBuild(true)}
   else if(a==="bAgain"){const r=(S.prefs.builds||[]).filter(x=>KITS[x.kit])[num(b.dataset.i)];if(r){openBuild(r.kit,r.q,{u:r.u,slot:slotNow()});$("#bName").value=r.nm}}
   else if(a==="bBack"){if(B){B=null;renderBuild()}else closeSheets()}
-  else if(a==="bStep"&&B){const o=bOpt(B.kit,b.dataset.id),u=bUnit(o),q=num(B.q[o[0]]),d=num(b.dataset.d);bSet(o[0],q===0&&d>0?Math.max(u[2],Math.round((o[5]||1)*o[2][0][1]/u[1]/u[2])*u[2]):Math.round((q+d*u[2])*100)/100)}
+  else if(a==="bStep"&&B){const o=bOpt(B.kit,b.dataset.id),u=bUnit(o),q=num(B.q[o[0]]),d=num(b.dataset.d);bSet(o[0],q===0&&d>0?u[3]||Math.max(u[2],Math.round((o[5]||1)*o[2][0][1]/u[1]/u[2])*u[2]):Math.round((q+d*u[2])*100)/100)}
   else if(a==="bUnit"&&B){const o=bOpt(B.kit,b.dataset.id),id=o[0],old=bUnit(o),ni=((B.u[id]||0)+1)%o[2].length,nu=o[2][ni],q=num(B.q[id]);B.u[id]=ni;if(q)B.q[id]=Math.max(nu[2],Math.round(q*old[1]/nu[1]/nu[2])*nu[2]);renderBuild()}
   else if(a==="bPick"&&B){const o=bOpt(B.kit,b.dataset.id),g=bGrp(B.kit,o[0]),q=num(B.q[o[0]]);bSet(o[0],g[1]==="tog"?(q+1)%3:q?(g[4]?1:0):1)}
   else if(a==="bGo"&&B)buildLog();
