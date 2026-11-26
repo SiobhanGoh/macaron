@@ -52,6 +52,24 @@ jobs:
           PY
               kaggle kernels push -p kernel --accelerator NvidiaTeslaT4 2>&1 || kaggle kernels push -p kernel 2>&1
             fi
+            if [ "$ACTION" = "cancel" ]; then
+              python - <<'PY'
+          import os
+          from kaggle.api.kaggle_api_extended import KaggleApi
+          from kagglesdk.kernels.types.kernels_api_service import ApiGetKernelRequest, ApiCancelKernelSessionRequest
+          api = KaggleApi(); api.authenticate()
+          owner, slug = os.environ["KERNEL"].split("/")
+          with api.build_kaggle_client() as k:
+              r = ApiGetKernelRequest(); r.user_name = owner; r.kernel_slug = slug
+              m = k.kernels.kernels_api_client.get_kernel(r).metadata
+              print("kernel id", m.id, "version", m.current_version_number)
+              try:
+                  c = ApiCancelKernelSessionRequest(); c.kernel_session_id = m.id
+                  print("cancel result", k.kernels.kernels_api_client.cancel_kernel_session(c))
+              except Exception as e:
+                  print("cancel failed", str(e)[:400])
+          PY
+            fi
             kaggle kernels status "$KERNEL" 2>&1
             if [ "$ACTION" = "collect" ]; then
               mkdir out && kaggle kernels output "$KERNEL" -p out 2>&1 | tail -5
