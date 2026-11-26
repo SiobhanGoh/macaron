@@ -110,7 +110,7 @@ jobs:
               [ "$JOB" = "style2" ] && cp out/contact_styles.jpg report/contact_styles_fast.jpg 2>/dev/null && echo "FAST STYLES READY"
               if [ "$JOB" = "dishart" ] && ls out/c*.webp >/dev/null 2>&1; then mkdir -p art/dish && cp out/c*.webp art/dish/ && cp out/contact*.jpg report/ 2>/dev/null; echo "DISH ART READY: $(ls out/c*.webp | wc -l) pictures"; echo dish=1 >> "$GITHUB_OUTPUT"; fi
               if [ "$JOB" = "art" ] && ls out/*.webp >/dev/null 2>&1; then mkdir -p art/hotpot && cp out/*.webp art/hotpot/ && cp out/contact*.jpg report/ 2>/dev/null; echo "ART READY"; echo art=1 >> "$GITHUB_OUTPUT"; fi
-              if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
+              if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; [ -s out/parts.json ] && cp out/parts.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
             fi
           } > report/kaggle_status.txt 2>&1
           cat report/kaggle_status.txt
@@ -119,7 +119,7 @@ jobs:
         run: |
           git config user.name "Siobhan Goh"
           git config user.email "216317456+SiobhanGoh@users.noreply.github.com"
-          git add model/food.onnx model/labels.json
+          git add model/food.onnx model/labels.json; [ -f model/parts.json ] && git add model/parts.json || true
           git commit -m "Add the trained food photo model" || true
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
       - name: Save the images into the app
