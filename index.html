@@ -3513,7 +3513,7 @@ function renderDish(){const tabs=["local","recent","fav"],q=$("#q").value.trim()
 function entryOf(f,slot,src){const e={...tpl(f),id:uid(),slot,mult:1,src,at:Date.now()};if(!e.low)e.low=e.kcal*.85;if(!e.high)e.high=e.kcal*1.2;if(!e.cuisine&&f.tags)e.cuisine=cuisineOf(f);return e}
 let dTray=[];
 function dFoot(){const n=dTray.reduce((a,x)=>a+x.n,0),k=dTray.reduce((a,x)=>a+(x.full?x.pc/x.full:x.n)*num(x.f.kcal),0);$("#dFoot").hidden=!n;$("#dAddBtn").textContent=n?`Add ${n} food${n===1?"":"s"} to ${SLOTNAME[$("#listSlot").value].toLowerCase()} (${fmt(k)} kcal)`:""}
-function addDish(i){const f=dishList[i];if(!f)return;const t=dTray.find(x=>x.f.name===f.name),pi=pieceInfo(f);if(t){if(t.full)t.pc=Math.min(t.full*4,t.pc+1);else t.n++}else dTray.push(pi?{f,n:1,pc:pi.n,full:pi.n,tab:S.dishTab}:{f,n:1,tab:S.dishTab});renderDish();dFoot()}
+function addDish(i){const f=dishList[i];if(!f)return;const t=dTray.find(x=>x.f.name===f.name),pi=pieceInfo(f);if(t){if(t.full)t.pc=Math.min(t.full*4,t.pc+1);else t.n++}else dTray.push(pi?{f,n:1,pc:1,full:pi.n,tab:S.dishTab}:{f,n:1,tab:S.dishTab});renderDish();dFoot()}
 function dAddAll(){if(!dTray.length)return;const slot=$("#listSlot").value,k=S.view,n=dTray.reduce((a,x)=>a+x.n,0),dTray0=dTray.length;for(const x of dTray){const e=entryOf(x.f,slot,x.tab);e.mult=x.full?x.pc/x.full:x.n;addEntry(k,e,true)}dTray=[];closeSheets();if(curView!=="today")location.hash="today";else renderToday();toast(`Added ${n} food${n===1?"":"s"} to ${SLOTNAME[slot]}`);if(k===today())mealTip(slot,day(k).entries.slice(-dTray0))}
 
 /* add food: on-device photo model, label form, order help. Nothing leaves the phone. */
