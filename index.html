@@ -4314,11 +4314,12 @@ fruit:(k)=>({
 }[k]),
 };
 const rims=["#f3d9d0","#ead9f2","#d6ebf5","#f6e3c0","#d9efd9","#ffd9e3"];
-const SLP=[[23,37],[43,31],[44,43],[29,48],[19,27],[35,25]],SLB=[[32,27],[21,29],[43,28],[32,33],[48,32],[15,32]];
+const SLT=[[28,38],[43,33],[42,45],[25,47],[20,30],[36,27]],SLP=[[23,37],[43,31],[44,43],[29,48],[19,27],[35,25]],SLB=[[32,27],[21,29],[43,28],[32,33],[48,32],[15,32]];
 function vessel(v,seed){const[k,a,b]=v.split(":"),rim=rims[seed%rims.length];
+  if(k==="T"){const br=c(b||"clr");return sh(32,59,25)+el(32,37,29.5,22,c(a&&a!=="w"?a:rim))+el(32,37,27,19.8,"#fffaf4")+el(32,37.6,24,17.2,"rgba(90,50,30,.18)")+el(32,37,24,17,br)+el(26,31,12,5,"#fff",' opacity=".22"')+el(41,44,6,2.2,"#fff",' opacity=".14"')}
   if(k==="P")return sh(32,58,24)+el(32,38,29,21,"#fff")+el(32,38,29,21,"none",` stroke="${rim}" stroke-width="2.4"`)+el(32,38,22,15,"#fff9f1");
   if(k==="L")return sh(32,58,26)+pa("M4 38Q8 16 32 16Q56 16 60 38Q56 58 32 58Q8 58 4 38Z","#7fc48a")+st("M8 38H56","#5fae78",1.4)+[16,24,40,48].map(x=>st(`M${x} 22V54`,"#6fbf85",.8)).join("");
-  if(k==="B")return sh(32,59,22)+pa("M5 30H59Q57 55 32 57Q7 55 5 30Z",c(a||rim))+pa("M5 30H59Q58.6 36 57 41H7Q5.4 36 5 30Z","#fff",' opacity=".25"')+el(32,30,27,8,c(b||"clr"));
+  if(k==="B")return sh(32,59,22)+pa("M5 30H59Q57 55 32 57Q7 55 5 30Z",c(a||rim))+pa("M5 30H59Q58.6 36 57 41H7Q5.4 36 5 30Z","#fff",' opacity=".25"')+el(32,30,27,8,c(b||"clr"))+el(25,28,9,1.6,"#fff",' opacity=".35"')+el(18,31,1.3,.7,"#fff",' opacity=".45"')+el(41,29,1.3,.7,"#fff",' opacity=".45"')+el(45,32,1.1,.6,"#fff",' opacity=".45"');
   if(k==="K")return sh(32,59,24)+pa("M6 30H58Q56 54 32 56Q8 54 6 30Z","#6b4630")+re(1,28,8,5,2.5,"#6b4630")+re(55,28,8,5,2.5,"#6b4630")+el(32,30,26,8,c(a||"#8a5a3a"));
   if(k==="X")return sh(32,58,24)+re(7,18,50,36,6,"#fff",` stroke="${rim}" stroke-width="2.2"`);
   return "";}
@@ -4336,13 +4337,51 @@ function glass(t,seed){const g=(k)=>t.find(x=>x.startsWith(k)),liq=c((g("liq")||
   if(plas)o+=el(32,12,15,3,"#fff",' opacity=".8" stroke="#e3d3cc" stroke-width="1"');
   o+=st("M23 18L25.5 50","#fff",1.8,' opacity=".5"');return o}
 const R={};
-function draw(name,key){const rec=R[key||name];if(!rec)return null;const seed=hs(name),[v,...t]=rec.split(" ");
+function draw(name,key){let rec=R[key||name];if(!rec)return null;if(typeof soupFix==="function")rec=soupFix(name,rec);const seed=hs(name),[v,...t]=rec.split(" ");
   if(v==="G")return glass(t,seed);
   if(v==="W"){const[k,...a]=t[0].split(":");let base=W[k]?W[k](...a):W.fruit(k);if(typeof base==="function")base=base(...a);return base+t.slice(1).map((x,i)=>{const[kk,a1,a2]=x.split(":"),[px,py]=[[52,48],[12,48],[52,18]][i%3];return I[kk]?I[kk](px,py,a1,a2):""}).join("")}
-  const bowl=v[0]==="B"||v[0]==="K",sl=bowl?SLB:SLP;let i=0;
+  const bowl=v[0]==="B"||v[0]==="K",sl=bowl?SLB:v[0]==="T"?SLT:SLP;let i=0;
   return vessel(v,seed)+t.map(x=>{let pos=null;const m=x.match(/@(\d+),(\d+)$/);if(m){pos=[+m[1],+m[2]];x=x.replace(/@.*$/,"")}const[k,a,b]=x.split(":");if(!I[k])return"";const[px,py]=pos||sl[i++%sl.length];return I[k](px,py,a,b)}).join("")}
 return{draw,R,I,vessel,glass,svg:(name,key)=>{if((key||name)==="Hot pot, typical meal"&&window.potSVG)return potSVG({style:(()=>{try{return S.prefs.potStyle==="iron"}catch(e){return false}})()?"iron":"copper",broths:["tomato","mala"],items:[["beef",1],["ftofu",2],["fball",2],["lettuce",1],["corn",1],["enoki",1]],uid:"hi"+(++artN)}).replace("<svg ",'<svg aria-hidden="true" ');if((key||name)==="Korean BBQ, typical meal"&&window.grillSVG)return grillSVG({items:[["belly",3],["galbi",2],["garlic",1],["kimchi",1],["prawn",1]],uid:"gi"+(++artN)}).replace("<svg ",'<svg aria-hidden="true" ');const d=draw(name,key);return d?`<svg viewBox="0 0 64 64" aria-hidden="true">${d}</svg>`:""}}
 })();
+
+/* richer food drawings */
+(function(){const A=ART,I=A.I;
+const el=(cx,cy,rx,ry,f,o="")=>`<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${f}"${o}/>`,ci=(cx,cy,r,f,o="")=>`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${f}"${o}/>`,
+pa=(d,f,o="")=>`<path d="${d}" fill="${f}"${o}/>`,st=(d,c,w,o="")=>`<path d="${d}" fill="none" stroke="${c}" stroke-width="${w}" stroke-linecap="round" stroke-linejoin="round"${o}/>`;
+const K={w:"#fffaf0",y:"#f3cf6a",gold:"#e8a94e",br:"#b9793f",dk:"#6b4630",red:"#e2607a",chili:"#c8382f",or:"#f39a4a",gr:"#8fcf8f",dg:"#4f9a5a",pale:"#f3e3c8",cr:"#fff6e6"};
+const col=k=>K[k]||k||"#fff";
+const shade=(h,f)=>{const m=/^#?([0-9a-f]{6})$/i.exec(h);if(!m)return h;const n=parseInt(m[1],16),r=n>>16,g=n>>8&255,b=n&255,t=v=>Math.max(0,Math.min(255,Math.round(f<0?v*(1+f):v+(255-v)*f)));return"#"+((t(r)<<16)|(t(g)<<8)|t(b)).toString(16).padStart(6,"0")};
+Object.assign(I,{
+nood:(x,y,a)=>{const c0=col(a||"y"),c1=shade(c0,-.16),c2=shade(c0,.35);let o=el(x,y+1,15,8.5,shade(c0,-.28),' opacity=".35"');
+  for(let i=0;i<8;i++){const yy=y-6+i*1.7,xx=x-14+(i%3);o+=st(`M${xx} ${yy}q3.5-3.6 7 0t7 0t7 0t5 .5`,i%2?c1:c0,1.9)}
+  return o+st(`M${x-10} ${y-3}q3.5-3 7 0t7 0`,c2,.9,' opacity=".9"')+st(`M${x-6} ${y+3}q3.5-3 7 0t7 0`,c2,.9,' opacity=".7"')},
+flat:(x,y,a)=>{const c0=col(a||"w"),c1=shade(c0,-.12);let o=el(x,y+1,15,8,shade(c0,-.3),' opacity=".28"');
+  for(let i=0;i<5;i++)o+=st(`M${x-14+(i%2)*2} ${y-5+i*2.6}q4.5-4 9 0t9 0t8 .5`,i%2?c1:c0,3.1);return o+st(`M${x-8} ${y-3}q4-3 8 0`,"#fff",.9,' opacity=".6"')},
+rice:(x,y,a)=>{const c0=col(a||"w"),g=[[-7,-3,20],[-3,-6,-30],[1,-7,10],[5,-4,-15],[8,0,35],[-9,1,-20],[-4,0,40],[0,-2,-10],[4,1,25],[-6,4,5],[-1,4,-35],[3,5,15],[7,4,-5],[-2,-4,60],[2,2,-50]];
+  return el(x,y+5,13,3.4,"rgba(120,80,50,.12)")+pa(`M${x-12.5} ${y+5}Q${x-13} ${y-10} ${x} ${y-10.5}Q${x+13} ${y-10} ${x+12.5} ${y+5}Q${x} ${y+9} ${x-12.5} ${y+5}Z`,c0,' stroke="rgba(170,140,100,.28)" stroke-width=".7"')+
+  g.map(([dx,dy,r])=>`<ellipse cx="${x+dx}" cy="${y+dy}" rx="1.5" ry=".7" fill="#fff" stroke="rgba(170,140,100,.35)" stroke-width=".35" transform="rotate(${r} ${x+dx} ${y+dy})"/>`).join("")+
+  pa(`M${x-8} ${y-6}q5-4 11-2`,"none",' stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".9"')},
+egh:(x,y)=>el(x+.6,y+1,5.6,6.8,"rgba(110,70,40,.15)")+el(x,y,5.4,6.6,"#fffdf8",' stroke="#efe3d1" stroke-width=".7"')+ci(x,y+.8,3.1,"#f6a821")+ci(x,y+.8,2.2,"#ffc23a")+ci(x-.9,y-.2,.8,"#fff3c4"),
+egf:(x,y)=>pa(`M${x-8} ${y}q-1-6 5-7q5-2 8 1q4 3 2 7q-2 5-8 5q-7 0-7-6z`,"#fffdf8",' stroke="#d9a35a" stroke-width="1.1"')+ci(x+.5,y,3.2,"#f6a821")+ci(x+.5,y,2.3,"#ffc23a")+ci(x-.5,y-1,.8,"#fff3c4"),
+cuc:(x,y)=>[[0,0,3.9],[5.6,2.6,3.5],[1.5,5.6,3.2]].map(([dx,dy,r])=>ci(x+dx,y+dy,r,"#3f8a4f")+ci(x+dx,y+dy,r-.8,"#b7e3a8")+ci(x+dx,y+dy,r-1.9,"#e8f7df")+[0,1,2].map(k=>el(x+dx+Math.cos(k*2.1)*1,y+dy+Math.sin(k*2.1)*1,.55,.3,"#c9e8b8")).join("")).join(""),
+sam:(x,y,a)=>{const c0=col(a||"chili");return pa(`M${x-6} ${y+1}q-1-6 6-6.5q7 0 6.5 6q0 4.5-6.5 4.5q-6 0-6-4z`,shade(c0,-.25))+pa(`M${x-4.5} ${y}q0-4.5 4.5-4.8q5 0 5 4.3q-.5 3-5 3q-4.5 0-4.5-2.5z`,c0)+
+  ci(x-2,y-2.2,1,"#fff",' opacity=".7"')+ci(x+2.5,y-.5,.6,"#fff",' opacity=".5"')+ci(x-1,y+1.5,.7,"#f2a28f")+ci(x+3,y+2,.6,"#f2a28f")+ci(x+.5,y-3,.5,"#7a1f1a")},
+nut:(x,y)=>[[-5,-1,15],[-1,-3,-20],[3,-1,30],[0,2,0],[-4,3,-35],[5,3,10]].map(([dx,dy,r])=>`<ellipse cx="${x+dx}" cy="${y+dy}" rx="2.1" ry="1.35" fill="#d39a5e" transform="rotate(${r} ${x+dx} ${y+dy})"/>`+ci(x+dx-.6,y+dy-.4,.5,"#f4d1a8")).join("")+
+  [[-6,6,-10],[2,6.5,12],[7,-3,-60]].map(([dx,dy,r])=>`<g transform="translate(${x+dx} ${y+dy}) rotate(${r})">${st("M-3.2 0q1.6-1 3.2-.2t3 .1","#b88a5a",1.4)}${ci(-3.1,-.1,.75,"#8a6040")}</g>`).join(""),
+prawn:(x,y)=>`<g transform="translate(${x} ${y})">${st("M-5 3q-2.5-9 6-8.5q6.5 .8 5.2 7.5","#f2774f",4.4)}${st("M-5 3q-2.5-9 6-8.5q6.5 .8 5.2 7.5","#ffa27e",2.2)}${[[-4.6,-1.5],[-2.6,-4.4],[1,-5.4],[4.2,-3.8]].map(([a,b])=>ci(a,b,.45,"#fff",' opacity=".8"')).join("")}${pa("M-5 3l-4 2.5l1 -3.6z","#e25a3a")}</g>`,
+slc:(x,y,a,b)=>{const c0=col(a||"pale"),c1=col(b||"cr");return[0,1,2,3].map(i=>`<g transform="rotate(${-12+i*8} ${x-6+i*4.4} ${y+2})">${pa(`M${x-8.5+i*4.4} ${y-5}h4.2q.9 0 .9 1v9.5q0 1-.9 1h-4.2q-.9 0-.9-1v-9.5q0-1 .9-1z`,c0,' stroke="'+shade(c0,-.2)+'" stroke-width=".5"')}${pa(`M${x-8.5+i*4.4} ${y-5}h4.2q.9 0 .9 1v2.2h-6v-2.2q0-1 .9-1z`,c1)}${st(`M${x-7.5+i*4.4} ${y}l3 1.5M${x-7.5+i*4.4} ${y+3}l3 1.2`,shade(c0,-.22),.45)}</g>`).join("")},
+won:(x,y)=>pa(`M${x-7} ${y+2}q-1-6 4-7q2-3 5 0q5 1 5 6q0 4-7 4q-6 0-7-3z`,"#fbe3a0",' stroke="#e3c66e" stroke-width=".6"')+st(`M${x-3} ${y-3}q1 2 0 4M${x} ${y-4}q1 2.5 0 5M${x+3} ${y-3}q1 2 0 4`,"#e3c66e",.8)+ci(x-2,y-2,.7,"#fff",' opacity=".7"'),
+grn:(x,y,a)=>{const c0=col(a||"dg"),c1=shade(c0,.25);return[[-4,0,-35],[3,-1,30],[0,3,-5]].map(([dx,dy,r])=>`<g transform="rotate(${r} ${x+dx} ${y+dy})">${pa(`M${x+dx-6} ${y+dy}q3-3.6 7-2.6q4 1 4.6 2.6q-.6 1.6-4.6 2.6q-4 1-7-2.6z`,c0)}${st(`M${x+dx-5.5} ${y+dy}h9`,c1,.6)}${st(`M${x+dx+4} ${y+dy}h3.5`,"#cfe8b8",1.6)}</g>`).join("")},
+herb:(x,y)=>[[-4,1],[1,-2],[4,2]].map(([dx,dy])=>ci(x+dx,y+dy,1.5,"#7cc47f")+ci(x+dx,y+dy,.7,"#d8f0c8")).join("")+st(`M${x-2} ${y+4}l1.2-3M${x+1} ${y+4}l-.5-3`,"#4f9a5a",1)
+});
+})();
+let SOUPTAGS=null;
+function soupFix(name,rec){if(rec[0]==="B"&&/ (nood|flat|thick)\b/.test(rec)){const p=rec.split(" "),[,a1,b1]=p[0].split(":");return"T:"+(a1||"w")+":"+(b1||"clr")+" "+p.slice(1).join(" ")}if(rec[0]!=="P"||rec[1]!==" ")return rec;if(!SOUPTAGS){SOUPTAGS={};try{for(const f of FOODS)if(/ soupy /.test(" "+f.tags+" "))SOUPTAGS[f.name]=f.tags}catch(e){return rec}}
+  const t=SOUPTAGS[name];if(!t||/\bdry\b/i.test(name))return rec;
+  const br=/ beef /.test(" "+t+" ")||/beef|braised|bak kut|herbal/i.test(name)?"#b97a4c":/ hot /.test(" "+t+" ")&&/tom ?y[au]m|laksa|curry|mala/i.test(name)?"#ec8a4a":/laksa|curry/i.test(name)?"#f0a03a":/tomato/i.test(name)?"#e9714f":"#efd9a8";
+  return"T:w:"+br+rec.slice(1)}
+
 Object.assign(ART.R,{
 "Green bean soup":"B:gr:#b9c98a mince:#8fae5a",
 "Black sesame paste":"B:pk:#3a2a26",
