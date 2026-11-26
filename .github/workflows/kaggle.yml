@@ -103,7 +103,8 @@ jobs:
               few = [l for l in lines if "too few" in l]; ok = [l for l in lines if l.rstrip().endswith("photos")]
               print("dishes with enough photos:", len(ok), "| left out:", len(few)); print("left out:", "; ".join(l.split(":")[0] for l in few)[:1500])
               print("\n".join(l for l in lines if any(k in l for k in ("classes", "training photos", "accuracy", "epoch", "MB", "weakest")))[-3000:])
-              print("----- last part of the Kaggle log -----"); print(text[-5000:])
+              clean = "\n".join(l[:400] for l in text.replace("\r", "\n").split("\n") if l.strip() and "%|" not in l)
+              print("----- last part of the Kaggle log -----"); print(clean[-16000:])
           PY
               [ "$JOB" = "style" ] && cp out/contact*.jpg report/ 2>/dev/null && echo "STYLES READY"
               [ "$JOB" = "style2" ] && cp out/contact_styles.jpg report/contact_styles_fast.jpg 2>/dev/null && echo "FAST STYLES READY"
