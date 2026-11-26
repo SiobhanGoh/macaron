@@ -35,7 +35,7 @@ jobs:
             ACTION="${{ github.event.inputs.action }}"
             [ -z "$ACTION" ] && ACTION=$(python -c "import json;print(json.load(open('training/kaggle_request.json'))['action'])")
             JOB=$(python -c "import json;print(json.load(open('training/kaggle_request.json')).get('job','model'))")
-            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art-images; NB=make_art.ipynb; TITLE="Macaron art images"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
+            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art-images; NB=make_art.ipynb; TITLE="Macaron art images"; elif [ "$JOB" = "style" ]; then KERNEL=siobhangoh/macaron-art-styles; NB=make_styles.ipynb; TITLE="Macaron art styles"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
             export KERNEL NB TITLE
             echo "action: $ACTION  job: $JOB"; date -u
             [ -z "$KAGGLE_API_TOKEN" ] && echo "KAGGLE_API_TOKEN secret is missing"
@@ -68,6 +68,7 @@ jobs:
               print("\n".join(l for l in lines if any(k in l for k in ("classes", "training photos", "accuracy", "epoch", "MB", "weakest")))[-3000:])
               print("----- last part of the Kaggle log -----"); print(text[-5000:])
           PY
+              [ "$JOB" = "style" ] && cp out/contact*.jpg report/ 2>/dev/null && echo "STYLES READY"
               if [ "$JOB" = "art" ] && ls out/*.webp >/dev/null 2>&1; then mkdir -p art/hotpot && cp out/*.webp art/hotpot/ && cp out/contact*.jpg report/ 2>/dev/null; echo "ART READY"; echo art=1 >> "$GITHUB_OUTPUT"; fi
               if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
             fi
