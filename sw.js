@@ -1,5 +1,5 @@
 /* Offline support: keeps a copy of the app on the phone. Bump VERSION when files change. */
-const VERSION="tingkat-v156";
+const VERSION="tingkat-v157";
 const SHELL=["./","index.html","manifest.webmanifest","icon-192.png","icon-512.png","i18n/ms.json","i18n/zh-Hans.json","i18n/zh-Hant.json","i18n/ko.json","i18n/ja.json"];
 self.addEventListener("install",e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(SHELL)).then(()=>self.skipWaiting()))});
 self.addEventListener("activate",e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
