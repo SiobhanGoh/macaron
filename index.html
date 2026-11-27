@@ -4319,13 +4319,20 @@ function goalOf(st){const gs=GOALS(st),bySex=S.profile?.sex==="male"?"arms":"leg
 const TYPEN={cardio:"Cardio",hiit:"HIIT",sculpt:"Sculpt and tone",build:"Muscle building",core:"Core",pilates:"Pilates-style",stretch:"Stretch and mobility",balance:"Balance and posture"},
 TYPED={cardio:"Walking, dance, boxing, bike",hiit:"Short fast bursts with rests",sculpt:"Resistance, lighter with more repeats",build:"Resistance, heavier with slow lowering",core:"Tummy and back",pilates:"Slow, controlled floor moves",stretch:"Loosen up and recover",balance:"One-leg and upper-back moves"},
 TYPES=st=>Object.keys(TYPEN).filter(x=>Array.isArray(st&&st.types)&&st.types.includes(x)),typeText=st=>{const t=TYPES(st);return t.length?t.map(x=>TYPEN[x]).join(", "):"A bit of everything"};
+/* five active days a week: every chosen kind gets its turn, never two hard days in a row, and repeats of a kind get a different session */
+function mixWeek(T,week){const n=T.length,heavy=x=>x==="sculpt"||x==="build"||x==="hiit",lights=T.filter(x=>!heavy(x));let hc=0,li=week;
+  const want=[0,1,2,3,4].map(j=>T[(week*5+j)%n]).map(t=>{if(!heavy(t))return t;hc++;return hc<=3?t:lights.length?lights[(li++)%lights.length]:"recover"}),
+  H=want.filter(heavy),L=want.filter(x=>!heavy(x)),hs=(week%2?[0,2,4]:[0,2,3]).slice(0,H.length),seq=[];let a=0,b=0;
+  for(let q=0;q<5;q++)seq.push(hs.includes(q)?H[a++]:L[b++]);
+  /* the same light kind on back-to-back days reads as a repeat: swap it with a later light day if one differs */
+  for(const[x,y]of[[0,1],[1,2],[3,4]])if(seq[x]===seq[y]&&!heavy(seq[y])){const z=[0,1,2,3,4].find(q=>q>y&&!heavy(seq[q])&&seq[q]!==seq[y]&&seq[q]!==seq[q-1===y?x:q-1]);if(z!=null){const t=seq[y];seq[y]=seq[z];seq[z]=t}}
+  return seq}
 function mixKind(st,i,week){const base=["a","cardio","b","rest","hiit","core","rest"][i%7],T=TYPES(st);if(base==="rest")return{kind:"rest"};
-  if(!T.length)return base==="a"?{kind:"a",style:"build"}:base==="b"?{kind:"b",style:"sculpt"}:base==="core"?{kind:["core","pilates","balance"][week%3]}:{kind:base};
-  const heavy=x=>x==="sculpt"||x==="build"||x==="hiit",adj=[0,1,1,0,1],seq=[];let p=(week*5)%T.length,ns=week,nc=week;
-  for(let j=0;j<5;j++){let pick=null;for(let n=0;n<T.length;n++){const c=T[(p+n)%T.length];if(adj[j]&&heavy(seq[j-1])&&heavy(c))continue;pick=c;p=(p+n+1)%T.length;break}seq.push(pick||"recover")}
-  const j=[0,1,2,4,5].indexOf(i%7);let out={kind:"stretch",recover:1};
-  for(let q=0;q<=j;q++){const t=seq[q];if(t==="sculpt"||t==="build"){out={kind:ns%2?"b":"a",style:t};ns++}else if(t==="cardio"){out={kind:"cardio"};nc++}else if(t==="hiit")out={kind:"hiit"};else if(t==="core")out={kind:"coreS"};else if(t==="recover")out={kind:"stretch",recover:1};else out={kind:t}}
-  return out}
+  if(!T.length)return base==="a"?{kind:"a",style:"build",occ:0}:base==="b"?{kind:"b",style:"sculpt",occ:1}:base==="core"?{kind:["core","pilates","balance"][week%3],occ:0}:{kind:base,occ:0};
+  const seq=mixWeek(T,week),j=[0,1,2,4,5].indexOf(i%7),t=seq[j],occ=seq.slice(0,j).filter(x=>x===t).length,ns=seq.slice(0,j).filter(x=>x==="sculpt"||x==="build").length+week;
+  if(t==="sculpt"||t==="build")return{kind:ns%2?"b":"a",style:t,occ:ns-week};
+  if(t==="recover")return{kind:"stretch",recover:1,occ};
+  return{kind:t==="core"?"coreS":t,occ}}
 /* name, family, unit, places (h home, g gym, o outdoors), equipment needed, levels, 1 if it loads the knees */
 const MV=[
 ["Squats","sq","","ho",0,"012",1],["Sumo squats","sq","","ho",0,"012",1],["Chair squats","sq","","h","chair","012",1],["Split squats","sq","L","ho",0,"12",1],["Pause squats","sq","","ho",0,"12",1],
@@ -4378,9 +4385,9 @@ function cardAlts(ex,st){const pl=plOf(st),E=new Set(Array.isArray(st.equip)?st.
   return all.some(c=>c[0]===ex.title)?ok:[]}
 function cardSet(ex,c){const m=(ex.steps.join(" ").match(/(\d+) minutes/)||[0,ex.minutes])[1];ex.title=c[0];ex.steps=c[1](m)}
 /* a different pick for each day and each week, so the same set rarely comes round twice */
-function mixVary(e,st,i,week){if(!e||e.intensity==="rest")return e;
-  const cs=cardAlts(e,st);if(cs.length>1){const c=cs[(i+week)%cs.length];if(c[0]!==e.title)cardSet(e,c);return e}
-  e.steps.forEach((x,j)=>{const p=mvParse(x);if(!p||p.pre||MVBY.get(p.name)[1]==="hi")return;const all=[p.name,...mvCands(p.name,st,e,j)];if(all.length<2)return;const to=all[(i+week+j)%all.length];if(to!==p.name)e.steps[j]=mvStep(p,to)});
+function mixVary(e,st,i,week){if(!e)return e;const occ=num(e.occ);delete e.occ;if(e.intensity==="rest")return e;
+  const cs=cardAlts(e,st);if(cs.length>1){const c=cs[(week+occ)%cs.length];if(c[0]!==e.title)cardSet(e,c);return e}
+  e.steps.forEach((x,j)=>{const p=mvParse(x);if(!p||p.pre||MVBY.get(p.name)[1]==="hi")return;const all=[p.name,...mvCands(p.name,st,e,j)];if(all.length<2)return;const to=all[(i+week+j+occ)%all.length];if(to!==p.name)e.steps[j]=mvStep(p,to)});
   return e}
 function exSwapDo(k,i){const pd=S.plan&&S.plan.days.find(x=>x.date===k),ex=pd&&pd.exercise;if(!ex||ex.steps[i]==null)return;const st=S.plan.settings||{},untick=all=>{if(S.plan.ticks&&S.plan.ticks[k])S.plan.ticks[k]=all?[]:S.plan.ticks[k].filter(v=>v!==i);if(S.plan.sets&&S.plan.sets[k]){if(all)S.plan.sets[k]={};else delete S.plan.sets[k][i]}};let to="";
   const cs=cardAlts(ex,st);
@@ -4609,9 +4616,9 @@ function exCore(st,i,week,w){const MK=mixKind(st,i,week),sty=MK.style,L=Math.max
     else{title="Full-body strength at home";steps=["Warm up: march on the spot for 2 minutes",`Squats: ${SR}`,`${L?"Push-ups":"Wall or knee push-ups"}: ${sets} sets of ${Math.max(5,r-3)}`,`Glute bridges: ${SR}`,`Plank: ${sets} holds of ${hold} seconds`,"Rest 45 seconds between sets"]}}
   else if(kind==="b"){if(pl==="gym"){title="Gym: full body B";steps=["Warm up: 5 easy minutes on the treadmill or bike",`Romanian deadlift with dumbbells: ${SR}`,`Seated row: ${SR}`,`Shoulder press machine: ${SR}`,`Leg curl: ${SR}`,`Side plank: ${sets} holds of ${Math.round(hold/2)} seconds each side`]}
     else{title=pl==="out"?"Legs and core outdoors":"Legs and core at home";steps=["Warm up: march on the spot for 2 minutes",`Reverse lunges: ${sets} sets of ${r} each leg`,`Wall sit: ${sets} holds of ${hold} seconds`,`Dead bug: ${sets} sets of ${r} each side`,`Superman: ${SR}`]}}
-  else if(kind==="hiit"&&(pl==="home"||week%2===1)){met=6;const sec=st.diff==="hard"?45:st.diff==="medium"?40:30,
+  else if(kind==="hiit"&&(pl==="home"||(week+num(MK.occ))%2===1)){met=6;const sec=st.diff==="hard"?45:st.diff==="medium"?40:30,
       LV=[["Step jacks","Shadow boxing","Marching with high knees","Side steps","Slow butt kicks","Standing knee drives"],["Jumping jacks","High knees","Mountain climbers","Skaters","Butt kicks","Shadow boxing","Fast feet"],["Jumping jacks","Burpees","Mountain climbers","Skaters","Squat jumps","High knees","Fast feet"]][L],
-      o=(week*2)%LV.length,mv=[...LV.slice(o),...LV.slice(0,o)].slice(0,5),rr=Math.max(2,Math.min(6,Math.floor((min-5)/(5*(sec+20)/60))));
+      o=(week*2+num(MK.occ)*3)%LV.length,mv=[...LV.slice(o),...LV.slice(0,o)].slice(0,5),rr=Math.max(2,Math.min(6,Math.floor((min-5)/(5*(sec+20)/60))));
     title=pl==="gym"?"Cardio circuit on the mats":"Cardio circuit";steps=["Warm up: march on the spot for 2 minutes",...mv.map(n=>`${n}: ${rr} rounds of ${sec} seconds`),`Tip: do the moves in order, then repeat the whole set ${rr} times`,"Rest 20 seconds after each move, and 1 minute after each round","Cool down with 2 minutes of slow walking"];inten=L?"moderate":"easy"}
   else if(kind==="hiit"){met=5.5;if(pl==="gym"){title="Bike intervals";steps=["Warm up: 3 easy minutes",`Repeat ${rounds} times: 1 minute fast, 2 minutes easy`,"Cool down with 2 easy minutes"]}
     else if(pl==="out"){title="Slope or stair repeats";steps=["Warm up: brisk walk for 3 minutes",`Repeat ${rounds} times: walk fast up a slope or stairs for 1 minute, then walk down slowly`,"Cool down with 2 minutes of slow walking"]}
@@ -4623,7 +4630,7 @@ function exCore(st,i,week,w){const MK=mixKind(st,i,week),sty=MK.style,L=Math.max
   else{title="Stretch and core";steps=["Cat-cow: 10 slow reps","Bird dog: 2 sets of 10 each side",`Side plank: 2 holds of ${Math.round(hold/2)} seconds each side`,"Child's pose, hamstring and hip stretches: 30 seconds each",`Keep moving gently for ${min} minutes in total`];inten="easy";met=2.5}
   if(sty&&(kind==="a"||kind==="b"))steps.push(sty==="build"?"Tip: lower slowly for a count of three on every rep, and add weight once the last two reps feel easy":"Tip: keep rests to about 30 seconds and the moves smooth, with light weights or none");
   const tag=kind==="rest"?"":sty?TYPEN[sty]:({cardio:"Cardio",hiit:"HIIT",core:"Core",coreS:"Core",pilates:TYPEN.pilates,balance:TYPEN.balance,stretch:MK.recover?"Recovery":TYPEN.stretch})[kind]||"";
-  return{title,minutes:m,intensity:inten,steps,burn:exBurn(st,met,w,m),tag}}
+  return{title,minutes:m,intensity:inten,steps,burn:exBurn(st,met,w,m),tag,occ:num(MK.occ)}}
 
 /* gentle workouts, picture guides and form tips */
 function exKnee(st,i,week,w){const L=Math.max(0,["Beginner","Some experience","Fit and active"].indexOf(st.level)),min=num(st.minutes,20),r=Math.max(4,[6,8,10][L]+Math.min(week,4)+DF(st)),sets=(min>=30?3:2)+(st.diff==="hard"?1:0),pl=String(st.place).startsWith("Gym")?"gym":String(st.place).startsWith("Outdoors")?"out":"home",kind=["a","cardio","b","rest","hiit","core","rest"][i%7],SR=`${sets} sets of ${r}`,rounds=Math.max(3,Math.floor(min/4));
