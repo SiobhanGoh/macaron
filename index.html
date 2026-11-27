@@ -3790,7 +3790,7 @@ function dn(n){const f=FOODBY.get(n);if(!f)return n;if(f._dn!==undefined)return 
   if(!DNMAX){DNMAX=new Map();for(const g of FOODS){const w=dnCut(g.name,g.place)[1];if(w>(DNMAX.get(g.place)||0))DNMAX.set(g.place,w)}}
   const [d,w]=dnCut(f.name,f.place);return f._dn=(w>=2||w===DNMAX.get(f.place))?d:f.name}
 const dnShop=n=>{const f=FOODBY.get(n);return f&&dn(n)!==f.name?f.place.replace(/,.*$/,""):""};
-const foodHay=f=>f._h||(f._h=canon((f.name+" "+(f.tags||"")+" "+f.detail+" "+(f.place||"")).toLowerCase()));
+const foodHay=f=>{const L=I18N.dict?I18N.lang:"en";if(f._hl!==L){f._hl=L;f._h2="";let t="";if(L!=="en"){t=trS(f.name);if(t===f.name)t=""}f._h=canon((f.name+" "+t+" "+(f.tags||"")+" "+f.detail+" "+(f.place||"")).toLowerCase())}return f._h};
 const has=(f,t)=>(" "+f.tags+" ").includes(" "+t+" ");
 const CUISINES=["malay","chinese","indian","japanese","korean","thai","western","mideast"];
 const cuisineOf=f=>{const c=CUISINES.find(x=>has(f,x));return c?c==="mideast"?"Middle Eastern":c[0].toUpperCase()+c.slice(1):""};
