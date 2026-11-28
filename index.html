@@ -690,7 +690,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;ba
 .themes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:8px}.themes button{display:grid;justify-items:center;gap:4px;padding:10px 4px;font-size:13px}.themes span{font-size:22px;line-height:1}.themes button[aria-pressed=true]{border-color:var(--ink)}
 .drow{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;border-top:1px solid var(--line)}.drow>button{grid-template-columns:40px minmax(0,1fr) auto!important;border-top:0!important;align-items:center}.drow.in{background:var(--a3)}
 .dq{display:grid;grid-template-columns:36px 28px;align-items:center;text-align:center;padding-right:6px}.dq button{width:36px;min-height:36px;padding:0;border-radius:50%;font-size:20px}.dq b{font-variant-numeric:tabular-nums}.kindsH{margin:14px 0 8px;font-size:14px}.kinds{display:flex;flex-wrap:wrap;gap:8px}.kinds button{display:grid;gap:0;text-align:left;padding:8px 14px;min-height:44px;border-radius:16px;border:1.5px solid var(--line);background:var(--card);color:var(--ink)}.kinds button b{font-size:14px}.kinds button small{color:var(--mute);font-size:12px}.dq.pcq{grid-template-columns:34px auto 34px;gap:0;padding:2px;overflow:hidden}.dq.pcq button{width:34px;min-height:34px;border:0;box-shadow:none;background:transparent;display:grid;place-items:center;line-height:1}.dq.pcq b{white-space:nowrap;padding:0 2px;font-size:14px}
-#dishSheet .panel.tall{grid-template-rows:auto auto auto auto minmax(0,1fr) auto}#dishSheet .flist{min-height:0}#dFoot{min-height:0}#dFoot{padding-top:8px;border-top:1.5px solid var(--line)}#custPop{position:fixed;inset:0;z-index:95}#custPop .cScrim{position:absolute;inset:0;background:rgb(40 20 30/.18);opacity:0;transition:opacity .18s}#custPop.open .cScrim{opacity:1}
+#dishSheet .panel.tall{grid-template-rows:auto auto auto auto minmax(0,1fr) auto}#dishSheet .flist{min-height:0}#dFoot{min-height:0}#dFoot{padding-top:8px;border-top:1.5px solid var(--line)}#custPop,#entPop{position:fixed;inset:0;z-index:95}#entPop .cScrim{position:absolute;inset:0;background:rgb(40 20 30/.3);opacity:0;transition:opacity .18s}#entPop.open .cScrim{opacity:1}#entPop.open .cCard{transform:translateY(-50%)!important;opacity:1}.entCard .entries{margin:0;padding:0;list-style:none}.entCard .entries li{border:0;padding:0;background:none;box-shadow:none}.entCard .erow{pointer-events:none}.entCard .edit{padding:12px 0 4px}.entCard .cBtns{margin-top:12px}#custPop .cScrim{position:absolute;inset:0;background:rgb(40 20 30/.18);opacity:0;transition:opacity .18s}#custPop.open .cScrim{opacity:1}
 .cCard{position:absolute;left:12px;right:12px;bottom:calc(env(safe-area-inset-bottom) + 18px);max-width:520px;margin:0 auto;max-height:74vh;overflow:auto;padding:18px 16px 14px;border-radius:28px;background:color-mix(in srgb,var(--card) 58%,transparent);-webkit-backdrop-filter:blur(24px) saturate(1.7);backdrop-filter:blur(24px) saturate(1.7);border:1px solid rgb(255 255 255/.55);box-shadow:0 24px 60px -18px color-mix(in srgb,var(--pk) 55%,rgb(0 0 0/.35)),inset 0 1px 0 rgb(255 255 255/.7),inset 0 0 0 1px color-mix(in srgb,var(--pk) 18%,transparent);transform:translateY(16px) scale(.97);opacity:0;transition:transform .22s var(--eio),opacity .18s}
 #custPop.open .cCard{transform:translateY(-50%);opacity:1}
 @media (prefers-reduced-motion:reduce){.cCard,#custPop .cScrim{transition:none}}
@@ -1262,6 +1262,7 @@ body.exFull .psub{position:sticky;top:0;z-index:5;padding:8px 0;align-items:cent
     <div id="dFoot" hidden><div id="dEcon" hidden></div><select id="listSlot" class="sr" tabindex="-1" aria-hidden="true"></select></div>
   </div>
 </div>
+<div id="entPop" hidden><div class="cScrim" data-act="entClose"></div><div class="cCard entCard" role="dialog" aria-modal="true" aria-label="Edit food"><div id="eBody"></div></div></div>
 <div id="custPop" hidden><div class="cScrim" data-act="cCancel"></div><div class="cCard" role="dialog" aria-modal="true" aria-labelledby="cTitle"><div id="cBody"></div></div></div>
 <div id="tour" hidden><div class="tRing"></div><div class="tBub" role="dialog" aria-live="polite" aria-labelledby="tTit"><small id="tN"></small><h3 id="tTit"></h3><p id="tTxt"></p><div class="rowb"><button class="ghost" data-act="tourSkip">Skip</button><button class="primary" data-act="tourNext" id="tNext">Next</button></div></div></div>
 <div class="sheet pg" id="buildSheet" hidden>
@@ -4054,7 +4055,7 @@ function entryArt(e){try{if(e.build){const a=buildArt(e.build);if(a)return a}con
 const PCRX=/^(\d+)\s+(pieces|pcs|sticks|skewers|balls|wings|buns|rolls|dumplings|slices|biscuits|cookies|scoops|drumsticks|nuggets|wontons|tarts|puffs|eggs|prawns|triangles|macarons|kuih)\b(.*)$/i;
 function pieceInfo(e){const n=String(e.sz0?.name||e.name||""),d=String(e.sz0?.detail||e.detail||"").trim();let m=d.match(PCRX);if(m&&/\d/.test(m[3]))m=null;if(!m){const k=n.match(/, (\d+) (pieces|sticks|skewers|wings|balls|rolls|slices)$/i);if(k)m=[k[0],k[1],k[2],""]}if(!m)return null;const c=+m[1];return c>1&&c<=40?{n:c,unit:m[2].toLowerCase()}:null}
 const pcUnit=(u,c)=>c===1?u.replace(/ies$/,"ie").replace(/s$/,""):u;
-function entryHtml(e){if(e.pt==="breastns")try{applyVar(e)}catch(x){}const m=num(e.mult,1),th=safeThumb(e.thumb),id=esc(e.id),open=S.open===e.id,fav=S.favs.list.some(f=>f.name===e.name);
+function entryHtml(e,pop){if(e.pt==="breastns")try{applyVar(e)}catch(x){}const m=num(e.mult,1),th=safeThumb(e.thumb),id=esc(e.id),open=!!pop,fav=S.favs.list.some(f=>f.name===e.name);
   const rng=num(e.low)&&num(e.high)&&num(e.high)-num(e.low)>10?`${fmt(num(e.low)*m)} to ${fmt(num(e.high)*m)} kcal`:"";
   const pi=pieceInfo(e),pc=pi?Math.round(m*pi.n):0;
   const det=[pi&&pc!==pi.n?String(e.detail).replace(new RegExp("\\b"+pi.n+" "+pi.unit,"i"),`${pc} of ${pi.n} ${pi.unit}`):e.detail,rng,!pi&&m!==1?`${PORTION[m]||"×"+m} portion`:""].filter(Boolean).map(String).join(". ");
@@ -4268,6 +4269,10 @@ function trayEntry(t){const e=entryOf(t.f,$("#listSlot").value||"lunch",t.tab),o
 const trayKcal=t=>{const e=trayEntry(t);return num(e.kcal)*e.mult};
 function canCustom(f){const e={name:f.name,detail:f.detail};return!!(sizeKind(e)||partKind(e)||leaveOpts(e).length||pieceInfo(e))}
 let custName=null,custSnap=null,dSess=[]; function openCust(n,fresh){custName=n;{const t=dTray.find(x=>x.f.name===n);custSnap=t&&!fresh?JSON.parse(JSON.stringify({n:t.n,pc:t.pc,opt:t.opt||{lo:[]}})):null}renderCust();const p=$("#custPop");p.hidden=false;requestAnimationFrame(()=>p.classList.add("open"))}
+function renderEntPop(){const p=$("#entPop");if(!p)return;const e=S.open&&day(S.view).entries.find(x=>x.id===S.open);
+  if(!e){if(!p.hidden&&p.classList.contains("open")){p.classList.remove("open");setTimeout(()=>{if(!S.open)p.hidden=true},calm?0:180)}return}
+  const c=p.querySelector(".cCard"),st=c.scrollTop;$("#eBody").innerHTML=`<ul class="entries">${entryHtml(e,true)}</ul><div class="cBtns"><button class="primary" data-act="entClose">Done</button></div>`;c.scrollTop=st;
+  if(p.hidden){p.hidden=false;requestAnimationFrame(()=>p.classList.add("open"))}}
 function closeCust(){const p=$("#custPop");p.classList.remove("open");setTimeout(()=>{p.hidden=true},calm?0:180);custName=null;renderDish();dFoot()}
 function renderCust(){const t=dTray.find(x=>x.f.name===custName);if(!t){closeCust();return}const f=t.f,o=t.opt=t.opt||{lo:[]},e0={name:f.name,detail:f.detail},sk=sizeKind(e0),pk=partKind(e0),lo=leaveOpts(e0),pi=pieceInfo(e0),k=trayKcal(t);
   const pdf=pk?partDef(e0,pk):"",d0=pk?num(PARTS[pk].opts.find(x=>x[0]===pdf)[2].kcal):0;
@@ -6903,6 +6908,22 @@ function buildLog(){const K=KITS[B.kit],sel=B.order.map(id=>bOpt(B.kit,id)).filt
   const k=B.date||S.view,fromPlan=!!B.date;$("#bArt").classList.add("joined");$("#bGo").disabled=true;
   setTimeout(()=>{closeSheets();if(!fromPlan&&curView!=="today")location.hash="today";addEntry(k,e);if(fromPlan&&curView==="plan")renderPlan();if(!calm)setTimeout(confetti,300)},calm?0:950)}
 
+
+{const _rt=renderToday;renderToday=function(){const r=_rt.apply(this,arguments);try{renderEntPop()}catch(x){}return r}}
+/* swipe from the left edge to go back, like iPhone: works on any page that has a Back button */
+(()=>{const ok=()=>!calm;let st=null;
+  const target=()=>{const sh=[...document.querySelectorAll(".sheet.pg:not([hidden])")].pop();if(sh)return{el:sh.querySelector(".panel"),back:sh.querySelector(".backLnk")};
+    const v=document.querySelector(".view.on"),b=v&&v.querySelector(":scope>.backLnk");return b?{el:v,back:b}:null};
+  addEventListener("touchstart",ev=>{if(ev.touches.length!==1)return;const t=ev.touches[0];if(t.clientX>28)return;const g=target();if(!g||!g.el)return;st={x:t.clientX,y:t.clientY,t:Date.now(),g,on:false}},{passive:true});
+  addEventListener("touchmove",ev=>{if(!st)return;const t=ev.touches[0],dx=t.clientX-st.x,dy=t.clientY-st.y;
+    if(!st.on){if(Math.abs(dy)>14&&Math.abs(dy)>dx){st=null;return}if(dx>10&&dx>Math.abs(dy)){st.on=true;st.g.el.style.transition="none"}}
+    if(st.on){ev.preventDefault();const d=Math.max(0,dx);st.d=d;st.g.el.style.transform=`translateX(${d}px)`;st.g.el.style.opacity=String(1-Math.min(.35,d/innerWidth*.5))}},{passive:false});
+  const end=()=>{if(!st)return;const g=st.g,d=st.d||0,v=d/Math.max(1,Date.now()-st.t),go=st.on&&(d>innerWidth*.33||v>.6&&d>40);
+    if(st.on){g.el.style.transition=ok()?"transform .22s ease-out,opacity .22s ease-out":"none";
+      if(go){g.el.style.transform=`translateX(${innerWidth}px)`;g.el.style.opacity="0";setTimeout(()=>{g.back.click();setTimeout(()=>{g.el.style.transition="";g.el.style.transform="";g.el.style.opacity=""},380)},ok()?200:0)}
+      else{g.el.style.transform="";g.el.style.opacity="";setTimeout(()=>{g.el.style.transition=""},240)}}
+    st=null};
+  addEventListener("touchend",end,{passive:true});addEventListener("touchcancel",end,{passive:true})})();
 /* first-time tour */
 const TOUR=[["#fab","Scan your food","Tap the middle button to snap your meal. Hold it for search, labels and more."],['.tabs a[href="#plan"]',"Your personal plan","Tap Plan for a week of meals and workouts made for you."],['.tabs a[href="#progress"]',"See how you're doing","Progress has your check-in calendar, weight, measurements and weekly review."],['.tabs a[href="#me"]',"Make it yours","Me is where you edit your preferences, change the colour mood and back up your data."]];
 let ti=0,tMode="tour",tEl=null;
@@ -7244,7 +7265,7 @@ function onbFinish(){const p=onbProfile(),k=today();if(/sweet tooth/i.test(p.tra
 
 /* routing with #057 panel swap: old fades .2 s, new starts .1 s later and rises 8 px */
 const VIEWS=["today","add","scan","plan","progress","me"];
-function show(v){if(v==="add"){const e=$("#dishCount");if(e)e.textContent=FOODS.length+" dishes and drinks"}for(const x of VIEWS){const el=$("#v-"+x);el.classList.remove("out");el.classList.toggle("on",x===v)}$("#main").scrollTop=0;window.scrollTo(0,0);setTimeout(()=>{$("#main").scrollTop=0;window.scrollTo(0,0)},60);
+function show(v){if(v!=="today"&&S.open){S.open=null;try{renderEntPop()}catch(x){}}if(v==="add"){const e=$("#dishCount");if(e)e.textContent=FOODS.length+" dishes and drinks"}for(const x of VIEWS){const el=$("#v-"+x);el.classList.remove("out");el.classList.toggle("on",x===v)}$("#main").scrollTop=0;window.scrollTo(0,0);setTimeout(()=>{$("#main").scrollTop=0;window.scrollTo(0,0)},60);
   if(v==="today")renderToday();else if(v==="plan"){renderPlan();}else if(v==="progress")renderProgress();else if(v==="me"){fillMe();renderGlass();renderGame();renderMood();renderSuppMe();renderRanks();renderNever();renderBackup();renderCalc();renderLearn()}else if(v==="scan"){setSeg($("#modeSeg"),Math.max(0,MODES.indexOf(scanMode)),2);scanChips();updateScanTotal()}
   const sel=v==="today"?"#v-today .wrap>*":v==="me"?"#v-me>*":v==="progress"?"#v-progress>*":"";if(sel&&window.gsap&&!calm&&!S.seen[v]){S.seen[v]=1;gsap.from($$(sel).filter(el=>el.offsetHeight>0),{y:22,opacity:0,duration:.5,stagger:.06,ease:"power3.out",clearProps:"transform,opacity"})}}
 function route(){if(!/^#plan/.test(location.hash))document.body.classList.remove("exFull");let v=location.hash.slice(1);if(!VIEWS.includes(v))v="today";if(v==="plan"&&v!==curView)S.planSub="";if(v===curView){show(v);return}
@@ -7288,6 +7309,7 @@ document.addEventListener("click",ev=>{const b=ev.target.closest("[data-act]");i
   else if(a==="supDel"){S.prefs.supps=(S.prefs.supps||[]).filter(x=>x.id!==k);store.set("prefs",S.prefs);renderSuppMe()}
   else if(a==="water"){const d=day(vk),was=d.water;d.water=d.water===i+1?i:i+1;if(d.water>(d.wx||0)){addXP((d.water-(d.wx||0))*2+(d.water>=WATER&&(d.wx||0)<WATER?10:0));d.wx=d.water}saveDay(vk);renderToday();if(d.water>was){$$("#glasses .glass").forEach((g,j)=>{if(j>=was&&j<d.water){g.classList.remove("sip");void g.offsetWidth;g.classList.add("sip")}})}if(d.water===WATER&&was<WATER){setTimeout(confetti,calm?0:900);toast("All 8 glasses finished. Well done.")}}
   else if(a==="toggle"){S.open=S.open===b.dataset.id?null:b.dataset.id;renderToday()}
+  else if(a==="entClose"){S.open=null;renderToday()}
   else if(a==="size"){const e=day(vk).entries.find(x=>x.id===b.dataset.id);if(e){setSize(e,b.dataset.s);saveDay(vk);renderToday()}}
   else if(a==="part"){const e=day(vk).entries.find(x=>x.id===b.dataset.id);if(e){setPart(e,b.dataset.s);saveDay(vk);renderToday()}}
   else if(a==="pcs"){const e=day(vk).entries.find(x=>x.id===b.dataset.id),pi=e&&pieceInfo(e);if(e&&pi){const c=Math.max(1,Math.min(pi.n*4,Math.round(num(e.mult,1)*pi.n)+num(b.dataset.d)));e.mult=c/pi.n;saveDay(vk);renderToday()}}
