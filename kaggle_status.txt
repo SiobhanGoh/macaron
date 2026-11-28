@@ -1,0 +1,6 @@
+action: logs  job: photos
+Sat Nov 28 12:47:45 UTC 2026
+Kaggle CLI 2.2.5
+
+
+siobhangoh/macaron-food-photos has status "KernelWorkerStatus.RUNNING"
