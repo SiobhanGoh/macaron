@@ -35,8 +35,9 @@ jobs:
             ACTION="${{ github.event.inputs.action }}"
             [ -z "$ACTION" ] && ACTION=$(python -c "import json;print(json.load(open('training/kaggle_request.json'))['action'])")
             JOB=$(python -c "import json;print(json.load(open('training/kaggle_request.json')).get('job','model'))")
-            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art-images; NB=make_art.ipynb; TITLE="Macaron art images"; elif [ "$JOB" = "style" ]; then KERNEL=siobhangoh/macaron-art-styles; NB=make_styles.ipynb; TITLE="Macaron art styles"; elif [ "$JOB" = "style2" ]; then KERNEL=siobhangoh/macaron-art-styles-fast; NB=make_styles_fast.ipynb; TITLE="Macaron art styles fast"; elif [ "$JOB" = "dishart" ]; then KERNEL=siobhangoh/macaron-dish-art; NB=make_dishart.ipynb; TITLE="Macaron dish art"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
-            export KERNEL NB TITLE
+            if [ "$JOB" = "art" ]; then KERNEL=siobhangoh/macaron-art-images; NB=make_art.ipynb; TITLE="Macaron art images"; elif [ "$JOB" = "style" ]; then KERNEL=siobhangoh/macaron-art-styles; NB=make_styles.ipynb; TITLE="Macaron art styles"; elif [ "$JOB" = "style2" ]; then KERNEL=siobhangoh/macaron-art-styles-fast; NB=make_styles_fast.ipynb; TITLE="Macaron art styles fast"; elif [ "$JOB" = "dishart" ]; then KERNEL=siobhangoh/macaron-dish-art; NB=make_dishart.ipynb; TITLE="Macaron dish art"; elif [ "$JOB" = "photos" ]; then KERNEL=siobhangoh/macaron-food-photos; NB=prepare_food_photos.ipynb; TITLE="Macaron food photos"; GPU=false; elif [ "$JOB" = "model10" ]; then KERNEL=siobhangoh/macaron-food-model-v10; NB=train_food_model_v10.ipynb; TITLE="Macaron food model v10"; SOURCES="siobhangoh/macaron-food-photos,siobhangoh/macaron-food-photo-model"; else NB=train_food_model.ipynb; TITLE="Macaron food photo model"; fi
+            GPU=${GPU:-true}; SOURCES=${SOURCES:-}
+            export KERNEL NB TITLE GPU SOURCES
             echo "action: $ACTION  job: $JOB"; date -u
             [ -z "$KAGGLE_API_TOKEN" ] && echo "KAGGLE_API_TOKEN secret is missing"
             pip -q install "kaggle>=1.8.0" six 2>&1 | tail -2
@@ -46,11 +47,11 @@ jobs:
               python - <<'PY'
           import json, os
           json.dump({"id": os.environ["KERNEL"], "title": os.environ["TITLE"], "code_file": os.environ["NB"],
-                     "language": "python", "kernel_type": "notebook", "is_private": True, "enable_gpu": True,
-                     "enable_internet": True, "dataset_sources": [], "competition_sources": [], "kernel_sources": []},
+                     "language": "python", "kernel_type": "notebook", "is_private": True, "enable_gpu": os.environ["GPU"] == "true",
+                     "enable_internet": True, "dataset_sources": [], "competition_sources": [], "kernel_sources": [x for x in os.environ["SOURCES"].split(",") if x]},
                     open("kernel/kernel-metadata.json", "w"), indent=1)
           PY
-              kaggle kernels push -p kernel --accelerator NvidiaTeslaT4 2>&1 || kaggle kernels push -p kernel 2>&1
+              if [ "$GPU" = "true" ]; then kaggle kernels push -p kernel --accelerator NvidiaTeslaT4 2>&1 || kaggle kernels push -p kernel 2>&1; else kaggle kernels push -p kernel 2>&1; fi
             fi
             if [ "$ACTION" = "quota" ]; then
               python - <<'PY'
@@ -110,7 +111,9 @@ jobs:
               [ "$JOB" = "style2" ] && cp out/contact_styles.jpg report/contact_styles_fast.jpg 2>/dev/null && echo "FAST STYLES READY"
               if [ "$JOB" = "dishart" ] && ls out/c*.webp >/dev/null 2>&1; then mkdir -p art/dish && cp out/c*.webp art/dish/ && cp out/contact*.jpg report/ 2>/dev/null; echo "DISH ART READY: $(ls out/c*.webp | wc -l) pictures"; echo dish=1 >> "$GITHUB_OUTPUT"; fi
               if [ "$JOB" = "art" ] && ls out/*.webp >/dev/null 2>&1; then mkdir -p art/hotpot && cp out/*.webp art/hotpot/ && cp out/contact*.jpg report/ 2>/dev/null; echo "ART READY"; echo art=1 >> "$GITHUB_OUTPUT"; fi
-              if [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; [ -s out/parts.json ] && cp out/parts.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
+              if [ "$JOB" = "photos" ]; then ls out/*.tar >/dev/null 2>&1 && echo "PHOTOS READY: $(ls out/*.tar | wc -l) packs"; python -c "import json;m=json.load(open('out/meta.json'));print('photos:',m['photos'],'duplicates removed:',m['duplicates_removed'])" 2>&1; fi
+              if [ "$JOB" = "model10" ] && [ -s out/food.onnx ]; then mkdir -p model_candidate && cp out/food.onnx out/labels.json out/parts.json out/report.json model_candidate/ && echo "CANDIDATE READY" && python -c "import json;r=json.load(open('out/report.json'));print('final score: right first time',r['right_first_time'],'in top 3',r['in_top_3'],'dishes',r['dishes'])"; echo cand=1 >> "$GITHUB_OUTPUT"; fi
+              if [ "$JOB" = "model" ] && [ -s out/food.onnx ] && [ -s out/labels.json ]; then cp out/food.onnx out/labels.json model/; [ -s out/parts.json ] && cp out/parts.json model/; echo "MODEL READY"; echo ready=1 >> "$GITHUB_OUTPUT"; fi
             fi
           } > report/kaggle_status.txt 2>&1
           cat report/kaggle_status.txt
@@ -121,6 +124,14 @@ jobs:
           git config user.email "216317456+SiobhanGoh@users.noreply.github.com"
           git add model/food.onnx model/labels.json; [ -f model/parts.json ] && git add model/parts.json || true
           git commit -m "Add the trained food photo model" || true
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
+      - name: Save the candidate model (not live until tested)
+        if: steps.run.outputs.cand == '1'
+        run: |
+          git config user.name "Siobhan Goh"
+          git config user.email "216317456+SiobhanGoh@users.noreply.github.com"
+          git add model_candidate
+          git commit -m "Add the version 10 candidate photo model for testing" || true
           for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 10; done
       - name: Save the images into the app
         if: steps.run.outputs.art == '1'
