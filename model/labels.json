@@ -1,7 +1,87 @@
 [
  {
-  "label": "ais_kacang_abc",
-  "food": "Ais kacang (ABC)"
+  "label": "6_inch_veggie_delite_with_egg",
+  "food": "6-inch Veggie Delite with egg"
+ },
+ {
+  "label": "6_inch_chicken_teriyaki_sub",
+  "food": "6-inch chicken teriyaki sub"
+ },
+ {
+  "label": "6_inch_roasted_chicken_sub",
+  "food": "6-inch roasted chicken sub"
+ },
+ {
+  "label": "6_inch_tuna_sub",
+  "food": "6-inch tuna sub"
+ },
+ {
+  "label": "7_eleven_slurpee_regular",
+  "food": "7-Eleven Slurpee, regular"
+ },
+ {
+  "label": "7_eleven_chicken_pau",
+  "food": "7-Eleven chicken pau"
+ },
+ {
+  "label": "7_eleven_chicken_slice_sandwich",
+  "food": "7-Eleven chicken slice sandwich"
+ },
+ {
+  "label": "7_eleven_egg_mayo_sandwich",
+  "food": "7-Eleven egg mayo sandwich"
+ },
+ {
+  "label": "7_eleven_fried_rice",
+  "food": "7-Eleven fried rice"
+ },
+ {
+  "label": "7_eleven_nasi_lemak",
+  "food": "7-Eleven nasi lemak"
+ },
+ {
+  "label": "7_eleven_onigiri_chicken",
+  "food": "7-Eleven onigiri, chicken"
+ },
+ {
+  "label": "7_eleven_onigiri_tuna_mayo",
+  "food": "7-Eleven onigiri, tuna mayo"
+ },
+ {
+  "label": "7_eleven_tuna_sandwich",
+  "food": "7-Eleven tuna sandwich"
+ },
+ {
+  "label": "abc_soup_with_chicken_and_rice",
+  "food": "ABC soup with chicken and rice"
+ },
+ {
+  "label": "abc_soup_with_pork_ribs",
+  "food": "ABC soup with pork ribs"
+ },
+ {
+  "label": "aglio_olio_with_prawns",
+  "food": "Aglio olio with prawns"
+ },
+ {
+  "label": "air_katira",
+  "food": "Air katira"
+ },
+ {
+  "label": "air_mata_kucing",
+  "food": "Air mata kucing"
+ },
+ {
+  "label": "air_fryer_tofu_with_broccoli_and_brown_rice",
+  "food": "Air-fryer tofu with broccoli and brown rice"
+ },
+ {
+  "label": "ajitama_ramen_egg",
+  "food": "Ajitama (ramen egg)"
+ },
+ {
+  "label": "al_halabi_hummus_with_bread",
+  "food": "Al Halabi hummus with bread"
  },
  {
   "label": "all_berry_bang_smoothie",
@@ -16,12 +96,20 @@
   "food": "Almond paste"
  },
  {
+  "label": "amazonas_latin_sharing_plates_per_person",
+  "food": "Amazonas Latin sharing plates, per person"
+ },
+ {
   "label": "americano",
   "food": "Americano"
  },
  {
   "label": "apam_balik",
   "food": "Apam balik"
+ },
+ {
+  "label": "apple",
+  "food": "Apple"
  },
  {
   "label": "apple_pie",
@@ -36,20 +124,48 @@
   "food": "Asam laksa"
  },
  {
+  "label": "asam_pedas_fish_1_piece",
+  "food": "Asam pedas fish, 1 piece"
+ },
+ {
+  "label": "avocado",
+  "food": "Avocado"
+ },
+ {
   "label": "avocado_toast_with_egg",
   "food": "Avocado toast with egg"
+ },
+ {
+  "label": "ayam_goreng_berempah",
+  "food": "Ayam goreng berempah"
+ },
+ {
+  "label": "ayam_goreng_berempah_air_fryer",
+  "food": "Ayam goreng berempah, air fryer"
+ },
+ {
+  "label": "ayam_goreng_kunyit",
+  "food": "Ayam goreng kunyit"
  },
  {
   "label": "ayam_masak_kicap_with_rice_and_sayur",
   "food": "Ayam masak kicap with rice and sayur"
  },
  {
-  "label": "bbq_chicken_wings",
-  "food": "BBQ chicken wings"
+  "label": "ayam_masak_merah_with_rice",
+  "food": "Ayam masak merah with rice"
+ },
+ {
+  "label": "ayam_percik_with_rice",
+  "food": "Ayam percik with rice"
  },
  {
   "label": "bbq_pork_ribs",
   "food": "BBQ pork ribs"
+ },
+ {
+  "label": "blt_sandwich",
+  "food": "BLT sandwich"
  },
  {
   "label": "bagel_with_cream_cheese",
@@ -64,8 +180,20 @@
   "food": "Bak chang"
  },
  {
+  "label": "bak_chor_mee",
+  "food": "Bak chor mee"
+ },
+ {
   "label": "bak_kut_teh_with_rice",
   "food": "Bak kut teh with rice"
+ },
+ {
+  "label": "baked_cheese_pasta",
+  "food": "Baked cheese pasta"
+ },
+ {
+  "label": "baked_cheese_tart",
+  "food": "Baked cheese tart"
  },
  {
   "label": "baked_chicken_thigh_with_potatoes_and_salad",
@@ -76,24 +204,108 @@
   "food": "Baked pork chop rice"
  },
  {
+  "label": "baked_salmon_with_sweet_potato_and_greens",
+  "food": "Baked salmon with sweet potato and greens"
+ },
+ {
+  "label": "banana",
+  "food": "Banana"
+ },
+ {
   "label": "banana_bread",
   "food": "Banana bread"
+ },
+ {
+  "label": "banana_leaf_rice_kanna_curry_house",
+  "food": "Banana leaf rice (Kanna Curry House)"
+ },
+ {
+  "label": "banana_leaf_rice_sri_nirwana_maju",
+  "food": "Banana leaf rice (Sri Nirwana Maju)"
  },
  {
   "label": "banana_leaf_rice_with_chicken",
   "food": "Banana leaf rice with chicken"
  },
  {
+  "label": "banana_leaf_rice_vegetarian",
+  "food": "Banana leaf rice, vegetarian"
+ },
+ {
   "label": "banana_pudding",
   "food": "Banana pudding"
+ },
+ {
+  "label": "banh_mi",
+  "food": "Banh mi"
+ },
+ {
+  "label": "banoffee_pie",
+  "food": "Banoffee pie"
+ },
+ {
+  "label": "barley_drink_sweetened",
+  "food": "Barley drink, sweetened"
  },
  {
   "label": "barley_fu_chuk_and_gingko",
   "food": "Barley, fu chuk and gingko"
  },
  {
+  "label": "basmati_rice_plain",
+  "food": "Basmati rice, plain"
+ },
+ {
+  "label": "baumkuchen",
+  "food": "Baumkuchen"
+ },
+ {
+  "label": "bean_sprouts_stir_fry",
+  "food": "Bean sprouts stir-fry"
+ },
+ {
+  "label": "beancurd_skin_roll_fried",
+  "food": "Beancurd skin roll, fried"
+ },
+ {
+  "label": "beancurd_skin_roll_steamed",
+  "food": "Beancurd skin roll, steamed"
+ },
+ {
   "label": "beard_papa_original_cream_puff",
   "food": "Beard Papa original cream puff"
+ },
+ {
+  "label": "bee_hoon_goreng",
+  "food": "Bee hoon goreng"
+ },
+ {
+  "label": "bee_hoon_soup_mee_hoon_soup",
+  "food": "Bee hoon soup / Mee hoon soup"
+ },
+ {
+  "label": "bee_hoon_soup_with_fish_balls_and_greens",
+  "food": "Bee hoon soup with fish balls and greens"
+ },
+ {
+  "label": "beef_ball_noodle_soup",
+  "food": "Beef ball noodle soup"
+ },
+ {
+  "label": "beef_ball_noodles_dry",
+  "food": "Beef ball noodles, dry"
+ },
+ {
+  "label": "beef_burger_with_fries",
+  "food": "Beef burger with fries"
+ },
+ {
+  "label": "beef_noodle_soup",
+  "food": "Beef noodle soup"
+ },
+ {
+  "label": "beef_noodles_soong_kee",
+  "food": "Beef noodles (Soong Kee)"
  },
  {
   "label": "bibimbap",
@@ -104,12 +316,52 @@
   "food": "Big Mac"
  },
  {
+  "label": "big_bao_dai_bao",
+  "food": "Big bao (dai bao)"
+ },
+ {
   "label": "big_breakfast",
   "food": "Big breakfast"
  },
  {
+  "label": "bitter_gourd_soup_with_lean_pork",
+  "food": "Bitter gourd soup with lean pork"
+ },
+ {
+  "label": "bitter_gourd_with_egg",
+  "food": "Bitter gourd with egg"
+ },
+ {
+  "label": "black_bean_fish",
+  "food": "Black bean fish"
+ },
+ {
+  "label": "black_bean_soup_with_chicken",
+  "food": "Black bean soup with chicken"
+ },
+ {
+  "label": "black_pepper_chicken",
+  "food": "Black pepper chicken"
+ },
+ {
+  "label": "black_pepper_pork",
+  "food": "Black pepper pork"
+ },
+ {
   "label": "black_sesame_paste",
   "food": "Black sesame paste"
+ },
+ {
+  "label": "blanched_greens_with_oyster_sauce",
+  "food": "Blanched greens with oyster sauce"
+ },
+ {
+  "label": "blondie",
+  "food": "Blondie"
+ },
+ {
+  "label": "blueberries",
+  "food": "Blueberries"
  },
  {
   "label": "blueberry_bagel_with_cream_cheese",
@@ -128,6 +380,50 @@
   "food": "Boiled egg"
  },
  {
+  "label": "braised_cabbage_with_glass_noodles",
+  "food": "Braised cabbage with glass noodles"
+ },
+ {
+  "label": "braised_chicken_with_potatoes",
+  "food": "Braised chicken with potatoes"
+ },
+ {
+  "label": "braised_chicken_with_potatoes_and_rice",
+  "food": "Braised chicken with potatoes and rice"
+ },
+ {
+  "label": "braised_mushrooms_with_tofu",
+  "food": "Braised mushrooms with tofu"
+ },
+ {
+  "label": "braised_pork_belly_tau_yu_bak",
+  "food": "Braised pork belly (tau yu bak)"
+ },
+ {
+  "label": "braised_pork_with_yam",
+  "food": "Braised pork with yam"
+ },
+ {
+  "label": "braised_tofu_economy_rice",
+  "food": "Braised tofu (economy rice)"
+ },
+ {
+  "label": "brinjal_with_sambal",
+  "food": "Brinjal with sambal"
+ },
+ {
+  "label": "broccoli_and_cauliflower_soup",
+  "food": "Broccoli and cauliflower soup"
+ },
+ {
+  "label": "brown_rice",
+  "food": "Brown rice"
+ },
+ {
+  "label": "brown_rice_economy_rice",
+  "food": "Brown rice (economy rice)"
+ },
+ {
   "label": "brown_sugar_pearl_fresh_milk",
   "food": "Brown sugar pearl fresh milk"
  },
@@ -140,20 +436,44 @@
   "food": "Bubble milk tea"
  },
  {
+  "label": "bubur_ayam_mcd",
+  "food": "Bubur Ayam McD"
+ },
+ {
   "label": "bubur_cha_cha",
   "food": "Bubur cha cha"
+ },
+ {
+  "label": "bubur_lambuk",
+  "food": "Bubur lambuk"
  },
  {
   "label": "bubur_pulut_hitam",
   "food": "Bubur pulut hitam"
  },
  {
+  "label": "build_your_own_salad_bowl",
+  "food": "Build-your-own salad bowl"
+ },
+ {
   "label": "bulgogi_with_rice",
   "food": "Bulgogi with rice"
  },
  {
+  "label": "bun_bo_hue",
+  "food": "Bun bo Hue"
+ },
+ {
+  "label": "burger_myburgerlab",
+  "food": "Burger (myBurgerLab)"
+ },
+ {
   "label": "burnt_cheesecake",
   "food": "Burnt cheesecake"
+ },
+ {
+  "label": "butter_cake",
+  "food": "Butter cake"
  },
  {
   "label": "butter_chicken_with_naan",
@@ -164,12 +484,36 @@
   "food": "Butter croissant"
  },
  {
+  "label": "butter_garlic_prawns_with_rice",
+  "food": "Butter garlic prawns with rice"
+ },
+ {
   "label": "butter_prawns",
   "food": "Butter prawns"
  },
  {
+  "label": "butter_toast",
+  "food": "Butter toast"
+ },
+ {
+  "label": "cadbury_dairy_milk_whole_bar",
+  "food": "Cadbury Dairy Milk, whole bar"
+ },
+ {
+  "label": "caesar_salad_no_chicken",
+  "food": "Caesar salad, no chicken"
+ },
+ {
   "label": "california_roll",
   "food": "California roll"
+ },
+ {
+  "label": "canele",
+  "food": "Canele"
+ },
+ {
+  "label": "cantonese_fried_noodles_yee_mee",
+  "food": "Cantonese fried noodles (yee mee)"
  },
  {
   "label": "caramel_frapp",
@@ -180,24 +524,60 @@
   "food": "Carrot cake with cream cheese"
  },
  {
+  "label": "cauliflower_fried_rice_with_egg_and_chicken",
+  "food": "Cauliflower fried rice with egg and chicken"
+ },
+ {
+  "label": "cauliflower_rice",
+  "food": "Cauliflower rice"
+ },
+ {
+  "label": "cempedak",
+  "food": "Cempedak"
+ },
+ {
   "label": "cendol",
   "food": "Cendol"
+ },
+ {
+  "label": "cendol_cake",
+  "food": "Cendol cake"
+ },
+ {
+  "label": "century_egg",
+  "food": "Century egg"
  },
  {
   "label": "century_egg_and_pork_porridge",
   "food": "Century egg and pork porridge"
  },
  {
+  "label": "cereal_prawns",
+  "food": "Cereal prawns"
+ },
+ {
+  "label": "chai_boey_mustard_greens_stew",
+  "food": "Chai boey (mustard greens stew)"
+ },
+ {
+  "label": "cham_ais",
+  "food": "Cham ais"
+ },
+ {
   "label": "chapati_with_dhal",
   "food": "Chapati with dhal"
  },
  {
-  "label": "char_kway_teow",
-  "food": "Char kway teow"
+  "label": "char_kway_teow_kway_teow_goreng",
+  "food": "Char kway teow / Kway teow goreng"
  },
  {
   "label": "char_siu_bao",
   "food": "Char siu bao"
+ },
+ {
+  "label": "char_siu_cheong_fun",
+  "food": "Char siu cheong fun"
  },
  {
   "label": "char_siu_rice",
@@ -208,8 +588,36 @@
   "food": "Char siu sou"
  },
  {
+  "label": "chawanmushi",
+  "food": "Chawanmushi"
+ },
+ {
+  "label": "chayote_and_carrot_soup_with_chicken",
+  "food": "Chayote and carrot soup with chicken"
+ },
+ {
+  "label": "chee_cheong_fun_ss2_morning_market",
+  "food": "Chee cheong fun (SS2 morning market)"
+ },
+ {
   "label": "chee_cheong_fun_plain",
   "food": "Chee cheong fun, plain"
+ },
+ {
+  "label": "cheese_bun",
+  "food": "Cheese bun"
+ },
+ {
+  "label": "cheese_foam_tea",
+  "food": "Cheese foam tea"
+ },
+ {
+  "label": "cheese_naan",
+  "food": "Cheese naan"
+ },
+ {
+  "label": "cheese_ramyeon",
+  "food": "Cheese ramyeon"
  },
  {
   "label": "cheeseburger",
@@ -220,8 +628,56 @@
   "food": "Cheesecake"
  },
  {
+  "label": "cheezy_wedges_large",
+  "food": "Cheezy wedges, large"
+ },
+ {
+  "label": "cherries",
+  "food": "Cherries"
+ },
+ {
+  "label": "cherry_tomatoes",
+  "food": "Cherry tomatoes"
+ },
+ {
+  "label": "chicken_and_vegetable_clear_soup_with_konjac_rice",
+  "food": "Chicken and vegetable clear soup with konjac rice"
+ },
+ {
+  "label": "chicken_and_vegetable_pasta",
+  "food": "Chicken and vegetable pasta"
+ },
+ {
+  "label": "chicken_and_vegetable_soup_with_bread",
+  "food": "Chicken and vegetable soup with bread"
+ },
+ {
+  "label": "chicken_bao",
+  "food": "Chicken bao"
+ },
+ {
+  "label": "chicken_breast_salad_bowl",
+  "food": "Chicken breast salad bowl"
+ },
+ {
+  "label": "chicken_breast_salad_wrap",
+  "food": "Chicken breast salad wrap"
+ },
+ {
+  "label": "chicken_burger_crispy",
+  "food": "Chicken burger, crispy"
+ },
+ {
   "label": "chicken_caesar_salad",
   "food": "Chicken caesar salad"
+ },
+ {
+  "label": "chicken_chop_with_black_pepper_sauce",
+  "food": "Chicken chop with black pepper sauce"
+ },
+ {
+  "label": "chicken_curry_with_potatoes_and_rice",
+  "food": "Chicken curry with potatoes and rice"
  },
  {
   "label": "chicken_curry_with_rice",
@@ -232,12 +688,28 @@
   "food": "Chicken feet in black bean sauce"
  },
  {
+  "label": "chicken_floss_bun",
+  "food": "Chicken floss bun"
+ },
+ {
   "label": "chicken_karaage",
   "food": "Chicken karaage"
  },
  {
   "label": "chicken_katsu_curry_rice",
   "food": "Chicken katsu curry rice"
+ },
+ {
+  "label": "chicken_kebab_plate_with_salad",
+  "food": "Chicken kebab plate with salad"
+ },
+ {
+  "label": "chicken_noodle_soup",
+  "food": "Chicken noodle soup"
+ },
+ {
+  "label": "chicken_noodles_dry",
+  "food": "Chicken noodles, dry"
  },
  {
   "label": "chicken_nuggets",
@@ -248,24 +720,80 @@
   "food": "Chicken pie"
  },
  {
+  "label": "chicken_pita",
+  "food": "Chicken pita"
+ },
+ {
   "label": "chicken_porridge",
   "food": "Chicken porridge"
+ },
+ {
+  "label": "chicken_porridge_with_ginger",
+  "food": "Chicken porridge with ginger"
  },
  {
   "label": "chicken_quesadilla",
   "food": "Chicken quesadilla"
  },
  {
+  "label": "chicken_rice_roasted",
+  "food": "Chicken rice, roasted"
+ },
+ {
   "label": "chicken_rice_steamed",
   "food": "Chicken rice, steamed"
+ },
+ {
+  "label": "chicken_sandwich_grilled",
+  "food": "Chicken sandwich, grilled"
  },
  {
   "label": "chicken_sausage_roll",
   "food": "Chicken sausage roll"
  },
  {
+  "label": "chicken_shawarma_wrap",
+  "food": "Chicken shawarma wrap"
+ },
+ {
+  "label": "chicken_siew_mai",
+  "food": "Chicken siew mai"
+ },
+ {
+  "label": "chicken_tenders",
+  "food": "Chicken tenders"
+ },
+ {
   "label": "chicken_teriyaki_don",
   "food": "Chicken teriyaki don"
+ },
+ {
+  "label": "chicken_wing_skewer",
+  "food": "Chicken wing skewer"
+ },
+ {
+  "label": "chicken_wings_fried",
+  "food": "Chicken wings, fried"
+ },
+ {
+  "label": "chickpea_and_cucumber_salad",
+  "food": "Chickpea and cucumber salad"
+ },
+ {
+  "label": "chilli_pan_mee",
+  "food": "Chilli pan mee"
+ },
+ {
+  "label": "chinese_cabbage_and_fish_ball_soup",
+  "food": "Chinese cabbage and fish ball soup"
+ },
+ {
+  "label": "chinese_pear",
+  "food": "Chinese pear"
+ },
+ {
+  "label": "chirashi_don",
+  "food": "Chirashi don"
  },
  {
   "label": "chocolate_bar",
@@ -282,6 +810,10 @@
  {
   "label": "chocolate_chip_cookie",
   "food": "Chocolate chip cookie"
+ },
+ {
+  "label": "chocolate_eclair",
+  "food": "Chocolate eclair"
  },
  {
   "label": "chocolate_milkshake",
@@ -304,6 +836,10 @@
   "food": "Churros with chocolate dip"
  },
  {
+  "label": "ciku_sapodilla",
+  "food": "Ciku (sapodilla)"
+ },
+ {
   "label": "cinnabon_classic_roll",
   "food": "Cinnabon Classic Roll"
  },
@@ -314,6 +850,18 @@
  {
   "label": "claypot_chicken_rice",
   "food": "Claypot chicken rice"
+ },
+ {
+  "label": "claypot_loh_shu_fun",
+  "food": "Claypot loh shu fun"
+ },
+ {
+  "label": "claypot_yee_mee",
+  "food": "Claypot yee mee"
+ },
+ {
+  "label": "cloud_9_rice_bowl",
+  "food": "Cloud 9 rice bowl"
  },
  {
   "label": "club_sandwich",
@@ -328,8 +876,32 @@
   "food": "Cold soba"
  },
  {
+  "label": "coleslaw",
+  "food": "Coleslaw"
+ },
+ {
+  "label": "coney_dog",
+  "food": "Coney dog"
+ },
+ {
+  "label": "corn_and_carrot_soup_with_chicken",
+  "food": "Corn and carrot soup with chicken"
+ },
+ {
+  "label": "corn_cup",
+  "food": "Corn cup"
+ },
+ {
+  "label": "cottage_cheese_toast_with_tomato",
+  "food": "Cottage cheese toast with tomato"
+ },
+ {
   "label": "cream_puff",
   "food": "Cream puff"
+ },
+ {
+  "label": "creamy_mushroom_chicken_pasta",
+  "food": "Creamy mushroom chicken pasta"
  },
  {
   "label": "croffle",
@@ -348,24 +920,100 @@
   "food": "Cr\u00eape with banana and chocolate"
  },
  {
+  "label": "cup_noodles",
+  "food": "Cup noodles"
+ },
+ {
   "label": "cupcake",
   "food": "Cupcake"
+ },
+ {
+  "label": "curry_chicken_economy_rice",
+  "food": "Curry chicken (economy rice)"
+ },
+ {
+  "label": "curry_chicken_bun",
+  "food": "Curry chicken bun"
+ },
+ {
+  "label": "curry_fish_economy_rice",
+  "food": "Curry fish (economy rice)"
+ },
+ {
+  "label": "curry_gravy_add_on",
+  "food": "Curry gravy, add-on"
  },
  {
   "label": "curry_laksa",
   "food": "Curry laksa"
  },
  {
+  "label": "curry_mee",
+  "food": "Curry mee"
+ },
+ {
   "label": "curry_puff",
   "food": "Curry puff"
+ },
+ {
+  "label": "curry_squid",
+  "food": "Curry squid"
+ },
+ {
+  "label": "curry_vegetables_sayur_lodeh",
+  "food": "Curry vegetables (sayur lodeh)"
+ },
+ {
+  "label": "cuura_tasting_dish_per_person",
+  "food": "Cuura tasting dish, per person"
+ },
+ {
+  "label": "d_empire_chinese_set_per_person",
+  "food": "D Empire Chinese set, per person"
+ },
+ {
+  "label": "dak_kkochi_chicken_skewer",
+  "food": "Dak-kkochi (chicken skewer)"
+ },
+ {
+  "label": "dan_dan_noodles",
+  "food": "Dan dan noodles"
+ },
+ {
+  "label": "dates",
+  "food": "Dates"
+ },
+ {
+  "label": "de_irrfan_s_laksa_johor",
+  "food": "De Irrfan's laksa Johor"
  },
  {
   "label": "dhal_curry",
   "food": "Dhal curry"
  },
  {
+  "label": "dhal_curry_with_vegetables_and_rice",
+  "food": "Dhal curry with vegetables and rice"
+ },
+ {
   "label": "dim_sum_breakfast",
   "food": "Dim sum breakfast"
+ },
+ {
+  "label": "dorayaki",
+  "food": "Dorayaki"
+ },
+ {
+  "label": "doritos_nacho_cheese",
+  "food": "Doritos Nacho Cheese"
+ },
+ {
+  "label": "double_beef_burger",
+  "food": "Double beef burger"
+ },
+ {
+  "label": "double_cheeseburger",
+  "food": "Double cheeseburger"
  },
  {
   "label": "double_skin_milk_pudding",
@@ -376,6 +1024,22 @@
   "food": "Doughnut"
  },
  {
+  "label": "dragon_fruit_red",
+  "food": "Dragon fruit, red"
+ },
+ {
+  "label": "dragon_fruit_white",
+  "food": "Dragon fruit, white"
+ },
+ {
+  "label": "dried_mango",
+  "food": "Dried mango"
+ },
+ {
+  "label": "dubai_chewy_cookie",
+  "food": "Dubai chewy cookie"
+ },
+ {
   "label": "dubai_chocolate_bar",
   "food": "Dubai chocolate bar"
  },
@@ -384,24 +1048,84 @@
   "food": "Dubai chocolate strawberry cup"
  },
  {
+  "label": "duck_noodle_soup",
+  "food": "Duck noodle soup"
+ },
+ {
+  "label": "duck_noodles_dry",
+  "food": "Duck noodles, dry"
+ },
+ {
+  "label": "duku_langsat",
+  "food": "Duku langsat"
+ },
+ {
+  "label": "dumplings_in_soup_with_greens",
+  "food": "Dumplings in soup with greens"
+ },
+ {
   "label": "durian_cendol",
   "food": "Durian cendol"
+ },
+ {
+  "label": "durian_crepe",
+  "food": "Durian crepe"
+ },
+ {
+  "label": "economy_bee_hoon",
+  "food": "Economy bee hoon"
+ },
+ {
+  "label": "economy_rice_home_kitchen",
+  "food": "Economy rice (Home Kitchen)"
  },
  {
   "label": "economy_rice_1_meat_2_veg",
   "food": "Economy rice: 1 meat, 2 veg"
  },
  {
+  "label": "economy_rice_steamed_fish_tofu_greens",
+  "food": "Economy rice: steamed fish, tofu, greens"
+ },
+ {
   "label": "edamame",
   "food": "Edamame"
+ },
+ {
+  "label": "egg_mcmuffin",
+  "food": "Egg McMuffin"
  },
  {
   "label": "egg_and_cheese_bagel",
   "food": "Egg and cheese bagel"
  },
  {
+  "label": "egg_and_tomato_stir_fry_with_rice",
+  "food": "Egg and tomato stir-fry with rice"
+ },
+ {
+  "label": "egg_foo_yong_omelette",
+  "food": "Egg foo yong (omelette)"
+ },
+ {
+  "label": "egg_fried_rice_with_vegetables",
+  "food": "Egg fried rice with vegetables"
+ },
+ {
+  "label": "egg_mayo_sandwich",
+  "food": "Egg mayo sandwich"
+ },
+ {
+  "label": "egg_sandwich",
+  "food": "Egg sandwich"
+ },
+ {
   "label": "egg_tart",
   "food": "Egg tart"
+ },
+ {
+  "label": "egg_white_omelette_with_spinach_and_mushrooms",
+  "food": "Egg white omelette with spinach and mushrooms"
  },
  {
   "label": "eggs_benedict",
@@ -412,20 +1136,160 @@
   "food": "Einsp\u00e4nner cream coffee"
  },
  {
+  "label": "eomuk_fish_cake_skewer",
+  "food": "Eomuk (fish cake skewer)"
+ },
+ {
+  "label": "extra_chashu",
+  "food": "Extra chashu"
+ },
+ {
+  "label": "familymart_chicken_katsu_bento",
+  "food": "FamilyMart chicken katsu bento"
+ },
+ {
+  "label": "familymart_chicken_katsu_sando",
+  "food": "FamilyMart chicken katsu sando"
+ },
+ {
+  "label": "familymart_egg_mayo_sando",
+  "food": "FamilyMart egg mayo sando"
+ },
+ {
+  "label": "familymart_mac_and_cheese",
+  "food": "FamilyMart mac and cheese"
+ },
+ {
+  "label": "familymart_nasi_lemak",
+  "food": "FamilyMart nasi lemak"
+ },
+ {
+  "label": "familymart_oden_chikuwa",
+  "food": "FamilyMart oden, chikuwa"
+ },
+ {
+  "label": "familymart_oden_crab_stick",
+  "food": "FamilyMart oden, crab stick"
+ },
+ {
+  "label": "familymart_oden_fish_ball_stick",
+  "food": "FamilyMart oden, fish ball stick"
+ },
+ {
+  "label": "familymart_oden_fish_cake",
+  "food": "FamilyMart oden, fish cake"
+ },
+ {
+  "label": "familymart_oden_radish",
+  "food": "FamilyMart oden, radish"
+ },
+ {
+  "label": "familymart_oden_udon_noodles",
+  "food": "FamilyMart oden, udon noodles"
+ },
+ {
+  "label": "familymart_onigiri_chicken_teriyaki",
+  "food": "FamilyMart onigiri, chicken teriyaki"
+ },
+ {
+  "label": "familymart_onigiri_salmon",
+  "food": "FamilyMart onigiri, salmon"
+ },
+ {
+  "label": "familymart_onigiri_spicy_tuna",
+  "food": "FamilyMart onigiri, spicy tuna"
+ },
+ {
+  "label": "familymart_onigiri_tuna_mayo",
+  "food": "FamilyMart onigiri, tuna mayo"
+ },
+ {
+  "label": "familymart_tuna_mayo_sando",
+  "food": "FamilyMart tuna mayo sando"
+ },
+ {
+  "label": "fettuccine_carbonara_with_mushroom",
+  "food": "Fettuccine carbonara with mushroom"
+ },
+ {
+  "label": "fig_fresh",
+  "food": "Fig, fresh"
+ },
+ {
+  "label": "filet_o_fish",
+  "food": "Filet-O-Fish"
+ },
+ {
+  "label": "financier",
+  "food": "Financier"
+ },
+ {
   "label": "fish_and_chips",
   "food": "Fish and chips"
+ },
+ {
+  "label": "fish_ball_noodle_soup",
+  "food": "Fish ball noodle soup"
+ },
+ {
+  "label": "fish_burger",
+  "food": "Fish burger"
+ },
+ {
+  "label": "fish_curry_with_rice",
+  "food": "Fish curry with rice"
+ },
+ {
+  "label": "fish_head_mee_hoon_clear_soup",
+  "food": "Fish head mee hoon, clear soup"
+ },
+ {
+  "label": "fish_head_noodle_milky_soup",
+  "food": "Fish head noodle, milky soup"
+ },
+ {
+  "label": "fish_porridge",
+  "food": "Fish porridge"
+ },
+ {
+  "label": "fish_slice_noodle_soup",
+  "food": "Fish slice noodle soup"
  },
  {
   "label": "fish_slice_soup_with_tofu_and_tomato",
   "food": "Fish slice soup with tofu and tomato"
  },
  {
+  "label": "flavoured_yogurt_cup",
+  "food": "Flavoured yogurt cup"
+ },
+ {
+  "label": "french_beans_with_minced_pork",
+  "food": "French beans with minced pork"
+ },
+ {
   "label": "french_fries",
   "food": "French fries"
  },
  {
+  "label": "french_fries_large",
+  "food": "French fries, large"
+ },
+ {
   "label": "french_toast",
   "food": "French toast"
+ },
+ {
+  "label": "fresh_delights_fruit_cup",
+  "food": "Fresh Delights fruit cup"
+ },
+ {
+  "label": "fresh_coconut_water",
+  "food": "Fresh coconut water"
+ },
+ {
+  "label": "fresh_orange_juice_no_sugar",
+  "food": "Fresh orange juice, no sugar"
  },
  {
   "label": "fried_calamari",
@@ -436,6 +1300,18 @@
   "food": "Fried chicken"
  },
  {
+  "label": "fried_chicken_wing_economy_rice",
+  "food": "Fried chicken wing (economy rice)"
+ },
+ {
+  "label": "fried_chicken_with_curry_rice_lim_fried_chicken",
+  "food": "Fried chicken with curry rice (Lim Fried Chicken)"
+ },
+ {
+  "label": "fried_ebi_roll",
+  "food": "Fried ebi roll"
+ },
+ {
   "label": "fried_egg",
   "food": "Fried egg"
  },
@@ -444,8 +1320,24 @@
   "food": "Fried fish cake"
  },
  {
+  "label": "fried_fish_fillet",
+  "food": "Fried fish fillet"
+ },
+ {
   "label": "fried_mantou_with_condensed_milk",
   "food": "Fried mantou with condensed milk"
+ },
+ {
+  "label": "fried_pork_cutlet_economy_rice",
+  "food": "Fried pork cutlet (economy rice)"
+ },
+ {
+  "label": "fried_prawn_dumplings_with_mayo",
+  "food": "Fried prawn dumplings with mayo"
+ },
+ {
+  "label": "fried_tofu_with_sweet_chilli",
+  "food": "Fried tofu with sweet chilli"
  },
  {
   "label": "fried_wantan",
@@ -468,6 +1360,10 @@
   "food": "Fruit tart"
  },
  {
+  "label": "fruit_tea_less_sugar",
+  "food": "Fruit tea, less sugar"
+ },
+ {
   "label": "garden_salad",
   "food": "Garden salad"
  },
@@ -476,12 +1372,60 @@
   "food": "Garlic bread"
  },
  {
+  "label": "garlic_fried_rice",
+  "food": "Garlic fried rice"
+ },
+ {
+  "label": "garlic_naan",
+  "food": "Garlic naan"
+ },
+ {
+  "label": "garlic_toast",
+  "food": "Garlic toast"
+ },
+ {
   "label": "garrett_popcorn_chicago_mix",
   "food": "Garrett popcorn, Chicago mix"
  },
  {
+  "label": "ginger_and_onion_pork",
+  "food": "Ginger and onion pork"
+ },
+ {
+  "label": "ginger_and_spring_onion_chicken",
+  "food": "Ginger and spring onion chicken"
+ },
+ {
+  "label": "glass_noodle_stir_fry",
+  "food": "Glass noodle stir-fry"
+ },
+ {
   "label": "granola_bar",
   "food": "Granola bar"
+ },
+ {
+  "label": "grapefruit",
+  "food": "Grapefruit"
+ },
+ {
+  "label": "grapes_purple_seedless",
+  "food": "Grapes, purple seedless"
+ },
+ {
+  "label": "grapes_red",
+  "food": "Grapes, red"
+ },
+ {
+  "label": "greek_salad",
+  "food": "Greek salad"
+ },
+ {
+  "label": "greek_yogurt_bowl_with_berries_and_granola",
+  "food": "Greek yogurt bowl with berries and granola"
+ },
+ {
+  "label": "greek_yogurt_with_fruit_and_oats",
+  "food": "Greek yogurt with fruit and oats"
  },
  {
   "label": "green_bean_soup",
@@ -492,36 +1436,144 @@
   "food": "Green curry chicken with rice"
  },
  {
+  "label": "green_papaya_fish_soup",
+  "food": "Green papaya fish soup"
+ },
+ {
+  "label": "grilled_cheese_sandwich",
+  "food": "Grilled cheese sandwich"
+ },
+ {
+  "label": "grilled_chicken_breast",
+  "food": "Grilled chicken breast"
+ },
+ {
   "label": "grilled_chicken_chop_with_salad",
   "food": "Grilled chicken chop with salad"
  },
  {
-  "label": "gui_ling_gao_herbal_jelly",
-  "food": "Gui ling gao herbal jelly"
+  "label": "grilled_chicken_salad",
+  "food": "Grilled chicken salad"
+ },
+ {
+  "label": "grilled_chicken_wings_bbq",
+  "food": "Grilled chicken wings (BBQ)"
+ },
+ {
+  "label": "grilled_chicken_wrap",
+  "food": "Grilled chicken wrap"
+ },
+ {
+  "label": "grilled_corn_skewer",
+  "food": "Grilled corn skewer"
+ },
+ {
+  "label": "grilled_fish_with_salad_and_sweet_potato",
+  "food": "Grilled fish with salad and sweet potato"
+ },
+ {
+  "label": "grilled_fish_with_vegetables",
+  "food": "Grilled fish with vegetables"
+ },
+ {
+  "label": "grilled_lean_beef_with_asparagus_and_mash",
+  "food": "Grilled lean beef with asparagus and mash"
+ },
+ {
+  "label": "grilled_mantou_skewer",
+  "food": "Grilled mantou skewer"
+ },
+ {
+  "label": "guava",
+  "food": "Guava"
+ },
+ {
+  "label": "gummy_bears",
+  "food": "Gummy bears"
+ },
+ {
+  "label": "gym_junkie_protein_smoothie",
+  "food": "Gym Junkie protein smoothie"
  },
  {
   "label": "gyoza",
   "food": "Gyoza"
  },
  {
+  "label": "gyudon",
+  "food": "Gyudon"
+ },
+ {
+  "label": "gyudon_mini_with_salad",
+  "food": "Gyudon, mini with salad"
+ },
+ {
+  "label": "hacks",
+  "food": "Hacks"
+ },
+ {
+  "label": "hailam_mee_yut_kee",
+  "food": "Hailam mee (Yut Kee)"
+ },
+ {
+  "label": "hainan_chicken_rice_hometown_hainan_coffee",
+  "food": "Hainan chicken rice (Hometown Hainan Coffee)"
+ },
+ {
+  "label": "hainan_toast_with_kaya_and_eggs",
+  "food": "Hainan toast with kaya, and eggs"
+ },
+ {
   "label": "hainanese_chicken_chop",
   "food": "Hainanese chicken chop"
+ },
+ {
+  "label": "half_boiled_eggs_with_wholemeal_toast",
+  "food": "Half-boiled eggs with wholemeal toast"
+ },
+ {
+  "label": "ham_sui_kok",
+  "food": "Ham sui kok"
  },
  {
   "label": "har_gow",
   "food": "Har gow"
  },
  {
+  "label": "herbal_chicken_soup",
+  "food": "Herbal chicken soup"
+ },
+ {
+  "label": "hershey_s_kisses",
+  "food": "Hershey's Kisses"
+ },
+ {
   "label": "hokkien_mee_kl",
   "food": "Hokkien mee (KL)"
+ },
+ {
+  "label": "honey_butter_biscuit",
+  "food": "Honey butter biscuit"
+ },
+ {
+  "label": "honeydew",
+  "food": "Honeydew"
  },
  {
   "label": "honeydew_sago",
   "food": "Honeydew sago"
  },
  {
+  "label": "horlicks_ais",
+  "food": "Horlicks ais"
+ },
+ {
   "label": "hot_dog",
   "food": "Hot dog"
+ },
+ {
+  "label": "hot_plate_tofu",
+  "food": "Hot plate tofu"
  },
  {
   "label": "hot_pot_typical_meal",
@@ -536,8 +1588,8 @@
   "food": "Ice cream"
  },
  {
-  "label": "ice_cream_waffle",
-  "food": "Ice cream waffle"
+  "label": "ice_cream_cone_packaged",
+  "food": "Ice cream cone, packaged"
  },
  {
   "label": "iced_chocolate",
@@ -552,6 +1604,18 @@
   "food": "Ikan bakar with rice and ulam"
  },
  {
+  "label": "ikan_pari_bakar_with_rice",
+  "food": "Ikan pari bakar with rice"
+ },
+ {
+  "label": "inari_sushi",
+  "food": "Inari sushi"
+ },
+ {
+  "label": "indomie_mi_goreng",
+  "food": "Indomie mi goreng"
+ },
+ {
   "label": "injeolmi_bingsu",
   "food": "Injeolmi bingsu"
  },
@@ -564,8 +1628,16 @@
   "food": "Inside Scoop, single scoop"
  },
  {
+  "label": "instant_noodles_curry_maggi",
+  "food": "Instant noodles, curry (Maggi)"
+ },
+ {
   "label": "ipoh_hor_fun",
   "food": "Ipoh hor fun"
+ },
+ {
+  "label": "jackfruit_nangka",
+  "food": "Jackfruit (nangka)"
  },
  {
   "label": "jagung_cheese",
@@ -576,24 +1648,164 @@
   "food": "Jajangmyeon"
  },
  {
+  "label": "jambu_air_rose_apple",
+  "food": "Jambu air (rose apple)"
+ },
+ {
+  "label": "japanese_curry_rice_beef",
+  "food": "Japanese curry rice, beef"
+ },
+ {
+  "label": "japanese_curry_rice_chicken",
+  "food": "Japanese curry rice, chicken"
+ },
+ {
+  "label": "japanese_rice",
+  "food": "Japanese rice"
+ },
+ {
+  "label": "japanese_set_hana_dining",
+  "food": "Japanese set (Hana Dining)"
+ },
+ {
+  "label": "japchae",
+  "food": "Japchae"
+ },
+ {
+  "label": "jjapaguri_ram_don",
+  "food": "Jjapaguri (ram-don)"
+ },
+ {
+  "label": "kfc_hot_spicy_breast",
+  "food": "KFC Hot & Spicy, breast"
+ },
+ {
+  "label": "kfc_original_recipe_breast",
+  "food": "KFC Original Recipe, breast"
+ },
+ {
+  "label": "kfc_original_recipe_drumstick",
+  "food": "KFC Original Recipe, drumstick"
+ },
+ {
   "label": "kfc_original_recipe_thigh",
   "food": "KFC Original Recipe, thigh"
+ },
+ {
+  "label": "kfc_original_recipe_wing",
+  "food": "KFC Original Recipe, wing"
+ },
+ {
+  "label": "kfc_nuggets",
+  "food": "KFC nuggets"
+ },
+ {
+  "label": "kk_mart_nasi_lemak_bungkus",
+  "food": "KK Mart nasi lemak bungkus"
+ },
+ {
+  "label": "kacang_putih_mix",
+  "food": "Kacang putih mix"
+ },
+ {
+  "label": "kangkung_belacan",
+  "food": "Kangkung belacan"
+ },
+ {
+  "label": "kangkung_belacan_with_tofu_and_rice",
+  "food": "Kangkung belacan with tofu and rice"
+ },
+ {
+  "label": "kappa_maki_cucumber",
+  "food": "Kappa maki (cucumber)"
+ },
+ {
+  "label": "karaage_don_hungry_don",
+  "food": "Karaage don (Hungry Don)"
+ },
+ {
+  "label": "kaya_bun",
+  "food": "Kaya bun"
+ },
+ {
+  "label": "kaya_puff",
+  "food": "Kaya puff"
  },
  {
   "label": "kaya_toast_set",
   "food": "Kaya toast set"
  },
  {
+  "label": "kek_batik",
+  "food": "Kek batik"
+ },
+ {
+  "label": "kek_lapis_sarawak",
+  "food": "Kek lapis Sarawak"
+ },
+ {
+  "label": "kek_lapis_legit",
+  "food": "Kek lapis legit"
+ },
+ {
   "label": "keropok_lekor",
   "food": "Keropok lekor"
+ },
+ {
+  "label": "kim_gary_macaroni_soup_with_ham",
+  "food": "Kim Gary macaroni soup with ham"
+ },
+ {
+  "label": "kimbap",
+  "food": "Kimbap"
+ },
+ {
+  "label": "kimchi_fried_rice_with_egg",
+  "food": "Kimchi fried rice with egg"
+ },
+ {
+  "label": "kimchi_fried_rice_with_egg_home_style",
+  "food": "Kimchi fried rice with egg, home-style"
  },
  {
   "label": "kimchi_jjigae_with_rice",
   "food": "Kimchi jjigae with rice"
  },
  {
-  "label": "kolo_mee",
-  "food": "Kolo mee"
+  "label": "kimchi_ramyeon",
+  "food": "Kimchi ramyeon"
+ },
+ {
+  "label": "kimchi_tofu_stew_light",
+  "food": "Kimchi tofu stew, light"
+ },
+ {
+  "label": "king_oyster_mushroom_skewer",
+  "food": "King oyster mushroom skewer"
+ },
+ {
+  "label": "kita_vegetarian_rice_bowl",
+  "food": "Kita vegetarian rice bowl"
+ },
+ {
+  "label": "kiwi",
+  "food": "Kiwi"
+ },
+ {
+  "label": "kofta_kebab_1_skewer",
+  "food": "Kofta kebab, 1 skewer"
+ },
+ {
+  "label": "kofta_plate_with_rice",
+  "food": "Kofta plate with rice"
+ },
+ {
+  "label": "kolo_mee_kon_lo_mee",
+  "food": "Kolo mee / Kon lo mee"
+ },
+ {
+  "label": "konjac_noodle_soup_with_prawns_and_greens",
+  "food": "Konjac noodle soup with prawns and greens"
  },
  {
   "label": "kopi_c",
@@ -608,8 +1820,16 @@
   "food": "Korean BBQ, typical meal"
  },
  {
+  "label": "korean_army_stew_budae_jjigae_at_home",
+  "food": "Korean army stew (budae jjigae) at home"
+ },
+ {
   "label": "korean_fried_chicken_soy_garlic",
   "food": "Korean fried chicken, soy garlic"
+ },
+ {
+  "label": "korean_fried_chicken_yangnyeom",
+  "food": "Korean fried chicken, yangnyeom"
  },
  {
   "label": "korean_garlic_cream_cheese_bun",
@@ -624,12 +1844,40 @@
   "food": "Kunafa"
  },
  {
+  "label": "kung_pao_chicken",
+  "food": "Kung pao chicken"
+ },
+ {
   "label": "kung_pao_chicken_with_rice",
   "food": "Kung pao chicken with rice"
  },
  {
+  "label": "kway_teow_soup",
+  "food": "Kway teow soup"
+ },
+ {
+  "label": "lady_s_fingers_with_sambal",
+  "food": "Lady's fingers with sambal"
+ },
+ {
+  "label": "laksam",
+  "food": "Laksam"
+ },
+ {
   "label": "lamb_chop_with_fries",
   "food": "Lamb chop with fries"
+ },
+ {
+  "label": "lamb_skewers_bbq",
+  "food": "Lamb skewers (BBQ)"
+ },
+ {
+  "label": "lanzhou_beef_lamian",
+  "food": "Lanzhou beef lamian"
+ },
+ {
+  "label": "las_meninas_tapas_per_person",
+  "food": "Las Meninas tapas, per person"
  },
  {
   "label": "lasagna",
@@ -644,6 +1892,10 @@
   "food": "Latte, iced"
  },
  {
+  "label": "lemon_chicken",
+  "food": "Lemon chicken"
+ },
+ {
   "label": "lemon_tart",
   "food": "Lemon tart"
  },
@@ -652,8 +1904,32 @@
   "food": "Leng chee kang"
  },
  {
+  "label": "lentil_soup_with_pita",
+  "food": "Lentil soup with pita"
+ },
+ {
+  "label": "lettuce_with_oyster_sauce",
+  "food": "Lettuce with oyster sauce"
+ },
+ {
+  "label": "lettuce_wraps_with_minced_chicken",
+  "food": "Lettuce wraps with minced chicken"
+ },
+ {
   "label": "lo_bak_go_pan_fried_radish_cake",
   "food": "Lo bak go, pan-fried radish cake"
+ },
+ {
+  "label": "lok_lok",
+  "food": "Lok lok"
+ },
+ {
+  "label": "long_beans_with_egg",
+  "food": "Long beans with egg"
+ },
+ {
+  "label": "longan",
+  "food": "Longan"
  },
  {
   "label": "lontong",
@@ -664,12 +1940,40 @@
   "food": "Lor mai kai"
  },
  {
-  "label": "lor_mee",
-  "food": "Lor mee"
+  "label": "lor_mee_loh_mee",
+  "food": "Lor mee / Loh mee"
+ },
+ {
+  "label": "lotus_paste_bun",
+  "food": "Lotus paste bun"
+ },
+ {
+  "label": "lotus_root_and_peanut_soup_with_pork_ribs",
+  "food": "Lotus root and peanut soup with pork ribs"
+ },
+ {
+  "label": "lotus_root_soup_vegetarian",
+  "food": "Lotus root soup, vegetarian"
+ },
+ {
+  "label": "luffa_and_egg_soup",
+  "food": "Luffa and egg soup"
+ },
+ {
+  "label": "luncheon_meat_slices",
+  "food": "Luncheon meat slices"
+ },
+ {
+  "label": "lychee",
+  "food": "Lychee"
  },
  {
   "label": "ma_lai_gao",
   "food": "Ma lai gao"
+ },
+ {
+  "label": "mac_and_cheese_with_chicken",
+  "food": "Mac and cheese with chicken"
  },
  {
   "label": "macaroni_and_cheese",
@@ -680,12 +1984,36 @@
   "food": "Macarons"
  },
  {
+  "label": "madeleine",
+  "food": "Madeleine"
+ },
+ {
+  "label": "maggi_goreng",
+  "food": "Maggi goreng"
+ },
+ {
+  "label": "mala_noodles",
+  "food": "Mala noodles"
+ },
+ {
+  "label": "mala_skewers_chuan_chuan",
+  "food": "Mala skewers (chuan chuan)"
+ },
+ {
+  "label": "mandarin_orange",
+  "food": "Mandarin orange"
+ },
+ {
+  "label": "mango",
+  "food": "Mango"
+ },
+ {
   "label": "mango_magic_smoothie",
   "food": "Mango Magic smoothie"
  },
  {
-  "label": "mango_bingsu",
-  "food": "Mango bingsu"
+  "label": "mango_crepe",
+  "food": "Mango crepe"
  },
  {
   "label": "mango_lassi",
@@ -704,8 +2032,36 @@
   "food": "Mango sticky rice"
  },
  {
+  "label": "mangosteen",
+  "food": "Mangosteen"
+ },
+ {
+  "label": "mapo_tofu",
+  "food": "Mapo tofu"
+ },
+ {
+  "label": "maritozzo_cream_bun",
+  "food": "Maritozzo cream bun"
+ },
+ {
+  "label": "marmite_chicken",
+  "food": "Marmite chicken"
+ },
+ {
+  "label": "masala_king_chicken_tikka_masala",
+  "food": "Masala King chicken tikka masala"
+ },
+ {
+  "label": "masala_tea",
+  "food": "Masala tea"
+ },
+ {
   "label": "masala_thosai",
   "food": "Masala thosai"
+ },
+ {
+  "label": "massaman_curry_with_rice",
+  "food": "Massaman curry with rice"
  },
  {
   "label": "matcha_latte_iced",
@@ -716,12 +2072,36 @@
   "food": "Matcha tiramisu"
  },
  {
+  "label": "mcchicken",
+  "food": "McChicken"
+ },
+ {
   "label": "mcflurry_with_oreo",
   "food": "McFlurry with Oreo"
  },
  {
+  "label": "mee_bandung",
+  "food": "Mee bandung"
+ },
+ {
   "label": "mee_goreng_mamak",
   "food": "Mee goreng mamak"
+ },
+ {
+  "label": "mee_goreng_home_style",
+  "food": "Mee goreng, home-style"
+ },
+ {
+  "label": "mee_hoon_kueh_soup",
+  "food": "Mee hoon kueh soup"
+ },
+ {
+  "label": "mee_jawa",
+  "food": "Mee jawa"
+ },
+ {
+  "label": "mee_kicap",
+  "food": "Mee kicap"
  },
  {
   "label": "mee_rebus",
@@ -732,8 +2112,24 @@
   "food": "Mee siam"
  },
  {
+  "label": "mee_soto",
+  "food": "Mee soto"
+ },
+ {
+  "label": "mee_sua_soup_with_chicken",
+  "food": "Mee sua soup with chicken"
+ },
+ {
   "label": "mexican_coffee_bun",
   "food": "Mexican coffee bun"
+ },
+ {
+  "label": "mi_xian_in_soup_with_meatballs",
+  "food": "Mi xian in soup with meatballs"
+ },
+ {
+  "label": "mille_crepe_original",
+  "food": "Mille crepe, original"
  },
  {
   "label": "mille_cr_pe",
@@ -744,16 +2140,48 @@
   "food": "Milo ais"
  },
  {
+  "label": "milo_packet_drink",
+  "food": "Milo, packet drink"
+ },
+ {
   "label": "minced_pork_soup",
   "food": "Minced pork soup"
+ },
+ {
+  "label": "miso_salmon_and_tofu_soup_with_rice",
+  "food": "Miso salmon and tofu soup with rice"
  },
  {
   "label": "miso_soup",
   "food": "Miso soup"
  },
  {
+  "label": "miso_soup_with_tofu_rice_and_egg",
+  "food": "Miso soup with tofu, rice and egg"
+ },
+ {
+  "label": "mixed_berries",
+  "food": "Mixed berries"
+ },
+ {
+  "label": "mixed_cut_fruit",
+  "food": "Mixed cut fruit"
+ },
+ {
+  "label": "mixed_nuts",
+  "food": "Mixed nuts"
+ },
+ {
+  "label": "mixed_vegetable_minestrone",
+  "food": "Mixed vegetable minestrone"
+ },
+ {
   "label": "mixue_ice_cream_cone",
   "food": "Mixue ice cream cone"
+ },
+ {
+  "label": "mixue_lemonade",
+  "food": "Mixue lemonade"
  },
  {
   "label": "mocha_iced",
@@ -772,8 +2200,24 @@
   "food": "Molten lava cake with ice cream"
  },
  {
+  "label": "mont_blanc",
+  "food": "Mont Blanc"
+ },
+ {
+  "label": "moo_ping_with_sticky_rice",
+  "food": "Moo ping with sticky rice"
+ },
+ {
+  "label": "mookata_thai_bbq_typical_meal",
+  "food": "Mookata (Thai BBQ), typical meal"
+ },
+ {
   "label": "mooncake_lotus_paste",
   "food": "Mooncake, lotus paste"
+ },
+ {
+  "label": "muah_chee",
+  "food": "Muah chee"
  },
  {
   "label": "murtabak_ayam",
@@ -784,6 +2228,30 @@
   "food": "Musang King durian"
  },
  {
+  "label": "mushroom_swiss_burger",
+  "food": "Mushroom Swiss burger"
+ },
+ {
+  "label": "mushroom_chicken_stew",
+  "food": "Mushroom chicken stew"
+ },
+ {
+  "label": "mushroom_clear_soup",
+  "food": "Mushroom clear soup"
+ },
+ {
+  "label": "mushroom_soup_with_garlic_bread",
+  "food": "Mushroom soup with garlic bread"
+ },
+ {
+  "label": "mutton_curry_with_rice",
+  "food": "Mutton curry with rice"
+ },
+ {
+  "label": "nasi_lemak_mcd",
+  "food": "Nasi Lemak McD"
+ },
+ {
   "label": "nasi_ayam_penyet",
   "food": "Nasi ayam penyet"
  },
@@ -792,12 +2260,56 @@
   "food": "Nasi briyani ayam"
  },
  {
+  "label": "nasi_briyani_rice_only",
+  "food": "Nasi briyani, rice only"
+ },
+ {
+  "label": "nasi_campur_ayam_bakar_sayur_ulam",
+  "food": "Nasi campur: ayam bakar, sayur, ulam"
+ },
+ {
   "label": "nasi_dagang",
   "food": "Nasi dagang"
  },
  {
+  "label": "nasi_goreng_usa",
+  "food": "Nasi goreng USA"
+ },
+ {
+  "label": "nasi_goreng_ayam",
+  "food": "Nasi goreng ayam"
+ },
+ {
+  "label": "nasi_goreng_belacan",
+  "food": "Nasi goreng belacan"
+ },
+ {
+  "label": "nasi_goreng_cina",
+  "food": "Nasi goreng cina"
+ },
+ {
+  "label": "nasi_goreng_daging_merah",
+  "food": "Nasi goreng daging merah"
+ },
+ {
   "label": "nasi_goreng_kampung",
   "food": "Nasi goreng kampung"
+ },
+ {
+  "label": "nasi_goreng_pattaya",
+  "food": "Nasi goreng pattaya"
+ },
+ {
+  "label": "nasi_goreng_seafood",
+  "food": "Nasi goreng seafood"
+ },
+ {
+  "label": "nasi_goreng_tom_yum",
+  "food": "Nasi goreng tom yum"
+ },
+ {
+  "label": "nasi_goreng_with_fried_egg",
+  "food": "Nasi goreng with fried egg"
  },
  {
   "label": "nasi_kandar",
@@ -808,20 +2320,124 @@
   "food": "Nasi kerabu with ayam percik"
  },
  {
+  "label": "nasi_lemak_ayam_goreng",
+  "food": "Nasi lemak ayam goreng"
+ },
+ {
   "label": "nasi_lemak_biasa",
   "food": "Nasi lemak biasa"
+ },
+ {
+  "label": "nasi_lemak_kerang",
+  "food": "Nasi lemak kerang"
+ },
+ {
+  "label": "nasi_lemak_rendang_ayam",
+  "food": "Nasi lemak rendang ayam"
+ },
+ {
+  "label": "nasi_lemak_rice",
+  "food": "Nasi lemak rice"
+ },
+ {
+  "label": "nasi_lemak_sambal_sotong",
+  "food": "Nasi lemak sambal sotong"
+ },
+ {
+  "label": "nasi_lemak_telur_mata",
+  "food": "Nasi lemak telur mata"
+ },
+ {
+  "label": "nasi_lemak_telur_rebus_kurang_nasi",
+  "food": "Nasi lemak telur rebus, kurang nasi"
+ },
+ {
+  "label": "nasi_mandi_ayam",
+  "food": "Nasi mandi ayam"
+ },
+ {
+  "label": "nasi_mandi_ayam_half_rice",
+  "food": "Nasi mandi ayam, half rice"
+ },
+ {
+  "label": "nasi_minyak",
+  "food": "Nasi minyak"
+ },
+ {
+  "label": "nasi_tomato",
+  "food": "Nasi tomato"
+ },
+ {
+  "label": "oat_porridge_savoury",
+  "food": "Oat porridge, savoury"
+ },
+ {
+  "label": "oats_with_milk_and_banana",
+  "food": "Oats with milk and banana"
+ },
+ {
+  "label": "oden",
+  "food": "Oden"
+ },
+ {
+  "label": "oil_rice_chicken_rice",
+  "food": "Oil rice (chicken rice)"
  },
  {
   "label": "okonomiyaki",
   "food": "Okonomiyaki"
  },
  {
+  "label": "old_cucumber_soup_with_pork_ribs",
+  "food": "Old cucumber soup with pork ribs"
+ },
+ {
+  "label": "omelette_with_onion_and_chilli_telur_dadar",
+  "food": "Omelette with onion and chilli (telur dadar)"
+ },
+ {
   "label": "omelette_with_rice_and_cucumber",
   "food": "Omelette with rice and cucumber"
  },
  {
+  "label": "omelette_plain",
+  "food": "Omelette, plain"
+ },
+ {
+  "label": "ondeh_ondeh_cake",
+  "food": "Ondeh-ondeh cake"
+ },
+ {
+  "label": "onigiri_and_boiled_egg",
+  "food": "Onigiri and boiled egg"
+ },
+ {
+  "label": "orange",
+  "food": "Orange"
+ },
+ {
+  "label": "original_recipe_chicken_2_pieces",
+  "food": "Original Recipe chicken, 2 pieces"
+ },
+ {
+  "label": "original_chicken_2_pieces",
+  "food": "Original chicken, 2 pieces"
+ },
+ {
   "label": "otak_otak",
   "food": "Otak-otak"
+ },
+ {
+  "label": "overnight_oats_with_greek_yogurt_and_berries_light",
+  "food": "Overnight oats with Greek yogurt and berries, light"
+ },
+ {
+  "label": "overnight_oats_with_chia_and_banana",
+  "food": "Overnight oats with chia and banana"
+ },
+ {
+  "label": "pad_kra_pao_chicken_home_style",
+  "food": "Pad kra pao chicken, home-style"
  },
  {
   "label": "pad_kra_pao_with_rice_and_egg",
@@ -860,20 +2476,80 @@
   "food": "Pandan gula melaka cake"
  },
  {
+  "label": "pandan_layer_cake",
+  "food": "Pandan layer cake"
+ },
+ {
+  "label": "papaya",
+  "food": "Papaya"
+ },
+ {
+  "label": "pavlova_with_cream_and_fruit",
+  "food": "Pavlova with cream and fruit"
+ },
+ {
+  "label": "peach",
+  "food": "Peach"
+ },
+ {
+  "label": "peanut_butter_banana_toast",
+  "food": "Peanut butter banana toast"
+ },
+ {
+  "label": "peanut_butter_toast",
+  "food": "Peanut butter toast"
+ },
+ {
   "label": "peanut_paste",
   "food": "Peanut paste"
+ },
+ {
+  "label": "pear",
+  "food": "Pear"
+ },
+ {
+  "label": "pecan_pie",
+  "food": "Pecan pie"
+ },
+ {
+  "label": "penne_arrabbiata_with_chicken",
+  "food": "Penne arrabbiata with chicken"
+ },
+ {
+  "label": "peony_roast_meat_rice",
+  "food": "Peony roast meat rice"
+ },
+ {
+  "label": "persimmon",
+  "food": "Persimmon"
  },
  {
   "label": "pho",
   "food": "Pho"
  },
  {
+  "label": "pho_chicken",
+  "food": "Pho, chicken"
+ },
+ {
+  "label": "pineapple",
+  "food": "Pineapple"
+ },
+ {
   "label": "pineapple_bun_with_butter",
   "food": "Pineapple bun with butter"
  },
  {
+  "label": "pineapple_fried_rice",
+  "food": "Pineapple fried rice"
+ },
+ {
   "label": "pineapple_tarts",
   "food": "Pineapple tarts"
+ },
+ {
+  "label": "pisang_emas",
+  "food": "Pisang emas"
  },
  {
   "label": "pisang_goreng",
@@ -888,8 +2564,76 @@
   "food": "Pizza"
  },
  {
+  "label": "pizza_bbq_chicken",
+  "food": "Pizza, BBQ chicken"
+ },
+ {
+  "label": "pizza_hawaiian_chicken",
+  "food": "Pizza, Hawaiian chicken"
+ },
+ {
+  "label": "pizza_cheese_stuffed_crust",
+  "food": "Pizza, cheese stuffed crust"
+ },
+ {
+  "label": "pizza_margherita",
+  "food": "Pizza, margherita"
+ },
+ {
+  "label": "pizza_meat_lovers",
+  "food": "Pizza, meat lovers"
+ },
+ {
+  "label": "pizza_pepperoni",
+  "food": "Pizza, pepperoni"
+ },
+ {
+  "label": "pizza_seafood_tuna_or_prawn",
+  "food": "Pizza, seafood (tuna or prawn)"
+ },
+ {
+  "label": "pizza_thin_crust",
+  "food": "Pizza, thin crust"
+ },
+ {
+  "label": "pizza_veggie",
+  "food": "Pizza, veggie"
+ },
+ {
+  "label": "plain_fried_rice",
+  "food": "Plain fried rice"
+ },
+ {
+  "label": "plain_naan",
+  "food": "Plain naan"
+ },
+ {
+  "label": "plain_porridge_with_side_dishes_teochew",
+  "food": "Plain porridge with side dishes (Teochew)"
+ },
+ {
+  "label": "poached_chicken_rice_chicken_rice_hub",
+  "food": "Poached chicken rice (Chicken Rice Hub)"
+ },
+ {
+  "label": "poached_eggs",
+  "food": "Poached eggs"
+ },
+ {
+  "label": "poke_bowl_salmon",
+  "food": "Poke bowl, salmon"
+ },
+ {
   "label": "polo_bun_with_butter",
   "food": "Polo bun with butter"
+ },
+ {
+  "label": "pomegranate",
+  "food": "Pomegranate"
+ },
+ {
+  "label": "pomelo",
+  "food": "Pomelo"
  },
  {
   "label": "popcorn_caramel",
@@ -900,8 +2644,28 @@
   "food": "Popcorn, salted"
  },
  {
+  "label": "popiah_1_roll",
+  "food": "Popiah, 1 roll"
+ },
+ {
   "label": "popiah_fresh",
   "food": "Popiah, fresh"
+ },
+ {
+  "label": "pork_noodle_soup",
+  "food": "Pork noodle soup"
+ },
+ {
+  "label": "pork_noodle_soup_dry",
+  "food": "Pork noodle soup, dry"
+ },
+ {
+  "label": "pork_noodle_soup_lean_pork_only",
+  "food": "Pork noodle soup, lean pork only"
+ },
+ {
+  "label": "pork_porridge",
+  "food": "Pork porridge"
  },
  {
   "label": "portuguese_egg_tart",
@@ -912,6 +2676,14 @@
   "food": "Potato chips"
  },
  {
+  "label": "potato_with_minced_pork",
+  "food": "Potato with minced pork"
+ },
+ {
+  "label": "prawn_and_egg_white_fried_cauliflower_rice_light",
+  "food": "Prawn and egg white fried cauliflower rice, light"
+ },
+ {
   "label": "prawn_cheong_fun",
   "food": "Prawn cheong fun"
  },
@@ -920,24 +2692,104 @@
   "food": "Prawn mee"
  },
  {
+  "label": "prawn_skewer",
+  "food": "Prawn skewer"
+ },
+ {
+  "label": "pretzel_cinnamon_sugar",
+  "food": "Pretzel, cinnamon sugar"
+ },
+ {
   "label": "pretzel_original",
   "food": "Pretzel, original"
+ },
+ {
+  "label": "prunes",
+  "food": "Prunes"
+ },
+ {
+  "label": "pumpkin_soup",
+  "food": "Pumpkin soup"
+ },
+ {
+  "label": "puri_with_potato_masala",
+  "food": "Puri with potato masala"
+ },
+ {
+  "label": "quarter_chicken_with_2_sides",
+  "food": "Quarter chicken with 2 sides"
+ },
+ {
+  "label": "quarter_chicken_with_3_sides",
+  "food": "Quarter chicken with 3 sides"
  },
  {
   "label": "quiche",
   "food": "Quiche"
  },
  {
+  "label": "quinoa_chicken_bowl",
+  "food": "Quinoa chicken bowl"
+ },
+ {
+  "label": "rambutan",
+  "food": "Rambutan"
+ },
+ {
+  "label": "ramen_chicken_paitan",
+  "food": "Ramen, chicken paitan"
+ },
+ {
+  "label": "ramen_miso",
+  "food": "Ramen, miso"
+ },
+ {
+  "label": "ramen_shio",
+  "food": "Ramen, shio"
+ },
+ {
   "label": "ramen_shoyu",
   "food": "Ramen, shoyu"
+ },
+ {
+  "label": "ramen_spicy_miso",
+  "food": "Ramen, spicy miso"
+ },
+ {
+  "label": "ramen_tantanmen",
+  "food": "Ramen, tantanmen"
  },
  {
   "label": "ramen_tonkotsu",
   "food": "Ramen, tonkotsu"
  },
  {
+  "label": "ramyeon_with_egg",
+  "food": "Ramyeon with egg"
+ },
+ {
+  "label": "raspberries",
+  "food": "Raspberries"
+ },
+ {
+  "label": "rava_thosai",
+  "food": "Rava thosai"
+ },
+ {
+  "label": "ravioli_in_tomato_sauce",
+  "food": "Ravioli in tomato sauce"
+ },
+ {
+  "label": "red_bean_bun",
+  "food": "Red bean bun"
+ },
+ {
   "label": "red_bean_soup",
   "food": "Red bean soup"
+ },
+ {
+  "label": "red_curry_chicken_with_rice",
+  "food": "Red curry chicken with rice"
  },
  {
   "label": "red_velvet_cake",
@@ -948,32 +2800,160 @@
   "food": "Rendang daging with rice"
  },
  {
+  "label": "ritz_crackers",
+  "food": "Ritz crackers"
+ },
+ {
+  "label": "roast_chicken_quarter",
+  "food": "Roast chicken, quarter"
+ },
+ {
   "label": "roast_duck_rice",
   "food": "Roast duck rice"
+ },
+ {
+  "label": "roasted_chicken_rice_choon_yien",
+  "food": "Roasted chicken rice (Choon Yien)"
+ },
+ {
+  "label": "rock_melon",
+  "food": "Rock melon"
  },
  {
   "label": "rojak_buah",
   "food": "Rojak buah"
  },
  {
+  "label": "root_beer_float",
+  "food": "Root beer float"
+ },
+ {
+  "label": "roti_bawang",
+  "food": "Roti bawang"
+ },
+ {
   "label": "roti_canai_kosong",
   "food": "Roti canai kosong"
+ },
+ {
+  "label": "roti_cheese",
+  "food": "Roti cheese"
+ },
+ {
+  "label": "roti_john",
+  "food": "Roti john"
+ },
+ {
+  "label": "roti_pisang",
+  "food": "Roti pisang"
+ },
+ {
+  "label": "roti_planta",
+  "food": "Roti planta"
+ },
+ {
+  "label": "roti_sardin",
+  "food": "Roti sardin"
  },
  {
   "label": "roti_telur",
   "food": "Roti telur"
  },
  {
+  "label": "roti_telur_bawang",
+  "food": "Roti telur bawang"
+ },
+ {
+  "label": "roti_tisu",
+  "food": "Roti tisu"
+ },
+ {
+  "label": "sago_gula_melaka",
+  "food": "Sago gula melaka"
+ },
+ {
+  "label": "salmon_don",
+  "food": "Salmon don"
+ },
+ {
+  "label": "salmon_maki",
+  "food": "Salmon maki"
+ },
+ {
+  "label": "salmon_mentai_aburi",
+  "food": "Salmon mentai aburi"
+ },
+ {
+  "label": "salmon_nigiri",
+  "food": "Salmon nigiri"
+ },
+ {
+  "label": "salmon_poke_bowl",
+  "food": "Salmon poke bowl"
+ },
+ {
+  "label": "salmon_sashimi",
+  "food": "Salmon sashimi"
+ },
+ {
   "label": "salmon_sashimi_and_rice",
   "food": "Salmon sashimi and rice"
+ },
+ {
+  "label": "salmon_teriyaki_bento",
+  "food": "Salmon teriyaki bento"
+ },
+ {
+  "label": "salmon_teriyaki_with_rice_and_broccoli",
+  "food": "Salmon teriyaki with rice and broccoli"
  },
  {
   "label": "salt_bread_shio_pan",
   "food": "Salt bread (shio pan)"
  },
  {
+  "label": "salted_egg",
+  "food": "Salted egg"
+ },
+ {
+  "label": "salted_egg_chicken_rice",
+  "food": "Salted egg chicken rice"
+ },
+ {
   "label": "salted_egg_custard_bun_lau_sar_bao",
   "food": "Salted egg custard bun (lau sar bao)"
+ },
+ {
+  "label": "salted_egg_pasta",
+  "food": "Salted egg pasta"
+ },
+ {
+  "label": "salted_vegetable_and_tofu_soup",
+  "food": "Salted vegetable and tofu soup"
+ },
+ {
+  "label": "salted_vegetable_duck_soup",
+  "food": "Salted vegetable duck soup"
+ },
+ {
+  "label": "sambal_egg",
+  "food": "Sambal egg"
+ },
+ {
+  "label": "sambal_fish",
+  "food": "Sambal fish"
+ },
+ {
+  "label": "sambal_kangkung",
+  "food": "Sambal kangkung"
+ },
+ {
+  "label": "sambal_prawns",
+  "food": "Sambal prawns"
+ },
+ {
+  "label": "samgyeopsal_set_with_rice",
+  "food": "Samgyeopsal set with rice"
  },
  {
   "label": "samgyetang",
@@ -984,20 +2964,68 @@
   "food": "Samosa"
  },
  {
+  "label": "sang_har_mee",
+  "food": "Sang har mee"
+ },
+ {
   "label": "sarawak_laksa",
   "food": "Sarawak laksa"
+ },
+ {
+  "label": "sardine_sandwich",
+  "food": "Sardine sandwich"
  },
  {
   "label": "satay_ayam",
   "food": "Satay ayam"
  },
  {
+  "label": "sate_lilit",
+  "food": "Sate lilit"
+ },
+ {
+  "label": "sate_padang",
+  "food": "Sate padang"
+ },
+ {
+  "label": "sausage_mcmuffin_with_egg",
+  "food": "Sausage McMuffin with egg"
+ },
+ {
+  "label": "sausage_bun",
+  "food": "Sausage bun"
+ },
+ {
+  "label": "sausage_skewer",
+  "food": "Sausage skewer"
+ },
+ {
   "label": "scone_with_jam_and_cream",
   "food": "Scone with jam and cream"
  },
  {
+  "label": "scrambled_eggs",
+  "food": "Scrambled eggs"
+ },
+ {
+  "label": "scrambled_eggs_on_wholemeal_toast",
+  "food": "Scrambled eggs on wholemeal toast"
+ },
+ {
+  "label": "seafood_marinara_pasta",
+  "food": "Seafood marinara pasta"
+ },
+ {
   "label": "seafood_pajeon",
   "food": "Seafood pajeon"
+ },
+ {
+  "label": "seafood_ramyeon_jjamppong_style",
+  "food": "Seafood ramyeon (jjamppong style)"
+ },
+ {
+  "label": "seaweed_and_tofu_soup",
+  "food": "Seaweed and tofu soup"
  },
  {
   "label": "sesame_balls_jin_deui",
@@ -1008,6 +3036,18 @@
   "food": "Sheng jian bao"
  },
  {
+  "label": "shin_ramyun",
+  "food": "Shin Ramyun"
+ },
+ {
+  "label": "shin_ramyun_with_egg_and_cheese",
+  "food": "Shin Ramyun with egg and cheese"
+ },
+ {
+  "label": "shucked_fresh_oysters",
+  "food": "Shucked fresh oysters"
+ },
+ {
   "label": "siew_mai",
   "food": "Siew mai"
  },
@@ -1016,16 +3056,32 @@
   "food": "Siew yuk rice"
  },
  {
+  "label": "sirap_bandung",
+  "food": "Sirap bandung"
+ },
+ {
   "label": "smoked_salmon_and_cream_cheese_bagel",
   "food": "Smoked salmon and cream cheese bagel"
  },
  {
-  "label": "snow_fungus_with_longan",
-  "food": "Snow fungus with longan"
+  "label": "smoothie_bowl",
+  "food": "Smoothie bowl"
+ },
+ {
+  "label": "soba_with_chicken_and_edamame",
+  "food": "Soba with chicken and edamame"
+ },
+ {
+  "label": "soda_limau_asam_boi",
+  "food": "Soda limau asam boi"
  },
  {
   "label": "soft_drink",
   "food": "Soft drink"
+ },
+ {
+  "label": "soft_drink_zero_sugar",
+  "food": "Soft drink, zero sugar"
  },
  {
   "label": "soft_serve_cone",
@@ -1040,8 +3096,60 @@
   "food": "Soto ayam"
  },
  {
+  "label": "sotteok_sotteok",
+  "food": "Sotteok sotteok"
+ },
+ {
   "label": "souffl_pancakes",
   "food": "Souffl\u00e9 pancakes"
+ },
+ {
+  "label": "sour_fish_soup_suan_cai_fish",
+  "food": "Sour fish soup (suan cai fish)"
+ },
+ {
+  "label": "sour_fish_soup_with_rice",
+  "food": "Sour fish soup with rice"
+ },
+ {
+  "label": "soursop",
+  "food": "Soursop"
+ },
+ {
+  "label": "soy_garlic_chicken_rice_box",
+  "food": "Soy garlic chicken rice box"
+ },
+ {
+  "label": "soy_sauce_chicken_economy_rice",
+  "food": "Soy sauce chicken (economy rice)"
+ },
+ {
+  "label": "soy_sauce_fried_fish",
+  "food": "Soy sauce fried fish"
+ },
+ {
+  "label": "soya_cincau",
+  "food": "Soya cincau"
+ },
+ {
+  "label": "spaghetti_aglio_olio",
+  "food": "Spaghetti aglio olio"
+ },
+ {
+  "label": "spaghetti_aglio_olio_with_chicken",
+  "food": "Spaghetti aglio olio with chicken"
+ },
+ {
+  "label": "spaghetti_aglio_olio_with_prawns",
+  "food": "Spaghetti aglio olio with prawns"
+ },
+ {
+  "label": "spaghetti_alfredo",
+  "food": "Spaghetti alfredo"
+ },
+ {
+  "label": "spaghetti_arrabbiata",
+  "food": "Spaghetti arrabbiata"
  },
  {
   "label": "spaghetti_bolognese",
@@ -1052,32 +3160,180 @@
   "food": "Spaghetti carbonara"
  },
  {
+  "label": "spaghetti_meatballs",
+  "food": "Spaghetti meatballs"
+ },
+ {
+  "label": "spaghetti_pesto_with_chicken",
+  "food": "Spaghetti pesto with chicken"
+ },
+ {
+  "label": "spaghetti_pomodoro",
+  "food": "Spaghetti pomodoro"
+ },
+ {
+  "label": "spaghetti_vongole",
+  "food": "Spaghetti vongole"
+ },
+ {
+  "label": "spicy_salmon_roll",
+  "food": "Spicy salmon roll"
+ },
+ {
+  "label": "spinach_and_egg_drop_soup_with_rice",
+  "food": "Spinach and egg drop soup with rice"
+ },
+ {
+  "label": "spinach_and_tofu_clear_soup",
+  "food": "Spinach and tofu clear soup"
+ },
+ {
   "label": "spring_rolls_fried",
   "food": "Spring rolls, fried"
+ },
+ {
+  "label": "squid_skewer",
+  "food": "Squid skewer"
+ },
+ {
+  "label": "starfruit",
+  "food": "Starfruit"
  },
  {
   "label": "steak_with_vegetables",
   "food": "Steak with vegetables"
  },
  {
+  "label": "steamed_hainan_bread_with_kaya",
+  "food": "Steamed Hainan bread with kaya"
+ },
+ {
+  "label": "steamed_chicken_breast_with_ginger_brown_rice_and_choy_sum",
+  "food": "Steamed chicken breast with ginger, brown rice and choy sum"
+ },
+ {
+  "label": "steamed_chicken_with_ginger_and_wolfberries",
+  "food": "Steamed chicken with ginger and wolfberries"
+ },
+ {
+  "label": "steamed_chicken_rice_and_broccoli",
+  "food": "Steamed chicken, rice and broccoli"
+ },
+ {
+  "label": "steamed_corn",
+  "food": "Steamed corn"
+ },
+ {
+  "label": "steamed_egg_custard",
+  "food": "Steamed egg custard"
+ },
+ {
+  "label": "steamed_egg_with_minced_chicken_rice",
+  "food": "Steamed egg with minced chicken, rice"
+ },
+ {
+  "label": "steamed_egg_with_minced_pork_and_rice",
+  "food": "Steamed egg with minced pork and rice"
+ },
+ {
+  "label": "steamed_fish_economy_rice",
+  "food": "Steamed fish (economy rice)"
+ },
+ {
+  "label": "steamed_fish_balls",
+  "food": "Steamed fish balls"
+ },
+ {
   "label": "steamed_fish_with_rice_and_greens",
   "food": "Steamed fish with rice and greens"
+ },
+ {
+  "label": "steamed_fish_with_tofu_and_spring_onion_no_rice",
+  "food": "Steamed fish with tofu and spring onion, no rice"
+ },
+ {
+  "label": "steamed_minced_pork_patty",
+  "food": "Steamed minced pork patty"
+ },
+ {
+  "label": "steamed_minced_pork_patty_with_rice",
+  "food": "Steamed minced pork patty with rice"
+ },
+ {
+  "label": "steamed_minced_pork_with_salted_egg",
+  "food": "Steamed minced pork with salted egg"
+ },
+ {
+  "label": "steamed_minced_pork_with_salted_fish",
+  "food": "Steamed minced pork with salted fish"
  },
  {
   "label": "steamed_pork_ribs_with_black_bean",
   "food": "Steamed pork ribs with black bean"
  },
  {
+  "label": "steamed_siakap_with_ginger_and_soy_rice_and_greens",
+  "food": "Steamed siakap with ginger and soy, rice and greens"
+ },
+ {
+  "label": "sticky_rice",
+  "food": "Sticky rice"
+ },
+ {
+  "label": "stir_fried_broccoli",
+  "food": "Stir-fried broccoli"
+ },
+ {
+  "label": "stir_fried_cabbage",
+  "food": "Stir-fried cabbage"
+ },
+ {
+  "label": "stir_fried_choy_sum",
+  "food": "Stir-fried choy sum"
+ },
+ {
   "label": "stir_fried_greens",
   "food": "Stir-fried greens"
+ },
+ {
+  "label": "stir_fried_kai_lan_with_garlic",
+  "food": "Stir-fried kai lan with garlic"
+ },
+ {
+  "label": "stir_fried_long_beans",
+  "food": "Stir-fried long beans"
+ },
+ {
+  "label": "stir_fried_spinach_bayam",
+  "food": "Stir-fried spinach (bayam)"
+ },
+ {
+  "label": "stir_fried_sweet_potato_leaves",
+  "food": "Stir-fried sweet potato leaves"
+ },
+ {
+  "label": "strawberries",
+  "food": "Strawberries"
  },
  {
   "label": "strawberry_matcha_latte",
   "food": "Strawberry matcha latte"
  },
  {
+  "label": "strawberry_shortcake",
+  "food": "Strawberry shortcake"
+ },
+ {
+  "label": "stuffed_tofu_and_brinjal",
+  "food": "Stuffed tofu and brinjal"
+ },
+ {
   "label": "sugarcane_juice",
   "food": "Sugarcane juice"
+ },
+ {
+  "label": "sui_kow_in_soup",
+  "food": "Sui kow in soup"
  },
  {
   "label": "sundubu_jjigae_with_rice",
@@ -1090,6 +3346,22 @@
  {
   "label": "sushi_plates",
   "food": "Sushi plates"
+ },
+ {
+  "label": "sweet_and_sour_chicken",
+  "food": "Sweet and sour chicken"
+ },
+ {
+  "label": "sweet_and_sour_chicken_with_rice",
+  "food": "Sweet and sour chicken with rice"
+ },
+ {
+  "label": "sweet_and_sour_fish",
+  "food": "Sweet and sour fish"
+ },
+ {
+  "label": "sweet_and_sour_pork",
+  "food": "Sweet and sour pork"
  },
  {
   "label": "sweet_and_sour_pork_with_rice",
@@ -1114,6 +3386,10 @@
  {
   "label": "takoyaki",
   "food": "Takoyaki"
+ },
+ {
+  "label": "tamago_nigiri",
+  "food": "Tamago nigiri"
  },
  {
   "label": "tandoori_chicken_with_naan",
@@ -1148,48 +3424,208 @@
   "food": "Teh tarik"
  },
  {
+  "label": "telur_bungkus",
+  "food": "Telur bungkus"
+ },
+ {
+  "label": "tempeh_and_vegetable_sambal_with_rice",
+  "food": "Tempeh and vegetable sambal with rice"
+ },
+ {
   "label": "tempeh_fried",
   "food": "Tempeh, fried"
+ },
+ {
+  "label": "tempura_udon",
+  "food": "Tempura udon"
+ },
+ {
+  "label": "texas_chicken_2_pieces",
+  "food": "Texas Chicken, 2 pieces"
+ },
+ {
+  "label": "thai_basil_chicken_rice_with_egg",
+  "food": "Thai basil chicken rice with egg"
+ },
+ {
+  "label": "thai_fried_rice_with_chicken",
+  "food": "Thai fried rice with chicken"
  },
  {
   "label": "thai_milk_tea",
   "food": "Thai milk tea"
  },
  {
+  "label": "thosai_telur",
+  "food": "Thosai telur"
+ },
+ {
   "label": "thosai_with_dhal_and_chutney",
   "food": "Thosai with dhal and chutney"
+ },
+ {
+  "label": "three_colour_steamed_egg",
+  "food": "Three-colour steamed egg"
  },
  {
   "label": "tiramisu",
   "food": "Tiramisu"
  },
  {
+  "label": "tofu_and_minced_chicken_with_long_beans",
+  "food": "Tofu and minced chicken with long beans"
+ },
+ {
+  "label": "tofu_and_vegetable_stir_fry_with_rice",
+  "food": "Tofu and vegetable stir-fry with rice"
+ },
+ {
+  "label": "tofu_and_vegetable_stir_fry_no_rice",
+  "food": "Tofu and vegetable stir-fry, no rice"
+ },
+ {
   "label": "tofu_braised",
   "food": "Tofu, braised"
+ },
+ {
+  "label": "tom_yum_noodles",
+  "food": "Tom yum noodles"
+ },
+ {
+  "label": "tom_yum_pasta",
+  "food": "Tom yum pasta"
  },
  {
   "label": "tom_yum_soup_with_rice",
   "food": "Tom yum soup with rice"
  },
  {
+  "label": "tomato_and_egg_soup",
+  "food": "Tomato and egg soup"
+ },
+ {
+  "label": "tomato_egg_noodle_soup",
+  "food": "Tomato egg noodle soup"
+ },
+ {
+  "label": "tomato_egg_stir_fry",
+  "food": "Tomato egg stir-fry"
+ },
+ {
   "label": "tonkatsu_set",
   "food": "Tonkatsu set"
+ },
+ {
+  "label": "truffle_mushroom_pasta",
+  "food": "Truffle mushroom pasta"
+ },
+ {
+  "label": "tsukemen_dipping_ramen",
+  "food": "Tsukemen (dipping ramen)"
+ },
+ {
+  "label": "tteok_kkochi_rice_cake_skewer",
+  "food": "Tteok-kkochi (rice cake skewer)"
  },
  {
   "label": "tteokbokki",
   "food": "Tteokbokki"
  },
  {
+  "label": "tuna_and_egg_salad_wrap",
+  "food": "Tuna and egg salad wrap"
+ },
+ {
+  "label": "tuna_mayo_bun",
+  "food": "Tuna mayo bun"
+ },
+ {
+  "label": "tuna_nigiri",
+  "food": "Tuna nigiri"
+ },
+ {
+  "label": "tuna_puff",
+  "food": "Tuna puff"
+ },
+ {
+  "label": "tuna_salad",
+  "food": "Tuna salad"
+ },
+ {
+  "label": "tuna_sandwich",
+  "food": "Tuna sandwich"
+ },
+ {
+  "label": "turmeric_rice_nasi_kunyit",
+  "food": "Turmeric rice (nasi kunyit)"
+ },
+ {
+  "label": "twix",
+  "food": "Twix"
+ },
+ {
   "label": "udon_in_soup",
   "food": "Udon in soup"
+ },
+ {
+  "label": "udon_beef_niku",
+  "food": "Udon, beef (niku)"
+ },
+ {
+  "label": "udon_curry",
+  "food": "Udon, curry"
+ },
+ {
+  "label": "udon_kitsune",
+  "food": "Udon, kitsune"
+ },
+ {
+  "label": "ulam_with_sambal_and_grilled_chicken_light",
+  "food": "Ulam with sambal and grilled chicken, light"
+ },
+ {
+  "label": "ulam_with_sambal_on_the_side",
+  "food": "Ulam with sambal on the side"
  },
  {
   "label": "unagi_don",
   "food": "Unagi don"
  },
  {
+  "label": "unagi_nigiri",
+  "food": "Unagi nigiri"
+ },
+ {
   "label": "vadai",
   "food": "Vadai"
+ },
+ {
+  "label": "vegetable_curry_with_rice",
+  "food": "Vegetable curry with rice"
+ },
+ {
+  "label": "vegetable_dumplings_steamed",
+  "food": "Vegetable dumplings, steamed"
+ },
+ {
+  "label": "veggie_burger",
+  "food": "Veggie burger"
+ },
+ {
+  "label": "vietnamese_fresh_spring_rolls",
+  "food": "Vietnamese fresh spring rolls"
+ },
+ {
+  "label": "vietnamese_prawn_rice_paper_rolls",
+  "food": "Vietnamese prawn rice paper rolls"
+ },
+ {
+  "label": "vinegar_pork_trotter",
+  "food": "Vinegar pork trotter"
+ },
+ {
+  "label": "vitagen",
+  "food": "Vitagen"
  },
  {
   "label": "waffle_with_ice_cream",
@@ -1204,24 +3640,76 @@
   "food": "Walnut paste"
  },
  {
+  "label": "wantan_mee_pj_old_town",
+  "food": "Wantan mee (PJ Old Town)"
+ },
+ {
   "label": "wantan_mee_dry",
   "food": "Wantan mee, dry"
+ },
+ {
+  "label": "wantan_mee_soup",
+  "food": "Wantan mee, soup"
+ },
+ {
+  "label": "wat_tan_hor",
+  "food": "Wat tan hor"
+ },
+ {
+  "label": "watercress_soup_with_lean_pork",
+  "food": "Watercress soup with lean pork"
+ },
+ {
+  "label": "watermelon",
+  "food": "Watermelon"
  },
  {
   "label": "watermelon_juice_no_sugar",
   "food": "Watermelon juice, no sugar"
  },
  {
+  "label": "whipped_potato_with_gravy",
+  "food": "Whipped potato with gravy"
+ },
+ {
   "label": "white_bread",
   "food": "White bread"
+ },
+ {
+  "label": "white_radish_soup_with_pork_ribs",
+  "food": "White radish soup with pork ribs"
  },
  {
   "label": "white_rice",
   "food": "White rice"
  },
  {
+  "label": "white_rice_economy_rice",
+  "food": "White rice (economy rice)"
+ },
+ {
+  "label": "whopper",
+  "food": "Whopper"
+ },
+ {
+  "label": "winter_melon_soup_with_dried_scallops",
+  "food": "Winter melon soup with dried scallops"
+ },
+ {
   "label": "xiao_long_bao",
   "food": "Xiao long bao"
+ },
+ {
+  "label": "yaki_udon",
+  "food": "Yaki udon"
+ },
+ {
+  "label": "yakiniku_typical_meal",
+  "food": "Yakiniku, typical meal"
+ },
+ {
+  "label": "yakisoba",
+  "food": "Yakisoba"
  },
  {
   "label": "yakitori",
@@ -1232,15 +3720,47 @@
   "food": "Yakult Ace"
  },
  {
+  "label": "yakult_green_tea",
+  "food": "Yakult green tea"
+ },
+ {
   "label": "yam_puff_wu_kok",
   "food": "Yam puff (wu kok)"
+ },
+ {
+  "label": "yan_yan_strawberry",
+  "food": "Yan Yan Strawberry"
+ },
+ {
+  "label": "yang_chow_fried_rice",
+  "food": "Yang chow fried rice"
+ },
+ {
+  "label": "yong_tau_foo_pj_old_town",
+  "food": "Yong tau foo (PJ Old Town)"
  },
  {
   "label": "yong_tau_foo_soup",
   "food": "Yong tau foo, soup"
  },
  {
+  "label": "zha_jiang_mian",
+  "food": "Zha jiang mian"
+ },
+ {
+  "label": "zinger_burger",
+  "food": "Zinger burger"
+ },
+ {
+  "label": "zucchini_noodles_with_prawns_and_tomato",
+  "food": "Zucchini noodles with prawns and tomato"
+ },
+ {
   "label": "llaollao_medium_tub_with_3_toppings",
   "food": "llaollao, medium tub with 3 toppings"
+ },
+ {
+  "label": "mynews_maru_bento_chicken",
+  "food": "myNEWS Maru bento, chicken"
  }
 ]
